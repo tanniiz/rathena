@@ -1,9 +1,9 @@
 <img src="doc/logo.png" align="right" height="90" />
 
 # Configuration
-Database Encoding: utf8mb3_general_ci
-Database Name: rathenath
-Executable Version: 20180620 (or higher is compatible)
+Database Encoding: utf8mb3_general_ci </br>
+Database Name: rathenath </br>
+Executable Version: 20180620 (or higher is compatible) </br>
 
 # rAthena
 ![clang](https://img.shields.io/github/actions/workflow/status/rathena/rathena/build_servers_clang.yml?label=clang%20build&logo=llvm) ![cmake](https://img.shields.io/github/actions/workflow/status/rathena/rathena/build_servers_cmake.yml?label=cmake%20build&logo=cmake) ![gcc](https://img.shields.io/github/actions/workflow/status/rathena/rathena/build_servers_gcc.yml?label=gcc%20build&logo=gnu) ![ms](https://img.shields.io/github/actions/workflow/status/rathena/rathena/build_servers_msbuild.yml?label=ms%20build&logo=visualstudio) ![GitHub](https://img.shields.io/github/license/rathena/rathena.svg) ![commit activity](https://img.shields.io/github/commit-activity/w/rathena/rathena) ![GitHub repo size](https://img.shields.io/github/repo-size/rathena/rathena.svg)

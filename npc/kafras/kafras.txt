@@ -187,46 +187,45 @@ morocc,160,258,4	script	Kafra::kaf_morocc2	114,{
 
 // Payon
 //============================================================
-payon,181,104,4	script	Kafra Employee::kaf_payon	113,{
+payon,100,116,4	script	Kafra Employee::kaf_payon	113,{
 	cutin "kafra_05",2;
 	callfunc "F_KafSet";
 	mes "[Kafra Employee]";
-	mes "The Kafra Corporation";
-	mes "is always working to provide";
-	mes "you with convenient services.";
-	mes "How may I be of assistance?";
+	mes "Kafra Corp. ยินดีต้อนรับ";
+	mes "พวกเรายินดีที่จะให้บริการ";
+	mes "มีอะไรให้ช่วยไหม ?";
 	callfunc "F_Kafra",5,0,1,60,930;
-	savepoint "payon",160,58,1,1;
+	savepoint "payon",69,99,1,1;
 	callfunc "F_KafEnd",0,1,"in the city of Payon";
 }
 
-payon,175,226,4	script	Kafra Employee::kaf_payon2	116,{
-	cutin "kafra_02",2;
-	callfunc "F_KafSet";
-	mes "[Kafra Employee]";
-	mes "Welcome to the";
-	mes "Kafra Corporation.";
-	mes "The Kafra services are";
-	mes "always on your side.";
-	mes "How may I assist you?";
-	callfunc "F_Kafra",5,0,1,60,930;
-	savepoint "payon",257,242,1,1;
-	callfunc "F_KafEnd",0,1,"in the city of Payon";
-}
-
-pay_arche,55,123,0	script	Kafra Employee::kaf_payon3	4_F_KAFRA1,{
-	cutin "kafra_03",2;
-	callfunc "F_KafSet";
-	mes "[Kafra Employee]";
-	mes "Welcome to the";
-	mes "Kafra Corporation.";
-	mes "The Kafra services";
-	mes "are always on your side.";
-	mes "How may I assist you?";
-	callfunc "F_Kafra",5,5,1,90,1200;
-	savepoint "pay_arche",49,144,1,1;
-	callfunc "F_KafEnd",0,1,"at the Payon Dungeon";
-}
+// payon,175,226,4	script	Kafra Employee::kaf_payon2	116,{
+// 	cutin "kafra_02",2;
+// 	callfunc "F_KafSet";
+// 	mes "[Kafra Employee]";
+// 	mes "Welcome to the";
+// 	mes "Kafra Corporation.";
+// 	mes "The Kafra services are";
+// 	mes "always on your side.";
+// 	mes "How may I assist you?";
+// 	callfunc "F_Kafra",5,0,1,60,930;
+// 	savepoint "payon",257,242,1,1;
+// 	callfunc "F_KafEnd",0,1,"in the city of Payon";
+// }
+// 
+// pay_arche,55,123,0	script	Kafra Employee::kaf_payon3	4_F_KAFRA1,{
+// 	cutin "kafra_03",2;
+// 	callfunc "F_KafSet";
+// 	mes "[Kafra Employee]";
+// 	mes "Welcome to the";
+// 	mes "Kafra Corporation.";
+// 	mes "The Kafra services";
+// 	mes "are always on your side.";
+// 	mes "How may I assist you?";
+// 	callfunc "F_Kafra",5,5,1,90,1200;
+// 	savepoint "pay_arche",49,144,1,1;
+// 	callfunc "F_KafEnd",0,1,"at the Payon Dungeon";
+// }
 
 // Prontera
 //============================================================

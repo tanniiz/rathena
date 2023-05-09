@@ -116,7 +116,7 @@ function	script	F_Kafra	{
 	}
 	next;
 	if (.@welcome == 2)// Guild Kafra Menu override (free Teleport, free Storage, Free Cart)
-		setarray .@K_Menu0$[0], "Use Storage", "Use Guild Storage", "Rent a Pushcart", "Use Teleport Service", "Cancel";
+		setarray .@K_Menu0$[0], "เปิด Storage", "เปิด Guild Storage", "เช่ารถเข็น", "ใช้บริการเทเลพอร์ท", "ยกเลิก";
 	else {
 		switch(.@menu_num) {
 			// Save and Storage only
@@ -139,22 +139,22 @@ function	script	F_Kafra	{
 			// Storage, Save, and Pushcart (Dewata, reorder of case 7)
 			case 10: setarray .@K_Menu0$[0],"Use Storage","Save","Rent a Pushcart","Cancel"; break;
 			// Default message (obsolete)
-			default: setarray .@K_Menu0$[0],"Save","Use Storage","Use Teleport Service","Rent a Pushcart","Check Other Information","Cancel"; break;
+			default: setarray .@K_Menu0$[0],"บันทึกจุดเกิด","เปิด Storage","ใช้บริการเทเลพอร์ท", "ยกเลิก"; break;
 		}
 	}
 	.@menu$ = implode(.@K_Menu0$,":");
 	while (true) {
 		.@j = select(.@menu$) - 1;
-		if (.@K_Menu0$[.@j] == "Save")
+		if (.@K_Menu0$[.@j] == "บันทึกจุดเกิด")
 			return;
-		else if (.@K_Menu0$[.@j] == "Use Storage") {
+		else if (.@K_Menu0$[.@j] == "เปิด Storage") {
 			if (.@welcome == 2)// Do not charge for Guild Storage
 				callfunc "F_KafStor",2,0,0;
 			else
 				callfunc "F_KafStor",0,getarg(3),.@welcome;
 			next;
 		}
-		else if (.@K_Menu0$[.@j] == "Use Teleport Service") {
+		else if (.@K_Menu0$[.@j] == "ใช้บริการเทเลพอร์ท") {
 			if (.@menu_num != 4)// Display Einbroch "No Teleport Service" notice.
 				callfunc "F_KafTele",.@welcome;
 			else {
@@ -181,7 +181,7 @@ function	script	F_Kafra	{
 			callfunc "F_KafInfo",getarg(2);
 			next;
 		}
-		else if (.@K_Menu0$[.@j] == "Cancel") {
+		else if (.@K_Menu0$[.@j] == "ยกเลิก") {
 			callfunc "F_KafEnd",.@welcome,0;
 			end;
 		}
@@ -221,10 +221,9 @@ function	script	F_KafStor	{
 			mes "B-basic sssskill l-level 6...^000000";
 			return;
 		}
-		mes "I'm sorry, but you";
-		mes "need the Novice's";
-		mes "Basic Skill Level 6 to";
-		mes "use the Storage Service.";
+		mes "ขออภัยท่านจำเป็นที่จะต้องมี";
+		mes "Job Level 6 เพื่อใช้งาน";
+		mes "บริการ Storage";
 		return;
 	}
 	// Accessing Normal Storage (Skipped if accessing Storage from Guild castle)
@@ -245,10 +244,9 @@ function	script	F_KafStor	{
 					return;
 				}
 				// Standard Message
-				mes "I'm sorry, but you don't";
-				mes "have enough zeny to use";
-				mes "the Storage Service. Our";
-				mes "Storage access fee is " + .@fee + " zeny.";
+				mes "ขออภัยท่านมี zeny ไม่เพียงพอ";
+				mes "ในการเปิดใช้งาน Storage";
+				mes "ท่านจะต้องมี " + .@fee + " zeny.";
 				return;
 			}
 			Zeny -= .@fee;
@@ -286,11 +284,10 @@ function	script	F_KafStor	{
 //===================================================
 function	script	F_KafTele	{
 	mes "[Kafra Employee]";
-	mes "Please choose";
-	mes "your destination.";
+	mes "กรุณาเลือกจุดหมายปลายทาง";
 	next;
 	.@j = select( implode(@wrpC$,":") ) - 1;
-	if (@wrpC$[.@j] == "Cancel")
+	if (@wrpC$[.@j] == "ยกเลิก")
 		return;
 	// Consume "Free Ticket for Kafra Transportation" if available.
 	// Do not consume if in Guild castle
@@ -299,10 +296,8 @@ function	script	F_KafTele	{
 	else {
 		if (Zeny < @wrpP[.@j]) {
 			mes "[Kafra Employee]";
-			mes "I'm sorry, but you don't have";
-			mes "enough zeny for the Teleport";
-			mes "Service. The fee to teleport";
-			mes "to " + @wrpD$[.@j] + " is " + @wrpP[.@j] + " zeny.";
+			mes "ขออภัยค่ะ ท่านมี zeny ไม่เพียงพอ";
+			mes "ที่จะใช้บริการ Teleport";
 			close3;
 		}
 		Zeny -= @wrpP[.@j];
@@ -449,14 +444,11 @@ function	script	F_KafEnd	{
 	.@type = getarg(0);
 	mes "[Kafra Employee]";
 	if (getarg(1) == true) {// Save
-		mes "Your Respawn Point";
-		mes "has been saved here";
-		mes "" + getarg(2) + ".";
-		mes "Thank you for using";
-		mes "the Kafra Services.";
+		mes "บันทึกจุดเกิดเรียบร้อย";
+		mes "ขอบคุณที่ใช้บริการค่ะ";
 	} else if (.@type == 0 || .@type == 5) {// Generic End
-		mes "We, here at Kafra Corporation,";
-		mes "are always endeavoring to provide you with the best services. We hope that we meet your adventuring needs and standards of excellence.";
+		mes "พวกเรา Kafra Corporation อยู่เคียงข้างท่านเสมอ";
+		mes "โปรดกลับมาใช้บริการเมื่อท่านต้องการได้เสมอ ขอบคุณค่ะ";
 	} else if (.@type == 1) {// Niflheim End
 		percentheal 0,-25;
 		mes "^666666Kaffffra n-never";
@@ -668,6 +660,6 @@ function	script	F_KafSet	{
 
 	for ( .@i = 0; .@i < .@warp_size; .@i++ )
 		@wrpC$[.@i] = @wrpD$[.@i] + " -> " + @wrpP[.@i] + " z";
-	@wrpC$[ .@warp_size ] = "Cancel";
+	@wrpC$[ .@warp_size ] = "ยกเลิก";
 	return;
 }

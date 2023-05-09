@@ -57,15 +57,15 @@ moc_ruins,52,85,6	shop	Jeweler#moc2	99,730:-1,2613:-1
 //=======================================================
 // Ninja Shops
 //=======================================================
-que_ng,72,31,2	shop	Boonji#nin	83,13250:-1,13251:-1,13252:-1,13253:-1,13254:-1
-que_ng,73,26,5	shop	Boonray#nin	83,2117:-1,7521:-1,7522:-1,7523:-1,7524:-1
+// que_ng,72,31,2	shop	Boonji#nin	83,13250:-1,13251:-1,13252:-1,13253:-1,13254:-1
+// que_ng,73,26,5	shop	Boonray#nin	83,2117:-1,7521:-1,7522:-1,7523:-1,7524:-1
 
 //=======================================================
 // Cooking Addition
 //=======================================================
-prontera,156,212,1	shop	Chef Assistant#prt	700,7454:-1,7456:-1,7482:-1,580:-1
-moc_ruins,115,123,5	shop	Chef Assistant#moc	86,7455:-1,7453:-1,7454:-1,7456:-1,7452:-1
-geffen,196,111,3	shop	Chef Assistant#gef	85,7482:-1
-alberta,167,135,5	shop	Chef Assistant#alb	712,579:-1
-payon,206,119,5	shop	Chef Assistant#pay	89,7455:-1
+// prontera,156,212,1	shop	Chef Assistant#prt	700,7454:-1,7456:-1,7482:-1,580:-1
+// moc_ruins,115,123,5	shop	Chef Assistant#moc	86,7455:-1,7453:-1,7454:-1,7456:-1,7452:-1
+// geffen,196,111,3	shop	Chef Assistant#gef	85,7482:-1
+// alberta,167,135,5	shop	Chef Assistant#alb	712,579:-1
+// payon,206,119,5	shop	Chef Assistant#pay	89,7455:-1
 

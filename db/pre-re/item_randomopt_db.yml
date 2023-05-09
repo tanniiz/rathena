@@ -31,10 +31,12 @@ Header:
   Type: RANDOM_OPTION_DB
   Version: 1
 
-Footer:
-  Imports:
-  - Path: db/re/item_randomopt_db.yml
-    Mode: Renewal
-  - Path: db/import/item_randomopt_db.yml
-  - Path: db/pre-re/item_randomopt_db.yml
-    Mode: Prerenewal
+Body:
+  - Id: 1
+    Option: VAR_INCREASEDROP_DATE
+    Script: |
+      bonus2 bDropAddRace,RC_ALL,getrandomoptinfo(ROA_VALUE);
+  - Id: 2
+    Option: VAR_CRITICAL_RATE
+    Script: |
+      bonus bCRate,getrandomoptinfo(ROA_VALUE);

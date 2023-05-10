@@ -1,0 +1,15 @@
+-	script	VIP_STATUS	-1,{
+OnPCLoginEvent:
+	if ( vip_status(1) ) {
+			dispbottom "You're VIP.";
+			dispbottom "=============================================";
+			dispbottom "Account Status : VIP Account";
+			dispbottom "Account Status : Enable to warp in VIP Central!";
+			dispbottom "Account Status : Exp & Job Increase 30%";
+			dispbottom "Account Status : Drop Increase 20%";
+			dispbottom "Time left : "+ vip_status(3) * 1000;
+			dispbottom "============================================";
+      sc_start SC_VIPSTATE, vip_status(3) * 1000, 0;
+	}
+  end;
+}

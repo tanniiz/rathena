@@ -7046,3 +7046,7 @@ Body:
       NoClearbuff: true
   - Status: WeaponBreaker
     DurationLookup: NPC_WEAPONBRAKER
+
+## Custom Statuses ##
+  - Status: VIPSTATE
+    Icon: EFST_VIPSTATE

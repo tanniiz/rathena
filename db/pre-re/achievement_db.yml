@@ -1009,86 +1009,86 @@ Body:
         Count: 1000
     Map: payon
     Score: 10
-  - Id: 127005
-    Group: Chatting
-    Name: Juno Contribution
-    Targets:
-      - Id: 0
-        Count: 3000
-      - Id: 1
-        Count: 6000
-      - Id: 2
-        Count: 12000
-      - Id: 3
-        Count: 20000
-      - Id: 4
-        Count: 1000
-    Map: yuno
-    Score: 10
-  - Id: 127006
-    Group: Chatting
-    Name: Lighthalzen Contribution
-    Targets:
-      - Id: 0
-        Count: 3000
-      - Id: 1
-        Count: 6000
-      - Id: 2
-        Count: 12000
-      - Id: 3
-        Count: 20000
-      - Id: 4
-        Count: 1000
-    Map: lighthalzen
-    Score: 10
-  - Id: 127007
-    Group: Chatting
-    Name: Einbroch Contribution
-    Targets:
-      - Id: 0
-        Count: 3000
-      - Id: 1
-        Count: 6000
-      - Id: 2
-        Count: 12000
-      - Id: 3
-        Count: 20000
-      - Id: 4
-        Count: 1000
-    Map: einbroch
-    Score: 10
-  - Id: 127008
-    Group: Chatting
-    Name: Rachel Contribution
-    Targets:
-      - Id: 0
-        Count: 3000
-      - Id: 1
-        Count: 6000
-      - Id: 2
-        Count: 12000
-      - Id: 3
-        Count: 20000
-      - Id: 4
-        Count: 1000
-    Map: rachel
-    Score: 10
-  - Id: 127009
-    Group: Chatting
-    Name: Veins Contribution
-    Targets:
-      - Id: 0
-        Count: 3000
-      - Id: 1
-        Count: 6000
-      - Id: 2
-        Count: 12000
-      - Id: 3
-        Count: 20000
-      - Id: 4
-        Count: 1000
-    Map: veins
-    Score: 10
+  # - Id: 127005
+  #   Group: Chatting
+  #   Name: Juno Contribution
+  #   Targets:
+  #     - Id: 0
+  #       Count: 3000
+  #     - Id: 1
+  #       Count: 6000
+  #     - Id: 2
+  #       Count: 12000
+  #     - Id: 3
+  #       Count: 20000
+  #     - Id: 4
+  #       Count: 1000
+  #   Map: yuno
+  #   Score: 10
+  # - Id: 127006
+  #   Group: Chatting
+  #   Name: Lighthalzen Contribution
+  #   Targets:
+  #     - Id: 0
+  #       Count: 3000
+  #     - Id: 1
+  #       Count: 6000
+  #     - Id: 2
+  #       Count: 12000
+  #     - Id: 3
+  #       Count: 20000
+  #     - Id: 4
+  #       Count: 1000
+  #   Map: lighthalzen
+  #   Score: 10
+  # - Id: 127007
+  #   Group: Chatting
+  #   Name: Einbroch Contribution
+  #   Targets:
+  #     - Id: 0
+  #       Count: 3000
+  #     - Id: 1
+  #       Count: 6000
+  #     - Id: 2
+  #       Count: 12000
+  #     - Id: 3
+  #       Count: 20000
+  #     - Id: 4
+  #       Count: 1000
+  #   Map: einbroch
+  #   Score: 10
+  # - Id: 127008
+  #   Group: Chatting
+  #   Name: Rachel Contribution
+  #   Targets:
+  #     - Id: 0
+  #       Count: 3000
+  #     - Id: 1
+  #       Count: 6000
+  #     - Id: 2
+  #       Count: 12000
+  #     - Id: 3
+  #       Count: 20000
+  #     - Id: 4
+  #       Count: 1000
+  #   Map: rachel
+  #   Score: 10
+  # - Id: 127009
+  #   Group: Chatting
+  #   Name: Veins Contribution
+  #   Targets:
+  #     - Id: 0
+  #       Count: 3000
+  #     - Id: 1
+  #       Count: 6000
+  #     - Id: 2
+  #       Count: 12000
+  #     - Id: 3
+  #       Count: 20000
+  #     - Id: 4
+  #       Count: 1000
+  #   Map: veins
+  #   Score: 10
   - Id: 128000
     Group: Battle
     Name: Uninvited Guest

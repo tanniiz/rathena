@@ -60,8 +60,8 @@ payon_in01,69,54,0	warp	payonwarp030	2,2,payon_in01,86,32
 payon_in01,69,73,0	warp	payonwarp031	2,2,payon_in01,129,40
 // refine
 payon,21,173,0	warp	payonwarp032	2,2,payon_in01,96,26
-payon_in01,99,26,0	warp	payonwarp032	2,2,payon,21,169
-payon_in01,86,35,0	warp	payonwarp033	2,2,payon_in01,69,57
+payon_in01,99,26,0	warp	payonwarp033	2,2,payon,21,169
+payon_in01,86,35,0	warp	payonwarp034	2,2,payon_in01,69,57
 
 // -- House --
 // payon,151,127,0	warp	payonwarp031	2,2,payon_in01,56,53

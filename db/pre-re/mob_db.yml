@@ -6159,102 +6159,102 @@ Body:
       - Item: Kobold_Card
         Rate: 1
         StealProtected: true
-#  - Id: 1136
-#    AegisName: KOBOLD_4
-#    Name: Kobold
-#    Level: 31
-#    Hp: 2179
-#    BaseExp: 806
-#    JobExp: 407
-#    Attack: 262
-#    Attack2: 324
-#    Defense: 15
-#    MagicDefense: 10
-#    Agi: 31
-#    Vit: 31
-#    Int: 20
-#    Dex: 46
-#    Luk: 20
-#    AttackRange: 1
-#    SkillRange: 10
-#    ChaseRange: 12
-#    Size: Medium
-#    Race: Demihuman
-#    Element: Poison
-#    ElementLevel: 2
-#    WalkSpeed: 200
-#    AttackDelay: 1528
-#    AttackMotion: 528
-#    DamageMotion: 360
-#    Ai: 13
-#    Modes:
-#      NoRandomWalk: true
-#    Drops:
-#      - Item: Steel
-#        Rate: 50
-#      - Item: Cobold_Hair
-#        Rate: 5335
-#      - Item: Zargon
-#        Rate: 100
-#      - Item: Hammer_
-#        Rate: 5
-#      - Item: Buckler_
-#        Rate: 3
-#      - Item: Yellow_Herb
-#        Rate: 100
-#      - Item: Axe
-#        Rate: 150
-#      - Item: Kobold_Card
-#        Rate: 1
-#        StealProtected: true
-#  - Id: 1137
-#    AegisName: KOBOLD_5
-#    Name: Kobold
-#    Level: 31
-#    Hp: 2179
-#    BaseExp: 644
-#    JobExp: 407
-#    Attack: 186
-#    Attack2: 216
-#    Defense: 15
-#    MagicDefense: 10
-#    Agi: 31
-#    Vit: 31
-#    Int: 20
-#    Dex: 88
-#    Luk: 20
-#    AttackRange: 1
-#    SkillRange: 10
-#    ChaseRange: 12
-#    Size: Medium
-#    Race: Demihuman
-#    Element: Fire
-#    ElementLevel: 2
-#    WalkSpeed: 300
-#    AttackDelay: 1228
-#    AttackMotion: 528
-#    DamageMotion: 360
-#    Ai: 13
-#    Modes:
-#      NoRandomWalk: true
-#    Drops:
-#      - Item: Steel
-#        Rate: 40
-#      - Item: Cobold_Hair
-#        Rate: 5335
-#      - Item: Zargon
-#        Rate: 100
-#      - Item: Morning_Star_
-#        Rate: 5
-#      - Item: Buckler_
-#        Rate: 3
-#      - Item: Yellow_Herb
-#        Rate: 100
-#      - Item: Club
-#        Rate: 150
-#      - Item: Kobold_Card
-#        Rate: 1
-#        StealProtected: true
+  - Id: 1136
+    AegisName: KOBOLD_4
+    Name: Kobold
+    Level: 31
+    Hp: 2179
+    BaseExp: 806
+    JobExp: 407
+    Attack: 262
+    Attack2: 324
+    Defense: 15
+    MagicDefense: 10
+    Agi: 31
+    Vit: 31
+    Int: 20
+    Dex: 46
+    Luk: 20
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demihuman
+    Element: Poison
+    ElementLevel: 2
+    WalkSpeed: 200
+    AttackDelay: 1528
+    AttackMotion: 528
+    DamageMotion: 360
+    Ai: 13
+    Modes:
+      NoRandomWalk: true
+    Drops:
+      - Item: Steel
+        Rate: 50
+      - Item: Cobold_Hair
+        Rate: 5335
+      - Item: Zargon
+        Rate: 100
+      - Item: Hammer_
+        Rate: 5
+      - Item: Buckler_
+        Rate: 3
+      - Item: Yellow_Herb
+        Rate: 100
+      - Item: Axe
+        Rate: 150
+      - Item: Kobold_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 1137
+    AegisName: KOBOLD_5
+    Name: Kobold
+    Level: 31
+    Hp: 2179
+    BaseExp: 644
+    JobExp: 407
+    Attack: 186
+    Attack2: 216
+    Defense: 15
+    MagicDefense: 10
+    Agi: 31
+    Vit: 31
+    Int: 20
+    Dex: 88
+    Luk: 20
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demihuman
+    Element: Fire
+    ElementLevel: 2
+    WalkSpeed: 300
+    AttackDelay: 1228
+    AttackMotion: 528
+    DamageMotion: 360
+    Ai: 13
+    Modes:
+      NoRandomWalk: true
+    Drops:
+      - Item: Steel
+        Rate: 40
+      - Item: Cobold_Hair
+        Rate: 5335
+      - Item: Zargon
+        Rate: 100
+      - Item: Morning_Star_
+        Rate: 5
+      - Item: Buckler_
+        Rate: 3
+      - Item: Yellow_Herb
+        Rate: 100
+      - Item: Club
+        Rate: 150
+      - Item: Kobold_Card
+        Rate: 1
+        StealProtected: true
   - Id: 1138
     AegisName: MAGNOLIA
     Name: Magnolia

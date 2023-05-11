@@ -22447,9 +22447,20 @@ void clif_parse_refineui_refine( int fd, map_session_data* sd ){
 		log_pick_pc( sd, LOG_TYPE_OTHER, -1, item );
 		// Success
 		item->refine = cap_value( item->refine + 1, 0, MAX_REFINE );
+		if (&item->option[0] != NULL) {
+			std::shared_ptr<s_random_opt_data> opt = random_option_db.find(static_cast<uint16>(item->option[0].id));
+
+			if (opt != NULL) {
+				sd->inventory.u.items_inventory[index].option[0].value = (opt->multiplier * item->refine) / 100;
+			}
+		}
 		log_pick_pc( sd, LOG_TYPE_OTHER, 1, item );
 		clif_misceffect( &sd->bl, 3 );
 		clif_refine( fd, 0, index, item->refine );
+		clif_delitem(sd, index, 1, 3);
+		log_pick_pc(sd, LOG_TYPE_SCRIPT, -1, &sd->inventory.u.items_inventory[index]);
+		clif_additem(sd, index, 1, 0);
+
 		if (info->broadcast_success) {
 			clif_broadcast_refine_result(*sd, item->nameid, item->refine, true);
 		}

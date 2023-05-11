@@ -1926,6 +1926,8 @@ extern ComboDatabase itemdb_combo;
 struct s_random_opt_data
 {
 	uint16 id;
+	short type;
+	uint16 multiplier;
 	std::string name;
 	script_code *script;
 

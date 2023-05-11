@@ -4245,6 +4245,18 @@ uint64 RandomOptionDatabase::parseBodyNode(const ryml::NodeRef& node) {
 
 		randopt = std::make_shared<s_random_opt_data>();
 		randopt->id = id;
+
+		short type;
+		uint16 multiplier;
+
+		if (!this->asInt16(node, "Type", type))
+			type = 0;
+
+		if (!this->asUInt16(node, "Multiplier", multiplier))
+			multiplier = 0;
+
+		randopt->type = type;
+		randopt->multiplier = multiplier;
 	}
 
 	if (this->nodeExists(node, "Option")) {

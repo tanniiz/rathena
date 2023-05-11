@@ -1948,6 +1948,8 @@ Body:
     Hit: Multi_Hit
     HitCount: 2
     Element: Weapon
+    DamageFlags:
+      Critical: true
   - Id: 49
     Name: TF_MISS
     Description: Improve Dodge

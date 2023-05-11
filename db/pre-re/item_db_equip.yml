@@ -23926,9 +23926,9 @@ Body:
       Both_Accessory: true
     ArmorLevel: 1
     Script: |
-      bonus bVit,1;
+      bonus bStr,1;
       if (Class == Job_Swordman)
-         bonus bDef,2;
+        bonus2 bSkillAtk,"MS_MAGNUM",10;
   - Id: 2767
     AegisName: Acolyte_Figure
     Name: Acolyte Figure
@@ -23939,7 +23939,7 @@ Body:
     Script: |
       bonus bInt,1;
       if (Class == Job_Acolyte)
-         bonus bMaxSP,50;
+        bonus2 bSkillAtk,"AL_HOLYLIGHT",50;
   - Id: 2768
     AegisName: Mage_Figure
     Name: Mage Figure
@@ -23950,7 +23950,7 @@ Body:
     Script: |
       bonus bInt,1;
       if (Class == Job_Mage)
-         bonus bSPrecovRate,5;
+        bonus bCastrate,-3;
   - Id: 2769
     AegisName: Archer_Figure
     Name: Archer Figure
@@ -23970,9 +23970,9 @@ Body:
       Both_Accessory: true
     ArmorLevel: 1
     Script: |
-      bonus bAgi,1;
+      bonus bCritical,5;
       if (Class == Job_Thief)
-         bonus bAspdRate,3;
+        bonus bAspdRate,3;
   - Id: 2771
     AegisName: Merchant_Figure
     Name: Merchant Figure
@@ -23983,7 +23983,7 @@ Body:
     Script: |
       bonus bStr,1;
       if (Class == Job_Merchant)
-         bonus bCritical,5;
+        bonus2 bSkillAtk,"MC_CARTREVOLUTION",3;
   - Id: 2772
     AegisName: Krieger_Ring1
     Name: Glorious Ring

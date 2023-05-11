@@ -22101,3 +22101,21 @@ Body:
       Third_Upper: true
       Third_Baby: true
     EquipLevelMin: 1
+
+### Custom Items ###
+  - Id: 41015
+    AegisName: VIP_CARD_7D
+    Name: VIP Card 7Days
+    Type: Usable
+    Buy: 20
+    Weight: 1
+    Script: |
+      vip_time(60*24*7);
+  - Id: 60001
+    AegisName: RANDOM_T1_OPTION
+    Name: Random Tier1 Option Box
+    Type: Usable
+    Buy: 20
+    Weight: 1
+    Script: |
+      setmultiplieroption(EQI_HAND_R,0,300,50,0);

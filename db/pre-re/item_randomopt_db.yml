@@ -23,6 +23,8 @@
 #
 ###########################################################################
 # - Id          Item Random Option ID matching the ID defined in enumvar.lub in the client.
+#   Type        0 = Use script, 1 = Use Refinement Multiplier. Default = 0
+#   Multiplier  Will be used only Type: 1, 100 = 1 * refine level. Default = 0
 #   Option      Item Random Option constant.
 #   Script      Bonus script used for option.
 ###########################################################################
@@ -32,11 +34,15 @@ Header:
   Version: 1
 
 Body:
-  - Id: 1
-    Option: VAR_INCREASEDROP_DATE
+  - Id: 300
+    Option: VAR_INCREASEDROP_RATE
+    Type: 1
+    Multiplier: 50
     Script: |
       bonus2 bDropAddRace,RC_ALL,getrandomoptinfo(ROA_VALUE);
   - Id: 2
     Option: VAR_CRITICAL_RATE
+    Type: 1
+    Multiplier: 50
     Script: |
       bonus bCRate,getrandomoptinfo(ROA_VALUE);

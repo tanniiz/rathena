@@ -24431,6 +24431,62 @@ BUILDIN_FUNC(setrandomoption) {
 	return SCRIPT_CMD_FAILURE;
 }
 
+/**
+* Adds a option with multiplier with refinement level
+* setmultiplieroption(<equipment slot>,<index>,<id>,<multiplier>,<param>{,<char id>});
+* @author [secretdataz]
+*/
+BUILDIN_FUNC(setmultiplieroption) {
+	map_session_data* sd;
+	int pos, index, id, multiplier, param, ep, refinementLevel;
+	int i = -1;
+	if (!script_charid2sd(7, sd))
+		return SCRIPT_CMD_FAILURE;
+	pos = script_getnum(st, 2);
+	index = script_getnum(st, 3);
+	id = script_getnum(st, 4);
+	param = script_getnum(st, 5);
+
+	std::shared_ptr<s_random_opt_data> opt = random_option_db.find(static_cast<uint16>(id));
+
+	if (opt == nullptr) {
+		ShowError("buildin_setmultiplieroption: Random option ID %d does not exists.\n", id);
+		script_pushint(st, 0);
+		return SCRIPT_CMD_FAILURE;
+	}
+	if (opt->type != 1) {
+		ShowError("buildin_setmultiplieroption: Random option ID %d is configured incorrectly.\n", id);
+		script_pushint(st, 0);
+		return SCRIPT_CMD_FAILURE;
+	}
+	if (index < 0 || index >= MAX_ITEM_RDM_OPT) {
+		ShowError("buildin_setmultiplieroption: Invalid random option index %d.\n", index);
+		script_pushint(st, 0);
+		return SCRIPT_CMD_FAILURE;
+	}
+	if (equip_index_check(pos))
+		i = pc_checkequip(sd, equip_bitmask[pos]);
+	if (i >= 0) {
+		ep = sd->inventory.u.items_inventory[i].equip;
+		log_pick_pc(sd, LOG_TYPE_SCRIPT, -1, &sd->inventory.u.items_inventory[i]);
+		pc_unequipitem(sd, i, 2);
+		refinementLevel = (int)sd->inventory.u.items_inventory[i].refine;
+		sd->inventory.u.items_inventory[i].option[index].id = id;
+		sd->inventory.u.items_inventory[i].option[index].value = (opt->multiplier * refinementLevel) / 100;
+		sd->inventory.u.items_inventory[i].option[index].param = param;
+		clif_delitem(sd, i, 1, 3);
+		log_pick_pc(sd, LOG_TYPE_SCRIPT, -1, &sd->inventory.u.items_inventory[i]);
+		clif_additem(sd, i, 1, 0);
+		pc_equipitem(sd, i, ep);
+		script_pushint(st, 1);
+		return SCRIPT_CMD_SUCCESS;
+	}
+
+	ShowError("buildin_setrandomoption: No item equipped at pos %d (CID=%d/AID=%d).\n", pos, sd->status.char_id, sd->status.account_id);
+	script_pushint(st, 0);
+	return SCRIPT_CMD_FAILURE;
+}
+
 /// Returns the number of stat points needed to change the specified stat by val.
 /// If val is negative, returns the number of stat points that would be needed to
 /// raise the specified stat from (current value - val) to current value.
@@ -27564,6 +27620,7 @@ struct script_function buildin_func[] = {
 	BUILDIN_DEF(getrandomoptinfo, "i"),
 	BUILDIN_DEF(getequiprandomoption, "iii?"),
 	BUILDIN_DEF(setrandomoption,"iiiii?"),
+	BUILDIN_DEF(setmultiplieroption, "iiii?"),
 	BUILDIN_DEF(needed_status_point,"ii?"),
 	BUILDIN_DEF(needed_trait_point, "ii?"),
 	BUILDIN_DEF(jobcanentermap,"s?"),

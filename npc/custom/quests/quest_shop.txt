@@ -69,7 +69,7 @@ OnInit:
 
 	setarray .Shops$[1],
 		"Headgears",	// Shop Named 1
-		"Weapons",		// Shop Named 2
+		"Ores",		// Shop Named 2
 		"Other";		// Shop Named 3
 
 // -----------------------------------------------------------
@@ -86,10 +86,14 @@ OnInit:
 	Add(1,5045,1,0,0,2252,1,1054,450,943,1200);
 
 // Shop 2
-	Add(2,1224,1,0,0,7297,30,969,10,999,50,714,10);
-	Add(2,1225,1,0,0,7292,30,969,10,999,50,714,10);
+	Add(2,757,5,100,0,985,1);
+	Add(2,985,1,100,0,757,5);
+	Add(2,756,5,100,0,984,1);
+	Add(2,984,1,100,0,756,5);
 
 // Shop 3
+	Add(3,505,1,200,0,510,2,713,1);
+	Add(3,504,1,100,0,509,2,713,1);
 	Add(3,531,1,3,0,512,1,713,1);
 	Add(3,532,1,3,0,513,1,713,1);
 	Add(3,533,1,3,0,514,1,713,1);
@@ -123,7 +127,7 @@ OnMenu:
 		message strcharinfo(0),"An error has occurred.";
 		end;
 	}
-	dispbottom "Select one item at a time.";
+	dispbottom "กรุณาเลือกซื้อสินค้า 1 ชนิดต่อครั้ง";
 	callshop "qshop"+@shop_index,1;
 	npcshopattach "qshop"+@shop_index;
 	end;
@@ -137,9 +141,9 @@ OnBuyItem:
 		message strcharinfo(0),"You can't purchase that many "+getitemname(.@q[0])+".";
 		end;
 	}
-	mes "[Quest Shop]";
-	mes "Reward: ^0055FF"+((.@q[2] > 1)?.@q[2]+"x ":"")+Slot(.@q[0])+"^000000";
-	mes "Requirements:";
+	mes "[Dealer]";
+	mes "สินค้า: ^0055FF"+((.@q[2] > 1)?.@q[2]+"x ":"")+Slot(.@q[0])+"^000000";
+	mes "เงื่อนไข:";
 	disable_items;
 	if (.@q[4]) mes " > "+Chk(Zeny,.@q[4]*.@q[1])+(.@q[4]*.@q[1])+" Zeny^000000";
 	if (.@q[5]) mes " > "+Chk(getd(.Points$[0]),.@q[5]*.@q[1])+(.@q[5]*.@q[1])+" "+.Points$[1]+" ("+getd(.Points$[0])+"/"+(.@q[5]*.@q[1])+")^000000";
@@ -151,16 +155,16 @@ OnBuyItem:
 		set .@preview,1;
 	addtimer 1000, strnpcinfo(0)+"::OnEnd";
 	while(1) {
-		switch(select(" ~ Purchase ^0055FF"+getitemname(.@q[0])+"^000000:"+((.@preview && !@qe[7])?" ~ Preview...":"")+": ~ ^777777Cancel^000000")) {
+		switch(select(" แลกเลย! ^0055FF"+getitemname(.@q[0])+"^000000:"+((.@preview && !@qe[7])?" ~ Preview...":"")+": ~ ^777777ยกเลิก^000000")) {
 		case 1:
 			if (@qe[0]) {
-				mes "[Quest Shop]";
-				mes "You're missing one or more quest requirements.";
+				mes "[Dealer]";
+				mes "ไสหัวไป! หาของที่ข้าต้องการให้ครบก่อนค่อยกลับมาหาข้า!";
 				close;
 			}
 			if (!checkweight(.@q[0],.@q[2])) {
-				mes "[Quest Shop]";
-				mes "^FF0000You need "+(((.@q[2]*getiteminfo(.@q[0], ITEMINFO_WEIGHT))+Weight-MaxWeight)/10)+" additional weight capacity to complete this trade.^000000";
+				mes "[Dealer]";
+				mes "ไปจัดการน้ำหนักในตัวเจ้าเสียก่อน! ค่อยกลับมาหาข้า";
 				close;
 			}
 			if (.@q[4]) set Zeny, Zeny-(.@q[4]*.@q[1]);
@@ -245,3 +249,21 @@ function	script	qshop	{
 -	shop	qshop3	-1,909:-1
 -	shop	qshop4	-1,909:-1
 -	shop	qshop5	-1,909:-1
+
+// Ores
+morocc,43,54,6	script	Blacksmith#Ores	726,{
+	callfunc "qshop", 2;
+
+	OnInit:
+	waitingroom "รวมแร่ต่าง ๆ",0;
+	end;
+}
+
+// Juices
+morocc,150,107,6	script	Juice Maker#Juice	612,{
+	callfunc "qshop", 3;
+
+	OnInit:
+	waitingroom "น้ำผลไม้ดับร้อน",0;
+	end;
+}

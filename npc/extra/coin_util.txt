@@ -1,0 +1,11 @@
+
+function	script	F_UseCoins	{
+  set totalCoin,countitem(getarg(0));
+  set pts, getd(getarg(1)) + totalCoin + 1;
+  delitem getarg(0),totalCoin;
+  setd getarg(1), pts;
+  dispbottom "---------------------------------------------------";
+	dispbottom "คุณมียอดสะสม " + getarg(1) + " ทั้งหมด " + getd(getarg(1));
+	dispbottom "---------------------------------------------------";
+	return;
+}

@@ -1,0 +1,18 @@
+-	script	MonsterKill	-1,{
+  OnNPCKillEvent:
+    if(!getmonsterinfo(killedrid, MOB_MVPEXP) ) {
+      set point, getmonsterinfo(killedrid, MOB_SIZE) + 1;
+      set #MobPoint,#MobPoint + point;
+
+      set cashPts, rand(10);
+		
+      #CASHPOINTS = #CASHPOINTS +cashPts;
+      dispbottom "---------------------------------------------------";
+      dispbottom "คุณได้รับ Mob Point: " + point;
+      if (cashPts > 0) {
+        dispbottom "คุณได้รับ Cash Point: " + cashPts;
+      }
+      dispbottom "---------------------------------------------------";
+    }
+  end;
+}

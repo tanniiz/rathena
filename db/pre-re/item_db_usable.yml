@@ -22107,7 +22107,7 @@ Body:
     AegisName: VIP_CARD_7D
     Name: VIP Card 7Days
     Type: Usable
-    Buy: 20
+    Buy: 0
     Weight: 1
     Script: |
       vip_time(60*24*7);
@@ -22115,7 +22115,15 @@ Body:
     AegisName: RANDOM_T1_OPTION
     Name: Random Tier1 Option Box
     Type: Usable
-    Buy: 20
+    Buy: 0
     Weight: 1
     Script: |
       setmultiplieroption(EQI_HAND_R,0,300,50,0);
+  - Id: 60500
+    AegisName: MOB_COIN
+    Name: Mob Coin
+    Type: Usable
+    Buy: 0
+    Weight: 1
+    Script: |
+      callfunc "F_UseCoins",60500,"#MobPoint";

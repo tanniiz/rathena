@@ -23915,9 +23915,9 @@ Body:
       Both_Accessory: true
     ArmorLevel: 1
     Script: |
-      bonus bMaxHP,70;
+      bonus bMaxHP,100;
       if (BaseJob == Job_Novice || BaseJob == Job_SuperNovice)
-         bonus bMaxHP,30;
+        skill "TF_DOUBLE",3;
   - Id: 2766
     AegisName: Swordman_Figure
     Name: Swordman Figure
@@ -23972,7 +23972,7 @@ Body:
     Script: |
       bonus bCritical,5;
       if (Class == Job_Thief)
-        bonus bAspdRate,3;
+        bonus bAspdRate,5;
   - Id: 2771
     AegisName: Merchant_Figure
     Name: Merchant Figure

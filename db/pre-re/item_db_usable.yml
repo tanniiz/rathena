@@ -22103,27 +22103,73 @@ Body:
     EquipLevelMin: 1
 
 ### Custom Items ###
+  ##### VIP #####
   - Id: 41015
     AegisName: VIP_CARD_7D
     Name: VIP Card 7Days
     Type: Usable
-    Buy: 0
+    Buy: 20
     Weight: 1
     Script: |
       vip_time(60*24*7);
-  - Id: 60001
-    AegisName: RANDOM_T1_OPTION
-    Name: Random Tier1 Option Box
-    Type: Usable
-    Buy: 0
-    Weight: 1
-    Script: |
-      setmultiplieroption(EQI_HAND_R,0,300,50,0);
+
+  ##### Coins #####
   - Id: 60500
     AegisName: MOB_COIN
     Name: Mob Coin
-    Type: Usable
     Buy: 0
     Weight: 1
     Script: |
       callfunc "F_UseCoins",60500,"#MobPoint";
+
+  ##### Weapon Option Tier 1 #####
+  - Id: 60001
+    AegisName: DROP_WEAPON_T1_OPTION
+    Name: Drop Tier1 Option Box
+    Type: Usable
+    Buy: 20
+    Weight: 1
+    Script: |
+      setmultiplieroption(EQI_HAND_R,0,300,50,0);
+  - Id: 60002
+    AegisName: CRITICAL_WEAPON_T1_OPTION
+    Name: Critical Tier1 Option Box
+    Type: Usable
+    Buy: 20
+    Weight: 1
+    Script: |
+      setmultiplieroption(EQI_HAND_R,0,24,100,0);
+  - Id: 60003
+    AegisName: ATK_WEAPON_T1_OPTION
+    Name: Attack Tier1 Option Box
+    Type: Usable
+    Buy: 20
+    Weight: 1
+    Script: |
+      setmultiplieroption(EQI_HAND_R,0,17,300,0);
+  - Id: 60004
+    AegisName: MATK_WEAPON_T1_OPTION
+    Name: Matk Tier1 Option Box
+    Type: Usable
+    Buy: 20
+    Weight: 1
+    Script: |
+      setmultiplieroption(EQI_HAND_R,0,19,300,0);
+  - Id: 60005
+    AegisName: EXP_WEAPON_T1_OPTION
+    Name: Exp Tier1 Option Box
+    Type: Usable
+    Buy: 20
+    Weight: 1
+    Script: |
+      setmultiplieroption(EQI_HAND_R,0,242,200,0);
+  - Id: 60006
+    AegisName: ASPD_WEAPON_T1_OPTION
+    Name: Aspd Tier1 Option Box
+    Type: Usable
+    Buy: 20
+    Weight: 1
+    Script: |
+      setmultiplieroption(EQI_HAND_R,0,15,50,0);
+
+

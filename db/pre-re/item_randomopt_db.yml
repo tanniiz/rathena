@@ -34,15 +34,39 @@ Header:
   Version: 1
 
 Body:
+  - Id: 24
+    Option: VAR_CRITICALSUCCESSVALUE
+    Type: 1
+    Multiplier: 100
+    Script: |
+      bonus bCritical,getrandomoptinfo(ROA_VALUE);
+  - Id: 15
+    Option: VAR_PLUSASPD
+    Type: 1
+    Multiplier: 50
+    Script: |
+      bonus bAspd,getrandomoptinfo(ROA_VALUE);
+  - Id: 17
+    Option: VAR_ATTPOWER
+    Type: 1
+    Multiplier: 300
+    Script: |
+      bonus bAtk,getrandomoptinfo(ROA_VALUE);
+  - Id: 19
+    Option: VAR_ATTMPOWER
+    Type: 1
+    Multiplier: 300
+    Script: |
+      bonus bMatk,getrandomoptinfo(ROA_VALUE);
+  - Id: 242
+    Option: ADDEXPPERCENT_KILLRACE_ALL
+    Type: 1
+    Multiplier: 200
+    Script: |
+      bonus2 bExpAddRace,RC_All,getrandomoptinfo(ROA_VALUE);
   - Id: 300
     Option: VAR_INCREASEDROP_RATE
     Type: 1
     Multiplier: 50
     Script: |
       bonus2 bDropAddRace,RC_ALL,getrandomoptinfo(ROA_VALUE);
-  - Id: 2
-    Option: VAR_CRITICAL_RATE
-    Type: 1
-    Multiplier: 50
-    Script: |
-      bonus bCRate,getrandomoptinfo(ROA_VALUE);

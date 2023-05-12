@@ -7475,3 +7475,49 @@ Body:
           - Item: Giant_Fly_Wing
           - Item: E_Giant_Fly_Wing
           - Item: F_Giant_Fly_Wing
+  - Group: CUSTOMIZING_BOX
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Item: DROP_WEAPON_T1_OPTION
+            Rate: 1
+            Announced: true
+          - Item: CRITICAL_WEAPON_T1_OPTION
+            Rate: 1
+            Announced: true
+          - Item: ATK_WEAPON_T1_OPTION
+            Rate: 1
+            Announced: true
+          - Item: MATK_WEAPON_T1_OPTION
+            Rate: 1
+            Announced: true
+          - Item: EXP_WEAPON_T1_OPTION
+            Rate: 1
+            Announced: true
+          - Item: ASPD_WEAPON_T1_OPTION
+            Rate: 1
+            Announced: true
+          - Item: Blessing_10_Scroll_Box
+            Rate: 10
+            Announced: true
+          - Item: Inc_Agi_10_Scroll_Box
+            Rate: 10
+            Announced: true
+          - Item: Aspersio_5_Scroll_Box
+            Rate: 10
+            Announced: true
+          - Item: HE_Bubble_Gum
+            Rate: 5
+            Amount: 3
+            Announced: true
+          - Item: Battle_Manual_X3
+            Rate: 5
+            Amount: 3
+            Announced: true
+          - Item: Elite_Siege_Supply_Box
+            Rate: 5
+            Announced: true
+          - Item: Basic_Siege_Supply_Box
+            Rate: 10
+            Announced: true
+            

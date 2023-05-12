@@ -49,4 +49,4 @@
 
 // Duplicates
 //============================================================
-morocc,159,97,6	duplicate(Healer)	Healer#alb	909
+morocc,159,97,4	duplicate(Healer)	Healer#alb	641

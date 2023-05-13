@@ -26,15 +26,21 @@
 //============================================================ 
 
 // Teleporter
-new_1-3,96,174,4	script	Keyman#nv	111,{
+new_1-3,96,174,4	script	Keyman#nv	85,{
 	mes "[Keyman]";
 
 	if (JobLevel < 10) {
 		mes "ท่านจำเป็นต้องมี Job Level 10 ก่อนถึงจะออกจากที่นี่ได้";
 	} else {
 		mes "ขอให้เดินทางโดยสวัสดิภาพ";
+		close2;
+		getitem 7059,20;
+		getitem 7060,20;
+		savepoint "morocc",159,89,1,1;
+		warp "morocc",159,89;
 	}
-	close;
+
+	end;
 }
 
 // Bulletin Board
@@ -86,12 +92,40 @@ new_1-2,100,29,4	script	Receptionist#nv1	86,{
 			mes "[Training Grounds Receptionist]";
 			mes "ขอให้ท่านเดินทางโดยสวัสดิภาพ";
 			close2;
+			
+			getitem 41014,1;
+			getitem 12263,2;
+			getitem 14592,2;
+			getitem 12324,20;
+			getitem 12323,100;
+			getitem 569,300;
+			getitem 2414,1;
+			getitem 2393,1;
+			getitem 2510,1;
+			getitem 2112,1;
+			getitem 1243,1;
+			getitem 5055,1;
+			equip 2414;
+			equip 2393;
+			equip 2510;
+			equip 2112;
+			equip 1243;
+			equip 5055;
+
 			savepoint "new_1-3",96,21,1,1;
 			warp "new_1-3",96,21;
 			end;
 		case 2:
 			mes "[Training Grounds Receptionist]";
 			mes "ขอให้ท่านเดินทางโดยสวัสดิภาพ";
+
+			getitem 12324,20;
+			getitem 12323,100;
+			getitem 2414,1;
+			getitem 2393,1;
+			getitem 2510,1;
+			getitem 2112,1;
+			getitem 1243,1;
 			close2;
 			savepoint "morocc",159,89,1,1;
 			warp "morocc",159,89;
@@ -3906,31 +3940,19 @@ new_1-4,91,22,4	script	Bruce#nv	57,{
 }
 
 // Training Ground Mobs
-new_1-3,0,0	monster	Poring	1002,10
-new_1-3,0,0	monster	Drops	1113,10
-new_1-3,0,0	monster	Lunatic	1063,10
-new_1-3,0,0	monster	ChonChon	1011,10
-new_2-3,0,0	monster	Condor	1009,10
-new_2-3,0,0	monster	Picky	1050,10
-new_2-3,0,0	monster	Willow	1010,10
-new_2-3,0,0	monster	Roda Frog	1012,10
-new_3-3,0,0	monster	Condor	1009,10
-new_3-3,0,0	monster	Picky	1050,10
-new_3-3,0,0	monster	Willow	1010,10
-new_3-3,0,0	monster	Roda Frog	1012,10
-new_4-3,0,0	monster	Rocker	1052,10
-new_4-3,0,0	monster	Thief Bug	1051,10
-new_4-3,0,0	monster	Thief Bug	1053,10
-new_4-3,0,0	monster	Spore	1014,10
-new_5-3,0,0	monster	Rocker	1052,10
-new_5-3,0,0	monster	Thief Bug	1051,1
-new_5-3,0,0	monster	Thief Bug	1053,1
-new_5-3,0,0	monster	Spore	1014,1
-new_1-3,0,0	monster	Fabre	1184,5
-new_2-3,0,0	monster	Fabre	1184,5
-new_3-3,0,0	monster	Fabre	1184,5
-new_4-3,0,0	monster	Fabre	1184,5
-new_5-3,0,0	monster	Fabre	1184,5
+new_1-3,0,0	monster	Poring	1002,30
+new_1-3,0,0	monster	Drops	1113,30
+new_1-3,0,0	monster	Lunatic	1063,30
+new_1-3,0,0	monster	ChonChon	1011,30
+new_1-3,0,0	monster	Condor	1009,30
+new_1-3,0,0	monster	Picky	1050,30
+new_1-3,0,0	monster	Willow	1010,30
+new_1-3,0,0	monster	Roda Frog	1012,30
+new_1-3,0,0	monster	Thief Bug	1051,30
+new_1-3,0,0	monster	Thief Bug	1053,30
+new_1-3,0,0	monster	Spore	1014,30
+new_1-3,0,0	monster	Rocker	1052,30
+new_1-3,0,0	monster	Fabre	1184,30
 
 //============================================================ 
 // Old changelog

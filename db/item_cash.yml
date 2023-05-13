@@ -34,8 +34,24 @@ Header:
 Body:
   - Tab: New
     Items:
-      - Item: ANGEL_SCROLL
-        Price: 49
+      - Item: VIP_CARD_1D
+        Price: 290
+      - Item: VIP_CARD_7D
+        Price: 990
+      - Item: Elite_Siege_Supply_Box
+        Price: 990
+      - Item: Basic_Siege_Supply_Box
+        Price: 490
+      - Item: Battle_Manual_Box
+        Price: 1490
+      - Item: Bubble_Gum_Box
+        Price: 1490
+      - Item: Inc_Agi_10_Scroll_Box
+        Price: 490
+      - Item: Blessing_10_Scroll_Box
+        Price: 490
+      - Item: Convex_Mirror_Box
+        Price: 990
       - Item: Swordman_Figure
         Price: 4900
       - Item: Acolyte_Figure

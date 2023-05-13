@@ -161,13 +161,12 @@ morocc,156,97,4	script	Kafra Employee::kaf_morocc	113,{
 	cutin "kafra_05",2;
 	callfunc "F_KafSet";
 	mes "[Kafra Employee]";
-	mes "The Kafra Corporation";
-	mes "is always working to provide";
-	mes "you with convenient services.";
-	mes "How may I be of assistance?";
-	callfunc "F_Kafra",5,0,0,60,930;
-	savepoint "morocc",156,46,1,1;
-	callfunc "F_KafEnd",0,1,"in the city of Morocc";
+	mes "Kafra Corp. ยินดีต้อนรับ";
+	mes "พวกเรายินดีที่จะให้บริการ";
+	mes "มีอะไรให้ช่วยไหม ?";
+	callfunc "F_Kafra",5,0,1,60,930;
+	savepoint "morocc",161,89,1,1;
+	callfunc "F_KafEnd",0,1,"";
 }
 
 morocc,160,258,4	script	Kafra::kaf_morocc2	114,{
@@ -196,7 +195,7 @@ payon,100,116,4	script	Kafra Employee::kaf_payon	113,{
 	mes "มีอะไรให้ช่วยไหม ?";
 	callfunc "F_Kafra",5,0,1,60,930;
 	savepoint "payon",69,99,1,1;
-	callfunc "F_KafEnd",0,1,"in the city of Payon";
+	callfunc "F_KafEnd",0,1,"";
 }
 
 // payon,175,226,4	script	Kafra Employee::kaf_payon2	116,{

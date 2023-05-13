@@ -26,7 +26,7 @@
 /* Created By: GmOcean
 /* ===========================================================*/
 
-morocc,160,160,4	script	SlotMachine::1slot	563,{
+morocc,160,160,4	script	Slot Machine::1slot	563,{
 	mes "[Slot Machine]";
 	mes "ฮัลโหลว ~ พ่อหนุ่ม เจ้าอยากจะเสี่ยงดวงหน่อยไหมหละ";
 	if( !.payment ) { mes "ค่าใช้จ่ายในการเล่น: "+ .tsm_payment_message$[0]; }
@@ -51,7 +51,7 @@ morocc,160,160,4	script	SlotMachine::1slot	563,{
 			if( .@a == 2 ){
 				if( !.prize || .prize == 2 ) { Zeny += .tsm_prize[0]; }
 				if( .prize ) { 
-					getgroupitem IG_CUSTOMIZING_BOX,1;
+					getrandgroupitem IG_CUSTOMIZING_BOX,1;
 				}
 			} else { dispbottom "ว๊า แย่จัง เจ้าไม่เอาอะไรเลยเห้อ ~"; }
 		if( select("เล่นต่อ (50000z):ยกเลิก") == 2 || Zeny < .tsm_payment[0] ){ cutin "",255; close; }
@@ -90,6 +90,8 @@ morocc,160,160,4	script	SlotMachine::1slot	563,{
 			}
 
 	OnInit:
+	waitingroom "Slot Machine",0;
+
 	// 0 = Disabled, 1 = Enabled.
 	.soundeffects = 0; 
 

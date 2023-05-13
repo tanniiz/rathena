@@ -1,0 +1,105 @@
+//=== DoOption Function ========================================================
+//=   arg(0): Equipment Position
+//=   arg(1): Base chance (without tool research)
+//=   arg(2): Allow Research Tool
+//=   arg(3): Research Tool Chance
+//=   arg(4): Option ID
+//=   arg(5): Option multiplier
+//=   arg(6): item caller id (for returning if cancel)
+//==========================================================================
+function	script	F_DoOption	{
+  .@part = getarg(0);
+  .@refineLevel = getequiprefinerycnt(.@part);
+  .@chance = getarg(1);
+  .@eluniumRate = 10;
+  .@orideconRate = 10;
+  .@useResearchTool = false;
+  .@zenyRate = 200000;
+
+  disable_items;
+  getitem getarg(6),1;
+  if (getequipid(.@part) <= 0) {
+    mes "[" + getitemname(getarg(6)) + "]";
+    mes "กรุณาสวมใส่ไอเทมก่อน!";
+    close;
+  }
+  
+  switch(select("+" + .@refineLevel + " " + getitemname(getequipid(.@part)))) {
+    case 1:
+      // If Research Tool is allowed.
+      if (getarg(2)) {
+        .@researchToolCount = countitem(60000);
+
+        if (.@researchToolCount > 0) {
+          mes "[" + getitemname(getarg(6)) + "]";
+          mes "Research Tool สามารถเพิ่มโอกาสสำเร็จได้ " + getarg(3) + "% และมีความจำเป็นต้องใช้วัตถุดิบเพิ่มขึ้น 2 เท่า ท่านต้องการใช้หรือไม่ ?";
+          next;
+          switch(select("แน่นอนสิ!:ไม่ละ ข้าห้าว")) {
+            case 1:
+              .@useResearchTool = true;
+              .@eluniumRate *= 2;
+              .@orideconRate *= 2;
+              .@zenyRate *= 2;
+              .@chance += getarg(3);
+              break;
+            case 2:
+              break;
+          }
+        } 
+      }
+      mes "[" + getitemname(getarg(6)) + "]";
+      mes "ในการเพิ่มความสามารถอุปกรณ์ ท่านต้องใช้ของดังนี้";
+
+      if (.@useResearchTool) {
+        mes "Research Tool x1";
+      }
+
+      mes "Elunium x" + .@eluniumRate;
+      mes "Oridecon x" + .@eluniumRate;
+      mes "Zeny: " + .@zenyRate;
+      mes "โอกาสสำเร็จ " + .@chance + "%";
+      next;
+      switch(select("จัดการทันที!:ยกเลิก")) {
+        case 1:
+          if (countitem(985) < .@eluniumRate
+          || countitem(984) < .@orideconRate
+          || (.@useResearchTool && .@researchToolCount < 1)
+          || Zeny < .@zenyRate) {
+            mes "[" + getitemname(getarg(6)) + "]";
+            mes "กลับไปเตรียมของมาให้ครบซะ!";
+            if (.@useResearchTool) {
+              mes "Research Tool x1";
+            }
+            mes getitemname(getarg(6)) + " x1";
+            mes "Elunium x" + .@eluniumRate;
+            mes "Oridecon x" + .@eluniumRate;
+            mes "Zeny: " + .@zenyRate;
+            close;
+          } else {
+            progressbar "#00FF00",2;
+            delitem getarg(6),1;
+            delitem 985,.@eluniumRate;
+            delitem 984,.@orideconRate;
+
+            if (.@useResearchTool) {
+              delitem 60000,1;
+            }
+
+            Zeny -= .@zenyRate;
+
+            if (rand(100) > .@chance) {
+              specialeffect2 EF_REFINEFAIL;
+            } else {
+              specialeffect2 EF_REFINEOK;
+              setmultiplieroption(.@part,0,getarg(4),getarg(5),0);
+            }
+          }
+          break;
+        case 2:
+          close;
+          break;
+      }
+      close;
+  }
+	return;
+}

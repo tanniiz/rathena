@@ -22138,7 +22138,10 @@ Body:
     Buy: 20
     Weight: 1
     Script: |
-      setmultiplieroption(EQI_HAND_R,0,300,50,0);
+      callfunc "F_DoOption",EQI_HAND_R,45,1,15,300,50,60001;
+    # Script: |
+    #  setmultiplieroption(EQI_HAND_R,0,300,50,0);
+
   - Id: 60002
     AegisName: CRITICAL_WEAPON_T1_OPTION
     Name: Critical Tier1 Option Box
@@ -22146,7 +22149,9 @@ Body:
     Buy: 20
     Weight: 1
     Script: |
-      setmultiplieroption(EQI_HAND_R,0,24,100,0);
+      callfunc "F_DoOption",EQI_HAND_R,45,1,15,24,100,60002;
+    # Script: |
+    #   setmultiplieroption(EQI_HAND_R,0,24,100,0);
   - Id: 60003
     AegisName: ATK_WEAPON_T1_OPTION
     Name: Attack Tier1 Option Box
@@ -22154,7 +22159,9 @@ Body:
     Buy: 20
     Weight: 1
     Script: |
-      setmultiplieroption(EQI_HAND_R,0,17,300,0);
+      callfunc "F_DoOption",EQI_HAND_R,45,1,15,17,300,60003;
+    # Script: |
+    #   setmultiplieroption(EQI_HAND_R,0,17,300,0);
   - Id: 60004
     AegisName: MATK_WEAPON_T1_OPTION
     Name: Matk Tier1 Option Box
@@ -22162,7 +22169,9 @@ Body:
     Buy: 20
     Weight: 1
     Script: |
-      setmultiplieroption(EQI_HAND_R,0,19,300,0);
+      callfunc "F_DoOption",EQI_HAND_R,45,1,15,19,300,60004;
+    # Script: |
+    #   setmultiplieroption(EQI_HAND_R,0,19,300,0);
   - Id: 60005
     AegisName: EXP_WEAPON_T1_OPTION
     Name: Exp Tier1 Option Box
@@ -22170,7 +22179,9 @@ Body:
     Buy: 20
     Weight: 1
     Script: |
-      setmultiplieroption(EQI_HAND_R,0,242,200,0);
+      callfunc "F_DoOption",EQI_HAND_R,45,1,15,242,200,60005;
+    # Script: |
+    #   setmultiplieroption(EQI_HAND_R,0,242,200,0);
   - Id: 60006
     AegisName: ASPD_WEAPON_T1_OPTION
     Name: Aspd Tier1 Option Box
@@ -22178,6 +22189,6 @@ Body:
     Buy: 20
     Weight: 1
     Script: |
-      setmultiplieroption(EQI_HAND_R,0,15,50,0);
+      callfunc "F_DoOption",EQI_HAND_R,45,1,15,15,50,60005;
 
 

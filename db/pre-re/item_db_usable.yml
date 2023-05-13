@@ -22104,6 +22104,14 @@ Body:
 
 ### Custom Items ###
   ##### VIP #####
+  - Id: 41014
+    AegisName: VIP_CARD_1D
+    Name: VIP Card 1Day
+    Type: Usable
+    Buy: 20
+    Weight: 1
+    Script: |
+      vip_time(60*24);
   - Id: 41015
     AegisName: VIP_CARD_7D
     Name: VIP Card 7Days

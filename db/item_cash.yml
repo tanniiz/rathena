@@ -31,7 +31,23 @@
 Header:
   Type: ITEM_CASH_DB
   Version: 1
-
+Body:
+  - Tab: New
+    Items:
+      - Item: ANGEL_SCROLL
+        Price: 49
+      - Item: Swordman_Figure
+        Price: 4900
+      - Item: Acolyte_Figure
+        Price: 4900
+      - Item: Mage_Figure
+        Price: 4900
+      - Item: Archer_Figure
+        Price: 4900
+      - Item: Thief_Figure
+        Price: 4900
+      - Item: Merchant_Figure
+        Price: 4900
 Footer:
   Imports:
     - Path: db/import/item_cash.yml

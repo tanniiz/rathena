@@ -20242,6 +20242,8 @@ Body:
       NoDrop: true
       NoSell: true
       NoGuildStorage: true
+    Script: |
+      getgroupitem(IG_Angel_Scroll);
   - Id: 14297
     AegisName: Devil_Scroll
     Name: Devil Scroll

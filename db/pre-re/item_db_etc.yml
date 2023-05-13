@@ -21160,3 +21160,10 @@ Body:
     Locations:
       Ammo: true
     EquipLevelMin: 99
+
+  - Id: 60000
+    AegisName: Research_Tool
+    Name: Research Tool
+    Type: Etc
+    Buy: 0
+    Weight: 1

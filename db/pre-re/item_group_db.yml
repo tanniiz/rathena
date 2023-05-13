@@ -7520,4 +7520,32 @@ Body:
           - Item: Basic_Siege_Supply_Box
             Rate: 10
             Announced: true
-            
+  - Group: ANGEL_SCROLL
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Item: Guyak_Pudding
+            Rate: 100
+          - Item: Mental_Potion
+            Rate: 100
+          - Item: Small_Life_Potion
+            Rate: 100
+          - Item: HD_Oridecon
+            Rate: 100
+          - Item: HD_Elunium
+            Rate: 100
+          - Item: Bubble_Gum
+            Rate: 100
+          - Item: Job_Manual50
+            Rate: 100
+          - Item: Token_Of_Siegfried
+            Rate: 100
+          - Item: Sunglasses_
+            Rate: 100
+            Announced: true
+          - Item: Glasses_
+            Rate: 100
+            Announced: true
+          - Item: Donut_In_Mouth
+            Rate: 100
+            Announced: true

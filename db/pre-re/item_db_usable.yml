@@ -22127,6 +22127,7 @@ Body:
   - Id: 60500
     AegisName: MOB_COIN
     Name: Mob Coin
+    Type: Usable
     Buy: 0
     Weight: 1
     Script: |

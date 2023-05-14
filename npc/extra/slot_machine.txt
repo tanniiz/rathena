@@ -132,7 +132,7 @@ morocc,160,160,4	script	Slot Machine::1slot	563,{
 	.payment = 0;
 	// [0] = Zeny, [1] = Item ID, [2] = Item Amount;
 	setarray .ssm_payment[0],100,501,1; // Single Slot Machine Payment Price
-	setarray .tsm_payment[0],50000,0,0; // Triple Slot Machine Payment Price
+	setarray .tsm_payment[0],10000,0,0; // Triple Slot Machine Payment Price
 
 	// DO NOT CHANGE BELOW
 	// Payment Text Syntax

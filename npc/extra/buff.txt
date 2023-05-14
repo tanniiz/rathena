@@ -13,6 +13,41 @@
 //= 1.1 Aligned coordinates with @go.
 //============================================================
 
+//Sailor-------------------------------------------------------------------------------------
+izlude,201,181,2	script	Sailor#01	100,{
+	mes "[Sailor]";
+	mes "ข้อคือกะลาสี เจ้าต้องการล่องเรือไปไหน ?";
+	next;
+	menu "Byalan Island -> 150 Zeny.",-,"Alberta Marina -> 500 Zeny.",L1,"ยกเลิก",LEnd;
+	
+		if(Zeny < 150) goto sl_NoZeny;
+		set Zeny, Zeny - 150;
+		warp "izlu2dun",107,50;
+		close;
+	L1:
+		if(Zeny < 500) goto sl_NoZeny;
+		set Zeny, Zeny - 500;
+		warp "alberta",188,169;
+	LEnd:
+		close;
+	sl_NoZeny:
+		mes "[Sailor]";
+		mes "เจ้ามีเงินไม่เพียงพอ!";
+		close;
+}
+
+//Sailor-------------------------------------------------------------------------------------
+izlu2dun,108,27,4	script	Sailor#02	100,{
+	mes "[Sailor]";
+	mes "เจ้าต้องการที่จะกลับหรือไม่?";
+	next;
+	menu "ใช่ ข้าต้องการ.",-,"ไม่อ่ะ ข้าอยากอยู่ที่นี่.",L1;
+	
+		warp "izlude",176,182;
+	L1:
+		close;
+}
+
 -	script	Healer	-1,{
 
 	.@Price = 0;	// Zeny required for heal

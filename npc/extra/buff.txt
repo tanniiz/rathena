@@ -86,3 +86,4 @@ izlu2dun,108,27,4	script	Sailor#02	100,{
 //============================================================
 new_1-3,95,38,4	duplicate(Healer)	Healer#tg	641
 morocc,159,97,4	duplicate(Healer)	Healer#moc1	641
+prontera,146,93,4	duplicate(Healer)	Healer#ptr	641

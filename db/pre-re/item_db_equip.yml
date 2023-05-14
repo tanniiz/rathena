@@ -41084,3 +41084,12 @@ Body:
     ArmorLevel: 1
     EquipLevelMin: 1
     View: 654
+  - Id: 5914
+    AegisName: C_Flutter_Butterfly
+    Name: C Flutter Butterfly
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 1378

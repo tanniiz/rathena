@@ -44,7 +44,7 @@ OnInit:
 //	setarray .Shops$[1],"<Shop 1>","<Shop 2>"{,...};
 // ===========================================================
 
-	setarray .Shops$[1],"~ เควสหมวก","~ เควส Old Blue Box","~ เควส Potion","~ เควส Juice (น้ำผลไม้)","~ เควส สีย้อมผ้า","~ เควส Mixture and Counteragent";
+	setarray .Shops$[1],"~ เควสหมวก","~ เควส Juice (น้ำผลไม้)","~ เควส สีย้อมผ้า","~ เควส Mixture and Counteragent";
 
 // ===========================================================
 //  Quest items

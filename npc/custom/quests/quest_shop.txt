@@ -167,6 +167,7 @@ OnBuyItem:
 	}
 	mes "เงื่อนไข:";
 	disable_items;
+	if (.@q[6] != 100) mes " > โอกาสสำเร็จ: ^FF0000"+.@q[6]+"% (ไม่รวม Research Tool)^000000";
 	if (.@q[4]) mes " > "+Chk(Zeny,.@q[4]*.@q[1])+(.@q[4]*.@q[1])+" Zeny^000000";
 	if (.@q[5]) mes " > "+Chk(getd(.Points$[0]),.@q[5]*.@q[1])+(.@q[5]*.@q[1])+" "+.Points$[1]+" ("+getd(.Points$[0])+"/"+(.@q[5]*.@q[1])+")^000000";
 	if (.@q[7]) for(set .@i,7; .@i<getarraysize(.@q); set .@i,.@i+2)

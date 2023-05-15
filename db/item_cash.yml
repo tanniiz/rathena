@@ -34,6 +34,8 @@ Header:
 Body:
   - Tab: New
     Items:
+      - Item: CASH_COIN
+        Price: 10
       - Item: VIP_CARD_1D
         Price: 290
       - Item: VIP_CARD_7D

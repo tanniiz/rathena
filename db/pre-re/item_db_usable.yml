@@ -22108,14 +22108,22 @@ Body:
       vip_time(60*24*7);
 
   ##### Coins #####
+  - Id: 30001
+    AegisName: CASH_COIN
+    Name: Cash Coin
+    Type: Usable
+    Buy: 0
+    Weight: 0
+    Script: |
+      callfunc "F_UseCoins",30001,"#CASHPOINTS",10;
   - Id: 60500
     AegisName: MOB_COIN
     Name: Mob Coin
     Type: Usable
     Buy: 0
-    Weight: 1
+    Weight: 0
     Script: |
-      callfunc "F_UseCoins",60500,"#MobPoint";
+      callfunc "F_UseCoins",60500,"#MobPoint",1;
 
   ##### Weapon Option Tier 1 #####
   - Id: 60001

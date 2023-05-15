@@ -70,7 +70,8 @@ OnInit:
 	setarray .Shops$[1],
 		"MobPointShop",	// Shop Named 1
 		"Ores",		// Shop Named 2
-		"Other";		// Shop Named 3
+		"Other",
+		"Figures";		// Shop Named 3
 
 // -----------------------------------------------------------
 //  Quest items -- do NOT use a reward item more than once!
@@ -85,6 +86,7 @@ OnInit:
   Add(1,984,1,100,1000,100);
 	Add(1,7619,1,100,20000,100);
   Add(1,7620,1,100,20000,100);
+  Add(1,60000,1,100,2000,100);
 
 // Shop 2
 	Add(2,757,5,100,0,100,985,1);
@@ -99,6 +101,14 @@ OnInit:
 	Add(3,532,1,3,0,100,513,1,713,1);
 	Add(3,533,1,3,0,100,514,1,713,1);
 	Add(3,534,1,3,0,100,515,1,713,1);
+
+// Shop 4
+	Add(4,69100,1,1500000,1000,30,2766,1,984,30,985,30);
+	Add(4,69200,1,1500000,1000,30,2770,1,984,30,985,30);
+	Add(4,69300,1,1500000,1000,30,2771,1,984,30,985,30);
+	Add(4,69400,1,1500000,1000,30,2769,1,984,30,985,30);
+	Add(4,69500,1,1500000,1000,30,2768,1,984,30,985,30);
+	Add(4,69600,1,1500000,1000,30,2767,1,984,30,985,30);
 
 // -----------------------------------------------------------
 
@@ -129,27 +139,32 @@ OnMenu:
 		end;
 	}
 	dispbottom "กรุณาเลือกซื้อสินค้า 1 ชนิดต่อครั้ง";
+
 	callshop "qshop"+@shop_index,1;
 	npcshopattach "qshop"+@shop_index;
 	end;
 
 OnBuyItem:
+	// .@q[] : RewardID, BoughtAmt, RewardAmt, BaseAmt, ReqZeny, ReqPts, { ReqItem, ReqAmt, ... }
+	setarray .@q[0],@bought_nameid[0],((@bought_quantity[0] > .MaxStack)?.MaxStack:@bought_quantity[0]);
+	copyarray .@q[3],getd(".q_"+@shop_index+"_"+.@q[0]+"[0]"),getarraysize(getd(".q_"+@shop_index+"_"+.@q[0]));
+
+	set .@q[2],.@q[1]*.@q[3];
 	if (.@q[6] != 100 && @bought_quantity[0] > 1) {
 		mes "[Dealer]";
 		mes "ไม่สามารถสร้างไอเทมหลายชิ้นพร้อมกันได้";
 		close;
 	}
 
-	// .@q[] : RewardID, BoughtAmt, RewardAmt, BaseAmt, ReqZeny, ReqPts, { ReqItem, ReqAmt, ... }
-	setarray .@q[0],@bought_nameid[0],((@bought_quantity[0] > .MaxStack)?.MaxStack:@bought_quantity[0]);
-	copyarray .@q[3],getd(".q_"+@shop_index+"_"+.@q[0]+"[0]"),getarraysize(getd(".q_"+@shop_index+"_"+.@q[0]));
-	set .@q[2],.@q[1]*.@q[3];
 	if (!.@q[2] || .@q[2] > 30000) {
 		message strcharinfo(0),"You can't purchase that many "+getitemname(.@q[0])+".";
 		end;
 	}
 	mes "[Dealer]";
 	mes "สินค้า: ^0055FF"+((.@q[2] > 1)?.@q[2]+"x ":"")+Slot(.@q[0])+"^000000";
+	if (.@q[5] > 0) {
+		mes "แต้ม " + .Points$[1] + " สะสม ^0055FF[" + getd(.Points$[0]) + "]^000000";
+	}
 	mes "เงื่อนไข:";
 	disable_items;
 	if (.@q[4]) mes " > "+Chk(Zeny,.@q[4]*.@q[1])+(.@q[4]*.@q[1])+" Zeny^000000";
@@ -174,6 +189,24 @@ OnBuyItem:
 				mes "ไปจัดการน้ำหนักในตัวเจ้าเสียก่อน! ค่อยกลับมาหาข้า";
 				close;
 			}
+  		.@useResearchTool = false;
+			if (.@q[6] != 100) {
+				.@researchToolCount = countitem(60000);
+
+        if (.@researchToolCount > 0) {
+          mes "[Dealer]";
+          mes "Research Tool สามารถเพิ่มโอกาสสำเร็จได้ 15% ท่านต้องการใช้หรือไม่ ?";
+          next;
+          switch(select("แน่นอนสิ!:ไม่ละ ข้าห้าว")) {
+            case 1:
+              .@useResearchTool = true;
+              .@q[6] += 15;
+              break;
+            case 2:
+              break;
+          }
+        }
+			}
 			if (.@q[4]) set Zeny, Zeny-(.@q[4]*.@q[1]);
 			if (.@q[5]) setd .Points$[0], getd(.Points$[0])-(.@q[5]*.@q[1]);
 			if (.@q[7]) {
@@ -181,11 +214,15 @@ OnBuyItem:
 					delitem .@q[.@i],.@q[.@i+1]*.@q[1];
 				}
 			}
+			if (.@useResearchTool) {
+				delitem 60000,1;
+			}
 
 			if (rand(0, 100) <= .@q[6]) {
 				getitem .@q[0],.@q[2];
+				announce "[Crafter] ปิ๊งป่อง!~ ยินดีด้วย คุณ [" + strcharinfo(0) + "] สร้าง [" + getitemname(.@q[0]) + "] สำเร็จ (โอกาสำเร็จ: " + .@q[6] + "%)",0;
 			} else {
-				announce "[Crafter] ปิ๊งป่อง!~ เสียใจด้วย คุณ " + strcharinfo(0) + " สร้าง " + getitemname(.@q[0]) + " ไม่สำเร็จ (โอกาสำเร็จ: " + .@q[6] + "%)",0;
+				announce "[Crafter] ปิ๊งป่อง!~ เสียใจด้วย คุณ [" + strcharinfo(0) + "] สร้าง [" + getitemname(.@q[0]) + "] ไม่สำเร็จ (โอกาสำเร็จ: " + .@q[6] + "%)",0;
 			}
 			
 			if (.@q[5]) {
@@ -291,5 +328,14 @@ morocc,171,102,4	script	Monster Point#1	998,{
 
 	OnInit:
 	waitingroom "Mob Points",0;
+	end;
+}
+
+// Figures
+morocc,168,108,4	script	Monster Point#1	56,{
+	callfunc "qshop", 4;
+
+	OnInit:
+	waitingroom "Figures Craft",0;
 	end;
 }

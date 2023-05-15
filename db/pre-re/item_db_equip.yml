@@ -41093,3 +41093,105 @@ Body:
     ArmorLevel: 1
     EquipLevelMin: 1
     View: 1378
+
+### Ability Figures ###
+  - Id: 69100
+    AegisName: Swordman_Ability_Figure
+    Name: Swordman Ability Figure
+    Type: Armor
+    Locations:
+      Both_Accessory: true
+    ArmorLevel: 1
+    Slots: 1
+    Jobs:
+      Swordman: true
+    Script: |
+      if (Class == Job_Swordman) {
+        bonus bStr,1;
+        bonus bHit,15;
+        bonus2 bSkillAtk,"MS_MAGNUM",15;
+        autobonus "{ bonus bBaseAtk,20; }",5,5000,BF_SHORT,"{ specialeffect2 EF_ENHANCE; }";
+      }
+  - Id: 69600
+    AegisName: Acolyte_Ability_Figure
+    Name: Acolyte Ability Figure
+    Type: Armor
+    Locations:
+      Both_Accessory: true
+    ArmorLevel: 1
+    Slots: 1
+    Jobs:
+      Acolyte: true
+    Script: |
+      if (Class == Job_Acolyte) {
+        bonus bAspdRate,10;
+        bonus2 bSkillAtk,"AL_HOLYLIGHT",75;
+        bonus bAllStats,2;
+        bonus bCritical,15;
+      }
+  - Id: 69500
+    AegisName: Mage_Ability_Figure
+    Name: Mage Ability Figure
+    Type: Armor
+    Locations:
+      Both_Accessory: true
+    ArmorLevel: 1
+    Slots: 1
+    Jobs:
+      Mage: true
+    Script: |
+      if (Class == Job_Mage) {
+        bonus bInt,2;
+        bonus bCastrate,-3;
+        bonus bDelayRate,-7;
+      }
+  - Id: 69400
+    AegisName: Archer_Ability_Figure
+    Name: Archer Ability Figure
+    Type: Armor
+    Locations:
+      Both_Accessory: true
+    ArmorLevel: 1
+    Slots: 1
+    Jobs:
+      Archer: true
+    Script: |
+      if (Class == Job_Archer) {
+        bonus bDex,1;
+        bonus bBaseAtk,15;
+        bonus bAspdRate,3;
+        bonus bLongAtkRate,5;
+      }
+  - Id: 69200
+    AegisName: Thief_Ability_Figure
+    Name: Thief Ability Figure
+    Type: Armor
+    Locations:
+      Both_Accessory: true
+    ArmorLevel: 1
+    Slots: 1
+    Jobs:
+      Thief: true
+    Script: |
+      if (Class == Job_Thief) {
+        bonus bCritical,7;
+        bonus bAspdRate,7;
+        bonus bCritAtkRate,7;
+        autobonus "{ bonus bCritical,35; }",5,5000,BF_SHORT,"{ specialeffect2 EF_ENHANCE; }";
+      }
+  - Id: 69300
+    AegisName: Merchant_Ability_Figure
+    Name: Merchant Ability Figure
+    Type: Armor
+    Locations:
+      Both_Accessory: true
+    ArmorLevel: 1
+    Slots: 1
+    Jobs:
+      Merchant: true
+    Script: |
+      if (Class == Job_Merchant) {
+        bonus bStr,2;
+        bonus2 bSkillAtk,"MC_CARTREVOLUTION",5;
+        bonus bAspdRate,7;
+      }

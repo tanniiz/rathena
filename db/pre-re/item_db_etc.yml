@@ -21167,3 +21167,12 @@ Body:
     Type: Etc
     Buy: 0
     Weight: 1
+  - Id: 6635
+    AegisName: Blacksmith_Blessing
+    Name: Blacksmith Blessing
+    Type: Etc
+    Buy: 20
+    Flags:
+      BuyingStore: true
+    Trade:
+      NoDrop: true

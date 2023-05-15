@@ -41110,7 +41110,7 @@ Body:
         bonus bStr,1;
         bonus bHit,15;
         bonus2 bSkillAtk,"MS_MAGNUM",15;
-        autobonus "{ bonus bBaseAtk,20; }",10,5000,BF_SHORT,"{ specialeffect2 EF_ENHANCE; }";
+        autobonus "{ bonus bBaseAtk,20; }",500,5000,BF_SHORT,"{ specialeffect2 EF_ENHANCE; }";
       }
   - Id: 69600
     AegisName: Acolyte_Ability_Figure
@@ -41177,7 +41177,7 @@ Body:
         bonus bCritical,7;
         bonus bAspdRate,7;
         bonus bCritAtkRate,7;
-        autobonus "{ bonus bCritical,35; }",10,5000,BF_NORMAL,"{ specialeffect2 EF_ENHANCE; }";
+        autobonus "{ bonus bCritical,35; }",500,5000,BF_NORMAL,"{ specialeffect2 EF_ENHANCE; }";
       }
   - Id: 69300
     AegisName: Merchant_Ability_Figure

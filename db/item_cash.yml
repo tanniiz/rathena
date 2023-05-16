@@ -36,6 +36,8 @@ Body:
     Items:
       - Item: CASH_COIN
         Price: 10
+      - Item: Max_Weight_Up_Scroll
+        Price: 490
       - Item: VIP_CARD_1D
         Price: 290
       - Item: VIP_CARD_7D

@@ -45,6 +45,56 @@ function	script	F_CashStore	{
 	return;
 }
 
+// Weight UP Book
+//============================================================ 
+function	script	F_WeightUp	{
+	mes "^0066FF[ Weight UP Book ]^000000";
+	mes "สกิล Enlarge Weight Limit";
+	mes "สกิลนี้ทำให้ถือของได้หนักขึ้น";
+	mes "น้ำหนัก +200 / 1 ครั้ง ที่ใช้งาน";
+	mes "1 ตัวละครสามารถเรียนได้ 10 ครั้ง ";
+	mes "เข้าใจตรงกันนะ ? ";
+	next;
+	switch(select("^ff0000•^000000 เยส..เซอร์!! ลุย !:^ff0000•^000000 ช้าก่อน..")) {
+	case 1:
+		if (gympassmemory < 10) {
+			set .@add_carry,gympassmemory + 1;
+			set .@remain_carry,10 - .@add_carry;
+			mes "^0066FF[ Weight UP Book ]^000000";
+			mes "เตรียมตัวให้พร้อม..";
+			mes "ทำใจให้ สงบ เตรียมรับพลัง!!";
+			mes "1 2 3 4 . . .";
+			next;
+			mes "^0066FF[ Weight UP Book ]^000000";
+			mes "ฮึ๊บ ฮึ๊บ ~";
+			specialeffect2 EF_EARTHSPIKE;
+			specialeffect2 EF_DEVIL;
+			specialeffect2 EF_COIN;
+			specialeffect2 EF_SIGHTRASHER;
+			next;
+			mes "^0066FF[ Weight UP Book ]^000000";
+			mes "ยินดีด้วย !!";
+			mes "เจ้าแข็งแกร่งขึ้นแล้วเด็กน้อย";
+			mes "หวังว่าเจ้าจะมีความสุข";
+			mes "กับพลังที่เพิ่มขึ้นของเจ้า !!";
+			set gympassmemory,.@add_carry;
+			skill "ALL_INCCARRY",.@add_carry,SKILL_PERM_GRANT;
+			close;
+		} else {
+			mes "^0066FF[ Weight UP Book ]^000000";
+			mes "ท่านไม่สามารถเรียนได้แล้ว";
+			mes "ท่านเรียนไปถึงเลเวล 10 แล้ว";
+			close;
+		}
+case 2:
+	mes "^0066FF[ Weight UP Book ]^000000";
+	mes "โอเค..";
+	mes "ไว้เจ้าพร้อมเมื่อไหร่";
+	mes "เรียกใช้งานข้าได้ทุกเมื่อ...";
+	close;
+	}
+}
+
 // Giant Fly Wing
 //============================================================ 
 // - Warp party leader to random spot on the map.

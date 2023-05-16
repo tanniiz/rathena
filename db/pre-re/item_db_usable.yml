@@ -22089,6 +22089,13 @@ Body:
     EquipLevelMin: 1
 
 ### Custom Items ###
+  - Id: 7776
+    AegisName: Max_Weight_Up_Scroll
+    Name: Gym Pass
+    Type: Usable
+    Weight: 10
+    Script: |
+      callfunc "F_WeightUp";
   ##### VIP #####
   - Id: 41014
     AegisName: VIP_CARD_1D

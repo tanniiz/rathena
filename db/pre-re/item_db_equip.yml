@@ -41093,7 +41093,126 @@ Body:
     ArmorLevel: 1
     EquipLevelMin: 1
     View: 1378
-
+### Custome ###
+  - Id: 68000
+    AegisName: RAINBOW_WING
+    Name: Rainbow Angel Wing
+    Type: Armor
+    Locations:
+      Costume_Garment: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 9
+    Script: |
+      bonus bAtkRate,3;
+      bonus bMatkRate,3;
+      bonus bAspd,2;
+      bonus bCritical,2;
+  - Id: 68001
+    AegisName: COSTUME_CROWN
+    Name: Costume Crown
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 45
+    Script: |
+      bonus2 bDropAddRace,RC_ALL,10;
+      bonus bMatkRate,3;
+      bonus bDelayRate,-5;
+  - Id: 68002
+    AegisName: COSTUME_MAJESTIC_GOAT
+    Name: Costume Majestic Goat
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 41
+    Script: |
+      bonus2 bDropAddRace,RC_ALL,10;
+      bonus bAtkRate,3;
+      bonus bAspd,1;
+      bonus bCritAtkRate,7;
+  - Id: 68003
+    AegisName: COSTUME_CORSAIR
+    Name: Costume Corsair
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 105
+    Script: |
+      bonus2 bDropAddRace,RC_ALL,10;
+      bonus2 bSubSize,Size_Medium,5;
+  - Id: 68004
+    AegisName: COSTUME_TIARA
+    Name: Costume Tiara
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 19
+    Script: |
+      bonus2 bDropAddRace,RC_ALL,10;
+      bonus bMatkRate,3;
+      bonus bCastrate,-5;
+  - Id: 68005
+    AegisName: COSTUME_CORONET
+    Name: Costume Coronet
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 33
+    Script: |
+      bonus2 bDropAddRace,RC_ALL,10;
+      bonus bMatkRate,1;
+      bonus bDelayRate,-2;
+      bonus bCastrate,-2;
+  - Id: 68006
+    AegisName: COSTUME_SPIKY_BAND
+    Name: Costume Spiky Band
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 43
+    Script: |
+      bonus2 bDropAddRace,RC_ALL,10;
+      bonus bAspd,3;
+      bonus bCritAtkRate,10;
+  - Id: 68007
+    AegisName: COSTUME_PIPE
+    Name: Costume Pipe
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 55
+    Script: |
+      bonus2 bDropAddRace,RC_ALL,5;
+      bonus bAllStats,1;
+      bonus2 bSubSize,Size_Medium,1;
+  - Id: 68008
+    AegisName: COSTUME_ANGEL_WING_EARS
+    Name: Costume Angel Wing Ears
+    Type: Armor
+    Locations:
+      Costume_Head_Mid: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 158
+    Script: |
+      bonus2 bDropAddRace,RC_ALL,5;
+      bonus bAllStats,1;
+      bonus2 bSubSize,Size_Medium,2;
 ### Ability Figures ###
   - Id: 69100
     AegisName: Swordman_Ability_Figure

@@ -41239,6 +41239,7 @@ Body:
     Slots: 1
     Jobs:
       Swordman: true
+      Knight: true
     Script: |
       if (Class == Job_Swordman) {
         bonus bStr,1;
@@ -41256,6 +41257,7 @@ Body:
     Slots: 1
     Jobs:
       Acolyte: true
+      Priest: true
     Script: |
       if (Class == Job_Acolyte) {
         bonus bAspdRate,10;
@@ -41273,6 +41275,7 @@ Body:
     Slots: 1
     Jobs:
       Mage: true
+      Wizard: true
     Script: |
       if (Class == Job_Mage) {
         bonus bInt,2;
@@ -41289,6 +41292,7 @@ Body:
     Slots: 1
     Jobs:
       Archer: true
+      Hunter: true
     Script: |
       if (Class == Job_Archer) {
         bonus bDex,1;
@@ -41306,6 +41310,7 @@ Body:
     Slots: 1
     Jobs:
       Thief: true
+      Assassin: true
     Script: |
       if (Class == Job_Thief) {
         bonus bCritical,7;
@@ -41323,6 +41328,7 @@ Body:
     Slots: 1
     Jobs:
       Merchant: true
+      Blacksmith: true
     Script: |
       if (Class == Job_Merchant) {
         bonus bStr,2;

@@ -41213,6 +41213,21 @@ Body:
       bonus2 bDropAddRace,RC_ALL,5;
       bonus bAllStats,1;
       bonus2 bSubSize,Size_Medium,2;
+  - Id: 68009
+    AegisName: COSTUME_GRAND_CIRCLET
+    Name: Costume Grand Circlet
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 93
+    Script: |
+      bonus2 bDropAddRace,RC_ALL,10;
+      bonus bAtkRate,1;
+      bonus bAspd,1;
+      bonus bLongAtkRate,2;
+      bonus bShortAtkRate,2;
 ### Ability Figures ###
   - Id: 69100
     AegisName: Swordman_Ability_Figure

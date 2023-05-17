@@ -7558,6 +7558,9 @@ Body:
           - Item: Rainbow_Scarf
             Rate: 1
             Announced: true
+          - Item: Pirate_Dagger
+            Rate: 1
+            Announced: true
           - Item: Crown_Of_Deceit
             Rate: 1
             Announced: true

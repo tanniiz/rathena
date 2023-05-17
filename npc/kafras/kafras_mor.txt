@@ -14,7 +14,7 @@ morocc,156,97,4	script	Kafra Corporation::Morocc#01	113,{
 	callfunc "F_Kafra",5,0,0,60,930;
 
 	M_Save:
-		savepoint "morocc",159,48;
+		savepoint "morocc",160,80;
 		callfunc "F_KafEnd",0,1,"Morroc";
 }
 

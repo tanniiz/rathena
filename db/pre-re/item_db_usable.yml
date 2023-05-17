@@ -22122,7 +22122,7 @@ Body:
     Buy: 0
     Weight: 0
     Script: |
-      callfunc "F_UseCoins",30001,"#CASHPOINTS",10;
+      callfunc "F_UseCoins",30001,"#CASHPOINTS",1;
   - Id: 60500
     AegisName: MOB_COIN
     Name: Mob Coin

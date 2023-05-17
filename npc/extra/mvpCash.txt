@@ -43,22 +43,22 @@ if ( getmonsterinfo( killedrid, MOB_MVPEXP )) {
 			}
 			else {
 				if (rand(100) < .chance) getitem .s_rwd[0], .s_rwd[1];
-				announce "[ System ] : à¸œà¸¹à¹‰à¹€à¸¥à¹ˆà¸™ ["+ strcharinfo(0) +"] à¹„à¸”à¹‰à¸à¸³à¸ˆà¸±à¸” "+ getmonsterinfo( killedrid, MOB_NAME ) +" à¹‚à¸”à¸¢à¸¥à¸³à¸žà¸±à¸‡ à¸—à¸µà¹ˆ "+ strcharinfo(3), bc_all;
+				announce "[ System ] : ¼ÙéàÅè¹ ["+ strcharinfo(0) +"] ä´é¡Ó¨Ñ´ "+ getmonsterinfo( killedrid, MOB_NAME ) +" â´ÂÅÓ¾Ñ§ ·Õè "+ strcharinfo(3), bc_all;
 			}
 
 		#CASHPOINTS = #CASHPOINTS +5000;
 		dispbottom "---------------------------------------------------";
-		dispbottom "à¸„à¸¸à¸“à¹„à¸”à¹‰à¸†à¹ˆà¸² MVP à¹à¸¥à¸° à¹„à¸”à¹‰à¸£à¸±à¸š 5000 Cash Point";
+		dispbottom "¤Ø³ä´é¦èÒ MVP áÅÐ ä´éÃÑº 5000 Cash Point";
 		dispbottom "---------------------------------------------------";
 		end;
 		}
 	} 
 		
 	if ( getcharid(1) ) {
-		announce "[ System ] : à¸œà¸¹à¹‰à¹€à¸¥à¹ˆà¸™ ["+ strcharinfo(0) +"] à¸‚à¸­à¸‡à¸›à¸²à¸£à¹Œà¸•à¸µà¹‰ ["+ strcharinfo(1) +"] à¹„à¸”à¹‰à¸à¸³à¸ˆà¸±à¸” "+ getmonsterinfo( killedrid, MOB_NAME ) +" à¸—à¸µà¹ˆ "+ strcharinfo(3), bc_all;
+		announce "[ System ] : ¼ÙéàÅè¹ ["+ strcharinfo(0) +"] ¢Í§»ÒÃìµÕé ["+ strcharinfo(1) +"] ä´é¡Ó¨Ñ´ "+ getmonsterinfo( killedrid, MOB_NAME ) +" ·Õè "+ strcharinfo(3), bc_all;
 		} 
 		else {
-		announce "[ System ] : à¸œà¸¹à¹‰à¹€à¸¥à¹ˆà¸™ ["+ strcharinfo(0) +"] à¹„à¸”à¹‰à¸à¸³à¸ˆà¸±à¸” "+ getmonsterinfo( killedrid, MOB_NAME ) +" à¹‚à¸”à¸¢à¸¥à¸³à¸žà¸±à¸‡ à¸—à¸µà¹ˆ "+ strcharinfo(3), bc_all;
+		announce "[ System ] : ¼ÙéàÅè¹ ["+ strcharinfo(0) +"] ä´é¡Ó¨Ñ´ "+ getmonsterinfo( killedrid, MOB_NAME ) +" â´ÂÅÓ¾Ñ§ ·Õè "+ strcharinfo(3), bc_all;
 		}
 		end;
 	}

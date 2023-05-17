@@ -7555,6 +7555,17 @@ Body:
             Rate: 3
           - Item: Oridecon_Box
             Rate: 3
+          - Item: Rainbow_Scarf
+            Rate: 1
+            Announced: true
+          - Item: Crown_Of_Deceit
+            Rate: 1
+            Announced: true
+          - Item: Pirate's_Pride
+            Rate: 1
+            Announced: true
+          - Item: J_Captain_Hat
+            Rate: 1
             Announced: true
           - Item: Robo_Eye
             Rate: 1

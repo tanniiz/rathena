@@ -41103,7 +41103,6 @@ Body:
     Locations:
       Head_Low: true
     ArmorLevel: 1
-    EquipLevelMin: 110
     View: 1358
     Script: |
       set .@bblvl,max(getskilllv("HT_BLITZBEAT"),1);

@@ -7524,28 +7524,50 @@ Body:
     SubGroups:
       - SubGroup: 1
         List:
-          - Item: Guyak_Pudding
-            Rate: 100
-          - Item: Mental_Potion
-            Rate: 100
-          - Item: Small_Life_Potion
-            Rate: 100
-          - Item: HD_Oridecon
-            Rate: 100
-          - Item: HD_Elunium
-            Rate: 100
+          - Item: CASH_COIN
+            Amount: 50
+            Rate: 10
+          - Item: Max_Weight_Up_Scroll
+            Rate: 5
+          - Item: Comp_Battle_Manual
+            Amount: 3
+            Rate: 10
           - Item: Bubble_Gum
-            Rate: 100
-          - Item: Job_Manual50
-            Rate: 100
-          - Item: Token_Of_Siegfried
-            Rate: 100
-          - Item: Sunglasses_
-            Rate: 100
+            Amount: 3
+            Rate: 10
+          - Item: Str_Dish04
+            Rate: 15
+          - Item: Agi_Dish04
+            Rate: 15
+          - Item: Vit_Dish04
+            Rate: 15
+          - Item: Dex_Dish04
+            Rate: 15
+          - Item: Int_Dish04
+            Rate: 15
+          - Item: Luk_Dish04
+            Rate: 15
+          - Item: Basic_Siege_Supply_Box
+            Rate: 10
+          - Item: Elite_Siege_Supply_Box
+            Rate: 5
+          - Item: Elunium_Box
+            Rate: 3
+          - Item: Oridecon_Box
+            Rate: 3
             Announced: true
-          - Item: Glasses_
-            Rate: 100
+          - Item: Robo_Eye
+            Rate: 1
             Announced: true
-          - Item: Donut_In_Mouth
-            Rate: 100
+          - Item: FlyingGalapago
+            Rate: 1
+            Announced: true
+          - Item: Blue_Pajamas_Hat
+            Rate: 1
+            Announced: true
+          - Item: Pink_Pajamas_Hat
+            Rate: 1
+            Announced: true
+          - Item: Sigrun's_Wing
+            Rate: 1
             Announced: true

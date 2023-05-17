@@ -41093,6 +41093,24 @@ Body:
     ArmorLevel: 1
     EquipLevelMin: 1
     View: 1378
+
+### Renewal Equipment ###
+  - Id: 5967
+    AegisName: FlyingGalapago
+    Name: Flying Galapago
+    Type: Armor
+    Weight: 500
+    Locations:
+      Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 110
+    View: 1358
+    Script: |
+      set .@bblvl,max(getskilllv("HT_BLITZBEAT"),1);
+      set .@luk,min(readparam(bLuk),120);
+      bonus bAgi,1;
+      bonus3 bAutoSpell,"HT_BLITZBEAT",.@bblvl,50 + (.@luk / 3) + (.@bblvl * 2);
+      bonus2 bSkillAtk,"HT_BLITZBEAT",getskilllv("HT_STEELCROW") * 40;
 ### Custome ###
   - Id: 68000
     AegisName: RAINBOW_WING

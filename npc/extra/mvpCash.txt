@@ -56,10 +56,17 @@ if ( getmonsterinfo( killedrid, MOB_MVPEXP )) {
 		
 	if ( getcharid(1) ) {
 		announce "[ System ] : ผู้เล่น ["+ strcharinfo(0) +"] ของปาร์ตี้ ["+ strcharinfo(1) +"] ได้กำจัด "+ getmonsterinfo( killedrid, MOB_NAME ) +" ที่ "+ strcharinfo(3), bc_all;
-		} 
-		else {
+    #CASHPOINTS = #CASHPOINTS +5000;
+		dispbottom "---------------------------------------------------";
+		dispbottom "คุณได้ฆ่า MVP และ ได้รับ 5000 Cash Point";
+		dispbottom "---------------------------------------------------";
+	} else {
 		announce "[ System ] : ผู้เล่น ["+ strcharinfo(0) +"] ได้กำจัด "+ getmonsterinfo( killedrid, MOB_NAME ) +" โดยลำพัง ที่ "+ strcharinfo(3), bc_all;
-		}
-		end;
+    #CASHPOINTS = #CASHPOINTS +5000;
+		dispbottom "---------------------------------------------------";
+		dispbottom "คุณได้ฆ่า MVP และ ได้รับ 5000 Cash Point";
+		dispbottom "---------------------------------------------------";
+	}
+	end;
 	}
 }

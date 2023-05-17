@@ -41090,11 +41090,13 @@ Body:
     ArmorLevel: 1
     View: 1358
     Script: |
-      set .@bblvl,max(getskilllv("HT_BLITZBEAT"),1);
-      set .@luk,min(readparam(bLuk),120);
       bonus bAgi,1;
-      bonus3 bAutoSpell,"HT_BLITZBEAT",.@bblvl,50 + (.@luk / 3) + (.@bblvl * 2);
-      bonus2 bSkillAtk,"HT_BLITZBEAT",getskilllv("HT_STEELCROW") * 40;
+      if (checkfalcon()) {
+        set .@bblvl,max(getskilllv("HT_BLITZBEAT"),1);
+        set .@luk,min(readparam(bLuk),120);
+        bonus3 bAutoSpell,"HT_BLITZBEAT",.@bblvl,50 + (.@luk / 3) + (.@bblvl * 2);
+        bonus2 bSkillAtk,"HT_BLITZBEAT",getskilllv("HT_STEELCROW") * 40;
+      }
 ### Custome ###
   - Id: 68000
     AegisName: RAINBOW_WING

@@ -22191,6 +22191,6 @@ Body:
     Buy: 20
     Weight: 1
     Script: |
-      callfunc "F_DoOption",EQI_HAND_R,45,1,15,15,50,60005;
+      callfunc "F_DoOption",EQI_HAND_R,45,1,15,15,50,60006;
 
 

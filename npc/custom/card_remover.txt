@@ -15,10 +15,6 @@
 //============================================================
 
 morocc,148,85,4	script	Wise Old Woman#eAcustom	78,{
-	OnInit:
-	waitingroom "ถอดการ์ด",0;
-	end;
-
 	set .zenycost,1000000;    // base cost of the card remover services (in Zeny)
 	set .percardcost,250000;  // cost per card of the card remover services (in Zeny)
 	set .faildestroy,1;      // should the card remover have a chance of failure that destroys items? (1=yes, 0=no)
@@ -145,4 +141,8 @@ morocc,148,85,4	script	Wise Old Woman#eAcustom	78,{
 		mes "ได้เลย เจ้ากลับมาหาข้าได้ทุกเมื่อ";
 		close;
 	}
+
+	OnInit:
+	waitingroom "ถอดการ์ด",0;
+	end;
 }

@@ -41359,7 +41359,7 @@ Body:
     Weight: 1500
     Attack: 165
     Range: 1
-    Slots: 1
+    Slots: 2
     Jobs:
       Assassin: true
     Locations:

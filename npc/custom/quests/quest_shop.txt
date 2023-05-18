@@ -402,10 +402,6 @@ function	script	qshop	{
 -	shop	qshop4	-1,909:-1
 -	shop	qshop5	-1,909:-1
 -	shop	qshop6	-1,909:-1
--	shop	qshop7	-1,909:-1
--	shop	qshop8	-1,909:-1
--	shop	qshop9	-1,909:-1
--	shop	qshop10	-1,909:-1
 
 // Ores
 morocc,43,54,6	script	Blacksmith#Ores	726,{

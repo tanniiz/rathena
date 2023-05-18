@@ -41327,3 +41327,132 @@ Body:
       bonus bStr,2;
       bonus2 bSkillAtk,"MC_CARTREVOLUTION",5;
       bonus bAspdRate,7;
+
+### Upgrade Weapon ###
+  - Id: 68100
+    AegisName: BOWLING_SABER
+    Name: Bowling Bash Master Saber
+    Type: Weapon
+    SubType: 1hSword
+    Buy: 0
+    Weight: 1000
+    Attack: 115
+    Range: 1
+    Slots: 3
+    Jobs:
+      Knight: true
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 4
+    Refineable: true
+    Script: |
+      bonus bStr,2;
+      bonus bDex,2;
+      bonus bCastrate,-1 * getrefine();
+      bonus2 bSkillAtk,62,getrefine() * 2;
+  - Id: 68101
+    AegisName: CRITICAL_MASTER_JAMADHAR
+    Name: Critical Master Jamadhar
+    Type: Weapon
+    SubType: Katar
+    Buy: 0
+    Weight: 1500
+    Attack: 165
+    Range: 1
+    Slots: 1
+    Jobs:
+      Assassin: true
+    Locations:
+      Both_Hand: true
+    WeaponLevel: 4
+    Refineable: true
+    Script: |
+      bonus bAtkRate,getrefine() * 2;
+      bonus bCritAtkRate,getrefine() * 2;
+      skill "TF_DOUBLE",getskilllv("TF_DOUBLE");
+  - Id: 68102
+    AegisName: MAMMONITE_MASTER_ORCISH_AXE
+    Name: Mammonite Master Orcish Axe
+    Type: Weapon
+    SubType: 1hAxe
+    Buy: 0
+    Weight: 1500
+    Attack: 100
+    Range: 1
+    Slots: 4
+    Jobs:
+      Blacksmith: true
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 4
+    Refineable: true
+    Script: |
+      bonus bStr,4;
+      bonus2 bSkillAtk,42,getrefine() * 4;
+  - Id: 68103
+    AegisName: DOUBLE_STRAFE_MASTER_GAKKUNG_BOW
+    Name: Double Strafe Master Gakkung Bow
+    Type: Weapon
+    SubType: Bow
+    Buy: 0
+    Weight: 1100
+    Attack: 100
+    Range: 5
+    Slots: 2
+    Jobs:
+      Hunter: true
+    Locations:
+      Both_Hand: true
+    WeaponLevel: 4
+    Refineable: true
+    Script: |
+      bonus bDex,2;
+      bonus bAgi,2;
+      bonus2 bSkillAtk,46,getrefine() * 4;
+  - Id: 68104
+    AegisName: SPELL_MASTER_ARC_WAND
+    Name: Spell Master Arc Wand
+    Type: Weapon
+    SubType: Staff
+    Buy: 0
+    Weight: 400
+    Attack: 60
+    Range: 1
+    Slots: 2
+    Jobs:
+      Wizard: true
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 4
+    Refineable: true
+    Script: |
+      bonus bInt,3;
+      bonus bDex,3;
+      bonus bMatkRate,15;
+      bonus bDelayRate,-(getrefine() * 3);
+      bonus2 bSkillAtk,83,getrefine();
+      bonus2 bSkillAtk,89,getrefine();
+      bonus2 bSkillAtk,85,getrefine();
+      bonus2 bSkillAtk,91,getrefine();
+  - Id: 68105
+    AegisName: MAGNUS_MASTER_ARC_WAND
+    Name: Magnus Master Arc Wand
+    Type: Weapon
+    SubType: Staff
+    Buy: 0
+    Weight: 400
+    Attack: 60
+    Range: 1
+    Slots: 2
+    Jobs:
+      Priest: true
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 4
+    Refineable: true
+    Script: |
+      bonus bInt,3;
+      bonus bDex,4;
+      bonus bMatkRate,15;
+      bonus bDelayRate,-(getrefine() * 2);
+      bonus2 bSkillAtk,79,getrefine() * 6;

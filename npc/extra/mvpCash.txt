@@ -12,11 +12,9 @@
 //		 slight rework on the script
 // 1.3 - Fixed on reset function (Report by: celeron0134)
 // ============================================
--	script	#mvp_kill	-1,{
+-	script	mvpKill	-1,{
 
 OnInit:
-	setarray .p_rwd, 607,1;	// Party reward <item>,<amount>
-	setarray .s_rwd, 607,1;	// Solo reward <item>,<amount>
 	.chance = 50;	// Drop rate chances %
 	end;
 

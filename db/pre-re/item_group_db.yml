@@ -7732,6 +7732,9 @@ Body:
           - Item: Siege_Blue_Potion
             Amount: 5
             Rate: 10
+          - Item: Research_Tool
+            Rate: 5
+            Announced: true
           - Item: Saber_
             Rate: 1
             Announced: true

@@ -2043,14 +2043,6 @@ Body:
     Name: WoE White Potion
     Type: Healing
     Weight: 100
-    Trade:
-      NoDrop: true
-      NoTrade: true
-      NoSell: true
-      NoCart: true
-      NoGuildStorage: true
-      NoMail: true
-      NoAuction: true
     Script: |
       itemheal rand(400,500),0;
   - Id: 11504
@@ -2058,14 +2050,6 @@ Body:
     Name: WoE Blue Potion
     Type: Healing
     Weight: 100
-    Trade:
-      NoDrop: true
-      NoTrade: true
-      NoSell: true
-      NoCart: true
-      NoGuildStorage: true
-      NoMail: true
-      NoAuction: true
     Script: |
       itemheal 0,rand(50,70);
   - Id: 11505
@@ -22141,9 +22125,6 @@ Body:
     Weight: 1
     Script: |
       callfunc "F_DoOption",EQI_HAND_R,45,1,15,300,50,60001;
-    # Script: |
-    #  setmultiplieroption(EQI_HAND_R,0,300,50,0);
-
   - Id: 60002
     AegisName: CRITICAL_WEAPON_T1_OPTION
     Name: Critical Tier1 Option Box
@@ -22152,8 +22133,6 @@ Body:
     Weight: 1
     Script: |
       callfunc "F_DoOption",EQI_HAND_R,45,1,15,24,100,60002;
-    # Script: |
-    #   setmultiplieroption(EQI_HAND_R,0,24,100,0);
   - Id: 60003
     AegisName: ATK_WEAPON_T1_OPTION
     Name: Attack Tier1 Option Box
@@ -22162,8 +22141,6 @@ Body:
     Weight: 1
     Script: |
       callfunc "F_DoOption",EQI_HAND_R,45,1,15,17,300,60003;
-    # Script: |
-    #   setmultiplieroption(EQI_HAND_R,0,17,300,0);
   - Id: 60004
     AegisName: MATK_WEAPON_T1_OPTION
     Name: Matk Tier1 Option Box
@@ -22172,8 +22149,6 @@ Body:
     Weight: 1
     Script: |
       callfunc "F_DoOption",EQI_HAND_R,45,1,15,19,300,60004;
-    # Script: |
-    #   setmultiplieroption(EQI_HAND_R,0,19,300,0);
   - Id: 60005
     AegisName: EXP_WEAPON_T1_OPTION
     Name: Exp Tier1 Option Box
@@ -22182,8 +22157,6 @@ Body:
     Weight: 1
     Script: |
       callfunc "F_DoOption",EQI_HAND_R,45,1,15,242,200,60005;
-    # Script: |
-    #   setmultiplieroption(EQI_HAND_R,0,242,200,0);
   - Id: 60006
     AegisName: ASPD_WEAPON_T1_OPTION
     Name: Aspd Tier1 Option Box
@@ -22192,5 +22165,60 @@ Body:
     Weight: 1
     Script: |
       callfunc "F_DoOption",EQI_HAND_R,45,1,15,15,50,60006;
-
+  - Id: 30300
+    AegisName: ARMOR_OPTION_T1_SCROLL
+    Name: Armor Option T1 Scroll
+    Type: Usable
+    Buy: 20
+    Weight: 10
+    Script: |
+      getgroupitem(IG_LUCKY_EGG_C6);
+  - Id: 60100
+    AegisName: STR_ARMOR_T1_OPTION
+    Name: Str Armor Tier1 Option Box
+    Type: Usable
+    Buy: 20
+    Weight: 1
+    Script: |
+      callfunc "F_DoOption",EQI_ARMOR,45,1,15,3,50,60100;
+  - Id: 60101
+    AegisName: AGI_ARMOR_T1_OPTION
+    Name: Agi Armor Tier1 Option Box
+    Type: Usable
+    Buy: 20
+    Weight: 1
+    Script: |
+      callfunc "F_DoOption",EQI_ARMOR,45,1,15,4,50,60101;
+  - Id: 60102
+    AegisName: VIT_ARMOR_T1_OPTION
+    Name: Vit Armor Tier1 Option Box
+    Type: Usable
+    Buy: 20
+    Weight: 1
+    Script: |
+      callfunc "F_DoOption",EQI_ARMOR,45,1,15,5,50,60102;
+  - Id: 60103
+    AegisName: INT_ARMOR_T1_OPTION
+    Name: Int Armor Tier1 Option Box
+    Type: Usable
+    Buy: 20
+    Weight: 1
+    Script: |
+      callfunc "F_DoOption",EQI_ARMOR,45,1,15,6,50,60103;
+  - Id: 60104
+    AegisName: DEX_ARMOR_T1_OPTION
+    Name: Dex Armor Tier1 Option Box
+    Type: Usable
+    Buy: 20
+    Weight: 1
+    Script: |
+      callfunc "F_DoOption",EQI_ARMOR,45,1,15,7,50,60104;
+  - Id: 60105
+    AegisName: Luk_ARMOR_T1_OPTION
+    Name: Luk Armor Tier1 Option Box
+    Type: Usable
+    Buy: 20
+    Weight: 1
+    Script: |
+      callfunc "F_DoOption",EQI_ARMOR,45,1,15,8,50,60105;
 

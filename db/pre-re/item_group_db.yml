@@ -7585,3 +7585,57 @@ Body:
           - Item: Sigrun's_Wing
             Rate: 1
             Announced: true
+  - Group: LUCKY_EGG_C6
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Item: CASH_COIN
+            Amount: 10
+            Rate: 10
+          - Item: MOB_COIN
+            Amount: 100
+            Rate: 10
+          - Item: Speed_Up_Potion
+            Rate: 7
+          - Item: Box_Of_Grudge
+            Rate: 7
+          - Item: Sleepy_Box
+            Rate: 7
+          - Item: Abrasive
+            Rate: 7
+          - Item: Str_Dish04
+            Rate: 3
+          - Item: Agi_Dish04
+            Rate: 3
+          - Item: Vit_Dish04
+            Rate: 3
+          - Item: Dex_Dish04
+            Rate: 3
+          - Item: Int_Dish04
+            Rate: 3
+          - Item: Luk_Dish04
+            Rate: 3
+          - Item: Siege_White_Potion
+            Amount: 5
+            Rate: 10
+          - Item: Siege_Blue_Potion
+            Amount: 5
+            Rate: 10
+          - Item: STR_ARMOR_T1_OPTION
+            Rate: 1
+            Announced: true
+          - Item: AGI_ARMOR_T1_OPTION
+            Rate: 1
+            Announced: true
+          - Item: VIT_ARMOR_T1_OPTION
+            Rate: 1
+            Announced: true
+          - Item: INT_ARMOR_T1_OPTION
+            Rate: 1
+            Announced: true
+          - Item: DEX_ARMOR_T1_OPTION
+            Rate: 1
+            Announced: true
+          - Item: LUK_ARMOR_T1_OPTION
+            Rate: 1
+            Announced: true

@@ -7639,3 +7639,117 @@ Body:
           - Item: LUK_ARMOR_T1_OPTION
             Rate: 1
             Announced: true
+  - Group: LEO_SCROLL
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Item: CASH_COIN
+            Amount: 10
+            Rate: 10
+          - Item: MOB_COIN
+            Amount: 100
+            Rate: 10
+          - Item: Giant_Fly_Wing
+            Amount: 10
+            Rate: 10
+          - Item: Speed_Up_Potion
+            Rate: 10
+          - Item: Box_Of_Grudge
+            Rate: 10
+          - Item: Sleepy_Box
+            Rate: 10
+          - Item: Abrasive
+            Rate: 10
+          - Item: Str_Dish04
+            Rate: 10
+          - Item: Agi_Dish04
+            Rate: 10
+          - Item: Vit_Dish04
+            Rate: 10
+          - Item: Dex_Dish04
+            Rate: 10
+          - Item: Int_Dish04
+            Rate: 10
+          - Item: Luk_Dish04
+            Rate: 10
+          - Item: Siege_White_Potion
+            Amount: 5
+            Rate: 10
+          - Item: Siege_Blue_Potion
+            Amount: 5
+            Rate: 10
+          - Item: Orchid_Hairband
+            Rate: 1
+            Announced: true
+          - Item: Yoyo_Hat
+            Rate: 1
+            Announced: true
+          - Item: Angel_Spirit
+            Rate: 1
+            Announced: true
+          - Item: Toast_C
+            Rate: 1
+            Announced: true
+          - Item: Valentine_Hat
+            Rate: 1
+            Announced: true
+  - Group: LIBRA_SCROLL
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Item: CASH_COIN
+            Amount: 10
+            Rate: 10
+          - Item: MOB_COIN
+            Amount: 100
+            Rate: 10
+          - Item: Giant_Fly_Wing
+            Amount: 10
+            Rate: 10
+          - Item: Speed_Up_Potion
+            Rate: 10
+          - Item: Box_Of_Grudge
+            Rate: 10
+          - Item: Sleepy_Box
+            Rate: 10
+          - Item: Abrasive
+            Rate: 10
+          - Item: Str_Dish04
+            Rate: 10
+          - Item: Agi_Dish04
+            Rate: 10
+          - Item: Vit_Dish04
+            Rate: 10
+          - Item: Dex_Dish04
+            Rate: 10
+          - Item: Int_Dish04
+            Rate: 10
+          - Item: Luk_Dish04
+            Rate: 10
+          - Item: Siege_White_Potion
+            Amount: 5
+            Rate: 10
+          - Item: Siege_Blue_Potion
+            Amount: 5
+            Rate: 10
+          - Item: Saber_
+            Rate: 1
+            Announced: true
+          - Item: Jamadhar_
+            Rate: 1
+            Announced: true
+          - Item: Angel_Spirit
+            Rate: 1
+            Announced: true
+          - Item: Orcish_Axe
+            Rate: 1
+            Announced: true
+          - Item: Kakkung_
+            Rate: 1
+            Announced: true
+          - Item: Arc_Wand_
+            Rate: 1
+            Announced: true
+          - Item: Arc_Wand_
+            Rate: 1
+            Announced: true

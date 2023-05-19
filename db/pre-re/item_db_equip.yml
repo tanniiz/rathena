@@ -31425,10 +31425,6 @@ Body:
     ArmorLevel: 1
     Refineable: true
     View: 380
-    Trade:
-      NoDrop: true
-      NoSell: true
-      NoGuildStorage: true
     Script: |
       bonus2 bAddRace,RC_DemiHuman,12;
       bonus2 bAddRace,RC_Player_Human,12;
@@ -31576,10 +31572,6 @@ Body:
     ArmorLevel: 1
     Refineable: true
     View: 388
-    Trade:
-      NoDrop: true
-      NoSell: true
-      NoGuildStorage: true
     Script: |
       bonus bVit,1;
       skill "AL_ANGELUS",1;
@@ -31704,10 +31696,6 @@ Body:
     EquipLevelMin: 30
     Refineable: true
     View: 393
-    Trade:
-      NoDrop: true
-      NoSell: true
-      NoGuildStorage: true
     Script: |
       skill "TF_DOUBLE",5;
   - Id: 5389
@@ -31721,10 +31709,6 @@ Body:
     ArmorLevel: 1
     EquipLevelMin: 30
     View: 394
-    Trade:
-      NoDrop: true
-      NoSell: true
-      NoGuildStorage: true
     Script: |
       bonus bStr,2;
       bonus bHit,15;
@@ -31751,15 +31735,6 @@ Body:
       Head_Low: true
     ArmorLevel: 1
     View: 188
-    Trade:
-      NoDrop: true
-      NoTrade: true
-      NoSell: true
-      NoCart: true
-      NoStorage: true
-      NoGuildStorage: true
-      NoMail: true
-      NoAuction: true
     Script: |
       bonus bMaxHP,100;
       bonus2 bAddMonsterDropItem,617,10;

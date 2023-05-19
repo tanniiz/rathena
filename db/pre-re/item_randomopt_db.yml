@@ -72,25 +72,37 @@ Body:
       bonus2 bDropAddRace,RC_ALL,getrandomoptinfo(ROA_VALUE);
   - Id: 3
     Option: VAR_STRAMOUNT
+    Type: 1
+    Multiplier: 50
     Script: |
       bonus bStr,getrandomoptinfo(ROA_VALUE);
   - Id: 4
     Option: VAR_AGIAMOUNT
+    Type: 1
+    Multiplier: 50
     Script: |
       bonus bAgi,getrandomoptinfo(ROA_VALUE);
   - Id: 5
     Option: VAR_VITAMOUNT
+    Type: 1
+    Multiplier: 50
     Script: |
       bonus bVit,getrandomoptinfo(ROA_VALUE);
   - Id: 6
     Option: VAR_INTAMOUNT
+    Type: 1
+    Multiplier: 50
     Script: |
       bonus bInt,getrandomoptinfo(ROA_VALUE);
   - Id: 7
     Option: VAR_DEXAMOUNT
+    Type: 1
+    Multiplier: 50
     Script: |
       bonus bDex,getrandomoptinfo(ROA_VALUE);
   - Id: 8
     Option: VAR_LUKAMOUNT
+    Type: 1
+    Multiplier: 50
     Script: |
       bonus bLuk,getrandomoptinfo(ROA_VALUE);

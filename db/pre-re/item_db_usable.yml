@@ -22170,9 +22170,25 @@ Body:
     Name: Armor Option T1 Scroll
     Type: Usable
     Buy: 20
-    Weight: 10
+    Weight: 0
     Script: |
       getgroupitem(IG_LUCKY_EGG_C6);
+  - Id: 30301
+    AegisName: HEADGEAR_V1_SCROLL
+    Name: Headgear V1 Scroll
+    Type: Usable
+    Buy: 20
+    Weight: 0
+    Script: |
+      getgroupitem(IG_LEO_SCROLL);
+  - Id: 30302
+    AegisName: WEAPON_QUEST_SCROLL
+    Name: Weapon Quest Scroll
+    Type: Usable
+    Buy: 20
+    Weight: 0
+    Script: |
+      getgroupitem(IG_LIBRA_SCROLL);
   - Id: 60100
     AegisName: STR_ARMOR_T1_OPTION
     Name: Str Armor Tier1 Option Box

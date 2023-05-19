@@ -36,7 +36,11 @@ Body:
     Items:
       - Item: CASH_COIN
         Price: 1
-      - Item: ANGEL_SCROLL
+      - Item: ARMOR_OPTION_T1_SCROLL
+        Price: 590
+      - Item: HEADGEAR_V1_SCROLL
+        Price: 590
+      - Item: WEAPON_QUEST_SCROLL
         Price: 590
       - Item: Max_Weight_Up_Scroll
         Price: 490

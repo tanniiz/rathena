@@ -4835,7 +4835,7 @@ Body:
       NoMail: true
       NoAuction: true
     Script: |
-      callfunc "F_CashReset";
+      callfunc "Reset_Skill";
   - Id: 12214
     AegisName: Convex_Mirror
     Name: Convex Mirror
@@ -22080,6 +22080,13 @@ Body:
     Weight: 10
     Script: |
       callfunc "F_WeightUp";
+  - Id: 7777
+    AegisName: Reset_Stone
+    Name: Premium Reset Stone
+    Type: Usable
+    Weight: 0
+    Script: |
+      callfunc "Reset_Status";
   ##### VIP #####
   - Id: 41014
     AegisName: VIP_CARD_1D

@@ -7050,3 +7050,10 @@ Body:
 ## Custom Statuses ##
   - Status: VIPSTATE
     Icon: EFST_VIPSTATE
+    Flags:
+      NoRemoveOnDead: true
+      NoClearbuff: true
+      NoDispell: true
+      NoBanishingBuster: true
+      NoClearance: true
+      SendVal1: true

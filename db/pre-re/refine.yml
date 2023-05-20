@@ -90,7 +90,7 @@ Body:
                 Material: Enriched_Elunium
                 BreakingRate: 10000
           - Level: 4
-            Bonus: 0
+            Bonus: 280
             BlacksmithBlessingAmount: 1
             Chances:
               - Type: Normal
@@ -104,7 +104,7 @@ Body:
                 Material: Enriched_Elunium
                 BreakingRate: 10000
           - Level: 5
-            Bonus: 0
+            Bonus: 350
             BlacksmithBlessingAmount: 1
             Chances:
               - Type: Normal
@@ -118,7 +118,7 @@ Body:
                 Material: Enriched_Elunium
                 BreakingRate: 10000
           - Level: 6
-            Bonus: 0
+            Bonus: 420
             BlacksmithBlessingAmount: 1
             Chances:
               - Type: Normal
@@ -132,7 +132,7 @@ Body:
                 Material: Enriched_Elunium
                 BreakingRate: 10000
           - Level: 7
-            Bonus: 0
+            Bonus: 490
             BlacksmithBlessingAmount: 1
             Chances:
               - Type: Normal
@@ -146,7 +146,7 @@ Body:
                 Material: Enriched_Elunium
                 BreakingRate: 10000
           - Level: 8
-            Bonus: 0
+            Bonus: 560
             BlacksmithBlessingAmount: 1
             Chances:
               - Type: Normal
@@ -160,7 +160,7 @@ Body:
                 Material: Enriched_Elunium
                 BreakingRate: 10000
           - Level: 9
-            Bonus: 0
+            Bonus: 630
             BlacksmithBlessingAmount: 2
             Chances:
               - Type: Normal
@@ -174,7 +174,7 @@ Body:
                 Material: Enriched_Elunium
                 BreakingRate: 10000
           - Level: 10
-            Bonus: 0
+            Bonus: 700
             BlacksmithBlessingAmount: 4
             Chances:
               - Type: Normal

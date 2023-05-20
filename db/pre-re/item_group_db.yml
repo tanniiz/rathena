@@ -7741,9 +7741,6 @@ Body:
           - Item: Jamadhar_
             Rate: 1
             Announced: true
-          - Item: Angel_Spirit
-            Rate: 1
-            Announced: true
           - Item: Orcish_Axe
             Rate: 1
             Announced: true

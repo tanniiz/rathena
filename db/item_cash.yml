@@ -74,6 +74,10 @@ Body:
         Price: 4900
       - Item: Merchant_Figure
         Price: 4900
+      - Item: Reset_Stone
+        Price: 29000
+      - Item: Neuralizer
+        Price: 29000
 Footer:
   Imports:
     - Path: db/import/item_cash.yml

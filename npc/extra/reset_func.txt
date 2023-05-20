@@ -1,0 +1,17 @@
+function	script	Reset_Status	{
+	if (Class != Job_Novice && Weight == 0 && !checkriding() && !checkfalcon() && !checkcart() && !ismounting() && !checkdragon()) {
+		resetstatus;
+		sc_end SC_ALL;
+		if (countitem(7777)) delitem 7777,1;
+	}
+	return;
+}
+
+function	script	Reset_Skill	{
+	if (Class != Job_Novice && Weight == 0 && !checkriding() && !checkfalcon() && !checkcart() && !ismounting() && !checkdragon()) {
+		resetskill;
+		sc_end SC_ALL;
+		if (countitem(12213)) delitem 12213,1;
+	}
+	return;
+}

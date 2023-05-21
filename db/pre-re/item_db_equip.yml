@@ -33647,7 +33647,7 @@ Body:
     Refineable: true
     View: 501
     Script: |
-      bonus bBaseAtk,5;
+      bonus bAtkRate,5;
       bonus bMatkRate,5;
   - Id: 5507
     AegisName: Pink_Pajamas_Hat
@@ -33661,7 +33661,7 @@ Body:
     Refineable: true
     View: 502
     Script: |
-      bonus bBaseAtk,5;
+      bonus bAtkRate,5;
       bonus bMatkRate,5;
   - Id: 5508
     AegisName: Shark_Hat
@@ -36246,21 +36246,10 @@ Body:
     ArmorLevel: 1
     Refineable: true
     View: 500
-    Trade:
-      NoDrop: true
-      NoTrade: true
-      NoCart: true
-      NoStorage: true
-      NoGuildStorage: true
-      NoMail: true
-      NoAuction: true
     Script: |
-      bonus bLuk,4;
-      bonus bMaxHP,100;
-      bonus bMaxSP,100;
-      bonus2 bSubRace,RC_DemiHuman,7;
-      bonus2 bSubRace,RC_Player_Human,7;
-      bonus2 bSubRace,RC_Undead,7;
+      bonus bAspd,2;
+      bonus bDex,1;
+      bonus bAtkRate,1;
   - Id: 5824
     AegisName: Fools_Day_Hat
     Name: Fools Day Hat

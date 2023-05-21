@@ -116,7 +116,7 @@ morocc,160,160,4	script	Slot Machine::1slot	563,{
 	//[8] = SFF (Do not change)
 	//[9] = SFF_Count (Do not change)
 	//[10] = Animation Time (Do not change, for best results :D)
-	setarray .tsm_animate$[0],"20","25","SSS_","41","SSF_","37","SFS_","41","SFF_","45","1";
+	setarray .tsm_animate$[0],"15","20","SSS_","41","SSF_","37","SFS_","41","SFF_","45","1";
 
 	// Prize Settings
 	// Prize Type
@@ -132,7 +132,7 @@ morocc,160,160,4	script	Slot Machine::1slot	563,{
 	.payment = 0;
 	// [0] = Zeny, [1] = Item ID, [2] = Item Amount;
 	setarray .ssm_payment[0],100,501,1; // Single Slot Machine Payment Price
-	setarray .tsm_payment[0],10000,0,0; // Triple Slot Machine Payment Price
+	setarray .tsm_payment[0],20000,0,0; // Triple Slot Machine Payment Price
 
 	// DO NOT CHANGE BELOW
 	// Payment Text Syntax

@@ -7479,46 +7479,67 @@ Body:
     SubGroups:
       - SubGroup: 1
         List:
-          - Item: DROP_WEAPON_T1_OPTION
-            Rate: 1
-            Announced: true
-          - Item: CRITICAL_WEAPON_T1_OPTION
-            Rate: 1
-            Announced: true
-          - Item: ATK_WEAPON_T1_OPTION
-            Rate: 1
-            Announced: true
-          - Item: MATK_WEAPON_T1_OPTION
-            Rate: 1
-            Announced: true
-          - Item: EXP_WEAPON_T1_OPTION
-            Rate: 1
-            Announced: true
-          - Item: ASPD_WEAPON_T1_OPTION
-            Rate: 1
-            Announced: true
-          - Item: Blessing_10_Scroll_Box
+          - Item: CASH_COIN
+            Amount: 100
             Rate: 10
-            Announced: true
-          - Item: Inc_Agi_10_Scroll_Box
+          - Item: MOB_COIN
+            Amount: 100
             Rate: 10
-            Announced: true
-          - Item: Aspersio_5_Scroll_Box
+          - Item: Giant_Fly_Wing
+            Amount: 10
             Rate: 10
-            Announced: true
+          - Item: Speed_Up_Potion
+            Rate: 10
+          - Item: Box_Of_Grudge
+            Rate: 10
+          - Item: Sleepy_Box
+            Rate: 10
+          - Item: Abrasive
+            Rate: 10
+          - Item: Str_Dish04
+            Rate: 10
+          - Item: Agi_Dish04
+            Rate: 10
+          - Item: Vit_Dish04
+            Rate: 10
+          - Item: Dex_Dish04
+            Rate: 10
+          - Item: Int_Dish04
+            Rate: 10
+          - Item: Luk_Dish04
+            Rate: 10
+          - Item: Siege_White_Potion
+            Amount: 5
+            Rate: 10
+          - Item: Siege_Blue_Potion
+            Amount: 5
+            Rate: 10
           - Item: HE_Bubble_Gum
             Rate: 5
-            Amount: 3
-            Announced: true
-          - Item: Battle_Manual_X3
+            Amount: 2
+          - Item: Bloody_Dead_Branch
             Rate: 5
-            Amount: 3
+            Amount: 1
+          - Item: Branch_Of_Dead_Tree
+            Rate: 3
+            Amount: 1
+          - Item: Snake_Head
+            Rate: 1
             Announced: true
-          - Item: Elite_Siege_Supply_Box
-            Rate: 5
+          - Item: Fox_Hat
+            Rate: 3
             Announced: true
-          - Item: Basic_Siege_Supply_Box
-            Rate: 10
+          - Item: Fish_In_Mouth
+            Rate: 1
+            Announced: true
+          - Item: Ribbon_Of_Bride
+            Rate: 1
+            Announced: true
+          - Item: Love_Chick_Hat
+            Rate: 1
+            Announced: true
+          - Item: Choco_Donut_In_Mouth
+            Rate: 2
             Announced: true
   - Group: ANGEL_SCROLL
     SubGroups:

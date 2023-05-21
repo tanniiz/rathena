@@ -192,7 +192,7 @@ Body:
       - Level: 1
         RefineLevels:
           - Level: 1
-            Bonus: 0
+            Bonus: 200
             Chances:
               - Type: Normal
                 Rate: 9900
@@ -205,7 +205,7 @@ Body:
                 Material: Enriched_Oridecon
                 BreakingRate: 10000
           - Level: 2
-            Bonus: 0
+            Bonus: 400
             Chances:
               - Type: Normal
                 Rate: 9500
@@ -218,7 +218,7 @@ Body:
                 Material: Enriched_Oridecon
                 BreakingRate: 10000
           - Level: 3
-            Bonus: 0
+            Bonus: 600
             Chances:
               - Type: Normal
                 Rate: 9000
@@ -231,7 +231,7 @@ Body:
                 Material: Enriched_Oridecon
                 BreakingRate: 10000
           - Level: 4
-            Bonus: 0
+            Bonus: 800
             Chances:
               - Type: Normal
                 Rate: 8500
@@ -244,7 +244,7 @@ Body:
                 Material: Enriched_Oridecon
                 BreakingRate: 10000
           - Level: 5
-            Bonus: 0
+            Bonus: 1000
             Chances:
               - Type: Normal
                 Rate: 7500
@@ -257,7 +257,7 @@ Body:
                 Material: Enriched_Oridecon
                 BreakingRate: 10000
           - Level: 6
-            Bonus: 0
+            Bonus: 1200
             Chances:
               - Type: Normal
                 Rate: 6500
@@ -270,7 +270,7 @@ Body:
                 Material: Enriched_Oridecon
                 BreakingRate: 10000
           - Level: 7
-            Bonus: 0
+            Bonus: 1400
             Chances:
               - Type: Normal
                 Rate: 6000
@@ -283,7 +283,7 @@ Body:
                 Material: Enriched_Oridecon
                 BreakingRate: 10000
           - Level: 8
-            Bonus: 0
+            Bonus: 1600
             BlacksmithBlessingAmount: 1
             Chances:
               - Type: Normal
@@ -297,7 +297,7 @@ Body:
                 Material: Enriched_Oridecon
                 BreakingRate: 10000
           - Level: 9
-            Bonus: 0
+            Bonus: 1800
             BlacksmithBlessingAmount: 2
             Chances:
               - Type: Normal
@@ -311,7 +311,7 @@ Body:
                 Material: Enriched_Oridecon
                 BreakingRate: 10000
           - Level: 10
-            Bonus: 0
+            Bonus: 2000
             BlacksmithBlessingAmount: 3
             Chances:
               - Type: Normal
@@ -327,7 +327,7 @@ Body:
       - Level: 2
         RefineLevels:
           - Level: 1
-            Bonus: 0
+            Bonus: 300
             Chances:
               - Type: Normal
                 Rate: 9900
@@ -340,7 +340,7 @@ Body:
                 Material: Enriched_Oridecon
                 BreakingRate: 10000
           - Level: 2
-            Bonus: 0
+            Bonus: 600
             Chances:
               - Type: Normal
                 Rate: 9000
@@ -353,7 +353,7 @@ Body:
                 Material: Enriched_Oridecon
                 BreakingRate: 10000
           - Level: 3
-            Bonus: 0
+            Bonus: 900
             Chances:
               - Type: Normal
                 Rate: 8000
@@ -366,7 +366,7 @@ Body:
                 Material: Enriched_Oridecon
                 BreakingRate: 10000
           - Level: 4
-            Bonus: 0
+            Bonus: 1200
             Chances:
               - Type: Normal
                 Rate: 7500
@@ -379,7 +379,7 @@ Body:
                 Material: Enriched_Oridecon
                 BreakingRate: 10000
           - Level: 5
-            Bonus: 0
+            Bonus: 1500
             Chances:
               - Type: Normal
                 Rate: 7000
@@ -392,7 +392,7 @@ Body:
                 Material: Enriched_Oridecon
                 BreakingRate: 10000
           - Level: 6
-            Bonus: 0
+            Bonus: 1800
             Chances:
               - Type: Normal
                 Rate: 70
@@ -405,6 +405,7 @@ Body:
                 Material: Enriched_Oridecon
                 BreakingRate: 10000
           - Level: 7
+            Bonus: 2100
             BlacksmithBlessingAmount: 1
             Chances:
               - Type: Normal
@@ -418,7 +419,7 @@ Body:
                 Material: Enriched_Oridecon
                 BreakingRate: 10000
           - Level: 8
-            Bonus: 0
+            Bonus: 2400
             BlacksmithBlessingAmount: 1
             Chances:
               - Type: Normal
@@ -432,7 +433,7 @@ Body:
                 Material: Enriched_Oridecon
                 BreakingRate: 10000
           - Level: 9
-            Bonus: 0
+            Bonus: 2700
             BlacksmithBlessingAmount: 2
             Chances:
               - Type: Normal
@@ -446,7 +447,7 @@ Body:
                 Material: Enriched_Oridecon
                 BreakingRate: 10000
           - Level: 10
-            Bonus: 0
+            Bonus: 3000
             BlacksmithBlessingAmount: 3
             Chances:
               - Type: Normal
@@ -462,7 +463,7 @@ Body:
       - Level: 3
         RefineLevels:
           - Level: 1
-            Bonus: 0
+            Bonus: 500
             Chances:
               - Type: Normal
                 Rate: 9900
@@ -475,7 +476,7 @@ Body:
                 Material: Enriched_Oridecon
                 BreakingRate: 10000
           - Level: 2
-            Bonus: 0
+            Bonus: 1000
             Chances:
               - Type: Normal
                 Rate: 9000
@@ -488,7 +489,7 @@ Body:
                 Material: Enriched_Oridecon
                 BreakingRate: 10000
           - Level: 3
-            Bonus: 0
+            Bonus: 1500
             Chances:
               - Type: Normal
                 Rate: 8000
@@ -501,7 +502,7 @@ Body:
                 Material: Enriched_Oridecon
                 BreakingRate: 10000
           - Level: 4
-            Bonus: 0
+            Bonus: 2000
             Chances:
               - Type: Normal
                 Rate: 7000
@@ -514,7 +515,7 @@ Body:
                 Material: Enriched_Oridecon
                 BreakingRate: 10000
           - Level: 5
-            Bonus: 0
+            Bonus: 2500
             BlacksmithBlessingAmount: 1
             Chances:
               - Type: Normal
@@ -528,7 +529,7 @@ Body:
                 Material: Enriched_Oridecon
                 BreakingRate: 10000
           - Level: 6
-            Bonus: 0
+            Bonus: 3000
             BlacksmithBlessingAmount: 1
             Chances:
               - Type: Normal
@@ -542,7 +543,7 @@ Body:
                 Material: Enriched_Oridecon
                 BreakingRate: 10000
           - Level: 7
-            Bonus: 0
+            Bonus: 3500
             BlacksmithBlessingAmount: 1
             Chances:
               - Type: Normal
@@ -556,7 +557,7 @@ Body:
                 Material: Enriched_Oridecon
                 BreakingRate: 10000
           - Level: 8
-            Bonus: 0
+            Bonus: 4000
             BlacksmithBlessingAmount: 1
             Chances:
               - Type: Normal
@@ -570,7 +571,7 @@ Body:
                 Material: Enriched_Oridecon
                 BreakingRate: 10000
           - Level: 9
-            Bonus: 0
+            Bonus: 4500
             BlacksmithBlessingAmount: 2
             Chances:
               - Type: Normal
@@ -601,7 +602,7 @@ Body:
       - Level: 4
         RefineLevels:
           - Level: 1
-            Bonus: 0
+            Bonus: 700
             Chances:
               - Type: Normal
                 Rate: 9900
@@ -614,7 +615,7 @@ Body:
                 Material: Enriched_Oridecon
                 BreakingRate: 10000
           - Level: 2
-            Bonus: 0
+            Bonus: 1400
             Chances:
               - Type: Normal
                 Rate: 9000
@@ -627,7 +628,7 @@ Body:
                 Material: Enriched_Oridecon
                 BreakingRate: 10000
           - Level: 3
-            Bonus: 0
+            Bonus: 2100
             Chances:
               - Type: Normal
                 Rate: 8000
@@ -640,7 +641,7 @@ Body:
                 Material: Enriched_Oridecon
                 BreakingRate: 10000
           - Level: 4
-            Bonus: 0
+            Bonus: 2800
             BlacksmithBlessingAmount: 1
             Chances:
               - Type: Normal
@@ -654,7 +655,7 @@ Body:
                 Material: Enriched_Oridecon
                 BreakingRate: 10000
           - Level: 5
-            Bonus: 0
+            Bonus: 3500
             BlacksmithBlessingAmount: 1
             Chances:
               - Type: Normal
@@ -668,7 +669,7 @@ Body:
                 Material: Enriched_Oridecon
                 BreakingRate: 10000
           - Level: 6
-            Bonus: 0
+            Bonus: 4200
             BlacksmithBlessingAmount: 1
             Chances:
               - Type: Normal
@@ -682,7 +683,7 @@ Body:
                 Material: Enriched_Oridecon
                 BreakingRate: 10000
           - Level: 7
-            Bonus: 0
+            Bonus: 4900
             BlacksmithBlessingAmount: 1
             Chances:
               - Type: Normal
@@ -696,7 +697,7 @@ Body:
                 Material: Enriched_Oridecon
                 BreakingRate: 10000
           - Level: 8
-            Bonus: 0
+            Bonus: 5600
             BlacksmithBlessingAmount: 1
             Chances:
               - Type: Normal

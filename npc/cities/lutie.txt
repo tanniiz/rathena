@@ -1,221 +1,206 @@
-//===== rAthena Script =======================================
-//= Lutie Town
-//===== Description: =========================================
-//= Lutie - City NPCs
-//===== Additional Comments: =================================
-//= 1.1 Edited some text and updated/enabled some triggers
-//=     for the quest.[kobra_k88]
-//= 1.2 Fixed exploit. Checked for Bard Job Quest compatibility [Lupus]
-//= 1.3 Fixed typos [Nexon]
-//= 1.4 Fixed exploit [Lupus]
-//= 1.5 Fixed a bug that could reset Lutie quest state [Lupus]
-//= 1.6 Heavy optimization to all the NPCs [DZeroX]
-//= 1.7 Updated to match AEGIS script. [Kisuka]
-//= 1.8 Split Mr. Claus to pre-re and re [Lemongrass]
-//============================================================
-
 // Teleport to Lutie
 //============================================================
--	script	Mr. Claus	718,{
+aldebaran,169,169,4	script	Mr. Claus	718,{
 	mes "[Mr. Claus]";
-	mes "Ho Ho Ho~";
+	mes "โฮ โฮ โฮ~";
 	mes "Merry Christmas!!";
-	mes "I wish all of you joy";
-	mes "and Christmas cheer!";
+	mes "ขอให้มีความสุข";
+	mes "และ Christmas cheer!";
 	next;
-	switch(select("Info about Lutie:Move to 'Lutie':Cancel")) {
-	case 1:
-		mes "[Mr. Claus]";
-		mes "^3355FFLutie^000000, the fantastic Christmas Town! Always filled with the spirit of giving, Lutie is filled with appetizing cakes, tiny toy soldiers, and all sorts of wonderful things~!";
-		next;
-		mes "[Mr. Claus]";
-		mes "Ho Ho Ho~";
-		mes "It's an amazing land blessed with the beauty of winter, and a year round atmosphere of festivity!";
-		next;
-		mes "[Mr. Claus]";
-		mes "I'm a Santa that will guide people to Lutie, the Christmas Town. Ask me at any time, and I'll magically send you there~";
-		close;
-	case 2:
-		mes "[Mr. Claus]";
-		mes "Ho Ho Ho~";
-		mes "The only way to get to Lutie is here in Al de Baran!";
-		next;
-		mes "[Mr. Claus]";
-		mes "I keep this place and personally transport people who want to visit Lutie. Please ask Santa Claus over there if you want to leave town. He will let you know the way out of Lutie.";
-		next;
-		mes "[Mr. Claus]";
-		mes "Ho Ho Ho~";
-		mes "Well, are you ready?";
-		mes "Have a nice trip!";
-		mes "Meeeeerry Christmas!";
-		close2;
-		warp "xmas_fild01",78,68;
-		end;
-	case 3:
-		mes "[Mr. Claus]";
-		mes "Ho Ho Ho~";
-		mes "Whenever you want to visit Lutie, be my guest. Just let me know when you want to leave.";
-		next;
-		mes "[Mr. Claus]";
-		mes "Ho ho hooooo!!";
-		mes "Haaaaappy Holidays!";
-		close;
+	switch(select("ข้อมูลเกี่ยวกับ Lutie:เคลื่อนไปสู่ 'Lutie':ยกเลิก")) {
+		case 1:
+			mes "[Mr. Claus]";
+			mes "^3355FFLutie^000000, เมืองคริสมาสต์ที่วิเศษ! เต็มไปด้วยจิตวิญญาณของการให้เสมอๆ, Lutie เต็มไปด้วยเค้กน่าอร่อย, ตุ๊กตาทหาร, และสิ่งมหัศจรรย์อีกมากมายs~!";
+			next;
+			mes "[Mr. Claus]";
+			mes "โฮ โฮ โฮ~";
+			mes "มันเป็นดินแดนที่วิเศษไปด้วยฤดูหนาวที่สวยงาม, และบรรยากาศของงานรื่นเริงตลอดปี!";
+			next;
+			mes "[Mr. Claus]";
+			mes "ข้าเป็นซานต้าที่มีหน้าที่ให้คำแนะนำคนที่จะไป Lutie, เมืองแห่งศริสมาสต์. ถามข้าได้ทุกเวลา, และข้าจะส่งท่านไปที่นั่นอย่างวิเศษ~";
+			close;
+		case 2:
+			mes "[Mr. Claus]";
+			mes "โฮ โฮ โฮ~";
+			mes "ทางเดียวที่จะไปสู่ Lutie อยู่ที่นี่ใน Al de Baran!";
+			next;
+			mes "[Mr. Claus]";
+			mes "ข้าทำงานที่นี่และส่งขนส่งคนที่ต้องการไปที่ Lutie. ถาม Santa Claus ถ้าท่านต้องการออกจากเมือง.ซานต้าจะทางออกจาก Lutie ให้ท่าน.";
+			next;
+			mes "[Mr. Claus]";
+			mes "โฮ โฮ โฮ~";
+			mes "ท่านพร้อมแล้วใช่มั้ย?";
+			mes "เดินทางปลอดภัย!";
+			mes "Meeeeerry Christmas!";
+			close2;
+			warp "xmas_fild01",78,68;
+			end;
+		case 3:
+			mes "[Mr. Claus]";
+			mes "โฮ โฮ โฮ ~";
+			mes "เมื่อไหร่ก็ตามที่ท่านต้องการไปเยือน Lutie, ตามสบายเลย.เพียงบอกข้าเมื่อท่านต้องการออก.";
+			next;
+			mes "[Mr. Claus]";
+			mes "โฮ โฮ โฮฮฮฮ!!";
+			mes "สุขสันต์วันหยุดดด!";
+			close;
 	}
 }
+
 
 // Inside Lutie
 //============================================================
 xmas_in,100,96,4	script	Santa Claus	718,{
 	mes "[Santa Claus]";
-	mes "Ho Ho Ho~";
+	mes "โฮ  โฮ โฮ~";
 	mes "Meeeerry Christmas !!";
 	next;
 	mes "^3355FFIt's...^000000";
-	mes "^3355FFIt's the original Santa Claus!^000000";
+	mes "^3355FF Santa Claus ตัวจริง!^000000";
 	next;
 	mes "[Santa Claus]";
-	mes "Ho Ho Ho~";
-	mes "I'm Santa Claus, and I bring gifts to every good boy and girl on Christmas!";
+	mes "โฮ โฮ โฮ~";
+	mes "ข้าคือ Santa Claus, ข้านำของขวัญไปให้เด็กๆทุกคนในวัน Christmas!";
 	next;
 	mes "[Santa Claus]";
-	mes "If you want to leave Lutie, go outside town and head south to the first field that you see. You'll be able to find a magical warp that will take you to Al de Baran.";
+	mes "ถ้าท่านต้องการออกจากเมือง Lutie, ไปนอกเมืองและมุ่งไปหัวเมืองทางใต้เพื่อไปสู่ลานแรกที่ท่านเห็น. ท่านจะพบของวิเศษที่จะนำท่านไปยัง Al de Baran.";
 	next;
 	mes "[Santa Claus]";
-	mes "Ho ho ho~";
+	mes "โฮ โฮ โฮ~";
 	mes "Meeeeeeerry Christmas!";
 	close;
 }
 
 xmas_in,167,173,4	script	Duffle	711,{
-	if (xmas_npc == 1) {
+	if(xmas_npc == 1) {
 		mes "[Duffle]";
 		mes "Merry Christmas!";
-		mes "Welcome to Lutie!";
+		mes "ยินดีต้อนรับสู่เมือง Lutie!";
 		next;
 		mes "[Duffle]";
-		mes "You got a present";
-		mes "from Santa Claus?!";
-		mes "Ha ha, you must";
-		mes "be really excited!";
+		mes "ท่านได้ของขวัญ";
+		mes "จาก Santa Claus มั้ย?!";
+		mes "ฮ่า ฮ่า, ท่านต้อง";
+		mes "ตื่นเต้นแน่ๆ!";
 		next;
 		mes "[Duffle]";
-		mes "Hey, have you heard that here in Lutie, we have an attraction that's equally as famous as Santa himself?";
+		mes "เฮ้, ท่านเคยได้ยินมั้ยว่าในเมือง Lutie เรามีที่ๆน่าสนใจเท่าๆกับความดังของ Santa ?";
 		next;
 		mes "[Duffle]";
-		mes "It's ^3355FFSnowysnow^000000,";
-		mes "the magical";
-		mes "talking snowman!";
+		mes "มันคือ ^3355FFSnowysnow^000000,";
+		mes "มนุษย์หิมะ";
+		mes "วิเศษพูดได้!";
 		next;
 		mes "[Duffle]";
-		mes "Before you leave, you really should meet and talk to Snowysnow, even if it's only once. He's really a nice guy and fun to talk to.";
+		mes "ก่อนที่ท่านจะไป, ท่านควรไปพบและพูดคุยกับมนุษย์หิมะเสียก่อน เขาเป็นคนน่ารักและคุยสนุก.";
 		next;
 		mes "[Duffle]";
-		mes "Well then...";
+		mes "โอเค งั้น...";
 		mes "Merry Christmas!!";
 		set xmas_npc,2;
 		close;
 	}
 	else if (xmas_npc > 1) {
 		mes "[Duffle]";
-		mes "Have you ever talked to the snowman in front of this town? The lonely snowman who stands in solitude...";
+		mes "ท่านคุยกับมนุษย์หิมะที่เมืองนี้หรือยัง? มนุษย์หิมะตัวที่ยืนอย่างโดดเดี่ยว...";
 		next;
 		mes "[Duffle]";
-		mes "But he's so warm hearted~! Sometimes, I talk to Snowysnow the snowman. For some weird reason, he can talk just like us!";
+		mes "แต่เขามีใจที่อบอุ่นนะ~! บางครั้ง, ข้าคุยกับ Snowysnow . เขาสามารถพูดคุยได้อย่างเรานี่แหละ!";
 		next;
 		mes "[Duffle]";
-		mes "When I talk to Snowysnow, I get to wondering how he came to be. I guess if you talk to him too, you'll feel the same way.";
+		mes "เวลาข้าคุยกับ Snowysnow, ข้ารู้สึกแปลกใจว่าเข้าเป็นแบบนี้ได้อย่างไร. ข้าคิดว่าถ้าท่านคุยกับเขาท่านอาจจะรู้สึกเช่นเดียวกับข้า.";
 		next;
 		mes "[Duffle]";
-		mes "How he was created, and how he thinks and talks like a human is such a mystery...";
+		mes "เขาถูกสร้างมาอย่างไร, และเขาคิดและพูดคุยอย่างมนุษย์ได้ยังไง...";
 		next;
 		mes "[Duffle]";
-		mes "Where did he come from and what kind of place was it? And how did he come to Lutie without any legs...?";
+		mes "เขามาจากที่ไหนกันนะ และที่นั่นมันเป็นสถานที่แบบไหนกัน? และเขามาที่เมือง Lutie โดยไม่มีขาได้อย่างไร...?";
 		next;
 		mes "[Duffle]";
-		mes "Lately, it seems more and more people are coming to this town to see Snowysnow.";
+		mes "เมื่อเร็วๆนี้, ดูเหมือนว่ามีคนมากมายมาที่เมืองนี้เพื่อดู Snowysnow.";
 		next;
 		mes "[Duffle]";
-		mes "I guess you should talk to the other people living in Lutie if you want to learn more about the mystery of Snowysnow...";
+		mes "ข้าคิดว่าท่านควรพูดคุยกับคนอื่นๆในเมือง Lutie ถ้าท่านอยากจะรู้มากกว่านี้เกี่ยวกับ Snowysnow ผู้ลึกลับ...";
 		close;
 	}
 	else {
 		mes "[Duffle]";
-		mes "Oh...!";
-		mes "While you're here, don't forget to visit the original Santa Claus here in Lutie.";
+		mes "โอ้...!";
+		mes "ในขณะที่ท่านอยู่ที่นี่, อย่าลืมไปเยื่ยมเยือน Santa Claus ที่อยู่ในเมือง Lutie.";
 		close;
 	}
 }
 
 xmas_in,27,103,4	script	Lenient Aunt	701,{
-	switch (xmas_npc) {
+switch (xmas_npc) {
 	case 5:
 		mes "[Thachentze]";
-		mes "Hmm? The Hairy guy";
-		mes "spoke well of me,";
-		mes "did he? Well well...";
+		mes "หะ? เจ้าตัวขน";
+		mes "คุยกับข้า,";
+		mes "ใช่มั้ย? ดี...";
 		next;
 		mes "[Thachentze]";
-		mes "I know what he thinks... Ho ho ho~! He intends to make me feel happy so that I'll give him some free jars of pickles! Oh well~!";
+		mes "ข้ารู้ว่าเขาคิดอะไร... โฮ โฮ โฮ~! เขาตั้งใจที่จะทำให้ข้ามีความสุข ข้าจะให้โหลแตงกวาดองกับเขาสักหน่อย! โฮ้ ดี~!";
 		next;
 		mes "[Thachentze]";
-		mes "He knows me too well. I almost can't stop from giving that man some pickles. Yes, even I know my pickles are the best in town!";
+		mes "เขารู้จักข้าดีมากๆ. ข้าเกือบลืมหยุดให้แตงกวาดองแก่นายคนนั้น. ใช่, ข้ารู้ว่าแตงกวาดองของข้าดีที่สุดในเมือง!";
 		next;
 		mes "[Thachentze]";
-		mes "Hmmm~?";
-		mes "You want to know";
-		mes "about ^3355FFSnowysnow^000000?";
-		mes "Oh. Yes, yes, I see...";
+		mes "ฮืม~?";
+		mes "ท่านอยากจะรู้";
+		mes "เกี่ยวกับ ^3355FFSnowysnow^000000 ใช่มั้ย?";
+		mes "โอ้. ใช่, ใช่, ข้ารู้แล้ว...";
 		next;
 		mes "[Thachentze]";
-		mes "Well, I can't just let anyone know something so important about Snowysnow. Hmmm...";
+		mes "อืม, ข้าไม่สามารถอนุญาติให้ใครรู้เรื่องที่สำคัญเกี่ยวกับ Snowysnow. ฮืมมม...";
 		next;
 		mes "[Thachentze]";
-		mes "Snowysnow has been holding something for me as a favor, the ^3355FFroughest salt in the world^000000 which I use to pickle cabbages.";
+		mes "Snowysnow ได้ทำถือบางอย่างให้ข้า, ^3355FF เป็นเกลือที่เค็มที่สุดในโลก ^000000 ที่ข้าใช้ในการดองกะหล่ำปลี.";
 		next;
 		mes "[Thachentze]";
-		mes "I suppose if you're really Snowysnow's friend, he will trust you enough to give it to you so you can deliver it to me. And in any case, I'll need more of it soon.";
+		mes "ข้านึกว่าเจ้าเป็นเพื่อนของ  Snowysnow จริงๆ, เขาจะเชื่อใจท่านพอที่จะให้มันแก่ท่านเพื่อให้ท่านมอบมันให้ข้า. ข้าจะต้องการมันมากขึ้นเร็วๆนี้.";
 		next;
 		mes "[Thachentze]";
-		mes "Now be a dear";
-		mes "and hurry up.";
-		mes "Come back quickly~";
+		mes "ตอนนี้";
+		mes "เร็วเข้า.";
+		mes "กลับมาโดยเร็ว~";
 		set xmas_npc,6;
-		close;
+		close;	
 	case 6:
 		mes "[Thachentze]";
-		mes "Hohohoho~";
-		mes "You're back!";
+		mes "โฮๆๆๆ~";
+		mes "ท่านกลับมาแล้ว!";
 		next;
 		mes "[Thachentze]";
-		mes "Did you bring it?";
-		mes "Oh goodness...!";
-		mes "My cabbages will";
-		mes "get sour soon!";
+		mes "ท่านได้นำมันมาให้ข้ามั้ย?";
+		mes "โอ้ พระเจ้า...!";
+		mes "กะหล่ำปลีของข้า";
+		mes "จะมีรสเปรี้ยวเร็วๆนี้!";
 		next;
 		mes "[Thachentze]";
-		mes "You...";
-		mes "Don't have it?";
+		mes "ท่าน...";
+		mes "ไม่มีมันใช่มั้ย?";
 		next;
 		mes "[Thachentze]";
-		mes "*Sigh*";
-		mes "You are really a scatter-brained person, my dear. Now hurry over to Snowysnow and bring me the ^3355FFroughest salt in the world^000000.";
+		mes "*เฮ้อ*";
+		mes "ท่านช่างเป็นคนที่ไม่รอบคอบเสียจริง . ตอนนี้ รีบไปหา Snowysnow และนำ ^3355FF เกลือที่เค็มที่สุดในโลก^000000 มาให้ข้า.";
 		next;
 		mes "[Thachentze]";
-		mes "Hurry now, dear,";
-		mes "Chop Chop~!";
+		mes "เร็วเข้า, ที่รัก,";
+		mes "ไป ไป~!";
 		close;
 	case 7:
 		mes "[Thachentze]";
-		mes "Hohohohoh hohohohoho !";
-		mes "Let's see, let's see...";
-		mes "Thank you dear,Thank you.";
+		mes "โฮฮฮๆๆๆๆๆๆ!";
+		mes "มาดูกันๆ...";
+		mes "ขอบใจมาก,ขอบใจ.";
 		next;
 		set xmas_npc,8;
-		mes "^3355FFYou gave her the";
-		mes "roughest salt in the world.^000000";
+		mes "^3355FF ท่านได้ให้";
+		mes "เกลือที่เค็มที่สุดในโลกแก่เธอ.^000000";
 		next;
 		mes "[Thachentze]";
-		mes "Now I am able to pickle my cabbages properly. Thank you, my dear. Thank you...";
+		mes "ตอนนี้ข้าสามารถดองกะหล่ำปลีได้จริงๆแล้ว. ขอบใจจริงๆ...";
 		next;
 		mes "...";
 		next;
@@ -223,48 +208,48 @@ xmas_in,27,103,4	script	Lenient Aunt	701,{
 		mes "......";
 		next;
 		mes "[Thachentze]";
-		mes "Oh yes, I'm sorry. I almost forgot what I promised you. You asked me about Snowysnow's magical gift bag, didn't you?";
+		mes "โอ้ ใช่, โทษที.ข้าเกือบลืมสิ่งที่ข้าสัญญากับท่าน. ท่านถามข้าเรื่องถุงวิเศษของ Snowysnow ใช่มั้ย?";
 		next;
 		mes "[Thachentze]";
-		mes "If you already met Uncle Cantata, you must know by now that Snowysnow has been made out of some mysterious snow that covered a thick field of magical flowers.";
+		mes "ถ้าท่านพบ Uncle Cantata แล้ว, ท่านต้องรู้เรื่องที่ว่า Snowysnow ได้สร้างหิมะลึกลับที่ถูกปกคลุมไปด้วยดอกไม้เวทมนต์.";
 		next;
 		mes "[Thachentze]";
-		mes "I can't tell you how, but when Snowysnow was revived, there was a reaction between the Alchemist's materials and the energies of Snowysnow's snow.";
+		mes "ข้าบอกท่านไม่ได้ว่าอย่างไร,เนื่องจากเมื่อตอน Snowysnow ได้ถูกคืนชีพมา ได้มีปฎิกิริยาระหว่างส่วนประกอบของ Alchemist และพลังงานแห่งหิมะของ Snowysnow.";
 		next;
 		mes "[Thachentze]";
-		mes "For some reason, Snowysnow's gift bag can now create as many presents as Snowysnow wants, just like Santa Claus.";
+		mes "ด้วยเหตุผลบางอย่าง, ถุงวิเศษของ Snowysnow สามารถเนรมิตของขวัญมากมายเท่าที่ต้องการ, เหมือน Santa Claus.";
 		next;
 		mes "[Thachentze]";
-		mes "Of course, if this power were to fall into the hands of evil, we would all be in trouble.";
+		mes "แน่นอน, ถ้าพลังนี้ตกไปอยู่ในมือของปีศาจ เราคงมีปัญหาแน่.";
 		next;
 		mes "[Thachentze]";
-		mes "However, everyone knows that Snowysnow is kind and loving towards others. So we're never worried about Snowysnow's powers.";
+		mes "อย่างไรก็ตาม,ทุกคนรู้ว่า Snowysnow ใจดีและรักคนอื่นๆ. ดังนั้น เราไม่เคยกัวลเรื่องพลังของ Snowysnow .";
 		next;
 		mes "[Thachentze]";
-		mes "Oh, and I've just heard some shocking news from ^3355FFHashokii^000000 the clown. It's quite an interesting story, actually. Why don't you ask him more about it?";
+		mes "โอ้, ข้าเพิ่งได้ข่าวที่น่าตกใจจาก ^3355FFHashokii^000000. เป็นเรื่องที่ค่อนข้างน่าสนใจ,อันที่จริง ทำไมท่านไม่ถามเขามากขึ้นเรื่องนี้?";
 		close;
 	default:
 		mes "[Thachentze]";
 		mes "Merry Christmas~";
-		mes "Ho! Ho! Ho!";
+		mes "โฮ โฮ โฮ!";
 		next;
 		mes "[Thachentze]";
-		mes "I can feel the Christmas spirit all around me! It's even in the eyes of the young travelers who've come out here all the way to Lutie. Hoho, I wish you a Merry Christmas!";
+		mes "ข้ารู้สึกได้ถึง Christmas รอบๆที่นี่! มันอยู่ในตาของนักท่องเที่ยววัยรุ่นที่มาที่นี่ที่เมือง Lutie. โฮๆ Merry Christmas!";
 		next;
 		mes "[Thachentze]";
-		mes "We have a dungeon named";
-		mes "'Christmas dungeon' around here. Well, I guess I don't need to tell you much if you've heard about it already.";
-		mes "Oh well...";
+		mes "เรามี dungeon ที่ขึ้นชื่อ";
+		mes "'Christmas dungeon' รอบๆทีนี่. ข้าคาดว่าข้าคงไม่ต้องบอกท่านมากถ้าท่านได้ยินเรื่องนั้นมาแล้ว.";
+		mes "โอ้ ดี...";
 		next;
 		mes "[Thachentze]";
-		mes "I figured something out a few days ago. In the Christmas dungeon, you'll run into creatures that are similar to those outside of town.";
+		mes "ข้าคิดบางอย่างออกสองสามวันที่แล้ว. ใน Christmas dungeon, ท่านจะทำเหมือนเป็นสิ่งมีชีวิตที่อยู่นอกเมือง.";
 		next;
 		mes "[Thachentze]";
-		mes "I'm guessing that monsters wandered here from outside of town, and were changed by the cold weather here. So monsters adapted to live in this environment.";
+		mes "ข้ากำลังคิดว่ามอนสเตอร์ได้ระเหเร่รอนมาที่นี่จากนอกเมือง และได้ถูกเปลี่ยนโดยอากาศที่หนาวเย็นของที่นี่ ดังนั้นมอนสเตอร์ทั้งหลายจึงปรับตัวให้เหมาะสมกับสถาพแวดล้อมของที่นี่.";
 		next;
 		mes "[Thachentze]";
 		mes "...";
-		mes "Okay, now I think I better be ready to pickle some cabbages. If you didn't know already, I make the best pickles around! Why don't you visit me later and try some?";
+		mes "โอเค, ตอนนี้ข้าคิดว่าข้าพร้อมแล้วที่จะดองกะหลำปลี. ข้าทำของดองที่ดีที่สุด! ทำไมท่านไม่มาเยี่ยมข้าแล้วลองสักโหลหละ?";
 		close;
 	}
 }
@@ -272,178 +257,178 @@ xmas_in,27,103,4	script	Lenient Aunt	701,{
 // Lutie
 //============================================================
 xmas,117,304,4	script	Poze	713,{
-	if (xmas_npc == 3 || xmas_npc == 4) {
+	if(xmas_npc == 3 || xmas_npc == 4) {
 		mes "[Poze]";
-		mes "You've gone to";
-		mes "^3355FFSnowysnow^000000 and he";
-		mes "mentioned me?";
+		mes "ท่านได้ไปหา";
+		mes "^3355FFSnowysnow^000000 มาแล้วและเขา";
+		mes "พูดถึงข้างั้นหรือ?";
 		next;
 		mes "[Poze]";
-		mes "Oh I see...";
-		mes "He's a snowman that doesn't have any legs. No wonder he hasn't come to visit me. What a shame, what a shame. I guess I better go visit him instead.";
+		mes "โอ้ โอเค..";
+		mes "เขาเป็นมนุษย์หิมะที่ไม่มีขา.ไม่แปลกใจที่เขาไม่มาหาข้า.น่าเสียดายจริงๆ ข้าคิดว่าข้าควรที่จะไปหาเขาเอง.";
 		next;
 		mes "[Poze]";
-		mes "Oh, there is someone who knows how Snowysnow came to be able to speak. That person would be ^3355FFUncle Hairy Cantata^000000...";
+		mes "โอ้,มีคนๆหนึ่งที่รู้ว่า Snowysnow พูดได้อย่างไร. คนๆนั้นคงจะเป็น ^3355FFUncle Hairy Cantata^000000...";
 		next;
 		mes "[Poze]";
-		mes "One day when apprentice of the great alchemist visited Lutie, I came to listen in on a conversation between him and Uncle Hairy.";
+		mes "คร้งหนึ่งเมื่อเด็กฝึกงานของนักเล่นแร่แปรธาตุมาเยือน Lutie, ข้าเข้าไปฟังการพูดคุยกันระหว่างเขากับ Uncle Hairy.";
 		next;
 		mes "[Poze]";
-		mes "Long ago, a great alchemist came by Snowysnow's hometown and happened to meet Snowysnow dying, melting down into water. However, Snowysnow was miraculously revived by that Alchemist.";
+		mes "นานมาแล้ว, นักเล่นแร่แปนธาตุคนหนึ่งได้ไปสู่บ้านเกิดของ Snowysnow และพบว่า Snowysnow กำลังจะตาย, ละลายเป็นน้ำ. อย่างไรก็ตาม, Snowysnow ได้ฟื้นขึ้นมาได้อย่างปาฏิหาริย์โดย Alchemist คนนั้น.";
 		next;
 		mes "[Poze]";
-		mes "But that's pretty much all I know. For the actual details, you should ask ^3355FFUncle Hairy Cantata^000000.";
+		mes "นั่นค่อนข้างมากที่ข้ารู้มา. สำหรับรายละเอียดจริงๆ ท่านควรถาม ^3355FFUncle Hairy Cantata^000000.";
 		set xmas_npc,4;
 		close;
-	} else {
+	}else{
 		mes "[Poze]";
-		mes "Welcome to Lutie,";
-		mes "the town which blesses";
-		mes "all of its visitors with";
-		mes "the spirit of Christmas!";
+		mes "ยินดีต้อนรับสู่เมือง Lutie,";
+		mes "เมืองซึ่งเต็มไปด้วย";
+		mes "ความสุขของผู้มาเยือน";
+		mes "แห่ง Christmas!";
 		mes "Merry Christmas !";
 		next;
 		mes "[Poze]";
-		mes "Here in this magical land of fun and fancy, you can enjoy the spirit of Christmas all year round~! Isn't that wonderful?";
+		mes "ในดินแดนแห่งมนต์ขลังและความมหัศจรรย์ ท่านสามารถมีความสุขไปกับจิตวิญญาณแห่ง Christmas ตลอดทั้งปี~! มันวิเศษใช่มั้ย?";
 		next;
 		mes "[Poze]";
-		mes "Lutie isn't merely just a simple attraction. We have convenient facilities like the other towns, but in a festive environment.";
+		mes "Lutie ไม่ได้เป็นเพียงที่น่าสนใจเท่านั้น. เรามีสิ่งอำนวยความสะดวกเหมือนเมืองอื่นๆ.";
 		next;
 		mes "[Poze]";
-		mes "So if you decide to stay here for a while, you should have all the comforts that you need. Merry Christmas~";
+		mes "ถ้าท่านตัดสินใจที่จะอยู่ที่นี่ช่วงหนึ่ง, ท่านคงมีความสะดวกสบายเท่าที่ท่านต้องการ. Merry Christmas~";
 		close;
 	}
 }
 
 xmas,176,236,4	script	Uncle Hairy	712,{
-	if (xmas_npc == 4) {
-		if (countitem(1024) > 0 && countitem(938) > 0) {
+	if(xmas_npc == 4) {
+		if(countitem(1024) > 0 && countitem(938) > 0) {
 			mes "[Cantata]";
-			mes "Oh? Y-y-you've got the stuff? Goooooooood. It's been so long since I've been able to have some of this... G-give it to me!";
+			mes "โอ้? ท่านมีสิ่งนั้นใช่มั้ย? ดีมากกก. นานแล้วที่ข้าได้เห็นสิ่งนี้...เอามันให้ข้าเถอะ!";
 			next;
-			delitem 1024,1;// Chinese_Ink
-			delitem 938,1;// Sticky_Mucus
-			mes "^3355FFYou quickly handed him the Squid Ink and Sticky Mucus and watched with a little disgust as he relished the flavor.^000000";
-			next;
-			mes "[Cantata]";
-			mes "*Burrrrpppp~*";
-			mes "Well, now it's the time for my story. Keep in mind that this is the whole story from what I know. I'm not sure how much you've already heard though...";
+			delitem 1024,1;	// Chinese_Ink
+			delitem 938,1;	// Sticky_Mucus
+			mes "^3355FF ท่านมอบ Squid Ink และ Sticky Mucus ให้เขาโดยเร็วและดูด้วยความรังเกียจเล็กน้อย ^000000";
 			next;
 			mes "[Cantata]";
-			mes "A long time ago,";
-			mes "there was a great";
-			mes "Alchemist living";
-			mes "in the far north.";
-			mes "His name was";
+			mes "*เอิ๊ก~*";
+			mes "โอเค ตอนนี้ถึงเวลาแล้วสำหรับเรื่องของข้า. จำไว้ว่านี่เป็นเรื่องราวทั้งหมดที่ข้ารู้. ข้าไม่แน่ว่าเจ้ารู้มามากแค่ไหนแล้ว...";
+			next;
+			mes "[Cantata]";
+			mes "นานมาแล้ว,";
+			mes "ได้มี";
+			mes "Alchemist ผู้เก่งกาจคนหนึ่ง";
+			mes "อาศัยอยู่ไกลออกไปทางตอนเหนือ.";
+			mes "ชื่อของเขาคือ";
 			mes "^3355FFPhilip Varsez^000000!";
 			next;
 			mes "[Cantata]";
-			mes "He was always foremost in the research of alchemy and needed rare materials to conduct his studies. Because of that, he had to travel the world in search of materials containing magical energies...";
+			mes "เขาให้ความสำคัญกับการวิจัยของเขาเสมอและต้องการวัสดุที่หาได้ยากเพื่อดำเนินการศึกษาของเขา.ด้วยเหตุนี้, เขาจะต้องเดินทางไปทั่วโลกในการค้นหาของวัสดุที่มีพลังวิเศษ...";
 			next;
 			mes "[Cantata]";
-			mes "One day, his travels brought him to a northern village known for its freezing weather. But when he arrived, he was welcomed by a smouldering town that had recently been destroyed.";
+			mes "วันหนึ่ง, การเดินทางของเขานำเขาไปยังหมู่บ้านทางตอนเหนือซึ่งเป็นหมู่บ้านที่มีอากาศหนาวเย็น. แต่เมื่อเขาไปถึง,เขาก็ได้ถูกต้อนรับโดยเมืองที่ลุกระอุหลังจากถูกทำลายไปได้ไม่นาน.";
 			next;
 			mes "[Cantata]";
-			mes "It was a grim sight: People were lying at the roadside, groaning in agony. As Varsez walked by, each villager would beg, 'K-Kill me...' and plead for him to put them out of their misery.";
+			mes "มันเป็นสภาพที่น่าสยดสยอง: ผู้คนนอนเกลื่อนกลาดไปตามท้องถนน, ส่งเสียงพึมพัมในความทุกข์ทรมาน. Varsez เดินผ่านไป,ชาวแต่ละคนจะอ้อนวอน, 'ฆ่าาาข้าาา...' และขอร้องให้เขานำพวกเขาออกจากความทุกข์ยาก.";
 			next;
 			mes "[Cantata]";
-			mes "Amidst the woeful cries of despair, the wails of two infants reached the ears of Philip Varsez. He rushed to investigate and found two babies cushioned in the bosom of a melting snowman.";
+			mes "ท่ามกลางเสียงร้องของความสิ้นหวัง, เสียงครวญครางของสองเด็กทารกถึงหู Philip Varsez. เขารีบวิ่งไปดูและพบว่าทารกทั้งสองถูกโอบอยู่ ในอกของมนุษย์หิมะที่กำลังละลาย.";
 			next;
 			mes "[Cantata]";
-			mes "That snowman...";
-			mes "was ^3355FFSnowysnow^000000.";
+			mes "มนุษย์หิมะ...";
+			mes "นั้นก็คือ^3355FFSnowysnow^000000 นี่เอง.";
 			next;
 			mes "[Cantata]";
-			mes "Being the wise Alchemist that he is, Varsez deduced that Snowysnow sacrificed himself to protect those two babies from the great disaster that had destroyed the village.";
+			mes "ด้วยความรู้ความสามารถที่ Alchemist มี, Varsez ประทับใจที่ Snowysnow เสียสละตัวเองเพื่อปกป้องทารกทั้งสองนั้นจากภัยพิบัติที่ทำลายหมู่บ้าน.";
 			next;
 			mes "[Cantata]";
-			mes "Varsez was touched, and was determined to save the life of this snowman with his alchemy. He would then transport him here to Lutie, the safest place in the world.";
+			mes "Varsez เห็นใจ, และมุ่งมั่นที่จะช่วยชีวิตของมนุษย์หิมะนี้ด้วยความสามารถของเขา. เขาส่ง Snowysnow มาที่เมือง Lutie, ที่ที่ปลอดภัยที่สุดในโลก.";
 			next;
 			mes "[Cantata]";
-			mes "Of course, there was another rumor that, in addition to the mercy from that Alchemist, Snowysnow was able to survive due to the special properties of his snow.";
+			mes "แน่นอนว่ายังมีข่าวลืออีกว่า, นอกเหนือไปจากความเมตตาจากของ Alchemist, Snowysnow ได้มีชีวิตรอดด้วยความพิเศษของหิมะในตัวเขา.";
 			next;
 			mes "[Cantata]";
-			mes "It's believed that Snowysnow's snow used to cover a mysterious field that would be filled with the bloom of magical flowers.";
+			mes "มันเป็นที่เชื่อกันว่าหิมะของ Snowysnow ใช้เพื่อครอบคลุมเขตลึกลับที่จะเต็มไปด้วยดอกไม้วิเศษ.";
 			next;
 			mes "[Cantata]";
-			mes "Muhahaha~";
-			mes "Well, that's pretty much all I know. I hope you were able to learn what you wanted from my story! Haw haw haw!";
+			mes "ฮ่าๆๆ~";
+			mes "นั่นค่อนข้างมากที่ข้ารู้. ข้าหวังว่าท่านจะเรียนรู้ได้จากสิ่งที่ท่านรู้จากเรื่องราวนี้! ฮืมม!";
 			next;
 			mes "[Cantata]";
-			mes "Well...";
-			mes "Now that I think about it...";
+			mes "โอเค...";
+			mes "ตอนนี้ที่ข้าคิด...";
 			next;
 			mes "[Cantata]";
-			mes "Snowysnow can not only speak, but he also seems to be able to create an endless supply of Christmas presents. Or at least, that's what I hear.";
+			mes "Snowysnow ไม่เพียงแต่สามารถพูดได้แต่เขายังสามารถสร้างของขวัญ Christmas ได้อย่างไม่มีที่สิ้นสุด. หรืออย่างน้อย ฉันก็ได้ยินมาอย่างนั้น.";
 			next;
 			mes "[Cantata]";
-			mes "^3355FFThachentze^000000, that lovely pickle maker, knows more about it. So if you're curious, you should go talk to her. Alrighty then, Merry Christmas!";
+			mes "^3355FFThachentze^000000, คนทำของดองที่ผู้น่ารักคนนั้นรู้มากเกี่ยวกับเรื่องนี้ ถ้าท่านอยากจะรู้ ท่านควรไปคุยกับหล่อน. โอเค, Merry Christmas!";
 			set xmas_npc,5;
-			close;
-		} else {
+			close;		
+		}else{
 			mes "[Cantata]";
-			mes "Oh yeah? Heard about me from Poze, did you? Haw haw haw! Yeah, I know a little bit about Snowysnow. In fact, I may even be his weak point, since...";
+			mes "โอ้ หะ? ได้ยินเรื่องข้ามาจาก Poze งั้นหรือ? อืมมม! ใช่,ข้ารู้นิดหน่อยเรื่อง Snowysnow. ความจริง ข้าอาจจะเป็นปมด้อยของเขา, ตั้งแต่ที่...";
 			next;
 			mes "[Cantata]";
-			mes "I know";
-			mes "the secret of";
-			mes "^3355FFSnowysnow's birth^000000!!";
+			mes "ข้ารู้";
+			mes "ความลับ";
+			mes "^3355FF เรื่องการกำเนิดของ Snowysnow ^000000!!";
 			next;
 			mes "[Cantata]";
-			mes "Are you curious?";
-			mes "Heh heh heh~ Well, don't think I'll let you know unless you give me something in return!";
+			mes "ท่านสงสัยงั้นหรือ?";
+			mes "เฮๆๆๆ~ อืม, อย่าคิดว่าข้าจะบอกท่านนอกเสียจากข้าจะได้บางสิ่งบางอย่างตอบแทน!";
 			next;
 			mes "[Cantata]";
-			mes "Living in this";
-			mes "town doesn't give me";
-			mes "much of a chance to enjoy";
-			mes "a man's drink. Hmmm, bring me...";
+			mes "การอยู่ที่เมืองนี้";
+			mes "ไม่ได้มีโอกาส";
+			mes "มากมายให้ข้าได้";
+			mes "สนุกสนาน. อึม, ไปนำ...";
 			next;
 			mes "[Cantata]";
-			mes "^3355FF1 Squid Ink^000000 and";
-			mes "^3355FF1 Sticky Muscus^000000!";
+			mes "^3355FF1 Squid Ink^000000 และ";
+			mes "^3355FF1 Sticky Muscus^000000 มาให้ข้า!";
 			next;
 			mes "[Cantata]";
-			mes "Wahhahaha! What the hell is that look for?! Never you mind my gourmet sense of taste! Now get to work~!";
+			mes "วะฮ่าาาๆๆ! เจ้ามองอะไร?! เจ้าไม่เคยรู้ความรู้สึกในการลิ้มรสของข้า! ตอนนี้ไปทำงานได้แล้ว~!";
 			close;
 		}
 	}
 	else {
 		mes "[Cantata]";
 		mes "Merry Christmas!";
-		mes "Welcome to Lutie!";
+		mes "ยินดีต้อนรับสู่เมือง Lutie!";
 		next;
 		mes "[Cantata]";
-		mes "It looks like the cold has brought a rosiness to your cheeks.";
-		mes "Haw haw haw!";
+		mes "ดูเหมือนความหนาวเย็นทำให้แก้มท่านแดงระเรื่อนะ.";
+		mes "ฮ่าๆ!";
 		next;
 		mes "[Cantata]";
-		mes "Be careful, it wouldn't be good for you to catch the Lutie Flu.";
+		mes "ระวังหน่อยหละ, มันคงจะแย่ถ้าท่านเป็นหวัดที่เมือง Lutie.";
 		mes "...";
 		next;
 		mes "[Cantata]";
-		mes "*Sigh* That reminds me...";
-		mes "My little boy had a terrible case of the Lutie Flu a while ago.";
+		mes "*เฮ้อ* นั่นทำให้ข้านึกถึง..";
+		mes "ลูกชายตัวน้อยของข้าได้เป็นไข้หวัดใหญ่เมื่อนานมาแล้ว.";
 		next;
 		mes "[Cantata]";
-		mes "It was during the night, and there was no place I could get any medicine. It seemed I could do nothing for my little boy.";
+		mes "มันเป็นเวลากลางดึกและไม่มีที่ใดที่เปิดขายยาช่วงนั้น. ดูเหมือนข้าทำอะไรไม่ได้เลยเพื่อลูกน้อยของข้า.";
 		next;
 		mes "[Cantata]";
-		mes "I thought the least I could do for my son was get something cold to bring down his fever, but the snow of Lutie kept on melting after being placed on his forehead. He was burning up, and I was failing to relieve him.";
+		mes "ข้าคิดว่าอย่างน้อยข้าก็ควรหาอะไรที่เย็นเพื่อมาลดไข้ลูกน้อยของข้า, แต่หิมะในเมือง Lutie ได้ละลายขณะที่ข้าวางลงที่หน้าผากของเขา. เขากำลังร้อนดั่งไฟ และข้าก็ล้มเหลวในการบรรเทาอาการเขา.";
 		next;
 		mes "[Cantata]";
-		mes "It was then that";
-		mes "I knew I needed";
-		mes "some magic ice.";
+		mes "มันทำให้ข้ารู้ว่า";
+		mes "ข้าจำเป็นต้องใช้";
+		mes "น้ำแข็งเวทมนต์.";
 		next;
 		mes "[Cantata]";
-		mes "Eventually, I found myself in the Christmas dungeon without any goal in mind. Inside I found, thank God, a certain creature made entirely of ice!";
+		mes "ในที่สุด, ข้าก็พบ, ขอบคุณพระเจ้า  สิ่งมีชีวิตทั้งหมดทำมาจากน้ำแข็ง!";
 		next;
 		mes "[Cantata]";
-		mes "It was an ^3355FFIceporing^000000! The local people used to call it 'Icepantzering.' Anyway, I was able to save my boy's life with it. Thank goodness something like that was around in this town.";
+		mes "มันคือ ^3355FFIceporing^000000! ชาวบ้านเคยเรียกมันว่า 'Icepantzering.' อย่างไรก็ตาม, ข้าก็สามารถรักษาชีวิตลูกชายข้าได้ด้วยของสิ่งนั้น. ขอบคุณพระเจ้าที่ประทานสิ่งนี้ให้มาอยู่ในเมืองนี้.";
 		next;
 		mes "[Cantata]";
-		mes "Oops, I think I've talked a bit much. Merry Christmas~!";
+		mes "Oops, ข้าคิดว่าข้าพูดมากไปหน่อยแล้ว. Merry Christmas~!";
 		close;
 	}
 }
@@ -451,381 +436,354 @@ xmas,176,236,4	script	Uncle Hairy	712,{
 xmas,134,112,4	script	Snowman	710,{
 	if (checkweight(1201,1) == 0 ) {
 		cutin "rutie_snownow01.bmp",2;
-		mes "- Wait a minute !! -";
-		mes "- Currently you're carrying -";
-		mes "- too many items with you. -";
-		mes "- Please try again -";
-		mes "- after you loose some weight. -";
-		close2;
-		cutin "",255;
-		end;
+		mes "-เดี๋ยวก่อน !! -";
+		mes "- ตอนนี้ ท่านแบก -";
+		mes "- ไอเทมมากเกินไป. -";
+		mes "- ลองอีกครั้ง -";
+		mes "- หลังจากที่ท่านปล่อยน้ำหนักไปบ้างแล้ว. -";
+		close2;	cutin "",255;	end;
 	}
 	cutin "rutie_snownow03.bmp",2;
 	mes "[Snowysnow]";
-	mes "I'm...";
-	mes "I'm so lonely!";
+	mes "ข้าา...";
+	mes "ข้าเหงาเหลือเกิน!";
 	next;
 	mes "[Snowysnow]";
-	mes "Always stuck here...";
-	mes "On the same spot...";
-	mes "Day after day after day after day after day after day after day after day after day after day...";
+	mes "อยู่ที่นี่เสมอ...";
+	mes "ที่ๆเดิม...";
+	mes "วันแล้วว วันเล่าา วันแล้ว วันเล่า...";
 	next;
-	switch(select("^3355FFSnowysnow?^000000:Info about the Christmas dungeon:Quit this conversation")) {
+	switch(select("^3355FFSnowysnow?^000000:ข้อมูลเกี่ยวกับ Christmas dungeon:ออกจากการสนทนานี้")) {
 	case 1:
 		if (xmas_npc < 2) {
 			cutin "rutie_snownow01.bmp",2;
 			mes "[Snowysnow]";
-			mes "I was born in an area to the north where it snowed all the time, and was much colder than Lutie, if you can believe that.";
+			mes "ข้าเกิดมาในพื้นที่ทางตอนเหนือที่ๆมีหิมะปกคลุมตลอดเวลาและเป็นที่ที่หนาวเย็นกว่าเมือง Lutie มาก, ถ้าท่านเชื่ออย่างนั้น.";
 			next;
 			mes "[Snowysnow]";
-			mes "I was made with love by a human, and I was really happy there. Life was simple, but it was full of quiet bliss.";
+			mes "ข้าถูกสร้างมาโดยมนุษย์ผู้หนึ่ง ข้ามีความสุขมากที่นั่น. มีชีวิตเรียบง่ายและเต็มไปด้วยความสุข.";
 			next;
 			mes "[Snowysnow]";
-			mes "I thought I could live the rest of my life in that kind of contentment. But... It was not to be.";
+			mes "ข้าคิดว่าข้าคงจะใช้ชีวิตที่เหลืออยู่อย่างที่ต้องการ. แต่... มันไม่ได้เป็นอย่างที่คิด.";
 			next;
 			cutin "rutie_snownow01.bmp",2;
 			mes "[Snowysnow]";
-			mes "One fateful day, some ugly old woman came to our town. People say her name was 'Merlophechum,' and that she was from some strange cave town where the weather was always hot.";
+			mes "วันหนึ่ง, ผู้หญิงแก่น่าเกลียดคนหนึ่งได้มาที่หมู่บ้านของเรา. คนเรียกหล่อนว่า 'Merlophechum,' หล่อนมาจากเมืองแปลกๆที่นั่นมีอากาศที่ร้อนอยู่ตลอดเวลา.";
 			next;
 			mes "[Snowysnow]";
-			mes "On the third night she was there, she set the town on fire with frightening magic. Everyone was running in panic amongst the fear and chaos. And somehow, I was knocked out.";
+			mes "คืนที่สามที่หล่อนอยู่ที่นั่น, หล่อนทำให้เมืองลุกเป้นไฟด้วยเวทมนต์ที่น่ากลัว. ทุกคนวิ่งหนีด้วยความหวาดกลัว. ด้วยเหตุบางอย่าง, ทำให้ข้าสลบไป.";
 			next;
 			cutin "rutie_snownow02.bmp",2;
 			mes "[Snowysnow]";
-			mes "I didn't notice how much time passed after that, but when I woke up, I was here. Well, I can say that this place, Lutie, is pretty much like heaven.";
+			mes "ข้าไม่รู้ว่าเวลาผ่านไปนานเท่าไหร่หลังจากนั้น แต่เมื่อข้าตื่นขึ้นมา ข้าก็อยู่ที่นี่แล้ว. อึม ข้าบอกได้เลยว่าเมือง Lutie นี้ค่อนข้างเหมือนสวรรค์.";
 			next;
 			mes "[Snowysnow]";
-			mes "Everyone here is never worried, and I'm always hearing Christmas carols and stuff.";
+			mes "ทุกๆคนที่นี่ไม่มีความวิตกกังวล ข้าได้ยินแต่เรื่อง Christmas เสมอๆ.";
 			next;
 			cutin "rutie_snownow03.bmp",2;
-			mes "[Snowysnow]";
-			mes "But still...";
-			mes "Sometimes all that Christmas joy somehow doesn't cure the dark loneliness that wells deep inside of me.";
+			mes "[Snowysnow]";;
+			mes "แต่...";
+			mes "บางครั้งมันก็ไม่สามารถปิดบังความเหงาที่อยู่ในใจลึกๆของข้าได้.";
 			next;
 			mes "[Snowysnow]";
-			mes "So will you be my friend? If you do, I'll be your friend too~";
-			close2;
-			cutin "",255;
-			end;
-		} else {
+			mes "ท่านเป็นเพื่อนข้าได้หรือไม่? ถ้าท่านต้องการ ข้าจะเป็นเพื่อนท่านด้วยเหมือนกัน~";
+			close2;	cutin "",255;	end;
+		}else{
 			switch(xmas_npc) {
 			case 2:
 				cutin "rutie_snownow01.bmp",2;
 				mes "[Snowysnow]";
-				mes "Oh...?";
-				mes "So you've met Duffle?";
-				mes "Yeah, sometimes she";
-				mes "stops by and says 'hi...'";
+				mes "โอ้...?";
+				mes "เจ้าพบ Duffle แล้วใช่มั้ย?";
+				mes "ใช่, บางครั้ง";
+				mes "หล่อนแวะมาทักทาย...";
 				next;
 				mes "[Snowysnow]";
-				mes "It's weird that the people of Lutie call me a mysterious, magical snowman. I mean, inside, aren't I just the same as regular people?";
+				mes "มันแปลกที่ผู้คนในเมือง Lutie เรียกข้าว่าตัวประหลาด. ข้าหมายถึง ข้างใน ข้าไม่ได้เหมือนแค่พวกมนุษย์ใช่มั้ย?";
 				next;
 				mes "[Snowysnow]";
-				mes "*Sniff* S-sometimes,";
-				mes "I don't even know what I am. But even so, the people of Lutie try to accept me no matter what.";
+				mes "*ฟุดฟิด* บางครั้ง,";
+				mes "ข้าไม่แม้แต่รู้ว่าข้าเป็นใคร. แต่ถึงกระนั้น,คนที่นี่ก็ต้อนรับข้าไม่ว่าข้าจะเป็นอะไร.";
 				next;
 				mes "[Snowysnow]";
-				mes "^3355FFPoze^000000 gave me his glamour photo with his address on it, and told me to visit him whenever I'm feeling blue. I was so happy to hear that...";
+				mes "^3355FFPoze^000000 ได้มอบรูปถ่ายพร้อมด้วยที่อยู่ของเขาให้แก่ข้าและเขาก็ยังบอกข้าว่าให้ไปหาเขาได้เมื่อไหร่ก็ตามที่ข้ารู้สึกแย่. ข้าดีใจมากที่ได้ยินอย่างนั้น...";
 				next;
 				mes "[Snowysnow]";
-				mes "But then fate played its cruel joke on me once again, and I realized that I had no legs to visit him with.";
+				mes "แต่แล้วโชคชะตาก็เล่นตลกกับข้าอีกแล้ว เพราะข้านึกขึ้นได้ว่าข้าไม่มีขาที่เดินไปพบเขา.";
 				next;
 				mes "[Snowysnow]";
-				mes "How did I ever get to this town? And how in the world am I able to talk?! I-It's not natural, is it? Does... Does that make me a monster?";
+				mes "แล้วข้ามาที่เมืองที่เมืองนี้ได้ยังไงนะ? และข้าพูดได้ยังไง?! มันไม่ปรกติใช่มั้ย? นั่น..ทำให้ข้าเป็นมอนสเตอร์ใช่หรือไม่?";
 				next;
-				mes "^3355FFSnowysnow is immersed in his deep thoughts, and seems^000000";
-				mes "^3355FFfixated on Poze's memento.^000000";
+				mes "^3355FFSnowysnow จมอยู่กับความคิดของเขา และดูเหมือน^000000";
+				mes "^3355FFเป็นของที่ระลึกของ Poze.^000000";
 				set xmas_npc,3;
-				close2;
-				cutin "",255;
-				end;
+				close2;	cutin "",255; end;
 			case 3:
 				cutin "rutie_snownow01.bmp",2;
 				mes "[Snowysnow]";
 				mes "...";
 				next;
-				mes "^3355FFSnowysnow is immersed in his deep thoughts, and seems^000000";
-				mes "^3355FFfixated on Poze's memento.^000000";
-				close2;
-				cutin "",255;
-				end;
+				mes "^3355FFSnowysnow จมอยู่กับความคิดของเขา และดูเหมือน^000000";
+				mes "^3355FFเป็นของที่ระลึกของ Poze.^000000";
+				close2;	cutin "",255;	end;
 			case 4:
 				cutin "rutie_snownow01.bmp",2;
 				mes "[Snowysnow]";
-				mes "Oh goody!";
-				mes "You've met Poze!";
+				mes "โอ้!";
+				mes "ท่าพบกับ Poze แล้ว!";
 				next;
 				mes "[Snowysnow]";
-				mes "He's such an honest, good hearted guy. I hope he and Duffle get together someday.";
+				mes "เขาช่างเป็นคนที่จริงใจและจิตใจงาม. ข้าหวังให้เขากับ  Duffle อยู่ด้วยกัน.";
 				next;
 				mes "[Snowysnow]";
-				mes "...Oh no~!";
-				mes "Did I say that out loud? That was supposed to stay in my head! I'm soooo sorry! Boy, I can be a real dum-dum head, huh?";
+				mes "...โอ้ ไม่~!";
+				mes "ข้าพูดออกมาดังมั้ย? ข้าขอโทษ! ";
 				next;
 				mes "[Snowysnow]";
-				mes "Yeah...";
-				mes "Poze is in love with Duffle. And she's kind to everybody, except for Poze.";
+				mes "ใช่...";
+				mes "Poze หลงรัก Duffle. เพราะหล่อนใจดีกับทุกคน ยกเว้น Poze.";
 				next;
 				mes "[Snowysnow]";
-				mes "But I know that's because she likes him a whole whole lot! Hee hee hee!";
-				close2;
-				cutin "",255;
-				end;
+				mes "แต่ข้ารู้ว่าหล่อนชอบเขามากๆเช่นกัน! เฮๆๆๆ!";
+				close2;	cutin "",255;	end;
 			case 5:
 				cutin "rutie_snownow01.bmp",2;
 				mes "[Snowysnow]";
-				mes "Oh...?";
-				mes "You've met";
-				mes "^3355FFUncle Hairy Cantata^000000?";
+				mes "โอ้...?";
+				mes "ท่านได้พบกับ";
+				mes "^3355FFUncle Hairy Cantata^000000 แล้วใช่หรือไม่?";
 				next;
 				cutin "rutie_snownow02.bmp",2;
 				mes "[Snowysnow]";
-				mes "Sure, he has a loud voice, doesn't take showers and smells like rotting food. But he's a funny guy with a warm heart. Everybody loves him!";
+				mes "แน่นอนหละ เขาเสัยงดัง แถมยังไม่ชอบอาบน้ำอีกทั้งยังมีกลิ่นตัวเหมือนอาหารเน่าอีก แต่เขาเป็นคนตลกและก็มีจิตใจดี ทุกคนรักเขา!";
 				next;
 				mes "[Snowysnow]";
-				mes "Of course, he still enjoys drinking strange things. They say it's a miracle that he doesn't have a tummyache. Hee hee~! Oh, I love that guy!";
-				close2;
-				cutin "",255;
-				end;
+				mes "ใช่แล้ว, เขาชอบดื่มของแปลกๆ. พวกเขาเรียกมันว่าเป็นสิ่งที่น่าเหลือเชื่อที่เขาไม่มีอาการปวดท้องเลย. เฮๆๆ~! โฮ, ข้ารักเขาจัง!";
+				close2;	cutin "",255;	end;
 			case 6:
 				cutin "rutie_snownow01.bmp",2;
 				mes "[Snowysnow]";
-				mes "Oh...?";
-				mes "You've met";
-				mes "^3355FFAunt Thachentze^000000?";
+				mes "โอ้...?";
+				mes "ท่านพบกับ";
+				mes "^3355FFAunt Thachentze^000000 แล้วใช่มั้ย?";
 				next;
 				mes "[Snowysnow]";
-				mes "Yeah, she's a pickle expert, alright. Oh right, would you give this to her? I've been keeping the roughest salt in the world for her as a bit of a favor.";
+				mes "ใช่แล้ว,หล่อนผู้เชียวชาญเรื่องการดอง, โอ้ ใช่สิ ท่านจะมอบสิ่งนี้ให้แก่เธอได้มั้ย? ข้าได้เก็บรักษาเกลือที่เค็มที่สุดในโลกไว้ให้เธอ.";
 				next;
 				set xmas_npc,7;
-				mes "^3355FFSnowysnow gave you the roughest salt in the world^000000.";
+				mes "^3355FFSnowysnow ได้ให้เกลือที่เค็มที่สุดในโลกแก่หล่อน^000000.";
 				next;
 				mes "[Snowysnow]";
-				mes "I like her cooking because it's soooo delicious! Sometimes, she gives me grape syrup on snow flakes. Anyway, please deliver that salt for me, buddy~!";
-				close2;
-				cutin "",255;
-				end;
+				mes "ข้าชอบอาหารของเธอเพราะว่ามันอร่อยมากก! บางครั้ง หล่อนให้น้ำแข็งใสน้ำเชื่อมรสองุ่นกับข้า. อย่างไรก็ตาม, ได้โปรดส่งเกลือนั้นให้ธอหน่อยละกัน, เพื่อนข้า~!";
+				close2;	cutin "",255;	end;
 			case 7:
 				cutin "rutie_snownow01.bmp",2;
 				mes "[Snowysnow]";
-				mes "'^3355FFThe roughest";
-				mes "salt in the world^000000...'";
-				mes "Wow. Now, that's rough! Aunt Tachentze is always making pickles, so she sure could use it soon!";
-				close2;
-				cutin "",255;
-				end;
+				mes "'^3355FFเกลือ";
+				mes "ที่เค็มที่สุดในโลก^000000...'";
+				mes "ว้าว! เกลือนั่น! Aunt Tachentze ทำของดองเสมอๆ, ดังนั้นเธอสามารถใช้มันได้แน่นอน!";
+				close2;	cutin "",255;	end;
 			case 8:
 				cutin "rutie_snownow01.bmp",2;
 				mes "[Snowysnow]";
-				mes "Hashokii, the boring clown? At first, he seems kind of dumb and not really that funny. But deep inside, he cares a lot about other people.";
+				mes "Hashokii, ตัวตลกน่าเบื่อ? อย่างแรก, เขาดูเหมือนใบ้และนั่นก็ไม่ตลกเลย. แต่ลึกๆแล้ว เขาแคร์คนอื่นมาก.";
 				next;
 				mes "[Snowysnow]";
-				mes "He's always trying his best to make those two orphans laugh and forget their troubles...";
-				close2;
-				cutin "",255;
-				end;
+				mes "เขาพยายามอย่างดีที่สุดเพื่อจะทำให้เด็กกำพร้าสองคนนั้นหัวเราะและลืมปัญหาของพวกเขา...";
+				close2;	cutin "",255;	end;
 			case 9:
 				cutin "rutie_snownow01.bmp",2;
 				mes "[Snowysnow]";
-				mes "Ah...";
-				mes "So you've met Charu Charu? That boy is so full of optimism and always looking forward. When he grows up, he's going to be a big shot!";
+				mes "อ้า...";
+				mes "ท่านพบกับ Charu Charu แล้วใช่มั้ย? เขาเป็นคนที่มองโลกในแง่ดีและมองไปข้างหน้าเสมอ.เมื่อเขาโตขึ้น เขาจะเป็นพี่ใหญ่t!";
 				next;
 				mes "[Snowysnow]";
-				mes "I'm sure of it!";
-				mes "Hee hee hee~!";
-				close2;
-				cutin "",255;
-				end;
+				mes "ข้าแน่ใจ!";
+				mes "เฮๆๆๆๆ~!";
+				close2;	cutin "",255;	end;
 			case 10:
 				cutin "rutie_snownow01.bmp",2;
 				mes "[Snowysnow]";
-				mes "Thank you for listening to me so far. I really appreciate that you try to understand me, even though you're a stranger here.";
+				mes "ขอบใจที่ฟังข้ามาซะนาน. ข้าซาบซึ้งที่ท่านพยายามเข้าใจข้า แม้ว่าท่านจะเป็นคนแปลกหน้าที่นี่.";
 				next;
 				mes "[Snowysnow]";
-				mes "Now, you know me better than anyone else in this town. So, in return, I want to give you a small present.";
+				mes "ตอนนี้ท่านรู้จักข้าดีกว่าทุกคนในเมือง. ตาท่านแล้ว ข้าอยากให้ของขวัญเล็กๆน้อยๆแก่ท่าน.";
 				next;
 				mes "[Snowysnow]";
-				mes "Tah dah!";
-				mes "Pick anything";
-				mes "you want in here~";
+				mes "ทาา ดามม!";
+				mes "หยิบอะไรก็ตาม";
+				mes "ที่ท่านต้องการในนี้~";
 				next;
-				mes "^3355FFYou gingerly stir";
-				mes "your hand around in";
-				mes "Snowysnow's magical gift bag^000000.";
+				mes "^3355FF ท่านคนๆมือ";
+				mes "ของท่านใน";
+				mes "ถุงของ Snowysnow ใบนี้ ^000000.";
+				set .@snownow,rand(1,8);
 				next;
-				switch(rand(1,8)) {
+				switch(.@snownow) {
 				case 1:
 					set xmas_npc,11;
-					getitem 529,5;// Candy
+					getitem 529,5;	// Candy
 					cutin "rutie_snownow02.bmp",2;
 					mes "[Snowysnow]";
-					mes "Wow~!";
+					mes "ว้าว~!";
 					mes "^3355FF5 Candy^000000!";
-					mes "Congratulations!";
+					mes "ยินดีด้วย!";
 					break;
 				case 2:
 					set xmas_npc,11;
-					getitem 529,10;// Candy
+					getitem 529,10;	// Candy
 					cutin "rutie_snownow02.bmp",2;
 					mes "[Snowysnow]";
-					mes "Ooh~!";
+					mes "โอ้~!";
 					mes "^3355FF10 Candy^000000!";
 					break;
 				case 3:
 					set xmas_npc,11;
-					getitem 530,5;// Candy_Striper
+					getitem 530,5;	// Candy_Striper
 					cutin "rutie_snownow02.bmp",2;
 					mes "[Snowysnow]";
-					mes "Hoooraaaay~!";
+					mes "ฮ่าาา~!";
 					mes "^3355FF5 Candy Cane^000000!";
 					break;
 				case 4:
 					set xmas_npc,11;
-					getitem 530,10;// Candy_Striper
+					getitem 530,10;	// Candy_Striper
 					cutin "rutie_snownow02.bmp",2;
 					mes "[Snowysnow]";
-					mes "Wow, that's so great!";
+					mes "ว้าว, ยอดเยี่ยม!";
 					mes "^3355FF10 Candy Cane^000000!";
 					break;
 				case 5:
 					set xmas_npc,11;
-					getitem 539,1;// Piece_Of_Cake
+					getitem 539,1;	// Piece_Of_Cake
 					cutin "rutie_snownow02.bmp",2;
 					mes "[Snowysnow]";
-					mes "Aren't you lucky!";
+					mes "โชคไม่ดี!";
 					mes "^3355FF1 Piece Of Cake^000000!";
 					break;
 				case 6:
 					set xmas_npc,11;
-					getitem 539,2;// Piece_Of_Cake
+					getitem 539,2;	// Piece_Of_Cake
 					cutin "rutie_snownow02.bmp",2;
 					mes "[Snowysnow]";
-					mes "Now, isn't that nice?";
+					mes "ดีมั้ย?";
 					mes "^3355FF2 Piece Of Cake^000000!";
 					break;
 				case 7:
 					set xmas_npc,11;
-					getitem 538,5;// Well_Baked_Cookie
+					getitem 538,5;	// Well_Baked_Cookie
 					cutin "rutie_snownow02.bmp",2;
 					mes "[Snowysnow]";
-					mes "Oh woooooow~!";
+					mes "โอ้ ว้าวว~!";
 					mes "^3355FF5 Cookie^000000!";
 					break;
 				case 8:
 					set xmas_npc,11;
-					getitem 538,10;// Well_Baked_Cookie
+					getitem 538,10;	// Well_Baked_Cookie
 					cutin "rutie_snownow02.bmp",2;
 					mes "[Snowysnow]";
-					mes "*Gasp!* Ooh~";
+					mes "*อ้าาา!* โอ้~";
 					mes "^3355FF10 Cookie^000000!";
 					break;
 				}
 				next;
 				mes "[Snowysnow]";
-				mes "My dear friend, please visit me from time to time, so that we can chitchat, okay? See you soon! And Merry Christmas!";
-				close2;
-				cutin "",255;
-				end;
+				mes "เพื่อนรักของข้า, ได้โปรดมาเยี่ยมข้า แล้วเราจะได้พูดคุยกัน ตกลงมั้ย? แล้วเจอกัน! Merry Christmas!";
+				close2;	cutin "",255;	end;
 			case 11:
 				cutin "rutie_snownow02.bmp",2;
 				mes "[Snowysnow]";
-				mes "Hello hello!";
+				mes "ฮัลโล ฮัลโล!";
 				next;
 				mes "[Snowysnow]";
-				mes "You're always welcome in Lutie, especially by me, Snowysnow! Happy Kwanza, Happy Hannukah and Merry Christmas~!";
-				close2;
-				cutin "",255;
-				end;
+				mes "ยินดีต้อนรับสู่เมือง Lutie เสมอ โดยเฉพาะข้าา, Snowysnow!  Kwanza,  Hannukah และ Merry Christmas~!";
+				close2;	cutin "",255;	end;
 			}
 		}
 		case 2:
 			cutin "rutie_snownow01.bmp",2;
 			mes "[Snowysnow]";
-			mes "Around this wonderful town, eternally blessed with Christmas, there is a horrible dungeon, eternally cursed with Christmas.";
+			mes "รอบๆเมืองที่น่าอยู่นี้,  Christmas ตลอดกาลลล";
 			next;
 			mes "[Snowysnow]";
-			mes "I've heard that it's well decorated and looks just like a Toy Factory inside, where everything is so cute and pretty. They are Toy Soldiers and Gift Boxes as far as the eye can see!";
+			mes "ข้าเคยได้ยินว่ามันตกแต่งอย่างดีและดูเหมือนของเล่นโรงงานข้างใน มันเป็นที่ๆทุกสิ่งทุกอย่างน่ารักและสวยงาม. พวกเขาคือ Toy Soldiers และ Gift Boxes !";
 			next;
 			cutin "rutie_snownow01.bmp",2;
 			mes "[Snowysnow]";
-			mes "Isn't that soooo exciting?! *Sigh* Even if it is a dungeon, I would like to go inside just to look. If only I was a real boy, or even had legs...";
-			close2;
-			cutin "",255;
-			end;
+			mes "นั่นไม่หน้าตื่นเต้นใช่มั้ย?! *เฮ้อ* แม้ว่ามันคือ dungeon, ข้าอยากจะเข้าไปดูข้างใน. ถ้าข้าเป็นเด็กผู้ชายจริงๆ หรือมีขา...";
+			close2;	cutin "",255;	end;
 		case 3:
 			cutin "rutie_snownow03.bmp",2;
 			mes "[Snowysnow]";
-			mes "Bye bye, friend~!";
-			mes "Thank you for listening me~";
-			mes "I'll see you again, someday! You'll always be in my heart~";
-			close2;
-			cutin "",255;
-			end;
+			mes "บ้าย บาย, เพื่อนข้า~!";
+			mes "ขอบใจที่ฟังข้า~";
+			mes "แล้วเจอกัน วันหนึ่ง! ท่านจะอยู่ในใจของข้าเสมอ~";
+			close2;	cutin "",255;	end;
 		}
 }
 
 xmas,146,136,4	script	Hashokii	715,{
 	mes "[Hashokii]";
 	mes "Meeee~RrrrrYYYY Christmas~!";
-	mes "La La La~!";
-	mes "Dum di Dum di Dum!";
+	mes "ลา ล้า ลา~!";
+	mes "ดัม ดา ดี่ ดัม!";
 	next;
-	switch(select("Yo Clown boy, what's up?:About Snowysnow:Quit conversation")) {
+	switch(select("โย้ Clown boy,เป็นไงบ้าง?: เกี่ยวกับ Snowysnow:ออกจากบทสนทนา")) {
 	case 1:
 		mes "[Hashokii]";
-		mes "La La La~!";
-		mes "Dum di Dum di Dum!";
-		mes "Ooh, I'm trying to think of a good show to put on for Charu Charu and Marcell!";
+		mes "ลา ล้า ลา~!";
+	                  mes "ดัม ดา ดี่ ดัม!";
+		mes "โอ้, ข้าพยายามคิดถึงการแสดงดีๆ ที่จะแสดงสำหรับ Charu Charu และ Marcell!";
 		next;
 		mes "[Hashokii]";
-		mes "They are getting smarter and wittier everyday, and now it seems that they don't laugh at my best jokes anymore. How did they get to be so clever?";
+		mes "พวกเขาฉลาดขึ้นทุกวันๆ และตอนนี้ดูเหมือนเด็กผู้ชายนั้นไม่ขำกับเรื่องตลกของข้าเลย. พวกเขาฉลาดขนาดนั้นได้อย่างไรกันนะ?";
 		next;
 		mes "[Hashokii]";
-		mes "Well, if I work hard enough, they can't help but laugh at my hilarious jokes! So... I better start inventing better jokes. Like, pronto.";
+		mes "ถ้าข้าขยันพอ,พวกเขาช่วยอะไรไม่ได้ ได้แต่ขำกับเรื่องตลกของข้า !ดังนั้นข้าควรจะสร้างเรื่องที่น่าขำมากกว่านี้. อย่างเช่น, pronto.";
 		next;
 		mes "[Hashokii]";
-		mes "La La La~!";
-		mes "Dum di Dum di Dum";
+		mes "ลา ล้า ลา~!";
+	                  mes "ดัม ดา ดี่ ดัม!";
 		mes "Merry Christmas!";
 		close;
 	case 2:
 		if (xmas_npc == 8) {
 			mes "[Hashokii]";
-			mes "Dum di Dum di Dum";
-			mes "Ah ha! So you wanna learn more about Snowyshow! Let's see...";
+			mes "ดัม ดา ดี่ ดัม!";
+			mes "อะฮ้าา! ท่านอยากจะรู้เรื่อง Snowyshow! มาดูกัน...";
 			next;
 			mes "[Hashokii]";
-			mes "Well, there are two naughty kids,";
-			mes "^3355FF' Charu Charu '^000000 and";
-			mes "^3355FF' Marcell '^000000. They attend my show regularly. I'm guessing you've heard the story from Cantata?";
+			mes "อืม, มีเด็กดื้อสองคน,";
+			mes "^3355FF' Charu Charu '^000000 และ";
+			mes "^3355FF' Marcell '^000000. พวกเขามาดูโชว์ของข้าเป็นประจำ. ข้าคิดว่าท่านคงได้ยินเรื่องราวมาแล้วจากCantata ใช่มั้ย?";
 			next;
 			mes "[Hashokii]";
-			mes "Anyway, the two babies that were protected in Snowysnow's bosom? Yup, that's them. But Charu Charu and Marcell don't seem to know that Snowysnow saved them.";
+			mes "อย่างไรก็ตาม, เด็กทั้งสองนั่นเป้นเด็กที่อยู่ในการปกป้องของ Snowysnow ใช่มั้ย? ใช่แล้ว, พวกเขานั่นแหละ. แต่ Charu Charu กับ Marcell ดูเหมือนจะไม่รู้ว่า Snowysnow เป็นคนปกป้องพวกเขา.";
 			next;
 			mes "[Hashokii]";
-			mes "Snowysnow told me the story of how he let his body fly into the air to block the giant fire ball that was about to hit them when they were babies. For their sake, he was willing to sacrifice himself.";
+			mes "Snowysnow ได้เล่าให้ข้าฟังเรื่องที่เขาใช้ตัวปกป้องเด็กสองคนนั้นจากลูกไฟที่กำลังมุ่งมาทางพวกเขา. ในตอนนั้น เขายอมที่จะสละชีวิตตัวเอง.";
 			next;
 			mes "[Hashokii]";
-			mes "Why don't you go meet those 2 children? They might tell you the story we've never got the chance to hear. Okay then, good luck~! Bye bye!";
+			mes "ทำไมท่านไม่หาเด็กสองคนนั้นหละ? พวกเขาอาจจะบอกท่านในเรื่องที่เราไม่มีโอกาสได้รู้ก็เป็นได้ งั้นโชคดีละกัน~! บ้าย บาย!";
 			set xmas_npc,9;
 			close;
-		} else {
+		}else{
 			mes "[Hashokii]";
-			mes "Ah... ^3355FFSnowysnow^000000?";
-			mes "Of course I know him! Anyone who doesn't know Snowysnow is a total stranger around here! Sometimes, he and I share a nice chat...";
+			mes "ฮ้า... ^3355FFSnowysnow^000000?";
+			mes "แน่นอน ข้ารู้จักเขา! ใครก็ตามที่ไม่รู้จัก Snowysnow คงจะเป็นคนที่แปลกในเมืองนี้! บางครั้ง, เขากับข้าคุยกันอย่างสนุกสนาน...";
 			next;
 			mes "[Hashokii]";
-			mes "He makes such a a good audience for my show. But to be honest, I'm not sure if he really likes it or not. Most people don't seem to care for my jokes.";
+			mes "เขาเป็นผู้ฟังที่ดีทีเดียว.แต่ข้าก้ไม่แน่ใจว่าเขาชอบโชว์ของข้าจริงๆหรือเปล่า. คนส่วนใหญ่ดูเหมือนไม่แคร์เรื่องตลกของข้า.";
 			next;
 			mes "[Hashokii]";
-			mes "It totally baffles me! How could they not like the best jokes in the world?! Sheeeeesh~";
+			mes "มันปิดกั้นข้าจริงๆ! พวกเข้าไม่สนใจเรื่องตลกที่ขำที่สุดในโลกได้ยังไงกัน?! ชิ~";
 			next;
 			mes "[Hashokii]";
-			mes "Hmmm, sorry!";
-			mes "Anyway, Snowysnow";
-			mes "is a great guy!";
-			mes "La La La~!";
-			mes "Dum di Dum di Dum";
+			mes "ฮืม, โทษที!";
+			mes "อย่างไรก็ตาม, Snowysnow";
+			mes "เป็นคนที่ดีทีเดียว!";
+			mes "ลา ล้า ลา~!";
+	                                    mes "ดัม ดา ดี่ ดัม!";
 			mes "Merry Christmas- !!";
 			close;
 		}
@@ -841,41 +799,41 @@ xmas,146,136,4	script	Hashokii	715,{
 xmas,206,168,4	script	Little Boy	706,{
 	if (xmas_npc == 9) {
 		mes "[Charu Charu]";
-		mes "Errrm?";
+		mes "เอิมมม?";
 		mes "Snowysnow?";
 		next;
 		mes "[Charu Charu]";
-		mes "Hmmm, well...";
-		mes "He's a nice snowman!";
-		mes "You want to know more about Snowysnow? Ummm, I'm not that smart! Ask Marcell!";
+		mes "ฮึมม...";
+		mes "เขาเป็นมนุษย์หิมะที่ดีจริงๆ!";
+		mes "ท่านอยากจะรู้เรื่อง Snowysnow มากว่านี้ใช่มั้ย? อืมม, ข้าไม่ใช่คนฉลาดนั่น! ไปถาม Marcell นู่น!";
 		close;
-	} else {
+	}else{
 		mes "[Charu Charu]";
 		mes "Merry Merry Christmas!";
-		mes "Heheheheheh~!";
+		mes "เฮๆๆๆๆ~!";
 		next;
 		mes "[Charu Charu]";
-		mes "Did you talk to that clown guy over there? Isn't he soooooo booooring? (-.-)";
+		mes "ท่านคุยกับชายคนนั้นที่นั่นแล้วใช่มั้ย? เขาน่าเบื่อมากกกใช่มั้ยหละ? (-.-)";
 		next;
 		mes "[Charu Charu]";
-		mes "When Marcell and I watch his show, we feel like we're getting dumber and dumber~";
+		mes "เวลาที่ Marcell กับข้าดูการแสดงของเขา เรารู้สึกเหมือนกำลังจะเป็นใบ้~";
 		next;
 		mes "[Marcell]";
-		mes "Charu Charu!! Watch your mouth! How dare you say that about poor Hashokii?! He's always trying hard to make us happy!";
+		mes "Charu Charu!! ดูปากนายสิ! เจ้ากล้าพูดอย่างนั้นกับ Hashokii ผู้น่าสงสารได้อย่างไรกัน?! เขาพยายามอย่างหนักที่จะมำให้เรามีความสุข!";
 		next;
 		mes "[Charu Charu]";
-		mes "Yeah, yeah.";
-		mes "Whatever~";
-		mes "I already know that!";
-		mes "But he's not funny at all!";
-		mes "I'd rather stay with ^3355FFSnowysnow^000000~";
+		mes "ใช่ๆ.";
+		mes "ไม่ว่ายังไง~";
+		mes "ข้ารู้แล้ว!";
+		mes "แต่เขาไม่ตลกเอาซะเลย!";
+		mes "ข้าค่อนข้างอยู่กับ ^3355FFSnowysnow^000000 มากกว่า~";
 		next;
 		mes "[Charu Charu]";
-		mes "Oh well, if you didn't visit Snowysnow yet, you should see him at least once. He's funny!";
+		mes "โอ้, ถ้าเจ้ายังไม่ได้ไปเยี่ยม Snowysnow, เจ้าควรจะพบเขาอย่างน้อยครั้งหนึ่ง. เขาตลกดี!";
 		next;
 		mes "[Charu Charu]";
 		mes "Merry Christmas!";
-		mes "Enjoy your Holiday in Lutie~!";
+		mes "ขอให้มีความสุขในเมือง Lutie~!";
 		close;
 	}
 }
@@ -885,53 +843,53 @@ xmas,208,168,4	script	Little Girl	703,{
 		switch(xmas_npc) {
 		case 9:
 			mes "[Marcell]";
-			mes "You mean Snowysnow?";
-			mes "Of course I know him!";
+			mes "ท่านหมายถึง Snowysnow งั้นหรือ?";
+			mes "แน่นอน ข้ารู้จักเขา!";
 			next;
 			mes "[Marcell]";
-			mes "He's a nice and funny guy!";
-			mes "And as Charu Charu always insists, he's funnier than Hashokii~ (But please don't let Hashokii know!)";
+			mes "เขาเป้นคนที่น่ารักและตลก!";
+			mes "อย่างที่ Charu Charu ยืนยันเสมอๆ ว่าเขาตลกกว่า Hashokii~ (ได้โปรดอย่าบอก Hashokii นะ!)";
 			next;
 			mes "[Marcell]";
-			mes "Well, Charu Charu and I are orphans, and don't remember our parents at all. We've been brought up by the people here in Lutie.";
+			mes "อืม Charu Charu กับข้าเป็นเด็กกำพร้า เราจำพ่อแม่ของพวกเราไม่ได้แล้ว.เราถูกพาอยู่ที่นี่ในเมือง Lutie.";
 			next;
 			mes "[Marcell]";
-			mes "Uncle Cantata and Auntie Thachentze treated us like their own children, and Poze and Duffle have been like a brother and sister to us!";
+			mes "Uncle Cantata กับ Auntie Thachentze เลี้ยงดูเรามาเหมือนลูกของพวกเขา และ Poze กับ Duffle เป็นเหมือนพี่น้องเราเช่นกัน!";
 			next;
 			mes "[Marcell]";
-			mes "They're all nice and generous, and we always appreciate what they've done to take care of us.";
+			mes "พวกเขาน่ารักและมีน้ำใจและเราก็ซาบซึ้งที่พวกเขาดูแลเรา.";
 			next;
 			mes "[Marcell]";
-			mes "I also heard Snowysnow doesn't have a mommy or daddy too. And I also heard Snowysnow and us weren't born here, but somewhere else.";
+			mes "ข้ายังได้ยินมาว่า Snowysnow ไม่มีพ่อแม่เหมือนกัน. แล้วข้ายังได้ยินมาอีกว่า Snowysnow กับพวกเราไม่ได้เกิดที่นี่ แต่เป็นที่อื่น.";
 			next;
 			mes "[Marcell]";
-			mes "I've heard that Snowysnow and us actually come from the same place, although I'm not sure yet. But I know that Snowysnow and me have the same kind of burns on our body.";
+			mes "ข้าได้ว่า Snowysnow กับพวกเรามาจากที่ๆเดียวกันด้วย แม้ว่าข้าจะยังไม่ค่อยแน่ใจก็ตาม.แต่ข้าก็รู้ว่า Snowysnow กับข้ามีรอยไหม้บนร่างกายเหมือนกัน.";
 			next;
 			mes "[Marcell]";
-			mes "Charu Charu and I have these old burns on our backs, and Snowysnow has a dark smudge on his tummy. So I think we got burned all at the same time...";
+			mes "Charu Charu กับข้ามีรอยไหม้เหล่านั้นที่หลัง และ Snowysnow มีรอยสีดำๆที่ท้อง. ดังนั้นข้าคิดว่าเราถูกไฟเผาในเวลาเดียวกัน...";
 			next;
 			mes "[Marcell]";
-			mes "Oh, now I see . . . . .";
-			mes "You wanna learn all about Snowysnow because you want to become his friend! He'll be so happy to know that! Ooh! Maybe he'll give you a present! Good luck!";
+			mes "โอ้, ตอนนี้ข้าเข้าใจแล้ว . . . . .";
+			mes "ท่านอยากจะรู้เรื่องราวทั้งหมดของ Snowysnow เพราะท่านอยากจะเป็นเพื่อนกับเขา! เขาคงจะมีความสุขมากที่ได้รู้เช่นนั้น! โอ้! บางทีเขาอาจจะให้ของขวัญแก่ท่าน! โชคดี!";
 			set xmas_npc,10;
 			close;
 		case 10:
 			mes "[Marcell]";
-			mes "More than anybody else, you know the most about Snowysnow! Please talk to Mr.Snowysnow, he'll be happy to know you care about him. Merry Christmas!";
+			mes "ท่านรู้จักเรื่องเกี่ยวกับ Snowysnow มากที่สุด! ได้โปรดคุยกับ Mr.Snowysnow, เขาจะมีความสุขมากที่รู้ว่าท่านแคร์เขา. Merry Christmas!";
 			close;
 		}
-	} else {
+	}else{
 		mes "[Marcell]";
 		mes "Merry Christmas~!";
 		next;
 		mes "[Marcell]";
-		mes "It's freezing out here...! And Charu Charu makes me colder with his unbearable jokes. And the wind's blowing so hard!";
+		mes "ข้างนอกมันหนาวเป็นน้ำแข็ง...! แต่ Charu Charu ทำให้ข้าหนาวกว่าด้วยเรื่องตลกที่สุดจะทนของเขา และลมก็ยังพัดอย่างหนักเชียว!";
 		next;
 		mes "[Marcell]";
-		mes "You know what? Snowysnow has a special power. He can make as many presents as Santa Claus! Isn't that great?";
+		mes "ท่านรู้อะไรมั้ย? Snowysnow มีพลังวิเศษ. เขาสามารถสร้างของขวัญมากมายเหมือนกับ Santa Claus! เยื่ยมไปเลยใช่มั้ยหละ?";
 		next;
 		mes "[Marcell]";
-		mes "Huh? What's that look on your face for? Snowysnow has a big gift bag inside of his body, and gives gifts whenever he feels like it. What's so hard to believe about that?";
+		mes " Snowysnow มีถุงของขวัญอยู่ภายในตัวของเขา เขาให้ของขวัญได้เมื่อไหร่ก็ตามที่เขาต้องการ. มันยากที่จะเชื่อใช่มั้ยหละ?";
 		close;
 	}
 }

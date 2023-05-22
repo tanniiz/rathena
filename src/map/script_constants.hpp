@@ -464,6 +464,7 @@
 	export_constant(MF_NOPENALTY);
 	export_constant(MF_NOZENYPENALTY);
 	export_constant(MF_PVP);
+	export_constant(MF_MAPMVP);
 	export_constant(MF_PVP_NOPARTY);
 	export_constant(MF_PVP_NOGUILD);
 	export_constant(MF_GVG);

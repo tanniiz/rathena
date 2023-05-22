@@ -9944,7 +9944,7 @@ int pc_dead(map_session_data *sd,struct block_list *src)
 			ssd->pvp_point++;
 			ssd->pvp_won++;
 		}
-		if( sd->pvp_point < 0 ) {
+		if(sd->pvp_point < 0 && !mapdata->flag[MF_MAPMVP]) {
 			sd->respawn_tid = add_timer(tick+1000, pc_respawn_timer,sd->bl.id,0);
 			return 1|8;
 		}

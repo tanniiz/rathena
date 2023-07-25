@@ -145,6 +145,7 @@ ByMG:
 	mes .@heading$;
 	mes "คุณได้เปลี่ยน Baby Mage แล้วห่ะ";
 	jobchange 4025;
+	getitem 1601,1;
 	close;
 ByAC:
 	mes .@heading$;
@@ -154,6 +155,7 @@ ByAC:
 	mes .@heading$;
 	mes "คุณได้เปลี่ยน Baby Archer แล้วห่ะ";
 	jobchange 4026;
+	getitem 1701,1;
 	close;
 ByAL:
 	mes .@heading$;
@@ -163,6 +165,7 @@ ByAL:
 	mes .@heading$;
 	mes "คุณได้เปลี่ยน Baby Acolyte แล้วห่ะ";
 	jobchange 4027;
+	getitem 1504,1;
 	close;
 ByMC:
 	mes .@heading$;
@@ -271,6 +274,7 @@ swordman:
 	mes "โอเค...ตามนั้นห่ะ";
 	next;
 	jobchange 1;
+	getitem 1104,1;
 	mes "คุณได้เปลี่ยนเป็น";
 	mes "คราส Swordman เรียบร้อยแล้วห่ะ";
 	close;
@@ -284,6 +288,7 @@ mage:
 	mes "โอเค...ตามนั้นห่ะ";
 	next;
 	jobchange 2;
+	getitem 1601,1;
 	mes "คุณได้เปลี่ยนเป็น";
 	mes "คราส Mage เรียบร้อยแล้วห่ะ";
 	close;
@@ -297,6 +302,7 @@ archer:
 	mes "โอเค...ตามนั้นห่ะ";
 	next;
 	jobchange 3;
+	getitem 1701,1;
 	mes "คุณได้เปลี่ยนเป็น";
 	mes "คราส Archer เรียบร้อยแล้วห่ะ";
 	close;
@@ -310,6 +316,7 @@ acolyte:
 	mes "โอเค...ตามนั้นห่ะ";
 	next;
 	jobchange 4;
+	getitem 1601,1;
 	mes "คุณได้เปลี่ยนเป็น";
 	mes "คราส Acolyte เรียบร้อยแล้วห่ะ";
 	close;
@@ -323,6 +330,7 @@ merchant:
 	mes "โอเค...ตามนั้นห่ะ";
 	next;
 	jobchange 5;
+	getitem 1301,1;
 	mes "คุณได้เปลี่ยนเป็น";
 	mes "คราส Merchant เรียบร้อยแล้วห่ะ";
 	close;
@@ -336,6 +344,7 @@ thief:
 	mes "โอเค...ตามนั้นห่ะ";
 	next;
 	jobchange 6;
+	getitem 1204,1;
 	mes "คุณได้เปลี่ยนเป็น";
 	mes "คราส Thief เรียบร้อยแล้วห่ะ";
 	close;

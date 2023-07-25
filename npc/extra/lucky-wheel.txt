@@ -1,0 +1,144 @@
+morocc,171,96,4	script	Lucky Wheel	563,{
+  if (Zeny < .Zeny_Cost && #freewheelfortunespin < 0) {
+    mes "[ ^0055FFกงล้อหรรษา^000000 ]";
+    mes "คุณมี Zeny หรือ Free Spin ไม่เพียงพอ!";
+    close;
+  }
+
+  .@mes$ = (#freewheelfortunespin > 0) ?
+    "... โอ้ว! แต่เจ้ามี Free Spin ทั้งหมด " + #freewheelfortunespin : "";
+  cutin("aca_salim02", 2);
+
+  mes "[ ^0055FFกงล้อหรรษา^000000 ]";
+  mes "คุณต้องการจะหมุนกงล้อเสี่ยงโชคไหม ?";
+  mes "ค่าใช้จ่าย: ^FF0000" + .Zeny_Cost + " Zeny^000000" + .@mes$;
+  if( select("แน่นอน ข้าพกดวงมาด้วย:ไม่หล่ะ ใจข้ายังไม่พร้อม") == 2) { close; }
+	while( @menu == 1 ){
+    if (Zeny < .Zeny_Cost && #freewheelfortunespin < 0) {
+      mes "[ ^0055FFกงล้อหรรษา^000000 ]";
+      mes "คุณมี Zeny หรือ Free Spin ไม่เพียงพอ!";
+      close;
+    } else {
+      next;
+      mes "[ ^0055FFกงล้อหรรษา^000000 ]";
+      mes "เจ้าต้องการหมุน โดยจ่ายข้ายังไงหละ";
+      mes "Free Spin คงเหลือ: " + #freewheelfortunespin;
+      switch(select (
+        (#freewheelfortunespin > 0) ? "ข้าต้องการใช้ Free spin" : "",
+        (Zeny >= .Zeny_Cost ) ? "ข้าต้องการใช้ " + .Zeny_Cost + " zeny" : "",
+        "ไม่หละ! ข้าเปลี่ยนใจ"
+      )) {
+        case 1:
+          if (#freewheelfortunespin > 0) {
+            if ((#freewheelfortunespin -= 1) < 0)
+					    #freewheelfortunespin = 0;
+            goto S_Spin;
+          } else {
+            cutin("aca_salim02", 2);
+            mes "[ ^0055FFกงล้อหรรษา^000000 ]";
+            mes "อุ๊ย! เจ้ามีเงินไม่เพียงพอ...";
+            mes "ลาก่อน เจ้ายาจก!";
+            close2;
+          }
+          break;
+
+        case 2:
+          if (Zeny >= .Zeny_Cost) {
+              Zeny -= .Zeny_Cost;
+            goto S_Spin;
+          } else {
+            cutin("aca_salim02", 2);
+            mes "[ ^0055FFกงล้อหรรษา^000000 ]";
+            mes "อุ๊ย! เจ้ามีเงินไม่เพียงพอ...";
+            mes "ลาก่อน เจ้ายาจก!";
+            close2;
+          }
+          break;
+
+        default:
+          close2;
+      }
+    }
+  }
+
+  S_Spin:
+    .@Sector = rand(.Sector_Range[0], .Sector_Range[1]);
+    .@Display = .@Sector * 2 - 1;
+    .@Speed = .Spin_Speed;
+
+    next;
+    mes "[ ^0055FFกงล้อหรรษา^000000 ]";
+    mes "เอาหละ... เริ่มได้!";
+    
+    for (.@i = 0; .@i < .nbTurns; .@i++) {
+      .@b = .Cutin_Range[0];
+      while (.@b <= .Cutin_Range[1]) {
+        cutin(.Cutin$ + .@b, 4);
+        sleep2(.@Speed);
+        .@b++;
+        .@Speed += 1; // not ++, because  you may want to adjust the stopping +1 +2 +3
+      }
+    }
+    
+    .@b = .Cutin_Range[0];
+    while (.@b < .@Display) {
+      cutin(.Cutin$ + .@b, 4);
+      sleep2(.@Speed);
+      .@b++;
+    }
+
+    cutin(.Cutin$ + .@b, 4);
+
+    if (.Prize_ID[.@Sector] == -1) {
+      // Free spin
+      if (.Sound_Effects)
+        soundeffect "wheel_jackpot.wav", 0;
+
+      announce "[ กงล้อหรรษา ]: ว้าวว! ผู้เล่น [ " + strcharinfo(0) + " ] ได้รับ Free Spin",bc_all;
+      #freewheelfortunespin = #freewheelfortunespin == 0 ? .Prize_Qty[.@Sector] : #freewheelfortunespin + .Prize_Qty[.@Sector];
+    } else if (.Prize_ID[.@Sector] == 0) {
+      // Nothing
+      if (.Sound_Effects)
+        soundeffect "wheel_lost.wav", 0;
+      announce "[ กงล้อหรรษา ]: ว้าาา~ ผู้เล่น [ " + strcharinfo(0) + " ] โชคไม่ดี เสียใจด้วย นร้าาาาา ~",bc_all;
+    } else { 
+      // Item
+      if (.Sound_Effects)
+        soundeffect "wheel_won.wav", 0;
+
+      announce "[ กงล้อหรรษา ]: ว้าวว~ ผู้เล่น [ " + strcharinfo(0) + " ] ได้รับ " + "[ " + getitemname(.Prize_ID[.@Sector]) + " ] จำนวน " + .Prize_Qty[.@Sector] + "ea",bc_all;
+      getitem(.Prize_ID[.@Sector], .Prize_Qty[.@Sector]);
+    }
+
+    sleep2(1000);
+    if (Zeny < .Zeny_Cost && #freewheelfortunespin < 0) {
+      mes "[ ^0055FFกงล้อหรรษา^000000 ]";
+      mes "เงินเจ้าหมดแล้ว และไม่เหลือ Free Spin";
+      mes "ไว้กลับมาใหม่ ภายหลังนะ";
+    }
+    close2;
+
+  OnEnd:
+    cutin("", 255);
+    end;
+
+  OnInit:
+    waitingroom "กงล้อมหาสนุก",0;
+    .EventName$ = "Wheel Of Fortune";
+    // bindatcmd("wheel_of_fortune", "Wheel_of_Fortune::OnCommand", 98, 98, false);
+    .Spin_Speed = 10; // What is the base spin speed? (ms)
+    .nbTurns = 2; // How many times the arrow makes a complete turn, before entering the stopping routine
+    .Zeny_Cost = 50000; // How much zeny does it cost for a spin?
+    .Sound_Effects = true; // Enable sound effects? (true/false)
+
+    // You must have a total of 10 prizes. DO NOT remove 0 or -1 from the array and do not
+    // change their order.
+    setarray(.Prize_ID[1], -1, 14001, 14001, 30300,   30001,   60500, 617,   12269, 0,  12270);
+    setarray(.Prize_Qty[1], 2,     1,     2,     1,     50,     100,     1,     3, 0,     3);
+
+    // Don't touch below
+    .Cutin$ = "WheelOfFortune_";
+    setarray(.Sector_Range, 1, 10); // Sector range
+    setarray(.Cutin_Range, 0, 19); // Cutin range
+    end;
+}

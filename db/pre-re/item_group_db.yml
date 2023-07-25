@@ -7546,36 +7546,34 @@ Body:
       - SubGroup: 1
         List:
           - Item: CASH_COIN
-            Amount: 50
+            Amount: 10
             Rate: 10
-          - Item: Max_Weight_Up_Scroll
-            Rate: 5
-          - Item: Comp_Battle_Manual
-            Amount: 3
+          - Item: MOB_COIN
+            Amount: 100
             Rate: 10
-          - Item: Bubble_Gum
-            Amount: 3
+          - Item: Giant_Fly_Wing
+            Amount: 10
+            Rate: 10
+          - Item: Speed_Up_Potion
+            Rate: 10
+          - Item: Box_Of_Grudge
+            Rate: 10
+          - Item: Sleepy_Box
+            Rate: 10
+          - Item: Abrasive
             Rate: 10
           - Item: Str_Dish04
-            Rate: 15
-          - Item: Agi_Dish04
-            Rate: 15
-          - Item: Vit_Dish04
-            Rate: 15
-          - Item: Dex_Dish04
-            Rate: 15
-          - Item: Int_Dish04
-            Rate: 15
-          - Item: Luk_Dish04
-            Rate: 15
-          - Item: Basic_Siege_Supply_Box
             Rate: 10
-          - Item: Elite_Siege_Supply_Box
-            Rate: 5
-          - Item: Elunium_Box
-            Rate: 3
-          - Item: Oridecon_Box
-            Rate: 3
+          - Item: Agi_Dish04
+            Rate: 10
+          - Item: Vit_Dish04
+            Rate: 10
+          - Item: Dex_Dish04
+            Rate: 10
+          - Item: Int_Dish04
+            Rate: 10
+          - Item: Luk_Dish04
+            Rate: 10
           - Item: Rainbow_Scarf
             Rate: 1
             Announced: true
@@ -7588,19 +7586,10 @@ Body:
           - Item: Pirate's_Pride
             Rate: 1
             Announced: true
-          - Item: J_Captain_Hat
-            Rate: 1
-            Announced: true
           - Item: Robo_Eye
             Rate: 1
             Announced: true
-          - Item: FlyingGalapago
-            Rate: 1
-            Announced: true
           - Item: Blue_Pajamas_Hat
-            Rate: 1
-            Announced: true
-          - Item: Pink_Pajamas_Hat
             Rate: 1
             Announced: true
           - Item: Sigrun's_Wing
@@ -7610,38 +7599,6 @@ Body:
     SubGroups:
       - SubGroup: 1
         List:
-          - Item: CASH_COIN
-            Amount: 10
-            Rate: 10
-          - Item: MOB_COIN
-            Amount: 100
-            Rate: 10
-          - Item: Speed_Up_Potion
-            Rate: 7
-          - Item: Box_Of_Grudge
-            Rate: 7
-          - Item: Sleepy_Box
-            Rate: 7
-          - Item: Abrasive
-            Rate: 7
-          - Item: Str_Dish04
-            Rate: 3
-          - Item: Agi_Dish04
-            Rate: 3
-          - Item: Vit_Dish04
-            Rate: 3
-          - Item: Dex_Dish04
-            Rate: 3
-          - Item: Int_Dish04
-            Rate: 3
-          - Item: Luk_Dish04
-            Rate: 3
-          - Item: Siege_White_Potion
-            Amount: 5
-            Rate: 10
-          - Item: Siege_Blue_Potion
-            Amount: 5
-            Rate: 10
           - Item: STR_ARMOR_T1_OPTION
             Rate: 1
             Announced: true
@@ -7658,6 +7615,15 @@ Body:
             Rate: 1
             Announced: true
           - Item: LUK_ARMOR_T1_OPTION
+            Rate: 1
+            Announced: true
+          - Item: DROP_ARMOR_T1_OPTION
+            Rate: 1
+            Announced: true
+          - Item: EXP_ARMOR_T1_OPTION
+            Rate: 1
+            Announced: true
+          - Item: MDEF_ARMOR_T1_OPTION
             Rate: 1
             Announced: true
   - Group: LEO_SCROLL
@@ -7699,7 +7665,10 @@ Body:
           - Item: Siege_Blue_Potion
             Amount: 5
             Rate: 10
-          - Item: Orchid_Hairband
+          - Item: Pink_Pajamas_Hat
+            Rate: 1
+            Announced: true
+          - Item: J_Captain_Hat
             Rate: 1
             Announced: true
           - Item: Yoyo_Hat

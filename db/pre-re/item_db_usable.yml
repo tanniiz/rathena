@@ -713,6 +713,15 @@ Body:
     Name: Novice Potion
     Type: Healing
     Weight: 10
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoSell: true
+      NoCart: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+      NoStorage: true
     Flags:
       BuyingStore: true
     Script: |
@@ -4745,13 +4754,13 @@ Body:
       Duration: 60000
       Status: Reuse_Limit_C
     Trade:
-      NoDrop: true
-      NoTrade: true
-      NoSell: true
-      NoCart: true
-      NoGuildStorage: true
-      NoMail: true
-      NoAuction: true
+      NoDrop: false
+      NoTrade: false
+      NoSell: false
+      NoCart: false
+      NoGuildStorage: false
+      NoMail: false
+      NoAuction: false
     Script: |
       sc_start SC_EXPBOOST,1800000,50;
   - Id: 12209
@@ -5477,14 +5486,14 @@ Body:
     Buy: 2
     Weight: 70
     Trade:
-      NoDrop: true
-      NoTrade: true
-      NoSell: true
-      NoCart: true
-      NoStorage: true
-      NoGuildStorage: true
-      NoMail: true
-      NoAuction: true
+      NoDrop: false
+      NoTrade: false
+      NoSell: false
+      NoCart: false
+      NoStorage: false
+      NoGuildStorage: false
+      NoMail: false
+      NoAuction: false
     Script: |
       sc_start SC_ATKPOTION,60000,10;
       sc_start SC_MATKFOOD,60000,10;
@@ -5495,13 +5504,13 @@ Body:
     Buy: 2
     Weight: 70
     Trade:
-      NoDrop: true
-      NoTrade: true
-      NoCart: true
-      NoStorage: true
-      NoGuildStorage: true
-      NoMail: true
-      NoAuction: true
+      NoDrop: false
+      NoTrade: false
+      NoCart: false
+      NoStorage: false
+      NoGuildStorage: false
+      NoMail: false
+      NoAuction: false
     Script: |
       sc_start SC_ATKPOTION,600000,15;
   - Id: 12270
@@ -5511,13 +5520,13 @@ Body:
     Buy: 2
     Weight: 70
     Trade:
-      NoDrop: true
-      NoTrade: true
-      NoCart: true
-      NoStorage: true
-      NoGuildStorage: true
-      NoMail: true
-      NoAuction: true
+      NoDrop: false
+      NoTrade: false
+      NoCart: false
+      NoStorage: false
+      NoGuildStorage: false
+      NoMail: false
+      NoAuction: false
     Script: |
       sc_start SC_MATKPOTION,600000,15;
   - Id: 12271
@@ -22094,6 +22103,15 @@ Body:
     Type: Usable
     Buy: 20
     Weight: 1
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoSell: true
+      NoCart: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+      NoStorage: true
     Script: |
       vip_time(60*24);
   - Id: 41015
@@ -22102,6 +22120,15 @@ Body:
     Type: Usable
     Buy: 20
     Weight: 1
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoSell: true
+      NoCart: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+      NoStorage: true
     Script: |
       vip_time(60*24*7);
 
@@ -22243,5 +22270,29 @@ Body:
     Buy: 20
     Weight: 1
     Script: |
-      callfunc "F_DoOption",EQI_ARMOR,45,1,15,8,50,60105;
+      callfunc "F_DoOption",EQI_ARMOR,45,1,15,8,100,60105;
+  - Id: 60106
+    AegisName: DROP_ARMOR_T1_OPTION
+    Name: Drop Armor Tier1 Option Box
+    Type: Usable
+    Buy: 20
+    Weight: 1
+    Script: |
+      callfunc "F_DoOption",EQI_ARMOR,45,1,15,300,50,60106;
+  - Id: 60107
+    AegisName: EXP_ARMOR_T1_OPTION
+    Name: EXP Armor Tier1 Option Box
+    Type: Usable
+    Buy: 20
+    Weight: 1
+    Script: |
+      callfunc "F_DoOption",EQI_ARMOR,45,1,15,242,200,60107;
+  - Id: 60108
+    AegisName: MDEF_ARMOR_T1_OPTION
+    Name: MDEF Armor Tier1 Option Box
+    Type: Usable
+    Buy: 20
+    Weight: 1
+    Script: |
+      callfunc "F_DoOption",EQI_ARMOR,45,1,15,21,50,60108;
 

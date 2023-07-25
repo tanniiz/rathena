@@ -58,6 +58,12 @@ Body:
     Multiplier: 300
     Script: |
       bonus bMatk,getrandomoptinfo(ROA_VALUE);
+  - Id: 21
+    Option: VAR_MDEFPOWER
+    Type: 1
+    Multiplier: 50
+    Script: |
+      bonus bMdef,getrandomoptinfo(ROA_VALUE);
   - Id: 242
     Option: ADDEXPPERCENT_KILLRACE_ALL
     Type: 1
@@ -103,6 +109,6 @@ Body:
   - Id: 8
     Option: VAR_LUKAMOUNT
     Type: 1
-    Multiplier: 50
+    Multiplier: 100
     Script: |
       bonus bLuk,getrandomoptinfo(ROA_VALUE);

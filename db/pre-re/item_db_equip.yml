@@ -41321,7 +41321,7 @@ Body:
     SubType: Katar
     Buy: 0
     Weight: 1500
-    Attack: 165
+    Attack: 125
     Range: 1
     Slots: 2
     Jobs:
@@ -41354,13 +41354,13 @@ Body:
       bonus bStr,4;
       bonus2 bSkillAtk,42,getrefine() * 4;
   - Id: 68103
-    AegisName: DOUBLE_STRAFE_MASTER_GAKKUNG_BOW
-    Name: Double Strafe Master Gakkung Bow
+    AegisName: DOUBLE_STRAFE_MASTER_ARBALEST_BOW
+    Name: Double Strafe Master Arbalest Bow
     Type: Weapon
     SubType: Bow
     Buy: 0
     Weight: 1100
-    Attack: 100
+    Attack: 90
     Range: 5
     Slots: 2
     Jobs:

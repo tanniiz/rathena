@@ -5241,8 +5241,8 @@ static const char* npc_parse_mob(char* w1, char* w2, char* w3, char* w4, const c
 	}
 
 	if (w4count > 2 && delay != 5000 && delay < battle_config.mob_respawn_time) {
-		ShowWarning("npc_parse_mob: Invalid delay %u for mob ID %d (file '%s', line '%d'), defaulting to 5 seconds.\n", delay, mob_id, filepath, strline(buffer, start - buffer));
-		mob.delay1 = 5000;
+		// ShowWarning("npc_parse_mob: Invalid delay %u for mob ID %d (file '%s', line '%d'), defaulting to 5 seconds.\n", delay, mob_id, filepath, strline(buffer, start - buffer));
+		mob.delay1 = battle_config.mob_respawn_time;
 	} else
 		mob.delay1 = delay;
 

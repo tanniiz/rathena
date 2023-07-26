@@ -33,13 +33,12 @@ morocc,171,92,4	script	Lucky Wheel#Cash	563,{
             if ((#freewheelfortunespin -= 1) < 0)
 					    #freewheelfortunespin = 0;
             goto S_Spin;
-            close2;
           } else {
             cutin("aca_salim02", 2);
             mes "[ ^0055FFกงล้อหรรษา^000000 ]";
             mes "อุ๊ย! เจ้ามีเงินไม่เพียงพอ...";
             mes "ลาก่อน เจ้ายาจก!";
-            close2;
+            goto S_End;
           }
           break;
 
@@ -47,18 +46,17 @@ morocc,171,92,4	script	Lucky Wheel#Cash	563,{
           if (#CASHPOINTS >= .Zeny_Cost) {
               #CASHPOINTS -= .Zeny_Cost;
             goto S_Spin;
-            close2;
           } else {
             cutin("aca_salim02", 2);
             mes "[ ^0055FFกงล้อหรรษา^000000 ]";
             mes "อุ๊ย! เจ้ามีเงินไม่เพียงพอ...";
             mes "ลาก่อน เจ้ายาจก!";
-            close2;
+            goto S_End;
           }
           break;
 
         default:
-          close2;
+          goto S_End;
       }
     }
   }
@@ -119,6 +117,9 @@ morocc,171,92,4	script	Lucky Wheel#Cash	563,{
       mes "ไว้กลับมาใหม่ ภายหลังนะ";
     }
     close2;
+
+  S_End:
+	  close2;
 
   OnEnd:
     cutin("", 255);

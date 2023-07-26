@@ -116,7 +116,7 @@ morocc,171,96,4	script	Lucky Wheel	563,{
       mes "เงินเจ้าหมดแล้ว และไม่เหลือ Free Spin";
       mes "ไว้กลับมาใหม่ ภายหลังนะ";
     }
-    goto S_End;
+    end;
 
   S_End:
 	  close2;

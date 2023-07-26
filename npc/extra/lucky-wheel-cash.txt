@@ -33,6 +33,7 @@ morocc,171,92,4	script	Lucky Wheel#Cash	563,{
             if ((#freewheelfortunespin -= 1) < 0)
 					    #freewheelfortunespin = 0;
             goto S_Spin;
+            close2;
           } else {
             cutin("aca_salim02", 2);
             mes "[ ^0055FF°ß≈ÈÕÀ√√…“^000000 ]";
@@ -46,6 +47,7 @@ morocc,171,92,4	script	Lucky Wheel#Cash	563,{
           if (#CASHPOINTS >= .Zeny_Cost) {
               #CASHPOINTS -= .Zeny_Cost;
             goto S_Spin;
+            close2;
           } else {
             cutin("aca_salim02", 2);
             mes "[ ^0055FF°ß≈ÈÕÀ√√…“^000000 ]";

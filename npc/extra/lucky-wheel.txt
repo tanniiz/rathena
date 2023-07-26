@@ -33,6 +33,7 @@ morocc,171,96,4	script	Lucky Wheel	563,{
             if ((#freewheelfortunespin -= 1) < 0)
 					    #freewheelfortunespin = 0;
             goto S_Spin;
+            close2;
           } else {
             cutin("aca_salim02", 2);
             mes "[ ^0055FFกงล้อหรรษา^000000 ]";
@@ -53,6 +54,7 @@ morocc,171,96,4	script	Lucky Wheel	563,{
             mes "ลาก่อน เจ้ายาจก!";
             close2;
           }
+          close2;
           break;
 
         default:

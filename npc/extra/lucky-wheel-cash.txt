@@ -110,13 +110,26 @@ morocc,171,92,4	script	Lucky Wheel#Cash	563,{
       getitem(.Prize_ID[.@Sector], .Prize_Qty[.@Sector]);
     }
 
-    sleep2(1000);
+    sleep2(500);
     if (#CASHPOINTS < .Zeny_Cost && #freewheelfortunespin < 0) {
       mes "[ ^0055FFกงล้อหรรษา^000000 ]";
       mes "เงินเจ้าหมดแล้ว และไม่เหลือ Free Spin";
       mes "ไว้กลับมาใหม่ ภายหลังนะ";
+      close2;
+    } else {
+      mes "[ ^0055FFกงล้อหรรษา^000000 ]";
+      mes "เล่นต่อ ?";
+      switch(select ("ใช่! แน่นอน","ไม่หละ")) {
+        case 1:
+          goto S_Spin;
+          break;
+
+        case 2:
+        default:
+          goto S_End;
+        }
+      }
     }
-    goto S_End;
 
   S_End:
 	  close2;

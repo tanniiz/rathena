@@ -1,4 +1,4 @@
-morocc,171,96,4	script	Lucky Wheel	563,{
+morocc,171,96,4	script	Lucky Wheel#Zeny	563,{
   if (Zeny < .Zeny_Cost && #freewheelfortunespin < 0) {
     mes "[ ^0055FFกงล้อหรรษา^000000 ]";
     mes "คุณมี Zeny หรือ Free Spin ไม่เพียงพอ!";

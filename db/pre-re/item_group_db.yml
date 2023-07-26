@@ -7595,6 +7595,28 @@ Body:
           - Item: Sigrun's_Wing
             Rate: 1
             Announced: true
+  - Group: LUCKY_EGG_C5
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Item: DROP_WEAPON_T1_OPTION
+            Rate: 1
+            Announced: true
+          - Item: CRITICAL_WEAPON_T1_OPTION
+            Rate: 1
+            Announced: true
+          - Item: ATK_WEAPON_T1_OPTION
+            Rate: 1
+            Announced: true
+          - Item: MATK_WEAPON_T1_OPTION
+            Rate: 1
+            Announced: true
+          - Item: EXP_WEAPON_T1_OPTION
+            Rate: 1
+            Announced: true
+          - Item: ASPD_WEAPON_T1_OPTION
+            Rate: 1
+            Announced: true
   - Group: LUCKY_EGG_C6
     SubGroups:
       - SubGroup: 1

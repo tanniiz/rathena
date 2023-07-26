@@ -22223,6 +22223,14 @@ Body:
     Weight: 0
     Script: |
       getgroupitem(IG_LIBRA_SCROLL);
+  - Id: 30303
+    AegisName: WEAPON_OPTION_T1_SCROLL
+    Name: Weapon Option T1 Scroll
+    Type: Usable
+    Buy: 20
+    Weight: 0
+    Script: |
+      getgroupitem(IG_LUCKY_EGG_C5);
   - Id: 60100
     AegisName: STR_ARMOR_T1_OPTION
     Name: Str Armor Tier1 Option Box

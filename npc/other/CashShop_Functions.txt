@@ -49,48 +49,48 @@ function	script	F_CashStore	{
 //============================================================ 
 function	script	F_WeightUp	{
 	mes "^0066FF[ Weight UP Book ]^000000";
-	mes "สกิล Enlarge Weight Limit";
-	mes "สกิลนี้ทำให้ถือของได้หนักขึ้น";
-	mes "น้ำหนัก +200 / 1 ครั้ง ที่ใช้งาน";
-	mes "1 ตัวละครสามารถเรียนได้ 10 ครั้ง ";
-	mes "เข้าใจตรงกันนะ ? ";
+	mes "สก๏ฟฝ๏ฟฝ Enlarge Weight Limit";
+	mes "สก๏ฟฝลน๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝอของ๏ฟฝ๏ฟฝหนัก๏ฟฝ๏ฟฝ๏ฟฝ";
+	mes "๏ฟฝ๏ฟฝ๏ฟฝหนัก +200 / 1 ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝาน";
+	mes "1 ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝะค๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝรถ๏ฟฝ๏ฟฝ๏ฟฝยน๏ฟฝ๏ฟฝ 10 ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ ";
+	mes "๏ฟฝ๏ฟฝ๏ฟฝใจตรง๏ฟฝัน๏ฟฝ๏ฟฝ ? ";
 	next;
-	switch(select("^ff0000•^000000 เยส..เซอร์!! ลุย !:^ff0000•^000000 ช้าก่อน..")) {
+	switch(select("^ff0000๏ฟฝ^000000 ๏ฟฝ๏ฟฝ๏ฟฝ..๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ!! ๏ฟฝ๏ฟฝ๏ฟฝ !:^ff0000๏ฟฝ^000000 ๏ฟฝ๏ฟฝาก๏ฟฝอน..")) {
 	case 1:
 		if (gympassmemory < 10) {
 			set .@add_carry,gympassmemory + 1;
 			set .@remain_carry,10 - .@add_carry;
 			mes "^0066FF[ Weight UP Book ]^000000";
-			mes "เตรียมตัวให้พร้อม..";
-			mes "ทำใจให้ สงบ เตรียมรับพลัง!!";
+			mes "๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ..";
+			mes "๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ สง๏ฟฝ ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝับ๏ฟฝ๏ฟฝัง!!";
 			mes "1 2 3 4 . . .";
 			next;
 			mes "^0066FF[ Weight UP Book ]^000000";
-			mes "ฮึ๊บ ฮึ๊บ ~";
+			mes "๏ฟฝ๏ฟฝ๏ฟฝ ๏ฟฝ๏ฟฝ๏ฟฝ ~";
 			specialeffect2 EF_EARTHSPIKE;
 			specialeffect2 EF_DEVIL;
 			specialeffect2 EF_COIN;
 			specialeffect2 EF_SIGHTRASHER;
 			next;
 			mes "^0066FF[ Weight UP Book ]^000000";
-			mes "ยินดีด้วย !!";
-			mes "เจ้าแข็งแกร่งขึ้นแล้วเด็กน้อย";
-			mes "หวังว่าเจ้าจะมีความสุข";
-			mes "กับพลังที่เพิ่มขึ้นของเจ้า !!";
+			mes "๏ฟฝิน๏ฟฝีด๏ฟฝ๏ฟฝ๏ฟฝ !!";
+			mes "๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ่งข๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ็กน๏ฟฝ๏ฟฝ๏ฟฝ";
+			mes "๏ฟฝ๏ฟฝัง๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝาจ๏ฟฝ๏ฟฝีค๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝุข";
+			mes "๏ฟฝับ๏ฟฝ๏ฟฝัง๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ้นของ๏ฟฝ๏ฟฝ๏ฟฝ !!";
 			set gympassmemory,.@add_carry;
 			skill "ALL_INCCARRY",.@add_carry,SKILL_PERM_GRANT;
 			close;
 		} else {
 			mes "^0066FF[ Weight UP Book ]^000000";
-			mes "ท่านไม่สามารถเรียนได้แล้ว";
-			mes "ท่านเรียนไปถึงเลเวล 10 แล้ว";
+			mes "๏ฟฝ๏ฟฝาน๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝรถ๏ฟฝ๏ฟฝ๏ฟฝยน๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ";
+			mes "๏ฟฝ๏ฟฝาน๏ฟฝ๏ฟฝ๏ฟฝยนไปถึง๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ 10 ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ";
 			close;
 		}
 case 2:
 	mes "^0066FF[ Weight UP Book ]^000000";
-	mes "โอเค..";
-	mes "ไว้เจ้าพร้อมเมื่อไหร่";
-	mes "เรียกใช้งานข้าได้ทุกเมื่อ...";
+	mes "๏ฟฝ๏ฟฝ๏ฟฝ..";
+	mes "๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝาพ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ";
+	mes "๏ฟฝ๏ฟฝ๏ฟฝยก๏ฟฝ๏ฟฝาน๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝุก๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ...";
 	close;
 	}
 }
@@ -128,27 +128,29 @@ function	script	F_CashReset	{
 function	script	F_CashDungeon	{
 	switch(getarg(0)) {
 	case 1:
-		switch(select("Nogg Road:Mjolnir Dead Pit:"+((checkre(0))?"":"Umbala Dungeon")+":Einbroch Mine Dungeon:Payon Dungeon:Toy Dungeon:Glast Heim Underprison:Luoyang Dungeon:Hermit's Checkers:Izlude Dungeon:Turtle Island Dungeon:Clock Tower B3f:Clock Tower 3f:Glast Heim Culvert 2f:Sphinx Dungeon 4f:Inside Pyramid 4f:Prontera Culvert 3f:Amatsu Dungeon 1f (Tatami Maze):Somatology Laboratory 1st floor:Ayothya Ancient Shrine 2nd floor")) {
-		case 1: warp "mag_dun01",125,71; end;	// Nogg Road
-		case 2: warp "mjo_dun02",80,297; end;	// Mjolnir Dead Pit
-		case 3: warp "um_dun02",125,122; end;	// Umbala Dungeon (Pre-Renewal only)
-		case 4: warp "ein_dun01",261,262; end;	// Einbroch Dungeon
-		case 5: warp "pay_dun03",155,150; end;	// Payon Caves
-		case 6: warp "xmas_dun01",133,130; end;	// Toy Factory
-		case 7: warp "gl_prison",140,15; end;	// Glast Heim Prison
-		case 8: warp "lou_dun03",165,38; end;	// Luoyang Dungeon
-		case 9: warp "gon_dun02",251,263; end;	// Kunlun Dungeon
-		case 10: warp "iz_dun02",350,335; end;	// Izlude Undersea Tunnel
-		case 11: warp "tur_dun02",165,30; end;	// Turtle Island
-		case 12: warp "alde_dun03",275,180; end;	// Clocktower 3F
-		case 13: warp "c_tower3",34,42; end;	// Clocktower B3F
-		case 14: warp "gl_sew02",292,295; end;	// Glast Heim Sewers 2F
-		case 15: warp "in_sphinx4",120,120; end;	// Sphinx Dungeon 4F
-		case 16: warp "moc_pryd04",195,4; end;	// Pyramid Dungeon 4F
-		case 17: warp "prt_sewb3",20,175; end;	// Prontera Culverts 3F
-		case 18: warp "ama_dun01",222,144; end;	// Amatsu Dungeon 1F
-		case 19: warp "lhz_dun01",19,153; end;	// Somatology Laboratory 1F
-		case 20: warp "ayo_dun02",70,240; end;	// Ayothaya Dungeon 2F
+		switch(
+			select(
+				"Mjolnir Dead Pit:Payon Dungeon:Toy Dungeon:Glast Heim Underprison:Izlude Dungeon:Turtle Island Dungeon:Clock Tower B3f:Clock Tower 3f:Glast Heim Culvert 2f:Sphinx Dungeon 4f:Inside Pyramid 4f:Prontera Culvert 3f")) {
+		// case 1: warp "mag_dun01",125,71; end;	// Nogg Road
+		case 1: warp "mjo_dun02",80,297; end;	// Mjolnir Dead Pit
+		// case : warp "um_dun02",125,122; end;	// Umbala Dungeon (Pre-Renewal only)
+		// case : warp "ein_dun01",261,262; end;	// Einbroch Dungeon
+		case 2: warp "pay_dun03",155,150; end;	// Payon Caves
+		case 3: warp "xmas_dun01",133,130; end;	// Toy Factory
+		case 4: warp "gl_prison",140,15; end;	// Glast Heim Prison
+		// case : warp "lou_dun03",165,38; end;	// Luoyang Dungeon
+		// case : warp "gon_dun02",251,263; end;	// Kunlun Dungeon
+		case 5: warp "iz_dun02",350,335; end;	// Izlude Undersea Tunnel
+		case 6: warp "tur_dun02",165,30; end;	// Turtle Island
+		case 7: warp "alde_dun03",275,180; end;	// Clocktower 3F
+		case 8: warp "c_tower3",34,42; end;	// Clocktower B3F
+		case 9: warp "gl_sew02",292,295; end;	// Glast Heim Sewers 2F
+		case 10: warp "in_sphinx4",120,120; end;	// Sphinx Dungeon 4F
+		case 11: warp "moc_pryd04",195,4; end;	// Pyramid Dungeon 4F
+		case 12: warp "prt_sewb3",20,175; end;	// Prontera Culverts 3F
+		// case : warp "ama_dun01",222,144; end;	// Amatsu Dungeon 1F
+		// case : warp "lhz_dun01",19,153; end;	// Somatology Laboratory 1F
+		// case : warp "ayo_dun02",70,240; end;	// Ayothaya Dungeon 2F
 		}
 	case 2: // Menu names are not official.
 		switch(select("Thor Volcano 2f:Ice Dungeon Entrance:Nameless Island Entrance:Niflheim:Labyrinth Forest 2f:Ruins of Juperos Entrance:Ant Hell 2f:Kiel Hyre's Academy Entrance:Thanatos Tower Entrance:Abyss Lake Entrance:Rachel Sanctuary Entrance:Odin Temple 2f")) {

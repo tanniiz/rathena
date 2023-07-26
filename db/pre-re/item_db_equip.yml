@@ -23971,7 +23971,7 @@ Body:
     ArmorLevel: 1
     Script: |
       bonus bCritical,5;
-      if (Class == Job_Thief)
+      if (Class == Job_Thief || Class == Job_Assassin)
         bonus bAspdRate,5;
   - Id: 2771
     AegisName: Merchant_Figure

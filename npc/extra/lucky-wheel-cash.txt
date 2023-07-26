@@ -1,5 +1,5 @@
-morocc,171,96,4	script	Lucky Wheel	563,{
-  if (Zeny < .Zeny_Cost && #freewheelfortunespin < 0) {
+morocc,171,92,4	script	Lucky Wheel#Cash	563,{
+  if (#CASHPOINTS < .Zeny_Cost && #freewheelfortunespin < 0) {
     mes "[ ^0055FFกงล้อหรรษา^000000 ]";
     mes "คุณมี Zeny หรือ Free Spin ไม่เพียงพอ!";
     close;
@@ -11,12 +11,12 @@ morocc,171,96,4	script	Lucky Wheel	563,{
 
   mes "[ ^0055FFกงล้อหรรษา^000000 ]";
   mes "คุณต้องการจะหมุนกงล้อเสี่ยงโชคไหม ?";
-  mes "ค่าใช้จ่าย: ^FF0000" + .Zeny_Cost + " Zeny^000000" + .@mes$;
+  mes "ค่าใช้จ่าย: ^FF0000" + #CASHPOINTS + " Cash^000000" + .@mes$;
   if( select("แน่นอน ข้าพกดวงมาด้วย:ไม่หล่ะ ใจข้ายังไม่พร้อม") == 2) { close; }
 	while( @menu == 1 ){
-    if (Zeny < .Zeny_Cost && #freewheelfortunespin < 0) {
+    if (#CASHPOINTS < .Zeny_Cost && #freewheelfortunespin < 0) {
       mes "[ ^0055FFกงล้อหรรษา^000000 ]";
-      mes "คุณมี Zeny หรือ Free Spin ไม่เพียงพอ!";
+      mes "คุณมี Cash Point หรือ Free Spin ไม่เพียงพอ!";
       close;
     } else {
       next;
@@ -25,7 +25,7 @@ morocc,171,96,4	script	Lucky Wheel	563,{
       mes "Free Spin คงเหลือ: " + #freewheelfortunespin;
       switch(select (
         (#freewheelfortunespin > 0) ? "ข้าต้องการใช้ Free spin" : "",
-        (Zeny >= .Zeny_Cost ) ? "ข้าต้องการใช้ " + .Zeny_Cost + " zeny" : "",
+        (#CASHPOINTS >= .Zeny_Cost ) ? "ข้าต้องการใช้ " + .Zeny_Cost + " Cash Point" : "",
         "ไม่หละ! ข้าเปลี่ยนใจ"
       )) {
         case 1:
@@ -43,8 +43,8 @@ morocc,171,96,4	script	Lucky Wheel	563,{
           break;
 
         case 2:
-          if (Zeny >= .Zeny_Cost) {
-              Zeny -= .Zeny_Cost;
+          if (#CASHPOINTS >= .Zeny_Cost) {
+              #CASHPOINTS -= .Zeny_Cost;
             goto S_Spin;
           } else {
             cutin("aca_salim02", 2);
@@ -111,7 +111,7 @@ morocc,171,96,4	script	Lucky Wheel	563,{
     }
 
     sleep2(1000);
-    if (Zeny < .Zeny_Cost && #freewheelfortunespin < 0) {
+    if (#CASHPOINTS < .Zeny_Cost && #freewheelfortunespin < 0) {
       mes "[ ^0055FFกงล้อหรรษา^000000 ]";
       mes "เงินเจ้าหมดแล้ว และไม่เหลือ Free Spin";
       mes "ไว้กลับมาใหม่ ภายหลังนะ";
@@ -123,17 +123,17 @@ morocc,171,96,4	script	Lucky Wheel	563,{
     end;
 
   OnInit:
-    waitingroom "กงล้อมหาสนุก [Zeny]",0;
-    .EventName$ = "Wheel Of Fortune (Zeny)";
+    waitingroom "กงล้อมหาสนุก [Cash]",0;
+    .EventName$ = "Wheel Of Fortune (Cash)";
     // bindatcmd("wheel_of_fortune", "Wheel_of_Fortune::OnCommand", 98, 98, false);
     .Spin_Speed = 10; // What is the base spin speed? (ms)
     .nbTurns = 2; // How many times the arrow makes a complete turn, before entering the stopping routine
-    .Zeny_Cost = 50000; // How much zeny does it cost for a spin?
+    .Zeny_Cost = 490; // How much zeny does it cost for a spin?
     .Sound_Effects = true; // Enable sound effects? (true/false)
 
     // You must have a total of 10 prizes. DO NOT remove 0 or -1 from the array and do not
     // change their order.
-    setarray(.Prize_ID[1], -1, 14001, 14001, 30300,   30001,   60500, 617,   12269, 0,  12270);
+    setarray(.Prize_ID[1], -1, 14001, 14001, 30303,   30001,   60500, 617,   12269, 0,  12270);
     setarray(.Prize_Qty[1], 2,     1,     2,     1,     50,     100,     1,     3, 0,     3);
 
     // Don't touch below

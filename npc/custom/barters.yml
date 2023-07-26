@@ -44,3 +44,166 @@
 Header:
   Type: BARTER_DB
   Version: 1
+Body:
+  - Name: General_Costume
+    Items:
+      - Index: 0
+        Zeny: 150000
+        Item: COSTUME_APPLE_OF_ARCHER
+        RequiredItems:
+          - Index: 0
+            Item: Apple_Of_Archer
+            Amount: 1
+          - Index: 1
+            Item: Elunium
+            Amount: 10
+          - Index: 2
+            Item: Oridecon
+            Amount: 10
+          - Index: 3
+            Item: MOB_COIN
+            Amount: 500
+      - Index: 1
+        Zeny: 150000
+        Item: COSTUME_WIZARD_HAT
+        RequiredItems:
+          - Index: 0
+            Item: Star_Sparkling
+            Amount: 1
+          - Index: 1
+            Item: Elunium
+            Amount: 10
+          - Index: 2
+            Item: Oridecon
+            Amount: 10
+          - Index: 3
+            Item: MOB_COIN
+            Amount: 500
+      - Index: 2
+        Zeny: 150000
+        Item: COSTUME_SAKKAT
+        RequiredItems:
+          - Index: 0
+            Item: Sahkkat
+            Amount: 1
+          - Index: 1
+            Item: Elunium
+            Amount: 10
+          - Index: 2
+            Item: Oridecon
+            Amount: 10
+          - Index: 3
+            Item: MOB_COIN
+            Amount: 500
+      - Index: 3
+        Zeny: 150000
+        Item: COSTUME_MARIONETTE_DOLL
+        RequiredItems:
+          - Index: 0
+            Item: Marionette_Doll
+            Amount: 1
+          - Index: 1
+            Item: Elunium
+            Amount: 10
+          - Index: 2
+            Item: Oridecon
+            Amount: 10
+          - Index: 3
+            Item: MOB_COIN
+            Amount: 500
+      - Index: 4
+        Zeny: 50000
+        Item: COSTUME_OPERA_MASK
+        RequiredItems:
+          - Index: 0
+            Item: Phantom_Of_Opera
+            Amount: 1
+          - Index: 1
+            Item: Elunium
+            Amount: 10
+          - Index: 2
+            Item: Oridecon
+            Amount: 10
+          - Index: 3
+            Item: MOB_COIN
+            Amount: 300
+      - Index: 5
+        Zeny: 200000
+        Item: COSTUME_ELVEN_EARS
+        RequiredItems:
+          - Index: 0
+            Item: Elven_Ears
+            Amount: 1
+          - Index: 1
+            Item: Elunium
+            Amount: 10
+          - Index: 2
+            Item: Oridecon
+            Amount: 10
+          - Index: 3
+            Item: MOB_COIN
+            Amount: 500
+      - Index: 6
+        Zeny: 200000
+        Item: COSTUME_EVIL_EARS
+        RequiredItems:
+          - Index: 0
+            Item: Ear_Of_Devil's_Wing
+            Amount: 1
+          - Index: 1
+            Item: Elunium
+            Amount: 10
+          - Index: 2
+            Item: Oridecon
+            Amount: 10
+          - Index: 3
+            Item: MOB_COIN
+            Amount: 1000
+      - Index: 7
+        Zeny: 150000
+        Item: COSTUME_ROMANTIC_LEAF
+        RequiredItems:
+          - Index: 0
+            Item: Centimental_Leaf
+            Amount: 1
+          - Index: 1
+            Item: Elunium
+            Amount: 10
+          - Index: 2
+            Item: Oridecon
+            Amount: 10
+          - Index: 3
+            Item: MOB_COIN
+            Amount: 300
+      - Index: 8
+        Zeny: 200000
+        Item: COSTUME_ROMANTIC_Flower
+        RequiredItems:
+          - Index: 0
+            Item: Centimental_Flower
+            Amount: 1
+          - Index: 1
+            Item: Elunium
+            Amount: 10
+          - Index: 2
+            Item: Oridecon
+            Amount: 10
+          - Index: 3
+            Item: MOB_COIN
+            Amount: 500
+      - Index: 9
+        Zeny: 50000
+        Item: COSTUME_CIGARATTE
+        RequiredItems:
+          - Index: 0
+            Item: Cigar
+            Amount: 1
+          - Index: 1
+            Item: Elunium
+            Amount: 10
+          - Index: 2
+            Item: Oridecon
+            Amount: 10
+          - Index: 3
+            Item: MOB_COIN
+            Amount: 200

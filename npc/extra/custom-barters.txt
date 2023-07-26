@@ -1,0 +1,8 @@
+morocc,146,140,4	script	General Costume#1	54,{
+ 	callshop "General_Costume";
+ 	end;
+
+  OnInit:
+    waitingroom "Costume เริ่มต้น",0;
+    end;
+}

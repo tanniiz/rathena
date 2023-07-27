@@ -36,6 +36,8 @@ Body:
     Items:
       - Item: CASH_COIN
         Price: 1
+      - Item: Dun_Tele_Scroll_Box10
+        Price: 390
       - Item: Angel_Scroll
         Price: 590
       - Item: HEADGEAR_V1_SCROLL
@@ -51,7 +53,9 @@ Body:
       - Item: Basic_Siege_Supply_Box
         Price: 490
       - Item: Battle_Manual_Box
-        Price: 1490
+        Price: 690
+      - Item: Job_Manual50_Box
+        Price: 690
       - Item: Bubble_Gum_Box
         Price: 1490
       - Item: Inc_Agi_10_Scroll_Box
@@ -73,9 +77,9 @@ Body:
       - Item: Merchant_Figure
         Price: 4900
       - Item: Reset_Stone
-        Price: 29000
+        Price: 14900
       - Item: Neuralizer
-        Price: 29000
+        Price: 14900
 Footer:
   Imports:
     - Path: db/import/item_cash.yml

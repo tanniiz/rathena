@@ -1,0 +1,35 @@
+//==============================================
+// - Script By : M-Ro Online
+// - Script City : Thailand 
+// - Script Support Server : Hercules & rAthena
+//==============================================
+-	script	Guildwar	-1,{
+set .@GID, GetCastleData("aldeg_cas03", CD_GUILD_ID);
+mes "[ Warper ]";
+mes "สวัสดีเจ้าต้องการเข้าร่วมสงครามหรือไม่ ?";
+next;
+switch (
+  select(
+    getcharid(2) == .@GID && getcharid(2) > 0 ? "กลับไปยังปราสาท" : "",
+    "ไปทันที!",
+    "ยกเลิก"
+  )) {
+  case 1:
+    warp "aldeg_cas03",194,44;
+    end;
+  case 2:
+    warp "aldeg_cas03",201,149;
+    end;
+  default:
+    close;
+}
+
+OnInit:
+waitingroom "[War] Warp",0;
+end;
+}
+//==============================================
+//ที่ตั้งNPC
+//==============================================
+morocc,162,97,4	duplicate(Guildwar)	Guildwar#01	641
+//==============================================

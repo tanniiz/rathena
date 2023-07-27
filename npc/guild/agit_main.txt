@@ -65,13 +65,16 @@ OnAgitStart:
 	if (strnpcinfo(0) == "Gld_Agit_Manager") end;
 	MapRespawnGuildID strnpcinfo(2),GetCastleData(strnpcinfo(2),CD_GUILD_ID),6;
 	GvgOn strnpcinfo(2);
+	if (strnpcinfo(2) == "aldeg_cas03") {
+		initnpctimer;
+	}
 
 // Spawn (fall through), or respawn the Emperium once it has been broken.
 OnStartArena:
 	// OnAgitStart will fall through and spawn the Emperium.
 	if (strnpcinfo(2) == "aldeg_cas01") { setarray .@emproom[0],216,23; }
 	else if (strnpcinfo(2) == "aldeg_cas02") { setarray .@emproom[0],213,23; }
-	else if (strnpcinfo(2) == "aldeg_cas03") { setarray .@emproom[0],205,31; }
+	else if (strnpcinfo(2) == "aldeg_cas03" ) { setarray .@emproom[0],205,31; }
 	else if (strnpcinfo(2) == "aldeg_cas04") { setarray .@emproom[0],36,217; }
 	else if (strnpcinfo(2) == "aldeg_cas05") { setarray .@emproom[0],27,101; }
 	else if (strnpcinfo(2) == "gefg_cas01") { setarray .@emproom[0],197,181; }
@@ -109,11 +112,11 @@ OnAgitBreak:
 		end;
 	}
 	// Adjust Economy Invest Level for Castle
-	set .@Economy,GetCastleData(strnpcinfo(2),CD_CURRENT_ECONOMY) - 5;
+	set .@Economy,0;
 	if (.@Economy < 0) set .@Economy, 0;
 	SetCastleData strnpcinfo(2), CD_CURRENT_ECONOMY, .@Economy;
 	// Adjust Defense Invest Level for Castle
-	set .@Defence,GetCastleData(strnpcinfo(2),CD_CURRENT_DEFENSE) - 5;
+	set .@Defence,0;
 	if (.@Defence < 0) set .@Defence, 0;
 	SetCastleData strnpcinfo(2), CD_CURRENT_DEFENSE, .@Defence;
 
@@ -138,10 +141,43 @@ OnAgitBreak:
 	}
 	// Respawn the Emperium, and display new owners.
 	sleep 500; // Slow down script execution slightly.
-	if( agitcheck() )
+	if( agitcheck() ) {
 		donpcevent "Agit#"+strnpcinfo(2)+"::OnStartArena";
+	} else {
+		donpcevent "Agit#"+strnpcinfo(2)+"::OnSetup";
+		donpcevent "Agit#"+strnpcinfo(2)+"::OnCustomCastleBreak";
+	}
 	sleep 7000;
-	announce "The [" + getcastlename(strnpcinfo(2)) + "] castle has been conquered by the [" + getguildName(.@GID) + "] guild.",bc_all|bc_woe;
+	announce "[" + getcastlename(strnpcinfo(2)) + "] Agit ได้ถูกยึดครองโดย Guild [" + getguildName(.@GID) + "]",bc_all|bc_woe;
+	end;
+
+OnPointGet:
+	set .@Economy,GetCastleData(strnpcinfo(2),CD_CURRENT_ECONOMY) + 5;
+	SetCastleData strnpcinfo(2), CD_CURRENT_ECONOMY, .@Economy;
+	announce "[" + getcastlename(strnpcinfo(2)) + "] มูลค่าเพิ่มขึ้น [5] หน่วย ผลรวม [" + GetCastleData(strnpcinfo(2),CD_CURRENT_ECONOMY) + "] หน่วย",bc_all;
+	end;
+
+OnSetup:
+	set $countdown, 3;
+	set .customAgitEnabled, 0;
+	end;
+
+OnCustomCastleBreak:
+	donpcevent "Agit#"+strnpcinfo(2)+"::OnAgitEnd";
+	stopnpctimer;
+	initnpctimer;
+	end;
+
+OnTimer180000:
+	set $countdown, $countdown - 1;
+	donpcevent "Agit#"+strnpcinfo(2)+"::OnPointGet";
+	stopnpctimer;
+	if ($countdown <= 0 && .customAgitEnabled == 0) {
+		set .customAgitEnabled, 1;
+		donpcevent "Agit#"+strnpcinfo(2)+"::OnAgitStart";
+	}
+
+	initnpctimer;
 	end;
 
 // War of Emperium has ended.
@@ -156,6 +192,9 @@ OnAgitEnd:
 
 // Occupying Guild has been disbanded.
 OnGuildBreak:
+  stopnpctimer;
+	set .customAgitEnabled, 1;
+	SetCastleData strnpcinfo(2), CD_CURRENT_ECONOMY, 0;
 	if (strnpcinfo(0) == "Gld_Agit_Manager") end;
 	// Kill guardians, disable the Kafra, and set owner to 0.
 	killmonster strnpcinfo(2),"Guardian#"+strnpcinfo(2)+"::OnGuardianDied";
@@ -1350,3 +1389,6 @@ OnTreasureDied23:
 	setd "$@"+strnpcinfo(2)+"_treasure",getd("$@"+strnpcinfo(2)+"_treasure") & ~8388608;
 	end;
 }
+
+// Auto Upgrade Tech
+//============================================================

@@ -340,16 +340,16 @@ aldeg_cas02,177,131,0	warp	aldeg-2-11_aldeg-2-9	1,1,aldeg_cas02,121,84
 aldeg_cas02,192,196,0	warp	aldeg-2-12_aldeg-2-3	1,1,aldeg_cas02,50,180
 aldeg_cas02,206,196,0	warp	aldeg-2-13_aldeg-2-14	1,1,aldeg_cas02,197,13
 aldeg_cas02,197,9,0	warp	aldeg-2-14_aldeg-2-13	1,1,aldeg_cas02,206,192
-aldeg_cas03,114,290,0	warp	aldeg-3-1_aldeg-3	1,1,alde_gld,142,85
-aldeg_cas03,92,217,0	warp	aldeg-3-2_aldeg-3-6	1,1,aldeg_cas03,127,90
-aldeg_cas03,87,247,0	warp	aldeg-3-3_aldeg-3-7	1,1,aldeg_cas03,54,90
-aldeg_cas03,44,222,0	warp	aldeg-3-4_aldeg-3-13	1,1,aldeg_cas03,213,182
-aldeg_cas03,91,57,0	warp	aldeg-3-5_aldeg-3-14	1,1,aldeg_cas03,60,236
-aldeg_cas03,130,90,0	warp	aldeg-3-6_aldeg-3-2	1,1,aldeg_cas03,96,215
-aldeg_cas03,51,90,0	warp	aldeg-3-7_aldeg-3-3	1,1,aldeg_cas03,87,251
-aldeg_cas03,93,124,0	warp	aldeg-3-8_aldeg-3-3	1,1,aldeg_cas03,87,251
-aldeg_cas03,79,130,0	warp	aldeg-3-9_aldeg-3-10	1,1,aldeg_cas03,201,149
-aldeg_cas03,201,145,0	warp	aldeg-3-10_aldeg-3-9	1,1,aldeg_cas03,79,126
+// aldeg_cas03,114,290,0	warp	aldeg-3-1_aldeg-3	1,1,alde_gld,142,85
+// aldeg_cas03,92,217,0	warp	aldeg-3-2_aldeg-3-6	1,1,aldeg_cas03,127,90
+// aldeg_cas03,87,247,0	warp	aldeg-3-3_aldeg-3-7	1,1,aldeg_cas03,54,90
+// aldeg_cas03,44,222,0	warp	aldeg-3-4_aldeg-3-13	1,1,aldeg_cas03,213,182
+// aldeg_cas03,91,57,0	warp	aldeg-3-5_aldeg-3-14	1,1,aldeg_cas03,60,236
+// aldeg_cas03,130,90,0	warp	aldeg-3-6_aldeg-3-2	1,1,aldeg_cas03,96,215
+// aldeg_cas03,51,90,0	warp	aldeg-3-7_aldeg-3-3	1,1,aldeg_cas03,87,251
+// aldeg_cas03,93,124,0	warp	aldeg-3-8_aldeg-3-3	1,1,aldeg_cas03,87,251
+// aldeg_cas03,79,130,0	warp	aldeg-3-9_aldeg-3-10	1,1,aldeg_cas03,201,149
+// aldeg_cas03,201,145,0	warp	aldeg-3-10_aldeg-3-9	1,1,aldeg_cas03,79,126
 aldeg_cas03,199,190,0	warp	aldeg-3-11_aldeg-3-12	1,1,aldeg_cas03,195,51
 aldeg_cas03,195,54,0	warp	aldeg-3-12_aldeg-3-11	1,1,aldeg_cas03,199,186
 aldeg_cas03,214,186,0	warp	aldeg-3-13_aldeg-3-4	1,1,aldeg_cas03,49,222

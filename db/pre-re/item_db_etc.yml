@@ -8564,6 +8564,204 @@ Body:
       BuyingStore: true
     Script: |
       bonus bBaseAtk,25;
+  - Id: 4500
+    AegisName: D_Desert_Wolf_Card
+    Name: "[D] Desert Wolf Card"
+    Type: Card
+    Buy: 20
+    Weight: 10
+    Locations:
+      Right_Hand: true
+    Flags:
+      BuyingStore: true
+    Script: |
+      bonus2 bAddSize,Size_Small,20;
+      bonus bBaseAtk,5;
+  - Id: 4501
+    AegisName: D_Skel_Worker_Card
+    Name: "[D] Skel Worker Card"
+    Type: Card
+    Buy: 20
+    Weight: 10
+    Locations:
+      Right_Hand: true
+    Flags:
+      BuyingStore: true
+    Script: |
+      bonus2 bAddSize,Size_Medium,20;
+      bonus bBaseAtk,5;
+  - Id: 4502
+    AegisName: D_Minorous_Card
+    Name: "[D] Minorous Card"
+    Type: Card
+    Buy: 20
+    Weight: 10
+    Locations:
+      Right_Hand: true
+    Flags:
+      BuyingStore: true
+    Script: |
+      bonus2 bAddSize,Size_Large,20;
+      bonus bBaseAtk,5;
+  - Id: 4503
+    AegisName: D_Hydra_Card
+    Name: "[D] Hydra Card"
+    Type: Card
+    Buy: 20
+    Weight: 10
+    Locations:
+      Right_Hand: true
+    Flags:
+      BuyingStore: true
+    Script: |
+      bonus2 bAddRace,RC_DemiHuman,25;
+      bonus2 bAddRace,RC_Player_Human,25;
+  - Id: 4504
+    AegisName: D_Vadon_Card
+    Name: "[D] Vadon Card"
+    Type: Card
+    Buy: 20
+    Weight: 10
+    Locations:
+      Right_Hand: true
+    Flags:
+      BuyingStore: true
+    Script: |
+      bonus2 bAddEle,Ele_Fire,25;
+  - Id: 4505
+    AegisName: D_Strouf_Card
+    Name: "[D] Strouf Card"
+    Type: Card
+    Buy: 20
+    Weight: 10
+    Locations:
+      Right_Hand: true
+    Flags:
+      BuyingStore: true
+    Script: |
+      bonus2 bAddRace,RC_Demon,25;
+  - Id: 4506
+    AegisName: D_Orc_Skeleton_Card
+    Name: "[D] Orc Skeleton Card"
+    Type: Card
+    Buy: 20
+    Weight: 10
+    Locations:
+      Right_Hand: true
+    Flags:
+      BuyingStore: true
+    Script: |
+      bonus2 bAddEle,Ele_Holy,25;
+  - Id: 4507
+    AegisName: D_Mandragora_Card
+    Name: "[D] Mandragora Card"
+    Type: Card
+    Buy: 20
+    Weight: 10
+    Locations:
+      Right_Hand: true
+    Flags:
+      BuyingStore: true
+    Script: |
+      bonus2 bAddEle,Ele_Wind,25;
+  - Id: 4508
+    AegisName: D_Kaho_Card
+    Name: "[D] Kaho Card"
+    Type: Card
+    Buy: 20
+    Weight: 10
+    Locations:
+      Right_Hand: true
+    Flags:
+      BuyingStore: true
+    Script: |
+      bonus2 bAddEle,Ele_Earth,25;
+  - Id: 4509
+    AegisName: D_Flora_Card
+    Name: "[D] Flora Card"
+    Type: Card
+    Buy: 20
+    Weight: 10
+    Locations:
+      Right_Hand: true
+    Flags:
+      BuyingStore: true
+    Script: |
+      bonus2 bAddRace,RC_Fish,25;
+  - Id: 4510
+    AegisName: D_Goblin_Card
+    Name: "[D] Goblin Card"
+    Type: Card
+    Buy: 20
+    Weight: 10
+    Locations:
+      Right_Hand: true
+    Flags:
+      BuyingStore: true
+    Script: |
+      bonus2 bAddRace,RC_Brute,25;
+  - Id: 4511
+    AegisName: Drainliar_Card
+    Name: Drainliar Card
+    Type: Card
+    Buy: 20
+    Weight: 10
+    Locations:
+      Right_Hand: true
+    Flags:
+      BuyingStore: true
+    Script: |
+      bonus2 bAddEle,Ele_Water,25;
+  - Id: 4512
+    AegisName: D_Drops_Card
+    Name: "[D] Drops Card"
+    Type: Card
+    Buy: 20
+    Weight: 10
+    Locations:
+      Right_Hand: true
+    Flags:
+      BuyingStore: true
+    Script: |
+      bonus bDex,1;
+      bonus bHit,3;
+      bonus bMatk,2;
+  - Id: 4513
+    AegisName: D_Petite_Earth_Card
+    Name: "[D] Petite Earth Card"
+    Type: Card
+    Buy: 20
+    Weight: 10
+    Locations:
+      Right_Hand: true
+    Flags:
+      BuyingStore: true
+    Script: |
+      bonus2 bAddRace,RC_Dragon,25;
+  - Id: 4514
+    AegisName: D_Caramel_Card
+    Name: "[D] Caramel Card"
+    Type: Card
+    Buy: 20
+    Weight: 10
+    Locations:
+      Right_Hand: true
+    Flags:
+      BuyingStore: true
+    Script: |
+      bonus2 bAddRace,RC_Insect,25;
+  - Id: 4515
+    AegisName: D_Abysmal_Knight_Card
+    Name: "[D] Abysmal Knight Card"
+    Type: Card
+    Buy: 20
+    Weight: 10
+    Locations:
+      Right_Hand: true
+    Flags:
+      BuyingStore: true
+    Script: |
+      bonus2 bAddClass,Class_Boss,30;
   - Id: 4700
     AegisName: Strength1
     Name: STR+1

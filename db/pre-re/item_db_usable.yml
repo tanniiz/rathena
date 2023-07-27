@@ -22142,6 +22142,14 @@ Body:
     Weight: 0
     Script: |
       callfunc "F_UseCoins",30001,"#CASHPOINTS",1;
+  - Id: 30100
+    AegisName: CARD_COIN
+    Name: Card Coin
+    Type: Usable
+    Buy: 0
+    Weight: 0
+    Script: |
+      callfunc "F_UseCoins",30100,"#Card_Points",1;
   - Id: 60500
     AegisName: MOB_COIN
     Name: Mob Coin

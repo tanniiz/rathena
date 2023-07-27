@@ -8701,8 +8701,8 @@ Body:
     Script: |
       bonus2 bAddRace,RC_Brute,25;
   - Id: 4511
-    AegisName: Drainliar_Card
-    Name: Drainliar Card
+    AegisName: D_Drainliar_Card
+    Name: "[D] Drainliar Card"
     Type: Card
     Buy: 20
     Weight: 10

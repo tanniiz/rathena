@@ -1419,11 +1419,6 @@
 1323,Sea Otter@WZ_WATERBALL,attack,86,3,500,1500,5000,yes,target,always,0,,,,,,6,
 1323,Sea Otter@WZ_WATERBALL,chase,86,3,500,1500,5000,yes,target,always,0,,,,,,6,
 
-3413,Sea Otter@NPC_WATERATTACK,attack,184,1,2000,0,5000,yes,target,always,0,,,,,,,
-3413,Sea Otter@WZ_WATERBALL,attack,86,3,500,1500,5000,yes,target,always,0,,,,,,6,
-3413,Sea Otter@WZ_WATERBALL,chase,86,3,500,1500,5000,yes,target,always,0,,,,,,6,
-
-
 1365,Apocalypse@KN_BRANDISHSPEAR,attack,57,5,1000,1000,5000,no,target,always,0,,,,,,9,
 1365,Apocalypse@NPC_DARKTHUNDER,attack,341,4,1000,700,5000,no,target,always,0,,,,,,9,
 1365,Apocalypse@NPC_SELFDESTRUCTION,attack,173,1,1000,2000,5000,no,self,myhpltmaxrate,10,,,,,,9,

@@ -349,3 +349,95 @@ Body:
           - Index: 1
             Item: CARD_COIN
             Amount: 10
+  - Name: Refine_HW1
+    Items:
+      - Index: 1
+        Zeny: 100000
+        Item: Drop_Amulet
+        RequiredItems:
+          - Index: 0
+            Item: REFINE_COIN
+            Amount: 100
+          - Index: 1
+            Item: CASH_COIN
+            Amount: 5000
+      - Index: 2
+        Zeny: 100000
+        Item: SP_REGEN_AMULET
+        RequiredItems:
+          - Index: 0
+            Item: REFINE_COIN
+            Amount: 100
+          - Index: 1
+            Item: CASH_COIN
+            Amount: 5000
+      - Index: 3
+        Zeny: 100000
+        Item: DELAY_REDUCTION_AMULET
+        RequiredItems:
+          - Index: 0
+            Item: REFINE_COIN
+            Amount: 100
+          - Index: 1
+            Item: CASH_COIN
+            Amount: 5000
+      - Index: 4
+        Zeny: 100000
+        Item: Critical_Rate_Amulet
+        RequiredItems:
+          - Index: 0
+            Item: REFINE_COIN
+            Amount: 100
+          - Index: 1
+            Item: CASH_COIN
+            Amount: 5000
+      - Index: 5
+        Zeny: 100000
+        Item: Critical_Rate_Amulet
+        RequiredItems:
+          - Index: 0
+            Item: REFINE_COIN
+            Amount: 100
+          - Index: 1
+            Item: CASH_COIN
+            Amount: 5000
+      - Index: 6
+        Zeny: 100000
+        Item: Long_Range_Amulet
+        RequiredItems:
+          - Index: 0
+            Item: REFINE_COIN
+            Amount: 100
+          - Index: 1
+            Item: CASH_COIN
+            Amount: 5000
+      - Index: 7
+        Zeny: 100000
+        Item: Melee_Amulet
+        RequiredItems:
+          - Index: 0
+            Item: REFINE_COIN
+            Amount: 100
+          - Index: 1
+            Item: CASH_COIN
+            Amount: 5000
+      - Index: 8
+        Zeny: 100000
+        Item: Matk_Amulet
+        RequiredItems:
+          - Index: 0
+            Item: REFINE_COIN
+            Amount: 100
+          - Index: 1
+            Item: CASH_COIN
+            Amount: 5000
+      - Index: 9
+        Zeny: 100000
+        Item: Cast_Reduction_Amulet
+        RequiredItems:
+          - Index: 0
+            Item: REFINE_COIN
+            Amount: 100
+          - Index: 1
+            Item: CASH_COIN
+            Amount: 5000

@@ -21374,3 +21374,165 @@ Body:
       BuyingStore: true
     Trade:
       NoDrop: true
+  - Id: 69000
+    AegisName: Drop_Amulet
+    Name: Drop Amulet
+    Type: Charm
+    Buy: 0
+    Weight: 1
+    EquipLevelMin: 1
+    Refineable: false
+    Locations:
+      Ammo: true
+    Trade:
+      NoDrop: true
+      NoSell: true   
+      NoMail: true
+    Script: |
+      bonus2 bDropAddRace,RC_ALL,countitem(69000)>10 ? 10 : countitem(69000);
+  - Id: 69001
+    AegisName: SP_REGEN_AMULET
+    Name: SP Regen Amulet
+    Type: Charm
+    Buy: 0
+    Weight: 1
+    EquipLevelMin: 1
+    Refineable: false
+    Locations:
+      Ammo: true
+    Trade:
+      NoDrop: true
+      NoSell: true   
+      NoMail: true
+    Script: |
+      bonus bSPrecovRate,(countitem(69001)>10 ? 10 : countitem(69001)) * 3;
+  - Id: 69002
+    AegisName: DELAY_REDUCTION_AMULET
+    Name: Delay Reduction Amulet
+    Type: Charm
+    Type: Charm
+    Buy: 0
+    Weight: 1
+    EquipLevelMin: 1
+    Refineable: false
+    Locations:
+      Ammo: true
+    Trade:
+      NoDrop: true
+      NoSell: true   
+      NoMail: true
+    Script: |
+      bonus bDelayRate,(countitem(69002)>10 ? 10 : countitem(69002)) * -1;
+  - Id: 69003
+    AegisName: ASPD_AMULET
+    Name: Aspd Amulet
+    Type: Charm
+    Buy: 0
+    Weight: 1
+    EquipLevelMin: 1
+    Refineable: false
+    Locations:
+      Ammo: true
+    Trade:
+      NoDrop: true
+      NoSell: true   
+      NoMail: true
+    Script: |
+      bonus bAspdRate,countitem(69003)>10 ? 10 : countitem(69003);
+  - Id: 69004
+    AegisName: Critical_Rate_Amulet
+    Name: Critical Rate Amulet
+    Type: Charm
+    Buy: 0
+    Weight: 1
+    EquipLevelMin: 1
+    Refineable: false
+    Locations:
+      Ammo: true
+    Trade:
+      NoDrop: true
+      NoSell: true   
+      NoMail: true
+    Script: |
+      bonus bCritical,countitem(69004)>10 ? 10 : countitem(69004);
+  - Id: 69005
+    AegisName: Critical_Damage_Amulet
+    Name: Critical Rate Amulet
+    Type: Charm
+    Buy: 0
+    Weight: 1
+    EquipLevelMin: 1
+    Refineable: false
+    Locations:
+      Ammo: true
+    Trade:
+      NoDrop: true
+      NoSell: true   
+      NoMail: true
+    Script: |
+      bonus bCritAtkRate,countitem(69005)>10 ? 10 : countitem(69005);
+  - Id: 69006
+    AegisName: Long_Range_Amulet
+    Name: Long Range Amulet
+    Type: Charm
+    Type: Charm
+    Buy: 0
+    Weight: 1
+    EquipLevelMin: 1
+    Refineable: false
+    Locations:
+      Ammo: true
+    Trade:
+      NoDrop: true
+      NoSell: true   
+      NoMail: true
+    Script: |
+      bonus bLongAtkRate,countitem(69006)>10 ? 10 : countitem(69006);
+  - Id: 69007
+    AegisName: Melee_Amulet
+    Name: Melee Amulet
+    Type: Charm
+    Buy: 0
+    Weight: 1
+    EquipLevelMin: 1
+    Refineable: false
+    Locations:
+      Ammo: true
+    Trade:
+      NoDrop: true
+      NoSell: true   
+      NoMail: true
+    Script: |
+      bonus bShortAtkRate,countitem(69007)>10 ? 10 : countitem(69007);
+  - Id: 69008
+    AegisName: Matk_Amulet
+    Name: Matk Amulet
+    Type: Charm
+    Buy: 0
+    Weight: 1
+    EquipLevelMin: 1
+    Refineable: false
+    Locations:
+      Ammo: true
+    Trade:
+      NoDrop: true
+      NoSell: true   
+      NoMail: true
+    Script: |
+      bonus bShortAtkRate,countitem(69008)>10 ? 10 : countitem(69008);
+  - Id: 69009
+    AegisName: Cast_Reduction_Amulet
+    Name: Cast Reduction Amulet
+    Type: Charm
+    Buy: 0
+    Weight: 1
+    EquipLevelMin: 1
+    Refineable: false
+    Locations:
+      Ammo: true
+    Trade:
+      NoDrop: true
+      NoSell: true   
+      NoMail: true
+    Script: |
+      bonus bCastrate,(countitem(69009)>10 ? 10 : countitem(69009)) * -1;

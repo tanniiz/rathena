@@ -41565,3 +41565,16 @@ Body:
       bonus bMatkRate,15;
       bonus bDelayRate,-(getrefine() * 2);
       bonus2 bSkillAtk,79,getrefine() * 6;
+
+### Refine challenge item
+  - Id: 68200
+    AegisName: REFINE_CHALLENGE_DAGGER
+    Name: Refine Challenge Dagger
+    Type: Weapon
+    SubType: Dagger
+    Buy: 0
+    Weight: 100
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 1
+    Refineable: true

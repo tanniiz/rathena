@@ -17194,6 +17194,8 @@ Body:
     AfterCastActDelay: 1000
     Requires:
       SpCost: 10
+      Equipment:
+        COSTUME_VICIOUS_RICHY_AURA: true
   - Id: 1014
     Name: PR_REDEMPTIO
     Description: Redemptio

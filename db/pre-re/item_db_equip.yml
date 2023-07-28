@@ -41062,6 +41062,18 @@ Body:
         bonus2 bSkillAtk,"HT_BLITZBEAT",getskilllv("HT_STEELCROW") * 40;
       }
 ### Custom ###
+  - Id: 47100
+    AegisName: COSTUME_RICHY_WING
+    Name: "[C] Richy Wing"
+    Type: Armor
+    Locations:
+      Costume_Garment: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 91
+    Script: |
+      bonus2 bDropAddRace,RC_ALL,5;
+      skill "BS_GREED",1;
   - Id: 67000
     AegisName: COSTUME_APPLE_OF_ARCHER
     Name: Costume Apple of Archer

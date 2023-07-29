@@ -1,14 +1,24 @@
--	script	Hotweek	-1,{
-    setarray .npc_name$,"Hot Week";
-    OnMinute00:
-        announce "xxx",bc_all;
-        for(.@i = 0; .@i < getarraysize(.npc_name$); ++.@i) {
-            announce .npc_name$[i],bc_all;
-            disablenpc .npc_name$;
-        }
-    OnMinute47:
-        for(.@i = 0; .@i < .@npc_name; ++.@i) {
-            hideonnpc .@npc_name;
-        }
-    end;
+-	script	HotweekEvent	-1,{
+	OnInit:
+		setarray .npc_name$,"HotWeekExchanger#1","HotWeekExchanger#2";
+		.count = getarraysize(.npc_name$);
+		
+		bindatcmd "hotweekstart","HotweekEvent::OnHotweekStart";
+		bindatcmd "hotweekend","HotweekEvent::OnHotweekEnd";
+
+		//TODO: impl hot week timer to auto start and stop hotweek
+		end;
+	OnHotweekStart:
+		announce "กิจกรรม Hot Week ได้เริ่มขึ้นแล้ว!!!",bc_all;
+		for(.@i = 0; .@i < .count; .@i++) {
+			enablenpc .npc_name$[.@i];
+		}
+		end;
+	OnHotweekEnd:
+		announce "กิจกรรม Hot Week ได้จบลงแล้ว!!!",bc_all;
+		for(.@i = 0; .@i < .count; .@i++) {
+			disablenpc .npc_name$[.@i];
+		}
+		end;
 }
+

@@ -1150,3 +1150,87 @@ Body:
       bonus bHit,10;
       bonus2 bAddSize,Size_Large,30;
       autobonus "{ bonus bAspdRate,100; }",1,7000,BF_WEAPON,"{ specialeffect2 EF_POTION_BERSERK; }";
+
+#### Ability Figures ####
+  - Combos:
+      - Combo:
+          - Knight_Ability_Figure
+          - Knight_Ability_Figure
+    Script: |
+      skill "LK_AURABLADE",1;
+  - Combos:
+      - Combo:
+          - Knight_Ability_Figure
+          - Knight_Ability_Figure
+          - BOWLING_SABER
+    Script: |
+      skill "LK_AURABLADE",3;
+  - Combos:
+      - Combo:
+          - Assasin_Ability_Figure
+          - Assasin_Ability_Figure
+    Script: |
+      skill "ASC_KATAR",1;
+  - Combos:
+      - Combo:
+          - Assasin_Ability_Figure
+          - Assasin_Ability_Figure
+          - CRITICAL_MASTER_JAMADHAR
+    Script: |
+      skill "ASC_KATAR",3;
+  - Combos:
+      - Combo:
+          - Wizard_Ability_Figure
+          - Wizard_Ability_Figure
+    Script: |
+      skill "HW_MAGICPOWER",3;
+  - Combos:
+      - Combo:
+          - Wizard_Ability_Figure
+          - Wizard_Ability_Figure
+          - SPELL_MASTER_ARC_WAND
+    Script: |
+      skill "HW_MAGICPOWER",5;
+  - Combos:
+      - Combo:
+          - Hunter_Ability_Figure
+          - Hunter_Ability_Figure
+    Script: |
+      skill "SN_SIGHT",3;
+  - Combos:
+      - Combo:
+          - Hunter_Ability_Figure
+          - Hunter_Ability_Figure
+          - DOUBLE_STRAFE_MASTER_ARBALEST_BOW
+    Script: |
+      skill "SN_SIGHT",5;
+  - Combos:
+      - Combo:
+          - Blacksmith_Ability_Figure
+          - Blacksmith_Ability_Figure
+    Script: |
+      skill "WS_OVERTHRUSTMAX",1;
+  - Combos:
+      - Combo:
+          - Blacksmith_Ability_Figure
+          - Blacksmith_Ability_Figure
+          - MAMMONITE_MASTER_ORCISH_AXE
+    Script: |
+      skill "WS_OVERTHRUSTMAX",3;
+  - Combos:
+      - Combo:
+          - Priest_Ability_Figure
+          - Priest_Ability_Figure
+    Script: |
+      skill "HP_ASSUMPTIO",3;
+  - Combos:
+      - Combo:
+          - Priest_Ability_Figure
+          - Priest_Ability_Figure
+          - MAGNUS_MASTER_ARC_WAND
+    Script: |
+      skill "HP_ASSUMPTIO",5;
+
+
+      
+    

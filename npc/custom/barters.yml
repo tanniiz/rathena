@@ -441,3 +441,65 @@ Body:
           - Index: 1
             Item: CASH_COIN
             Amount: 5000
+  - Name: Craft_HW1
+    Items:
+      - Index: 1
+        Zeny: 100000
+        Item: Knight_Ability_Figure
+        RequiredItems:
+          - Index: 0
+            Item: REFINE_COIN
+            Amount: 100
+          - Index: 1
+            Item: CASH_COIN
+            Amount: 5000
+      - Index: 2
+        Zeny: 100000
+        Item: Assasin_Ability_Figure
+        RequiredItems:
+          - Index: 0
+            Item: REFINE_COIN
+            Amount: 100
+          - Index: 1
+            Item: CASH_COIN
+            Amount: 5000
+      - Index: 3
+        Zeny: 100000
+        Item: Wizard_Ability_Figure
+        RequiredItems:
+          - Index: 0
+            Item: REFINE_COIN
+            Amount: 100
+          - Index: 1
+            Item: CASH_COIN
+            Amount: 5000
+      - Index: 4
+        Zeny: 100000
+        Item: Hunter_Ability_Figure
+        RequiredItems:
+          - Index: 0
+            Item: REFINE_COIN
+            Amount: 100
+          - Index: 1
+            Item: CASH_COIN
+            Amount: 5000
+      - Index: 5
+        Zeny: 100000
+        Item: Blacksmith_Ability_Figure
+        RequiredItems:
+          - Index: 0
+            Item: REFINE_COIN
+            Amount: 100
+          - Index: 1
+            Item: CASH_COIN
+            Amount: 5000
+      - Index: 6
+        Zeny: 100000
+        Item: Priest_Ability_Figure
+        RequiredItems:
+          - Index: 0
+            Item: REFINE_COIN
+            Amount: 100
+          - Index: 1
+            Item: CASH_COIN
+            Amount: 5000

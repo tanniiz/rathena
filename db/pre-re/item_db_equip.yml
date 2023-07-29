@@ -41358,53 +41358,22 @@ Body:
       bonus bHit,15;
       bonus2 bSkillAtk,"MS_MAGNUM",15;
       autobonus "{ bonus bBaseAtk,20; bonus bHit,15; }",200,5000,BF_SHORT,"{ specialeffect2 EF_ENHANCE; }";
-  - Id: 69600
-    AegisName: Acolyte_Ability_Figure
-    Name: Acolyte Ability Figure
+  - Id: 69101
+    AegisName: Knight_Ability_Figure
+    Name: Knight Ability Figure
     Type: Armor
     Locations:
       Both_Accessory: true
     ArmorLevel: 1
     Slots: 1
     Jobs:
-      Acolyte: true
-      Priest: true
+      Knight: true
     Script: |
-      bonus bAspdRate,10;
-      bonus2 bSkillAtk,"AL_HOLYLIGHT",75;
-      bonus bAllStats,2;
-      bonus bCritical,15;
-  - Id: 69500
-    AegisName: Mage_Ability_Figure
-    Name: Mage Ability Figure
-    Type: Armor
-    Locations:
-      Both_Accessory: true
-    ArmorLevel: 1
-    Slots: 1
-    Jobs:
-      Mage: true
-      Wizard: true
-    Script: |
-      bonus bInt,2;
+      bonus bStr,1;
+      bonus bHit,20;
       bonus bCastrate,-3;
-      bonus bDelayRate,-7;
-  - Id: 69400
-    AegisName: Archer_Ability_Figure
-    Name: Archer Ability Figure
-    Type: Armor
-    Locations:
-      Both_Accessory: true
-    ArmorLevel: 1
-    Slots: 1
-    Jobs:
-      Archer: true
-      Hunter: true
-    Script: |
-      bonus bDex,1;
-      bonus bBaseAtk,15;
-      bonus bAspdRate,3;
-      bonus bLongAtkRate,5;
+      bonus2 bSkillAtk,"KN_BOWLINGBASH",5;
+      autobonus "{ bonus bBaseAtk,20; bonus bHit,15; }",200,5000,BF_SHORT,"{ specialeffect2 EF_ENHANCE; }";
   - Id: 69200
     AegisName: Thief_Ability_Figure
     Name: Thief Ability Figure
@@ -41421,6 +41390,22 @@ Body:
       bonus bAspdRate,7;
       bonus bCritAtkRate,7;
       autobonus "{ bonus bCritical,35; }",200,5000,BF_NORMAL,"{ specialeffect2 EF_ENHANCE; }";
+  - Id: 69201
+    AegisName: Assasin_Ability_Figure
+    Name: Assasin Ability Figure
+    Type: Armor
+    Locations:
+      Both_Accessory: true
+    ArmorLevel: 1
+    Slots: 1
+    Jobs:
+      Assassin: true
+    Script: |
+      bonus bCritical,10;
+      bonus bAspd,3;
+      bonus bCritAtkRate,10;
+      bonus2 bSkillAtk,"AS_GRIMTOOTH",5;
+      autobonus "{ bonus bCritical,35; }",200,5000,BF_NORMAL,"{ specialeffect2 EF_ENHANCE; }";
   - Id: 69300
     AegisName: Merchant_Ability_Figure
     Name: Merchant Ability Figure
@@ -41436,6 +41421,118 @@ Body:
       bonus bStr,2;
       bonus2 bSkillAtk,"MC_CARTREVOLUTION",5;
       bonus bAspdRate,7;
+  - Id: 69301
+    AegisName: Blacksmith_Ability_Figure
+    Name: Blacksmith Ability Figure
+    Type: Armor
+    Locations:
+      Both_Accessory: true
+    ArmorLevel: 1
+    Slots: 1
+    Jobs:
+      Blacksmith: true
+    Script: |
+      bonus bStr,2;
+      bonus bDex,1;
+      bonus2 bSkillAtk,"MC_CARTREVOLUTION",8;
+      bonus bAspd,2;
+  - Id: 69400
+    AegisName: Archer_Ability_Figure
+    Name: Archer Ability Figure
+    Type: Armor
+    Locations:
+      Both_Accessory: true
+    ArmorLevel: 1
+    Slots: 1
+    Jobs:
+      Archer: true
+      Hunter: true
+    Script: |
+      bonus bDex,1;
+      bonus bBaseAtk,15;
+      bonus bAspdRate,3;
+      bonus bLongAtkRate,5;
+  - Id: 69401
+    AegisName: Hunter_Ability_Figure
+    Name: Hunter Ability Figure
+    Type: Armor
+    Locations:
+      Both_Accessory: true
+    ArmorLevel: 1
+    Slots: 1
+    Jobs:
+      Hunter: true
+    Script: |
+      bonus bDex,2;
+      bonus bBaseAtk,15;
+      bonus bAspd,2;
+      bonus bLongAtkRate,5;
+      bonus2 bSkillAtk,"MA_DOUBLE",5;
+  - Id: 69500
+    AegisName: Mage_Ability_Figure
+    Name: Mage Ability Figure
+    Type: Armor
+    Locations:
+      Both_Accessory: true
+    ArmorLevel: 1
+    Slots: 1
+    Jobs:
+      Mage: true
+      Wizard: true
+    Script: |
+      bonus bInt,2;
+      bonus bCastrate,-3;
+      bonus bDelayRate,-7;
+  - Id: 69501
+    AegisName: Wizard_Ability_Figure
+    Name: Wizard Ability Figure
+    Type: Armor
+    Locations:
+      Both_Accessory: true
+    ArmorLevel: 1
+    Slots: 1
+    Jobs:
+      Wizard: true
+    Script: |
+      bonus bInt,2;
+      bonus bDex,1;
+      bonus bCastrate,-5;
+      bonus bDelayRate,-10;
+      bonus2 bSkillAtk,"WZ_STORMGUST",3;
+      bonus2 bSkillAtk,"WZ_METEOR",3;
+      bonus2 bSkillAtk,"WZ_VERMILION",3;
+  - Id: 69600
+    AegisName: Acolyte_Ability_Figure
+    Name: Acolyte Ability Figure
+    Type: Armor
+    Locations:
+      Both_Accessory: true
+    ArmorLevel: 1
+    Slots: 1
+    Jobs:
+      Acolyte: true
+      Priest: true
+    Script: |
+      bonus bAspdRate,10;
+      bonus2 bSkillAtk,"AL_HOLYLIGHT",75;
+      bonus bAllStats,2;
+      bonus bCritical,15;
+  - Id: 69601
+    AegisName: Priest_Ability_Figure
+    Name: Priest Ability Figure
+    Type: Armor
+    Locations:
+      Both_Accessory: true
+    ArmorLevel: 1
+    Slots: 1
+    Jobs:
+      Priest: true
+    Script: |
+      bonus bAllStats,2;
+      bonus bDelayRate,-10;
+      bonus bDelayRate,-15;
+      bonus2 bCastrate,"PR_MAGNUS",-15;
+      bonus2 bSkillAtk,"PR_MAGNUS",20;
 
 ### Upgrade Weapon ###
   - Id: 68100
@@ -41564,4 +41661,4 @@ Body:
       bonus bDex,4;
       bonus bMatkRate,15;
       bonus bDelayRate,-(getrefine() * 2);
-      bonus2 bSkillAtk,79,getrefine() * 6;
+      bonus2 bSkillAtk,"PR_MAGNUS",getrefine() * 6;

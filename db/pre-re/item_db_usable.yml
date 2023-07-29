@@ -2870,7 +2870,7 @@ Body:
     Name: Herb Marinade Beef
     Type: Healing
     Buy: 8000
-    Weight: 500
+    Weight: 10
     Flags:
       BuyingStore: true
     Script: |
@@ -2925,7 +2925,7 @@ Body:
     Name: Morocc Fruit Wine
     Type: Healing
     Buy: 8000
-    Weight: 300
+    Weight: 10
     Flags:
       BuyingStore: true
     Script: |
@@ -2980,7 +2980,7 @@ Body:
     Name: Seasoned Jellyfish
     Type: Healing
     Buy: 8000
-    Weight: 500
+    Weight: 10
     Flags:
       BuyingStore: true
     Script: |
@@ -3035,7 +3035,7 @@ Body:
     Name: Lutie Cold Noodle
     Type: Healing
     Buy: 8000
-    Weight: 400
+    Weight: 10
     Flags:
       BuyingStore: true
     Script: |
@@ -3090,7 +3090,7 @@ Body:
     Name: Cream Sandwich
     Type: Healing
     Buy: 8000
-    Weight: 500
+    Weight: 10
     Flags:
       BuyingStore: true
     Script: |
@@ -3145,7 +3145,7 @@ Body:
     Name: Steamed Ancient Lips
     Type: Healing
     Buy: 8000
-    Weight: 500
+    Weight: 10
     Flags:
       BuyingStore: true
     Script: |

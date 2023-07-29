@@ -2,7 +2,7 @@
   OnNPCKillEvent:
     if(!getmonsterinfo(killedrid, MOB_MVPEXP) ) {
       set point, getmonsterinfo(killedrid, MOB_SIZE) + 1;
-      set #MobPoint, (#MobPoint + point * 2);
+      set #MobPoint, #MobPoint + (point * 2);
 
       set cashPts, (rand(10) * 2);
 		

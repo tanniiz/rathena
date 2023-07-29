@@ -36,22 +36,20 @@
 OnInit:
   AgitEnd;
 	if ($customAgitEnabled) {
-    if (GetGuildName(GetCastleData("aldeg_cas03",1))) {
-		  AgitStart;
-    }
+    // if (GetGuildName(GetCastleData("aldeg_cas03",1))) {
+		//   AgitStart;
+    // }
+		AgitStart;
 		callsub S_DisplayOwners;
 	}
 	end;
 
 S_DisplayOwners:
-	setarray .@maps$[0],"aldeg_cas03";
-	for( set .@i, 0; .@i < 1; set .@i, .@i+1 ) {
-		if (GetGuildName(GetCastleData(.@maps$[.@i],1))) {
-			Announce "The [" + GetCastleName(.@maps$[.@i]) + "] castle has been conquered by the [" + GetGuildName(GetCastleData(.@maps$[.@i],1)) + "] guild.",bc_all|bc_woe;
+	if (GetCastleData("aldeg_cas03",1)) {
+			Announce "The [" + GetCastleName("aldeg_cas03") + "] castle has been conquered by the [" + GetGuildName(GetCastleData("aldeg_cas03",1)) + "] guild.",bc_all|bc_woe;
 		}
 		else {
-			Announce "The [" + GetCastleName(.@maps$[.@i]) + "] castle is currently unoccupied.",bc_all|bc_woe;
+			Announce "The [" + GetCastleName("aldeg_cas03") + "] castle is currently unoccupied.",bc_all|bc_woe;
 		}
-	}
 	end;
 }

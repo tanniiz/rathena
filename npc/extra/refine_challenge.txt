@@ -17,7 +17,7 @@
 -	shop	REFINEDUMMYSHOP#1			-1,501:1000
 -	cashshop	REFINE_MATERIAL_SHOP	-1,68200:500
 
-morocc,156,107,4	script	Refine Challenge	4_CAT_SAILOR1,{
+morocc,155,126,4	script	Refine Challenge	4_CAT_SAILOR1,{
 	disable_items;
 	mes .npc_name$;
 	mes "หวัดดี มีไรให้ช่วยไหม?";

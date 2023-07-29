@@ -74,11 +74,12 @@ OnInit:
 		"Figures",		// Shop Named 3
 		"Hatter",
 		"MVPCostume",
-		"Weapon";
+		"Weapon",
+		"HotweekCraft";
 
 // -----------------------------------------------------------
 //  Quest items -- do NOT use a reward item more than once!
-//	Add(<shop ID>,<reward ID>,<reward amount>,
+//	Add(<shop ID>,<reward ID>,<reward amount>,<limit>,
 //		<Zeny cost>,<Mob point cost>, <chance>,
 //		<required item ID>,<required item amount>,
 //		[...<required item ID>,<required item amount>]);
@@ -214,6 +215,16 @@ OnInit:
 	Add(7,68104,1,3000000,10000,35,1611,1,984,30,985,30,999,100);
 	Add(7,68105,1,3000000,10000,35,1611,1,984,30,985,30,999,100);
 
+	// Shop 8: Hotweek craft
+	Add(8,69101,1,5000000,5000,30,69100,1,984,50,985,50);
+	Add(8,69201,1,5000000,5000,30,69200,1,984,50,985,50);
+	Add(8,69301,1,5000000,5000,30,69300,1,984,50,985,50);
+	Add(8,69401,1,5000000,5000,30,69400,1,984,50,985,50);
+	Add(8,69501,1,5000000,5000,30,69500,1,984,50,985,50);
+	Add(8,69601,1,5000000,5000,30,69600,1,984,50,985,50);
+	Add(8,12412,1,200000,100,65,12208,2,30001,100);
+	Add(8,14533,1,200000,100,65,12210,2,30001,100);
+
 // -----------------------------------------------------------
 
 //=====================================================================================
@@ -249,7 +260,7 @@ OnMenu:
 	end;
 
 OnBuyItem:
-	// .@q[] : RewardID, BoughtAmt, RewardAmt, BaseAmt, ReqZeny, ReqPts, { ReqItem, ReqAmt, ... }
+	// .@q[] : RewardID, BoughtAmt, RewardAmt, Limit,BaseAmt, ReqZeny, ReqPts, { ReqItem, ReqAmt, ... }
 	setarray .@q[0],@bought_nameid[0],((@bought_quantity[0] > .MaxStack)?.MaxStack:@bought_quantity[0]);
 	copyarray .@q[3],getd(".q_"+@shop_index+"_"+.@q[0]+"[0]"),getarraysize(getd(".q_"+@shop_index+"_"+.@q[0]));
 
@@ -264,6 +275,7 @@ OnBuyItem:
 		message strcharinfo(0),"You can't purchase that many "+getitemname(.@q[0])+".";
 		end;
 	}
+
 	mes "[Dealer]";
 	mes "สินค้า: ^0055FF"+((.@q[2] > 1)?.@q[2]+"x ":"")+Slot(.@q[0])+"^000000";
 	if (.@q[5] > 0) {
@@ -475,5 +487,14 @@ morocc,165,112,6	script	Weapon Crafter#1	84,{
 
 	OnInit:
 	waitingroom "Weapon Quests",0;
+	end;
+}
+
+// Weapon
+morocc,163,126,6	script	Hotweek#Craft	84,{
+	callfunc "qshop", 8;
+
+	OnInit:
+	waitingroom "[HW] สร้างไอเทม",0;
 	end;
 }

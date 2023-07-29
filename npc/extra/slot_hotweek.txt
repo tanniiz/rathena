@@ -428,7 +428,7 @@ OnInit:
 	set .Reset_Day, 1;
 	bindatcmd "≈È“ßµŸÈcash»ÿ°√Ï",strnpcinfo(3) + "::OnAtcommand";
 	while(1) {
-		waitingroom ""+callfunc("F_InsertComma",$CashPool)+"Cash",0;
+		waitingroom ""+callfunc("F_InsertComma",$CashPool)+" Cash",0;
 		sleep 1000;
 		delwaitingroom;
 	}

@@ -1,8 +1,8 @@
 -	script	MonsterKill	-1,{
   OnNPCKillEvent:
     if(!getmonsterinfo(killedrid, MOB_MVPEXP) ) {
-      set point, getmonsterinfo(killedrid, MOB_SIZE) + 1;
-      set #MobPoint, #MobPoint + (point * 2);
+      set point, ((getmonsterinfo(killedrid, MOB_SIZE) + 1) * 2);
+      set #MobPoint, #MobPoint + point;
 
       set cashPts, (rand(10) * 2);
 		

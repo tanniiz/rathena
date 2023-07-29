@@ -13,11 +13,11 @@
 //============================================================
 
 //  Rewards shop
--	pointshop	REFINESHOP				-1,SECRET_REFINE,501:10,502:200,503:300
--	shop		REFINEDUMMYSHOP			-1,501:1000
--	cashshop	REFINE_MATERIAL_SHOP	-1,68200:5000
+-	pointshop	REFINESHOP				-1,SECRET_REFINE,30002:1
+-	shop	REFINEDUMMYSHOP#1			-1,501:1000
+-	cashshop	REFINE_MATERIAL_SHOP	-1,68200:500
 
-morocc,166,97,4	script	Refine Challenge	4_CAT_SAILOR1,{
+morocc,156,107,4	script	Refine Challenge	4_CAT_SAILOR1,{
 	disable_items;
 	mes .npc_name$;
 	mes "หวัดดี มีไรให้ช่วยไหม?";
@@ -34,8 +34,8 @@ morocc,166,97,4	script	Refine Challenge	4_CAT_SAILOR1,{
 			mes .npc_name$;
 			mes "คุณสามารถดูคะแนนที่จะได้รับก่อนการแลกเปลี่ยน";
 			close2;
-			npcshopattach "REFINEDUMMYSHOP";
-			callshop "REFINEDUMMYSHOP",2;
+			npcshopattach "REFINEDUMMYSHOP#1";
+			callshop "REFINEDUMMYSHOP#1",2;
 			end;
 		case 3: // Exchange
 			close2;
@@ -67,7 +67,7 @@ morocc,166,97,4	script	Refine Challenge	4_CAT_SAILOR1,{
         .@p = 1;
         for(.@i = 0; .@i < .@count; ++.@i) {
             if(@sold_nameid[.@i] != .itemid) {
-                mes "คุณสามารภขายได้เฉพาะไอเทมที่ได้รับการลงทะเบียน";
+                mes "คุณสามารถขายได้เฉพาะไอเทมที่ได้รับการลงทะเบียน";
                 close;
             }
             .@ref = @sold_refine[.@i];
@@ -85,7 +85,7 @@ morocc,166,97,4	script	Refine Challenge	4_CAT_SAILOR1,{
         if(!.@p){
             next;
             mes .npc_name$;
-            mes "You cannot turn in this item.";
+            mes "สินค้าชนิดนี้ไม่สามารถแลกคะแนนได้";
             close;
         }
         mes "แลกได้ทั้งหมด " + .@pts + " แต้ม";
@@ -108,9 +108,9 @@ morocc,166,97,4	script	Refine Challenge	4_CAT_SAILOR1,{
         
     // Customize points from each refine level
     OnInit:
-	//  				   0,1,2,3,....., 7, 8, 9, 10, 11, 12,  13,  14,  15,  16,    17,    18,    19,    20
-	setarray .refine_worth,0,0,0,0,0,0,0,10,25,70,150,350,800,1700,4000,9000,20000,45000,100000,250000,600000;
+	//  				   0,1,2,3,....., 7, 8, 9, 10;
+	setarray .refine_worth,0,0,0,0,0,0,2,4,10,25,100;
 	.itemid = 68200;
-	.npc_name$ = "[ ^0000FFRefine Challenge^000000 ]";
+	.npc_name$ = "[ ^0000FFกิจกรรมตีบวก^000000 ]";
 	waitingroom "กิจกรรมตีบวก",0;
 }

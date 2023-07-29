@@ -41670,8 +41670,8 @@ Body:
     Type: Weapon
     SubType: Dagger
     Buy: 0
-    Weight: 100
+    Weight: 1
     Locations:
       Right_Hand: true
-    WeaponLevel: 1
+    WeaponLevel: 4
     Refineable: true

@@ -1,0 +1,116 @@
+//===== rAthena Script =======================================
+//= Refine Challenge
+//===== Description: =========================================
+//= Players can turn in listed items for points that
+//= can be exchanged for various items.
+//===== Changelogs: ==========================================
+//= 1.0 First version [Secretdataz]
+//===== Dependency: ==========================================
+//= To use `sellitem` mode, you need to install this mod.
+//= https://github.com/secretdataz/rathena/pull/7
+//= Diff file
+//= https://github.com/secretdataz/rathena/pull/7.diff
+//============================================================
+
+//  Rewards shop
+-	pointshop	REFINESHOP				-1,SECRET_REFINE,501:10,502:200,503:300
+-	shop		REFINEDUMMYSHOP			-1,501:1000
+-	cashshop	REFINE_MATERIAL_SHOP	-1,68200:5000
+
+morocc,166,97,4	script	Refine Challenge	4_CAT_SAILOR1,{
+	disable_items;
+	mes .npc_name$;
+	mes "หวัดดี มีไรให้ช่วยไหม?";
+	mes " ";
+	mes "แต้มคงเหลือของคุณ : ^0000FF" + SECRET_REFINE + "^000000";
+	mes "แต้มทั้งหมดของคุณ : ^0000FF" + SECRET_REFINERANK + "^000000";
+	next;
+	switch(select("ซื้อวัตถุดิบ","แลกไอเทมเป็นแต้ม","ร้านค้า","ดูอันดับ")) {
+		case 1:
+			close2;
+			callshop "REFINE_MATERIAL_SHOP",1;
+			end;
+		case 2: // Turn in
+			mes .npc_name$;
+			mes "คุณสามารถดูคะแนนที่จะได้รับก่อนการแลกเปลี่ยน";
+			close2;
+			npcshopattach "REFINEDUMMYSHOP";
+			callshop "REFINEDUMMYSHOP",2;
+			end;
+		case 3: // Exchange
+			close2;
+			callshop "REFINESHOP",1;
+			end;
+		case 4: // Ranking
+			.@rows = query_sql("SELECT char_id, value FROM `char_reg_num` WHERE `key` LIKE 'SECRET_REFINERANK' ORDER BY value DESC LIMIT 5", .@char_id, .@value);
+			mes .npc_name$;
+			if(.@rows == -1) {
+				mes "เกิดข้อผิดพลาด โปรดลองใหม่อีกครั้ง";
+				close;
+			}
+			if(!.@rows)	{
+				mes "ยังไม่มีใครนำไอเทมมาแลกเลยนะ";
+				close;
+			}
+			for(.@i = 0; .@i < .@rows; ++.@i) {
+				query_sql("SELECT name FROM `char` WHERE char_id = " + .@char_id[.@i], .@name$);
+				mes (.@i+1) + ". " + .@name$ + " " + .@value[.@i] + " แต้ม";
+			}
+			break;
+	}
+	close;
+	end;
+	
+    OnSellItem:
+        .@count = getarraysize(@sold_nameid);
+        mes .n$;
+        .@p = 1;
+        for(.@i = 0; .@i < .@count; ++.@i) {
+            if(@sold_nameid[.@i] != .itemid) {
+                mes "คุณสามารภขายได้เฉพาะไอเทมที่ได้รับการลงทะเบียน";
+                close;
+            }
+            .@ref = @sold_refine[.@i];
+            if(@sold_identify[.@i]) {
+                mes (.@p++) + "." + "+" + .@ref + " " + getitemname(@sold_nameid[.@i]) + " " + .refine_worth[.@ref] + " แต้ม";
+                .@tmpsto$ = .@tmpsto$ + @sold_nameid[.@i] + ":" + @sold_refine[.@i] + ":" + @sold_identify[.@i] + ":" + @sold_attribute + ":" + @sold_card1[.@i] + ":" + @sold_card2[.@i] + ":" + @sold_card3[.@i] + ":" + @sold_card4[.@i] + "|";
+                .@pts += .refine_worth[.@ref];
+            } else {
+                next;
+                mes .npc_name$;
+                mes "มีไอเทมที่ยังไม่ได้ส่อง";
+                close;
+            }
+        }
+        if(!.@p){
+            next;
+            mes .npc_name$;
+            mes "You cannot turn in this item.";
+            close;
+        }
+        mes "แลกได้ทั้งหมด " + .@pts + " แต้ม";
+        mes "ต้องการแลกทั้งหมดจริงๆใช้มั้ย?";
+        next;
+        menu "ยืนยัน",-;
+        explode(.@items$, .@tmpsto$, "|");
+        .@sz = getarraysize(.@items$);
+        for(.@i = 0; .@i < .@sz; ++.@i) {
+            if(.@items$ == "") continue;
+            explode(.@iteminfo$, .@items$[.@i], ":");
+            delitem2 atoi(.@iteminfo$[0]),1,atoi(.@iteminfo$[2]),atoi(.@iteminfo$[1]),atoi(.@iteminfo$[3]),atoi(.@iteminfo$[4]),atoi(.@iteminfo$[5]),atoi(.@iteminfo$[6]),atoi(.@iteminfo$[7]);
+        }
+        SECRET_REFINE += .@pts;
+        SECRET_REFINERANK += .@pts;
+        mes .npc_name$;
+        mes "คุณได้รับแต้มทั้งหมด " + .@pts + " แต้ม";
+        close;
+        end;
+        
+    // Customize points from each refine level
+    OnInit:
+	//  				   0,1,2,3,....., 7, 8, 9, 10, 11, 12,  13,  14,  15,  16,    17,    18,    19,    20
+	setarray .refine_worth,0,0,0,0,0,0,0,10,25,70,150,350,800,1700,4000,9000,20000,45000,100000,250000,600000;
+	.itemid = 68200;
+	.npc_name$ = "[ ^0000FFRefine Challenge^000000 ]";
+	waitingroom "กิจกรรมตีบวก",0;
+}

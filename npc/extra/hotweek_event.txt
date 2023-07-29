@@ -1,0 +1,14 @@
+-	script	Hotweek	-1,{
+    setarray .npc_name$,"Hot Week";
+    OnMinute00:
+        announce "xxx",bc_all;
+        for(.@i = 0; .@i < getarraysize(.npc_name$); ++.@i) {
+            announce .npc_name$[i],bc_all;
+            disablenpc .npc_name$;
+        }
+    OnMinute47:
+        for(.@i = 0; .@i < .@npc_name; ++.@i) {
+            hideonnpc .@npc_name;
+        }
+    end;
+}

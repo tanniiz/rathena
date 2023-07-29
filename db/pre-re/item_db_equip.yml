@@ -35110,9 +35110,9 @@ Body:
     View: 568
     Script: |
       if (BaseClass == Job_Swordman || BaseClass == Job_Merchant || BaseClass == Job_Thief || (BaseJob == Job_Taekwon && Class!=Job_Soul_Linker))
-         bonus bStr,1;
+         bonus bAspd,1;
       else if (BaseClass == Job_Mage || BaseClass == Job_Acolyte || class == Job_Ninja || class == Job_Soul_Linker)
-         bonus bInt,1;
+         bonus bMatk,5;
       else if (BaseClass == Job_Archer || BaseClass == Job_Gunslinger)
          bonus bDex,1;
       else if (BaseJob == Job_Novice || BaseJob == Job_SuperNovice) {

@@ -24798,6 +24798,19 @@ Body:
       skill "MG_COLDBOLT",1;
       skill "MG_FIREWALL",1;
       skill "MG_FIREBOLT",1;
+  - Id: 2855
+    AegisName: Whike_Black_Tail
+    Name: Whike Black Tail
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Both_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 45
+    Script: |
+      bonus bCritical,7;
+      bonus bAspdRate,3;
   - Id: 5001
     AegisName: Headset
     Name: Headset
@@ -31156,8 +31169,6 @@ Body:
       bonus bFlee,10;
       bonus bCritical,3;
       bonus bCritAtkRate,10;
-      bonus bDefRate,-50;
-      bonus bDef2Rate,-50;
   - Id: 5361
     AegisName: Gang_Scarf
     Name: Gangster Scarf

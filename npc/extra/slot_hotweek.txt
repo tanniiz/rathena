@@ -1,0 +1,523 @@
+-	script	cpz_db	-1,{
+OnInit:
+	query_sql (
+		"CREATE TABLE IF NOT EXISTS `SlotCash_player_logs` ("+
+		"`id` int(7) NOT NULL AUTO_INCREMENT,"+
+		"`account_id` int(11) NOT NULL,"+
+		"`char_id` int(11) NOT NULL,"+
+		"`player_name` varchar(255) NOT NULL,"+
+		"`played` int(7) NOT NULL,"+
+		"PRIMARY KEY (`id`)"+
+		") ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;"
+	);
+	query_sql (
+		"CREATE TABLE IF NOT EXISTS `SlotCash_player_ranking` ("+
+		"`id` int(7) NOT NULL AUTO_INCREMENT,"+
+		"`account_id` int(11) NOT NULL,"+
+		"`char_id` int(11) NOT NULL,"+
+		"`player_name` varchar(255) NOT NULL,"+
+		"`score` int(7) NOT NULL,"+
+		"PRIMARY KEY (`id`)"+
+		") ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;"
+	);
+	query_sql (
+		"CREATE TABLE IF NOT EXISTS `SlotCash_player_winners` ("+
+		"`id` int(7) NOT NULL AUTO_INCREMENT,"+
+		"`account_id` int(11) NOT NULL,"+
+		"`char_id` int(11) NOT NULL,"+
+		"`player_name` varchar(255) NOT NULL,"+
+		"`score` int(7) NOT NULL,"+
+		"`number` tinyint(1) NOT NULL,"+
+		"`reward_id` int(7) NOT NULL,"+
+		"`reward_amount` int(7) NOT NULL,"+
+		"`claim` tinyint(1) NOT NULL,"+
+		"PRIMARY KEY (`id`)"+
+		") ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;"
+	);
+end;
+}
+
+
+morocc,159,131,4	script	น้องหนุ่ย Slot Cash	563,{
+	
+	mes .NPCName$;
+	mes "ท่านมี "+callfunc("F_InsertComma",#CASHPOINTS)+" Cash";
+	mes "สุ่มไปแล้ว "+Played+" ครั้ง";
+	mes "^FF0000ยอด Cash ที่ทั้ง Server หมุน^000000";
+	mes "ตอนนี้ยอดรวมทั้งหมด: "+callfunc("F_InsertComma",$CashPool)+" Cash";
+	next;
+	switch(select("ใช้ "+callfunc("F_InsertComma",.Fee)+" Cash ในการสุ่ม:ดู Item ที่จะออกในตู้:ดู ranking สัปดาห์ที่ผ่านมา:ดู ranking สัปดาห์นี้:รับรางวัล ranking:ยกเลิก")) {
+		case 1:
+			mes .NPCName$;
+			mes "ค่าบริการในการสุ่ม";
+			mes "^FF0000"+callfunc("F_InsertComma",.Fee)+"^000000 Cash";
+/*			
+			mes "แบ่งเข้า Pool";
+			mes "^FF0000"+callfunc("F_InsertComma",.Share2Pool)+"^000000 Cash";
+*/			
+			mes "ยืนยันการสุ่มหรือไม่?";
+			next;
+			if (select("ยืนยัน:ยกเลิก") == 2) {
+				mes .NPCName$;
+				mes " ";
+				mes "^FF0000ไม่ลองดูซักหน่อยหรอ^000000";
+				close;
+			}
+			if (#CASHPOINTS < .Fee) {
+				mes .NPCName$;
+				mes " ";
+				mes "^FF0000ท่านมี CASHPOINTS ไม่ถึง "+callfunc("F_InsertComma",.Fee)+" Cash^000000";
+				close;
+			}
+			set $CashPool, $CashPool+.Share2Pool;
+			set Played, Played+1;
+			set #CASHPOINTS, #CASHPOINTS-.Fee;
+			query_sql("SELECT COUNT(char_id) FROM `SlotCash_player_logs` WHERE char_id = "+getcharid(0)+"",.@ccid);
+			if (!.@ccid) {
+				query_sql("INSERT INTO `SlotCash_player_logs` (account_id,char_id,player_name,played) VALUES ("+getcharid(3)+","+getcharid(0)+",'"+strcharinfo(0)+"',1)");
+			}
+			else {
+				query_sql("UPDATE `SlotCash_player_logs` SET `played` = `played`+1 WHERE char_id = "+getcharid(0)+"");
+			}
+			query_sql("SELECT COUNT(char_id) FROM `SlotCash_player_ranking` WHERE char_id = "+getcharid(0)+"",.@ccid);
+			if (!.@ccid) {
+				query_sql("INSERT INTO `SlotCash_player_ranking` (account_id,char_id,player_name,score) VALUES ("+getcharid(3)+","+getcharid(0)+",'"+strcharinfo(0)+"',1)");
+			}
+			else {
+				query_sql("UPDATE `SlotCash_player_ranking` SET `score` = `score`+1 WHERE char_id = "+getcharid(0)+"");
+			}
+			
+			// .@P ข้างล่างมีถึงเท่าไหร่ใส่ตรงนี้
+			set .@Total,13;
+			// 10000 = 100%
+			// 1000 = 10%
+			// 100 = 1%
+			// 10 = 0.1%
+			// 1 = 0.01%
+			//<%>,<ItemID>,<Amount>	
+/*			
+//			setarray .@P1[0],120,41096,1;		//Wickebine Black Cat Ears
+//			setarray .@P2[0],220,5305,1;		//Pirate_Dagger
+//			setarray .@P3[0],120,5463,1;		//Rainbow_Scarf
+//			setarray .@P4[0],220,5490,1;		//Anubis_Helm
+//			setarray .@P5[0],170,5389,1;		//Angel_Spirit
+//			setarray .@P6[0],170,5372,1;		//Drooping_White_Kitty
+//			setarray .@P7[0],170,5431,1;		//Chicken_Hat
+//			setarray .@P8[0],120,5464,1;		//Zaha
+//			setarray .@P9[0],250,41084,1;		//Color_Name_Pass
+//			setarray .@P10[0],500,41085,1;		//Stylist_Pass
+//			setarray .@P11[0],100,41065,1;		//Re Status
+//			setarray .@P12[0],150,41064,1;		//Re Skill
+/////////////////////////////////////////SS2////////////////////////////////////////////
+//			setarray .@P1[0],120,5359,1;		//J_Captain_Hat
+//			setarray .@P2[0],220,5286,1;		//Pecopeco_Hairband
+//			setarray .@P3[0],120,5564,1;		//Crown_Of_Deceit
+//			setarray .@P4[0],220,5462,1;		//Spiked_Scarf
+//			setarray .@P5[0],170,5416,1;		//Beer_Cap
+//			setarray .@P6[0],170,5664,1;		//Filir_Wing
+//			setarray .@P7[0],100,41065,1;		//Re Status
+//			setarray .@P8[0],150,41064,1;		//Re Skill
+/////////////////////////////////////////SS3////////////////////////////////////////////		
+//			setarray .@P1[0],300,41155,1;		//Blood_Butterfly_Ears
+//			setarray .@P2[0],200,41156,1;		//Toy_Syring
+//			setarray .@P3[0],300,41157,1;		//Droopy_Turtle_Hat
+//			setarray .@P4[0],200,41158,1;		//Alice_Doll
+//			setarray .@P5[0],200,41159,1;		//Bennit_Doll_Hat
+//			setarray .@P6[0],300,41160,1;		//Holy_Marcher_Hat
+//			setarray .@P7[0],200,41161,1;		//Robo_Eye
+//			setarray .@P8[0],100,41162,1;		//New_Wave_sunglasses
+//			setarray .@P9[0],100,41163,1;		//Thief_Bandana
+//			setarray .@P10[0],300,41164,1;		//Ghostring_Ballon
+//			setarray .@P11[0],200,41165,1;		//Defolty_Doll_Hat
+//			setarray .@P12[0],200,41166,1;		//Glaris_Doll_Hat
+//			setarray .@P13[0],100,41167,1;		//Whike_Black_Tail
+//			setarray .@P14[0],200,41065,1;		//Re Status
+//			setarray .@P15[0],300,41064,1;		//Re Skill	
+/////////////////////////////////////////SS4////////////////////////////////////////////			
+//			setarray .@P1[0],300,41170,1;		//Rasta_Wig
+//			setarray .@P2[0],200,41171,1;		//Golden_Crown
+//			setarray .@P3[0],300,41172,1;		//Lion_Model_Hat
+//			setarray .@P4[0],200,41173,1;		//Monkey_On_Fur_Hat
+//			setarray .@P5[0],200,41174,1;		//Rabbit_Magic_Hat
+//			setarray .@P6[0],300,41175,1;		//Leaf_Cat_Hat
+//			setarray .@P7[0],200,41176,1;		//WH_4_Swordman_Figure
+//			setarray .@P8[0],300,41177,1;		//WH_4_Acolyte_Figure
+//			setarray .@P9[0],300,41178,1;		//WH_4_Mage_Figure
+//			setarray .@P10[0],300,41179,1;		//WH_4_Archer_Figure
+//			setarray .@P11[0],200,41180,1;		//WH_4_Thief_Figure
+//			setarray .@P12[0],200,41181,1;		//WH_4_Merchant_Figure
+//			setarray .@P13[0],300,4000003,1;		//Extent_Refine_Bonus
+//			setarray .@P14[0],200,41065,1;		//Re Status
+//			setarray .@P15[0],300,41064,1;		//Re Skill
+//			setarray .@P16[0],300,41142,1;		//Tool_Research
+//			setarray .@P17[0],300,41197,1;		//RemoveCard_knife	
+/////////////////////////////////////////SS5////////////////////////////////////////////
+//			setarray .@P1[0],100,41203,1;		//HW5_Assasin_Amulet
+//			setarray .@P2[0],200,41204,1;		//HW5_Foxtail
+//			setarray .@P3[0],100,41205,1;		//HW5_Well_Baked_Toast
+//			setarray .@P4[0],200,41206,1;		//HW5_Angel_Egg
+//			setarray .@P5[0],200,41207,1;		//HW5_Amistr_Bag
+//			setarray .@P6[0],300,41208,1;		//HW5_Khalitzburg_Knight_Armor
+//			setarray .@P7[0],200,41209,1;		//HW5_Undershirt_
+//			setarray .@P8[0],200,41210,1;		//HW5_G_Strings_
+//			setarray .@P9[0],300,4000003,1;		//Extent_Refine_Bonus
+//			setarray .@P10[0],200,41065,1;		//Re Status
+//			setarray .@P11[0],300,41064,1;		//Re Skill
+//			setarray .@P12[0],300,41142,1;		//Tool_Research
+//			setarray .@P13[0],300,41197,1;		//RemoveCard_knife
+*/
+/////////////////////////////////////////SS5////////////////////////////////////////////
+//			setarray .@P1[0],100,41223,1;		//HW6_Glove_Of_Smith
+//			setarray .@P2[0],200,41224,1;		//HW6_Bloody_Knight_Shield_
+//			setarray .@P3[0],100,41225,1;		//HW6_Bubble_Gum_In_Mouth
+//			setarray .@P4[0],200,41226,1;		//HW6_Magic_Eyes
+//			setarray .@P5[0],200,41227,1;		//HW6_Lava_Leather_Manteau
+//			setarray .@P6[0],100,41228,1;		//HW6_Falconer_Claw
+//			setarray .@P7[0],100,41229,1;		//HW6_L_Magestic_Goat
+//			setarray .@P8[0],300,4000003,1;		//Extent_Refine_Bonus
+//			setarray .@P9[0],200,41065,1;		//Re Status
+//			setarray .@P10[0],300,41064,1;		//Re Skill
+//			setarray .@P11[0],300,41142,1;		//Tool_Research
+//			setarray .@P12[0],300,41197,1;		//RemoveCard_knife
+
+      setarray .@P1[0],200,5360,1;		// หูแมว
+			setarray .@P2[0],200,2855,1;		// หางแมว
+			setarray .@P3[0],200,5464,1;		// Zaha
+			setarray .@P4[0],200,5315,1;		// Observer
+			setarray .@P5[0],200,5288,1;		// Red_Glasses
+			setarray .@P6[0],200,5208,1;		// Rideword_Hat
+			setarray .@P7[0],200,5210,1;		// Flying_Angel
+			setarray .@P7[0],200,5293,1;		// Ramen Hat
+			setarray .@P7[0],200,5801,1;		// Red Tailed
+			setarray .@P8[0],250,7619,1;		// EluHE
+			setarray .@P9[0],250,7620,1;		// OriHE
+			setarray .@P10[0],300,7777,1;		// Restat
+			setarray .@P11[0],300,12213,1;		// Neuralizer
+
+			
+			
+			// ตั้งค่ารหัสไอเทมขยะ
+			setarray .@NM_ItemID, 12211, 12044, 12059, 12054, 12049, 12064, 12069, 11504, 11503;
+			setarray .@NM_ItemAmt, 1, 2, 2, 2, 2, 2, 2, 5, 5;
+			
+			
+			set .@Pick_NM, rand(getarraysize(.@NM_ItemID));
+			setarray .@Default[0],.@NM_ItemID[.@Pick_NM],.@NM_ItemAmt[.@Pick_NM];
+			set .@i, rand(1,.@Total);
+			if (rand(1,10000) > getd(".@P"+.@i+"[0]")) {
+				for(set .@j,0; .@j<getarraysize(.@Default); set .@j,.@j+2) {
+					getitem .@Default[.@j], .@Default[.@j+1];
+					if(!.@k[0])
+						setarray .@k[0], .@Default[.@j], .@Default[.@j+1];
+					specialeffect 10;
+					soundeffect "zherlthsh_attack.wav",0;
+				}
+			}
+			else {
+				for(set .@j,1; .@j<getarraysize(getd(".@P"+.@i)); set .@j,.@j+2) {
+					getitem getd(".@P"+.@i+"["+.@j+"]"), getd(".@P"+.@i+"["+(.@j+1)+"]");
+					if (!.@k[0]) {
+						set .@rare, 1;
+						setarray .@k[0], getd(".@P"+.@i+"["+.@j+"]"), getd(".@P"+.@i+"["+(.@j+1)+"]");
+						break;
+					}
+				}
+			}
+			dispbottom .NPCName$+" : ท่านได้รับไอเท็ม [ ^FF0000"+ getitemname( .@k[0] ) +"^000000 ^0000FF"+ .@k[1] +" ea^000000 ]";
+			if (.@rare) {
+				announce .NPCName$+" : ยินดีด้วยท่าน " + strcharinfo(0) + " ได้รับรางวัล [ "+ getitemname( .@k[0] ) +" ] จำนวน  "+ .@k[1] +" ea. จากการเล่น น้องหนุ่ย Slot Cash", bc_all, "0x00d2ff";
+						specialeffect 636;
+						specialeffect 410;
+						specialeffect2 507;
+						specialeffect2 42;
+						specialeffect 636;
+			}
+		
+			if (Played >= .Round2Jackpot) {
+/*			
+				mes .NPCName$;
+				mes "ท่านกำลังเข้าสู่การลุ้น Jackpot";
+				mes "มีโอกาสได้รับเงินรางวัลจาก Jackpot "+.Jackpot_Rate+"%";
+				mes "และจะสุ่มได้รับ 10-70% จาก Jackpot";
+				mes "ท่านอยากไปต่อหรือพอแค่นี้ละ?";
+				next;
+				if (select("ไปต่อ:พอแค่นี้") == 2) {
+					mes .NPCName$;
+					mes " ";
+					mes "^FF0000น่าเสียดายโอกาสนี้จริงๆ^000000";
+					close;
+				}
+*/				
+				if (rand(1,100) <= .Jackpot_Rate) {
+					set .@JP, rand(10,50);
+					set .@Reward, ($CashPool/100)*.@JP;
+					set $CashPool, $CashPool-.@Reward;
+					set #CASHPOINTS, #CASHPOINTS+.@Reward;
+					set Played, 0;
+					specialeffect2 507;
+						specialeffect2 42;
+						specialeffect2 37;
+						specialeffect2 313;
+						specialeffect2 150;
+						specialeffect2 635;
+						specialeffect2 8;
+						specialeffect2 636;
+						specialeffect2 17;
+						specialeffect2 375;
+						specialeffect2 410;
+						sleep2 20;
+						specialeffect 636;
+						specialeffect 68;
+						sleep2 100;
+						specialeffect 636;
+						specialeffect 68;
+						sleep2 100;
+						specialeffect 636;
+						specialeffect 68;
+						sleep2 100;
+						specialeffect 636;
+						specialeffect 68;
+						sleep2 100;
+						specialeffect 636;
+						specialeffect 68;
+						sleep2 100;
+						specialeffect 636;
+						specialeffect 100;
+					dispbottom .NPCName$+" : ยินดีด้วยท่านได้รับรางวัล Jackpot "+.@JP+"% มูลค่า "+callfunc("F_InsertComma",.@Reward)+" Cash";
+					announce .NPCName$+" : ยินดีด้วยท่าน " +strcharinfo(0)+ " ได้รับรางวัล Jackpot "+.@JP+"% มูลค่า "+callfunc("F_InsertComma",.@Reward)+" Cash จากการเล่น น้องหนุ่ย Slot Cash", bc_all, "0xeb34a8";
+				}
+				else {
+					dispbottom .NPCName$+" : น่าเสียดายท่านไม่ได้รับรางวัล Jackpot";
+					set Played, 0;
+				}
+			}		
+			end;
+		case 2:
+			callfunc "preview_Zero_Slot_Cash"; 
+		end;			
+		case 3:
+			mes .NPCName$;
+			query_sql("SELECT player_name,score,number FROM `SlotCash_player_winners` ORDER BY id DESC LIMIT 3",.@name$,.@score,.@number);
+			if (!.@score[0]) {
+				mes " ";
+				mes "^FF0000ยังไม่มีข้อมูลของสัปดาห์ที่แล้ว^000000";
+				close;
+			}
+			for (set .@i,getarraysize(.@name$); .@i >= 0 ; set .@i,.@i-1) {
+				if (.@score[.@i])
+				mes ""+.@number[.@i]+". "+.@name$[.@i]+" ["+.@score[.@i]+"]";
+			}
+			close;
+			
+		case 4:
+			mes .NPCName$;
+			query_sql("SELECT player_name,score FROM `SlotCash_player_ranking` ORDER BY score DESC LIMIT 10",.@name$,.@score);
+			if (!.@score[0]) {
+				mes " ";
+				mes "^FF0000ยังไม่มีข้อมูลของสัปดาห์นี้^000000";
+				close;
+			}
+			for (set .@i,0; .@i < getarraysize(.@name$); set .@i,.@i+1) {
+				mes ""+(.@i+1)+". "+.@name$[.@i]+" ["+.@score[.@i]+"]";
+			}
+			close;
+			
+		case 5:
+			query_sql("SELECT COUNT(char_id) FROM `SlotCash_player_winners` WHERE char_id = "+getcharid(0)+" AND claim = 0",.@ccid);
+			mes .NPCName$;
+			mes " ";
+			mes "รางวัลที่ยังไม่ได้รับ ^FF0000"+.@ccid+"^000000 รางวัล";
+			next;
+			if (!.@ccid) {
+				mes .NPCName$;
+				mes " ";
+				mes "^FF0000ยังไม่มีรางวัลที่ท่านสามารถรับได้^000000";
+				close;
+			}
+			if (select("รับรางวัล:ยกเลิก") == 2) {
+				mes .NPCName$;
+				mes " ";
+				mes "^FF0000ไม่เป็นไร ไว้มารับทีหลังก็ได้นะ^000000";
+				close;
+			}
+			query_sql("SELECT id,number,reward_id,reward_amount FROM `SlotCash_player_winners` WHERE char_id = "+getcharid(0)+" AND claim = 0",.@id,.@no,.@rwid,.@rwamt);
+			for (set .@i,0; .@i < getarraysize(.@rwid); set .@i,.@i+1) {
+				query_sql("UPDATE `SlotCash_player_winners` SET claim = 1 WHERE id = "+.@id[.@i]+"");
+				dispbottom .NPCName$+" : คุณได้รับรางวัล ranking อันดับ "+.@no[.@i]+" เป็น "+getitemname(.@rwid[.@i])+" จำนวน "+.@rwamt[.@i]+"ea จาก Jackpot Dominator";
+				getitem .@rwid[.@i], .@rwamt[.@i];
+			}
+			end;
+		
+		case 6:
+			mes .NPCName$;
+			mes " ";
+			mes "^FF0000ไม่ลองดูซักหน่อยหรอ^000000";
+			close;
+	}
+	end;
+/*	
+OnClock2359:
+	if (gettime(4) == .Reset_Day) {
+		query_sql("SELECT account_id,char_id,player_name,score FROM `SlotCash_player_ranking` ORDER BY score DESC LIMIT 3",.@aid,.@cid,.@name$,.@score);
+		for (set .@j,0; .@j < getarraysize(.@aid); set .@j,.@j+1) {
+			if ((.@j+1) == 1) {
+				set .@rwid, .No1_Reward_ID;
+				set .@rwamt, .No1_Reward_Amt;
+			}
+			else if ((.@j+1) == 2) {
+				set .@rwid, .No2_Reward_ID;
+				set .@rwamt, .No2_Reward_Amt;
+			}
+			else {
+				set .@rwid, .No3_Reward_ID;
+				set .@rwamt, .No3_Reward_Amt;
+			}
+			announce .NPCName$+" : ผู้เล่น " +.@name$[.@i]+ " ได้อันดับ "+(.@i+1)+" จากการเล่น น้องหนุ่ย Slot Cash "+.@score[.@i]+" คะแนน สัปดาห์นี้", bc_all, "0xeb34a8";
+			query_sql("INSERT INTO `SlotCash_player_winners` (account_id,char_id,player_name,score,number,reward_id,reward_amount,claim) VALUES ("+.@aid[.@i]+","+.@cid[.@i]+",'"+.@name$[.@i]+"',"+.@score[.@i]+","+(.@i+1)+","+.@rwid+","+.@rwamt+",0)");
+		}
+		query_sql("TRUNCATE TABLE `SlotCash_player_ranking`");
+		announce .NPCName$+" : ทำการรีเซ็ตอันดับ Jackpot Dominator เรียบร้อยแล้ว", bc_all, "0xeb34a8";
+	}
+	end;
+*/	
+OnAtcommand:
+	if (getgmlevel() != 99) { end; }
+	mes .NPCName$;
+	mes " ";
+	mes "^FF0000ท่านแอดมินต้องการรีเซ็ต Jackpot จำนวน";
+	mes ""+callfunc("F_InsertComma",$CashPool)+" Cash";
+	mes "ใช่หรือไม่?^000000";
+	next;
+	if (select("ยกเลิก:ยืนยัน") == 1) {
+		mes .NPCName$;
+		mes " ";
+		mes "^FF0000เกือบไปแล้วไหมละ^000000";
+		close;
+	}
+	set $CashPool, 0;
+	mes .NPCName$;
+	mes " ";
+	mes "^0000FFทำการรีเซ็ต Jackpot เรียบร้อยแล้ว^000000";
+	close;
+	
+OnInit:
+	// ตั้งค่าชื่อ NPC
+	set .NPCName$, "[ น้องหนุ่ย Hotweek Cash ]";
+	// ตั้งค่าค่าบริการ
+	set .Fee, 200;
+	// ตั้งค่าจำนวนที่จะแบ่งเข้า Jackpot Pool
+	set .Share2Pool, 10;
+	// ตั้งค่าเล่นครบกี่รอบจะได้สุ่ม Jackpot
+	set .Round2Jackpot, 15;
+	// ตั้งค่าโอกาสที่จะได้ Jackpot 1-100%
+	set .Jackpot_Rate, 5;
+	// ตั้งค่ารหัสไอเทมรางวัล ranking ที่ 1
+	set .No1_Reward_ID, 501;
+	// ตั้งค่าจำนวนไอเทมรางวัล ranking ที่ 1
+	set .No1_Reward_Amt, 1;
+	// ตั้งค่ารหัสไอเทมรางวัล ranking ที่ 2
+	set .No2_Reward_ID, 501;
+	// ตั้งค่าจำนวนไอเทมรางวัล ranking ที่ 2
+	set .No2_Reward_Amt, 1;
+	// ตั้งค่ารหัสไอเทมรางวัล ranking ที่ 3
+	set .No3_Reward_ID, 501;
+	// ตั้งค่าจำนวนไอเทมรางวัล ranking ที่ 3
+	set .No3_Reward_Amt, 1;
+	// ตั้งค่าวันตัด ranking
+	// 0 อาทิตย์ 1 จันทร์ 2 อังคร 3 พุธ 4 พฤหัสบดี 5 ศุกร์ 6 เสาร์
+	set .Reset_Day, 1;
+	bindatcmd "ล้างตู้cashศุกร์",strnpcinfo(3) + "::OnAtcommand";
+	while(1) {
+		waitingroom ""+callfunc("F_InsertComma",$CashPool)+"Cash",0;
+		sleep 1000;
+		delwaitingroom;
+	}
+	end;
+}
+
+
+-	script	preview_Slot_Cash	-1,{ 
+// =============================================================
+function PreviewAddItems;
+// =============================================================
+OnInit:
+	freeloop(1);
+	setarray .Shops$[1],"~ ตัวอย่างของรางวัล";
+// =============================================================
+	PreviewAddItems(1,5360,1,0,0);			
+	PreviewAddItems(1,2855,1,0,0);			
+	PreviewAddItems(1,5464,1,0,0);			
+	PreviewAddItems(1,5315,1,0,0);			
+	PreviewAddItems(1,5288,1,0,0);			
+	PreviewAddItems(1,5208,1,0,0);			
+	PreviewAddItems(1,5210,1,0,0);			
+	PreviewAddItems(1,5293,1,0,0);			
+	PreviewAddItems(1,5801,1,0,0);			
+	PreviewAddItems(1,7619,1,0,0);			
+	PreviewAddItems(1,7620,1,0,0);			
+	PreviewAddItems(1,12213,1,0,0);			
+	PreviewAddItems(1,7777,1,0,0);			
+	PreviewAddItems(1,11503,1,0,0);			
+
+	PreviewAddItems(1,11504,1,0,0);		//OBB
+	PreviewAddItems(1,12069,1,0,0);		//Life_Insurance
+	PreviewAddItems(1,12064,1,0,0);		//Kafra_Card
+	PreviewAddItems(1,12049,1,0,0);		//Level 10 Blessing Scroll
+	PreviewAddItems(1,12054,1,0,0);		//Level 10 Increase Agility Scroll
+	PreviewAddItems(1,12059,1,0,0);		//[WH] Light White Potion
+	PreviewAddItems(1,12044,1,0,0);		//[WH] Light Blue Potion
+	PreviewAddItems(1,12211,1,0,0);		//Giant_Fly_Wing
+
+			
+	
+// =============================================================
+
+	freeloop(0);
+	set .menu$,"";
+	for(set .@i,1; .@i<=getarraysize(.Shops$); set .@i,.@i+1) {
+		set .menu$, .menu$+.Shops$[.@i]+":";
+		npcshopdelitem "preview_Zero_Slot_Cash"+.@i,909;
+	}
+	end;
+
+OnMainMenu:
+
+	set .@size, getarraysize(@i);
+	if (!.@size) set .@i, select(.menu$);
+	else if (.@size == 1) set .@i, @i[0];
+	else {
+		for(set .@j,0; .@j<.@size; set .@j,.@j+1)
+			set .@menu$, .@menu$+.Shops$[@i[.@j]]+":";
+		set .@i, @i[select(.@menu$)-1];
+	}
+	deletearray @i[0],getarraysize(@i);
+	if (.Shops$[.@i] == "") {
+		message strcharinfo(0),"เกิดข้อผิดพลาด.";
+		end;
+	}
+	callshop "preview_Zero_Slot_Cash"+.@i,1;
+	npcshopattach "preview_Zero_Slot_Cash"+.@i;
+	end;
+
+OnBuyItem:
+	end;
+
+function PreviewAddItems {
+	
+	npcshopadditem "preview_Zero_Slot_Cash"+getarg(0),getarg(1),((.ShowCash)?getarg(3):0);
+	return;
+}
+
+}
+
+function	script	preview_Zero_Slot_Cash	{
+
+	deletearray @i[0],getarraysize(@i);
+	for(set .@i,0; .@i<getargcount(); set .@i,.@i+1)
+		set @i[.@i],getarg(.@i);
+	doevent "preview_Slot_Cash::OnMainMenu";
+	end;
+}
+
+-	shop	preview_Zero_Slot_Cash1	-1,909:-1
+

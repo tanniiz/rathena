@@ -1230,7 +1230,14 @@ Body:
           - MAGNUS_MASTER_ARC_WAND
     Script: |
       skill "HP_ASSUMPTIO",5;
-
+  - Combos:
+      - Combo:
+          - Whike_Black_Tail   # 2855
+          - Whikebain_Ears   # 5360
+    Script: |
+      bonus bCritAtkRate,10;
+      if (getequiprefinerycnt(EQI_HEAD_TOP) >= 7)
+         bonus bCritical,5;
 
       
     

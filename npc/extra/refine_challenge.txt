@@ -20,19 +20,19 @@
 morocc,156,107,4	script	Refine Challenge	4_CAT_SAILOR1,{
 	disable_items;
 	mes .npc_name$;
-	mes "๏ฟฝ๏ฟฝัด๏ฟฝ๏ฟฝ ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ?";
+	mes "หวัดดี มีไรให้ช่วยไหม?";
 	mes " ";
-	mes "๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝอของ๏ฟฝุณ : ^0000FF" + SECRET_REFINE + "^000000";
-	mes "๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝอง๏ฟฝุณ : ^0000FF" + SECRET_REFINERANK + "^000000";
+	mes "แต้มคงเหลือของคุณ : ^0000FF" + SECRET_REFINE + "^000000";
+	mes "แต้มทั้งหมดของคุณ : ^0000FF" + SECRET_REFINERANK + "^000000";
 	next;
-	switch(select("๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝัต๏ฟฝุดิบ","๏ฟฝลก๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ","๏ฟฝ๏ฟฝาน๏ฟฝ๏ฟฝ๏ฟฝ","๏ฟฝ๏ฟฝ๏ฟฝัน๏ฟฝับ","๏ฟฝีบวก๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ")) {
+	switch(select("ซื้อวัตถุดิบ","แลกไอเทมเป็นแต้ม","ร้านค้า","ดูอันดับ","ตีบวกไอเทม")) {
 		case 1:
 			close2;
 			callshop "REFINE_MATERIAL_SHOP",1;
 			end;
 		case 2: // Turn in
 			mes .npc_name$;
-			mes "๏ฟฝุณ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝรถ๏ฟฝูค๏ฟฝแนน๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝับ๏ฟฝ๏ฟฝอน๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝลก๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝยน";
+			mes "คุณสามารถดูคะแนนที่จะได้รับก่อนการแลกเปลี่ยน";
 			close2;
 			npcshopattach "REFINEDUMMYSHOP#1";
 			callshop "REFINEDUMMYSHOP#1",2;
@@ -45,16 +45,16 @@ morocc,156,107,4	script	Refine Challenge	4_CAT_SAILOR1,{
 			.@rows = query_sql("SELECT char_id, value FROM `char_reg_num` WHERE `key` LIKE 'SECRET_REFINERANK' ORDER BY value DESC LIMIT 5", .@char_id, .@value);
 			mes .npc_name$;
 			if(.@rows == -1) {
-				mes "๏ฟฝิด๏ฟฝ๏ฟฝอผิด๏ฟฝ๏ฟฝาด ๏ฟฝรด๏ฟฝอง๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝีก๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ";
+				mes "เกิดข้อผิดพลาด โปรดลองใหม่อีกครั้ง";
 				close;
 			}
 			if(!.@rows)	{
-				mes "๏ฟฝัง๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝรน๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝลก๏ฟฝ๏ฟฝยน๏ฟฝ";
+				mes "ยังไม่มีใครนำไอเทมมาแลกเลยนะ";
 				close;
 			}
 			for(.@i = 0; .@i < .@rows; ++.@i) {
 				query_sql("SELECT name FROM `char` WHERE char_id = " + .@char_id[.@i], .@name$);
-				mes (.@i+1) + ". " + .@name$ + " " + .@value[.@i] + " ๏ฟฝ๏ฟฝ๏ฟฝ";
+				mes (.@i+1) + ". " + .@name$ + " " + .@value[.@i] + " แต้ม";
 			}
 			break;
 		case 5:
@@ -70,31 +70,31 @@ morocc,156,107,4	script	Refine Challenge	4_CAT_SAILOR1,{
         .@p = 1;
         for(.@i = 0; .@i < .@count; ++.@i) {
             if(@sold_nameid[.@i] != .itemid) {
-                mes "๏ฟฝุณ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝรถ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝเฉพ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝับ๏ฟฝ๏ฟฝ๏ฟฝลง๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝยน";
+                mes "คุณสามารถขายได้เฉพาะไอเทมที่ได้รับการลงทะเบียน";
                 close;
             }
             .@ref = @sold_refine[.@i];
             if(@sold_identify[.@i]) {
-                mes (.@p++) + "." + "+" + .@ref + " " + getitemname(@sold_nameid[.@i]) + " " + .refine_worth[.@ref] + " ๏ฟฝ๏ฟฝ๏ฟฝ";
+                mes (.@p++) + "." + "+" + .@ref + " " + getitemname(@sold_nameid[.@i]) + " " + .refine_worth[.@ref] + " แต้ม";
                 .@tmpsto$ = .@tmpsto$ + @sold_nameid[.@i] + ":" + @sold_refine[.@i] + ":" + @sold_identify[.@i] + ":" + @sold_attribute + ":" + @sold_card1[.@i] + ":" + @sold_card2[.@i] + ":" + @sold_card3[.@i] + ":" + @sold_card4[.@i] + "|";
                 .@pts += .refine_worth[.@ref];
             } else {
                 next;
                 mes .npc_name$;
-                mes "๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝัง๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝอง";
+                mes "มีไอเทมที่ยังไม่ได้ส่อง";
                 close;
             }
         }
         if(!.@p){
             next;
             mes .npc_name$;
-            mes "๏ฟฝิน๏ฟฝ๏ฟฝาช๏ฟฝิด๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝรถ๏ฟฝลก๏ฟฝ๏ฟฝแนน๏ฟฝ๏ฟฝ";
+            mes "สินค้าชนิดนี้ไม่สามารถแลกคะแนนได้";
             close;
         }
-        mes "๏ฟฝลก๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ " + .@pts + " ๏ฟฝ๏ฟฝ๏ฟฝ";
-        mes "๏ฟฝ๏ฟฝอง๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝลก๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝิง๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ?";
+        mes "แลกได้ทั้งหมด " + .@pts + " แต้ม";
+        mes "ต้องการแลกทั้งหมดจริงๆใช้มั้ย?";
         next;
-        menu "๏ฟฝืน๏ฟฝัน",-;
+        menu "ยืนยัน",-;
         explode(.@items$, .@tmpsto$, "|");
         .@sz = getarraysize(.@items$);
         for(.@i = 0; .@i < .@sz; ++.@i) {
@@ -105,7 +105,7 @@ morocc,156,107,4	script	Refine Challenge	4_CAT_SAILOR1,{
         SECRET_REFINE += .@pts;
         SECRET_REFINERANK += .@pts;
         mes .npc_name$;
-        mes "๏ฟฝุณ๏ฟฝ๏ฟฝ๏ฟฝับ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ " + .@pts + " ๏ฟฝ๏ฟฝ๏ฟฝ";
+        mes "คุณได้รับแต้มทั้งหมด " + .@pts + " แต้ม";
         close;
         end;
         
@@ -114,6 +114,6 @@ morocc,156,107,4	script	Refine Challenge	4_CAT_SAILOR1,{
 	//  				   0,1,2,3,....., 7, 8, 9, 10;
 	setarray .refine_worth,0,0,0,0,0,0,2,4,10,25,100;
 	.itemid = 68200;
-	.npc_name$ = "[ ^0000FF๏ฟฝิจ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝีบวก^000000 ]";
-	waitingroom "๏ฟฝิจ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝีบวก",0;
+	.npc_name$ = "[ ^0000FFกิจกรรมตีบวก^000000 ]";
+	waitingroom "กิจกรรมตีบวก",0;
 }

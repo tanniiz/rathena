@@ -2,11 +2,11 @@
   OnNPCKillEvent:
     if(!getmonsterinfo(killedrid, MOB_MVPEXP) ) {
       set point, getmonsterinfo(killedrid, MOB_SIZE) + 1;
-      set #MobPoint,#MobPoint + point;
+      set #MobPoint, (#MobPoint + point * 2);
 
-      set cashPts, rand(10);
+      set cashPts, (rand(10) * 2);
 		
-      #CASHPOINTS = #CASHPOINTS +cashPts;
+      #CASHPOINTS = #CASHPOINTS + cashPts;
       dispbottom "---------------------------------------------------";
       dispbottom "คุณได้รับ Mob Point: " + point;
       if (cashPts > 0) {

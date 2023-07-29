@@ -17583,28 +17583,12 @@ Body:
     Type: Etc
     Buy: 2
     Weight: 10
-    Trade:
-      NoDrop: true
-      NoTrade: true
-      NoSell: true
-      NoCart: true
-      NoGuildStorage: true
-      NoMail: true
-      NoAuction: true
   - Id: 7620
     AegisName: Enriched_Oridecon
     Name: Enriched Oridecon
     Type: Etc
     Buy: 2
     Weight: 10
-    Trade:
-      NoDrop: true
-      NoTrade: true
-      NoSell: true
-      NoCart: true
-      NoGuildStorage: true
-      NoMail: true
-      NoAuction: true
   - Id: 7621
     AegisName: Token_Of_Siegfried
     Name: Token Of Siegfried

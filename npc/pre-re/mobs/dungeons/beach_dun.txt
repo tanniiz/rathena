@@ -16,13 +16,12 @@
 //==================================================
 // beach_dun - Karu, the West Cave
 //==================================================
-beach_dun,0,0,0,0	monster	Medusa	1148,100,0,0,0
+beach_dun,0,0,0,0	monster	Medusa	1148,200,0,0,0
 beach_dun,0,0,0,0	monster	Merman	1264,15,0,0,0
 beach_dun,0,0,0,0	monster	Nereid	1255,25,0,0,0
 beach_dun,0,0,0,0	monster	Pest	1256,25,0,0,0
 beach_dun,0,0,0,0	monster	Megalith	1274,8,0,0,0
 beach_dun,0,0,0,0	monster	Tri Joint	1279,8,0,0,0
-beach_dun,0,0,0,0	monster	Medusa	1148,25,15000,10000,0
 beach_dun,0,0,0,0	monster	Merman	1264,10,0,0,0
 beach_dun,0,0,0,0	monster	Chimera	1283,1,1800000,0,0
 

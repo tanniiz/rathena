@@ -32,7 +32,7 @@ tur_dun02,0,0,0,0	monster	Pest	1256,25,0,0,0
 //==================================================
 tur_dun03,0,0,0,0	monster	Permeter	1314,35,0,0,0
 tur_dun03,0,0,0,0	monster	Freezer	1319,50,0,0,0
-tur_dun03,0,0,0,0	monster	Assaulter	1315,30,0,0,0
+tur_dun03,0,0,0,0	monster	Assaulter	1315,150,0,0,0
 tur_dun03,0,0,0,0	monster	Heater	1318,30,50000,0,0
 
 //==================================================

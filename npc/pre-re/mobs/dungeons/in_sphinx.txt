@@ -62,7 +62,7 @@ in_sphinx4,0,0,0,0	monster	Side Winder	1037,15,0,0,0
 // in_sphinx4,0,0,0,0	monster	Evil Druid	1117,1,0,0,0
 in_sphinx4,0,0,0,0	monster	Minorous	1149,115,0,0,0
 // in_sphinx4,0,0,0,0	monster	Marduk	1140,25,0,0,0
-in_sphinx3,0,0	monster	Pasana	1154,30
+in_sphinx4,0,0	monster	Pasana	1154,30
 in_sphinx4,0,0,0,0	monster	Mimic	1191,4,600000,300000,1
 //==================================================
 // In_sphinx5 - Sphinx F5
@@ -74,3 +74,4 @@ in_sphinx5,0,0,0,0	monster	Requiem	1164,45,0,0,0
 in_sphinx5,0,0,0,0	monster	Whisper	1179,10,0,0,0
 in_sphinx5,0,0,0,0	monster	Mimic	1191,7,600000,300000,1
 in_sphinx5,0,0,0,0	monster	Wraith	1192,5,0,0,0
+in_sphinx5,0,0	monster	Pasana	1154,60

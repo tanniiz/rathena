@@ -25,7 +25,7 @@ morocc,156,107,4	script	Refine Challenge	4_CAT_SAILOR1,{
 	mes "แต้มคงเหลือของคุณ : ^0000FF" + SECRET_REFINE + "^000000";
 	mes "แต้มทั้งหมดของคุณ : ^0000FF" + SECRET_REFINERANK + "^000000";
 	next;
-	switch(select("ซื้อวัตถุดิบ","แลกไอเทมเป็นแต้ม","ร้านค้า","ดูอันดับ")) {
+	switch(select("ซื้อวัตถุดิบ","แลกไอเทมเป็นแต้ม","ร้านค้า","ดูอันดับ","ตีบวกไอเทม")) {
 		case 1:
 			close2;
 			callshop "REFINE_MATERIAL_SHOP",1;
@@ -57,6 +57,9 @@ morocc,156,107,4	script	Refine Challenge	4_CAT_SAILOR1,{
 				mes (.@i+1) + ". " + .@name$ + " " + .@value[.@i] + " แต้ม";
 			}
 			break;
+		case 5:
+			refineui();
+			end;
 	}
 	close;
 	end;

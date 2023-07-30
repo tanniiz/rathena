@@ -4788,14 +4788,6 @@ Body:
     Delay:
       Duration: 60000
       Status: Reuse_Limit_D
-    Trade:
-      NoDrop: true
-      NoTrade: true
-      NoSell: true
-      NoCart: true
-      NoGuildStorage: true
-      NoMail: true
-      NoAuction: true
     Script: |
       sc_start SC_ITEMBOOST,1800000,100;
   - Id: 12211
@@ -22240,6 +22232,22 @@ Body:
     Weight: 0
     Script: |
       getgroupitem(IG_LUCKY_EGG_C5);
+  - Id: 30304
+    AegisName: SHOES_OPTION_T1_SCROLL
+    Name: Shoes Option T1 Scroll
+    Type: Usable
+    Buy: 20
+    Weight: 0
+    Script: |
+      getgroupitem(IG_LUCKY_EGG_C8);
+  - Id: 30305
+    AegisName: GARMENT_OPTION_T1_SCROLL
+    Name: Garment Option T1 Scroll
+    Type: Usable
+    Buy: 20
+    Weight: 0
+    Script: |
+      getgroupitem(IG_LUCKY_EGG_C7);
   - Id: 60100
     AegisName: STR_ARMOR_T1_OPTION
     Name: Str Armor Tier1 Option Box
@@ -22312,4 +22320,171 @@ Body:
     Weight: 1
     Script: |
       callfunc "F_DoOption",EQI_ARMOR,45,1,15,21,50,60108;
-
+  - Id: 60200
+    AegisName: STR_FOOTGEAR_T1_OPTION
+    Name: Str Footgear Tier1 Option Box
+    Type: Usable
+    Buy: 20
+    Weight: 1
+    Script: |
+      callfunc "F_DoOption",EQI_SHOES,45,1,15,3,50,60200;
+  - Id: 60201
+    AegisName: AGI_FOOTGEAR_T1_OPTION
+    Name: Agi Footgear Tier1 Option Box
+    Type: Usable
+    Buy: 20
+    Weight: 1
+    Script: |
+      callfunc "F_DoOption",EQI_SHOES,45,1,15,4,50,60201;
+  - Id: 60202
+    AegisName: VIT_FOOTGEAR_T1_OPTION
+    Name: Vit Footgear Tier1 Option Box
+    Type: Usable
+    Buy: 20
+    Weight: 1
+    Script: |
+      callfunc "F_DoOption",EQI_SHOES,45,1,15,5,50,60202;
+  - Id: 60203
+    AegisName: INT_FOOTGEAR_T1_OPTION
+    Name: Int Footgear Tier1 Option Box
+    Type: Usable
+    Buy: 20
+    Weight: 1
+    Script: |
+      callfunc "F_DoOption",EQI_SHOES,45,1,15,6,50,60203;
+  - Id: 60204
+    AegisName: DEX_FOOTGEAR_T1_OPTION
+    Name: Dex Footgear Tier1 Option Box
+    Type: Usable
+    Buy: 20
+    Weight: 1
+    Script: |
+      callfunc "F_DoOption",EQI_SHOES,45,1,15,7,50,60204;
+  - Id: 60205
+    AegisName: Luk_FOOTGEAR_T1_OPTION
+    Name: Luk Footgear Tier1 Option Box
+    Type: Usable
+    Buy: 20
+    Weight: 1
+    Script: |
+      callfunc "F_DoOption",EQI_SHOES,45,1,15,8,100,60205;
+  - Id: 60206
+    AegisName: DROP_FOOTGEAR_T1_OPTION
+    Name: Drop Footgear Tier1 Option Box
+    Type: Usable
+    Buy: 20
+    Weight: 1
+    Script: |
+      callfunc "F_DoOption",EQI_SHOES,45,1,15,300,50,60206;
+  - Id: 60207
+    AegisName: EXP_FOOTGEAR_T1_OPTION
+    Name: EXP Footgear Tier1 Option Box
+    Type: Usable
+    Buy: 20
+    Weight: 1
+    Script: |
+      callfunc "F_DoOption",EQI_SHOES,45,1,15,242,200,60207;
+  - Id: 60208
+    AegisName: ATK_RATE_FOOTGEAR_T1_OPTION
+    Name: Atk Rate Footgear Tier1 Option Box
+    Type: Usable
+    Buy: 20
+    Weight: 1
+    Script: |
+      callfunc "F_DoOption",EQI_SHOES,45,1,15,13,100,60208;
+  - Id: 60209
+    AegisName: MATK_RATE_FOOTGEAR_T1_OPTION
+    Name: Matk Rate Footgear Tier1 Option Box
+    Type: Usable
+    Buy: 20
+    Weight: 1
+    Script: |
+      callfunc "F_DoOption",EQI_SHOES,45,1,15,14,100,60209;
+  - Id: 60210
+    AegisName: DELAY_FOOTGEAR_T1_OPTION
+    Name: Delay Footgear Tier1 Option Box
+    Type: Usable
+    Buy: 20
+    Weight: 1
+    Script: |
+      callfunc "F_DoOption",EQI_SHOES,45,1,15,171,-1000,60210;
+  - Id: 60300
+    AegisName: STR_Garment_T1_OPTION
+    Name: Str Garment Tier1 Option Box
+    Type: Usable
+    Buy: 20
+    Weight: 1
+    Script: |
+      callfunc "F_DoOption",EQI_GARMENT,45,1,15,3,50,60300;
+  - Id: 60301
+    AegisName: AGI_Garment_T1_OPTION
+    Name: Agi Garment Tier1 Option Box
+    Type: Usable
+    Buy: 20
+    Weight: 1
+    Script: |
+      callfunc "F_DoOption",EQI_GARMENT,45,1,15,4,50,60301;
+  - Id: 60302
+    AegisName: VIT_Garment_T1_OPTION
+    Name: Vit Garment Tier1 Option Box
+    Type: Usable
+    Buy: 20
+    Weight: 1
+    Script: |
+      callfunc "F_DoOption",EQI_GARMENT,45,1,15,5,50,60302;
+  - Id: 60303
+    AegisName: INT_Garment_T1_OPTION
+    Name: Int Garment Tier1 Option Box
+    Type: Usable
+    Buy: 20
+    Weight: 1
+    Script: |
+      callfunc "F_DoOption",EQI_GARMENT,45,1,15,6,50,60303;
+  - Id: 60304
+    AegisName: DEX_Garment_T1_OPTION
+    Name: Dex Garment Tier1 Option Box
+    Type: Usable
+    Buy: 20
+    Weight: 1
+    Script: |
+      callfunc "F_DoOption",EQI_GARMENT,45,1,15,7,50,60304;
+  - Id: 60305
+    AegisName: Luk_Garment_T1_OPTION
+    Name: Luk Garment Tier1 Option Box
+    Type: Usable
+    Buy: 20
+    Weight: 1
+    Script: |
+      callfunc "F_DoOption",EQI_GARMENT,45,1,15,8,100,60305;
+  - Id: 60306
+    AegisName: DROP_Garment_T1_OPTION
+    Name: Drop Garment Tier1 Option Box
+    Type: Usable
+    Buy: 20
+    Weight: 1
+    Script: |
+      callfunc "F_DoOption",EQI_GARMENT,45,1,15,300,50,60306;
+  - Id: 60307
+    AegisName: EXP_Garment_T1_OPTION
+    Name: EXP Garment Tier1 Option Box
+    Type: Usable
+    Buy: 20
+    Weight: 1
+    Script: |
+      callfunc "F_DoOption",EQI_GARMENT,45,1,15,242,200,60307;
+  - Id: 60308
+    AegisName: DemiHuman_Garment_T1_OPTION
+    Name: DemiHuman Garment Tier1 Option Box
+    Type: Usable
+    Buy: 20
+    Weight: 1
+    Script: |
+      callfunc "F_DoOption",EQI_GARMENT,45,1,15,94,100,60308;
+  - Id: 60309
+    AegisName: Flee_RATE_Garment_T1_OPTION
+    Name: Flee Rate Garment Tier1 Option Box
+    Type: Usable
+    Buy: 20
+    Weight: 1
+    Script: |
+      callfunc "F_DoOption",EQI_GARMENT,45,1,15,22,200,60309;

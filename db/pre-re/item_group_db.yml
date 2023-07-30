@@ -7648,6 +7648,74 @@ Body:
           - Item: MDEF_ARMOR_T1_OPTION
             Rate: 1
             Announced: true
+  - Group: LUCKY_EGG_C7
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Item: STR_FOOTGEAR_T1_OPTION
+            Rate: 1
+            Announced: true
+          - Item: AGI_FOOTGEAR_T1_OPTION
+            Rate: 1
+            Announced: true
+          - Item: VIT_FOOTGEAR_T1_OPTION
+            Rate: 1
+            Announced: true
+          - Item: INT_FOOTGEAR_T1_OPTION
+            Rate: 1
+            Announced: true
+          - Item: DEX_FOOTGEAR_T1_OPTION
+            Rate: 1
+            Announced: true
+          - Item: Luk_FOOTGEAR_T1_OPTION
+            Rate: 1
+            Announced: true
+          - Item: DROP_FOOTGEAR_T1_OPTION
+            Rate: 1
+            Announced: true
+          - Item: EXP_FOOTGEAR_T1_OPTION
+            Rate: 1
+            Announced: true
+          - Item: ATK_RATE_FOOTGEAR_T1_OPTION
+            Rate: 1
+            Announced: true
+          - Item: MATK_RATE_FOOTGEAR_T1_OPTION
+            Rate: 1
+            Announced: true
+  - Group: LUCKY_EGG_C8
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Item: STR_FOOTGEAR_T1_OPTION
+            Rate: 1
+            Announced: true
+          - Item: AGI_FOOTGEAR_T1_OPTION
+            Rate: 1
+            Announced: true
+          - Item: VIT_FOOTGEAR_T1_OPTION
+            Rate: 1
+            Announced: true
+          - Item: INT_FOOTGEAR_T1_OPTION
+            Rate: 1
+            Announced: true
+          - Item: DEX_FOOTGEAR_T1_OPTION
+            Rate: 1
+            Announced: true
+          - Item: Luk_FOOTGEAR_T1_OPTION
+            Rate: 1
+            Announced: true
+          - Item: DROP_FOOTGEAR_T1_OPTION
+            Rate: 1
+            Announced: true
+          - Item: EXP_FOOTGEAR_T1_OPTION
+            Rate: 1
+            Announced: true
+          - Item: ATK_RATE_FOOTGEAR_T1_OPTION
+            Rate: 1
+            Announced: true
+          - Item: MATK_RATE_FOOTGEAR_T1_OPTION
+            Rate: 1
+            Announced: true
   - Group: LEO_SCROLL
     SubGroups:
       - SubGroup: 1

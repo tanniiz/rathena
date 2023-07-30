@@ -40,6 +40,18 @@ Body:
     Multiplier: 100
     Script: |
       bonus bCritical,getrandomoptinfo(ROA_VALUE);
+  - Id: 13
+    Option: VAR_ATKPERCENT
+    Type: 1
+    Multiplier: 100
+    Script: |
+      bonus bAtkRate,getrandomoptinfo(ROA_VALUE);
+  - Id: 14
+    Option: VAR_MAGICATKPERCENT
+    Type: 1
+    Multiplier: 100
+    Script: |
+      bonus bMatkRate,getrandomoptinfo(ROA_VALUE);
   - Id: 15
     Option: VAR_PLUSASPD
     Type: 1
@@ -64,6 +76,12 @@ Body:
     Multiplier: 50
     Script: |
       bonus bMdef,getrandomoptinfo(ROA_VALUE);
+  - Id: 22
+    Option: VAR_AVOIDSUCCESSVALUE
+    Type: 1
+    Multiplier: 200
+    Script: |
+      bonus bFlee,getrandomoptinfo(ROA_VALUE);
   - Id: 242
     Option: ADDEXPPERCENT_KILLRACE_ALL
     Type: 1
@@ -112,3 +130,16 @@ Body:
     Multiplier: 100
     Script: |
       bonus bLuk,getrandomoptinfo(ROA_VALUE);
+  - Id: 171
+    Option: DEC_SPELL_DELAY_TIME
+    Multiplier: 100
+    Type: 1
+    Script: |
+      bonus bDelayrate,-(getrandomoptinfo(ROA_VALUE));
+  - Id: 94
+    Option: RACE_TOLERACE_HUMAN
+    Multiplier: 100
+    Type: 1
+    Script: |
+      bonus2 bSubRace,RC_DemiHuman,getrandomoptinfo(ROA_VALUE);
+      bonus2 bSubRace,RC_Player_Human,getrandomoptinfo(ROA_VALUE);

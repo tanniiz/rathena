@@ -138,7 +138,7 @@ OnAgitBreak:
 	}
 	// Respawn the Emperium, and display new owners.
 	sleep 500; // Slow down script execution slightly.
-	if( agitcheck() ) {
+	if( agitcheck() && strnpcinfo(2) != "aldeg_cas03" ) {
 		donpcevent "Agit#"+strnpcinfo(2)+"::OnStartArena";
 	} else {
 		stopnpctimer;

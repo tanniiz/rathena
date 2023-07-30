@@ -1,0 +1,77 @@
+morocc,169,85,4	script	GuildManager	55,{
+  set .castleMapName$,"aldeg_cas03";
+  set .GID,GetCastleData(.castleMapName$,CD_GUILD_ID);
+  set .CastleName$,GetCastleName(.castleMapName$);
+  set .@Economy,GetCastleData(.castleMapName$,CD_CURRENT_ECONOMY);
+
+  setarray .@prize,  7619, 7620, 6635,  60500,  30001, 30002, 12920,  12921,  6635, 60500,  30001, 30002;
+  setarray .@prizeAmt, 2,    2,    1,    7500,   7500,    10,     1,      1,    5, 30000,  30000,   100;
+  setarray .@prizeLvl, 5,    10,   15,     20,     25,    30,    50,     60,    70,    80,     90,   100;
+
+  // if (.GID == 0) {
+	// 	mes "[ ผู้จัดการ ]";
+	// 	mes "ไม่มีผู้ใดครอบครองปราสาท";
+	// 	close;
+	// }
+  if (is_guild_leader(.GID) == false) {
+		mes "[ ผู้จัดการ ]";
+		mes "เจ้าไม่ใช่หัวหน้ากิลด์ผู้ครอบครองปราสาท!";
+		close;
+  }
+  mes "[ ผู้จัดการ ]";
+	mes "ยินดีต้อนรับท่านหัวหน้ากิลด์ ^ff0000"+ strcharinfo(0) +"^000000...";
+  mes "ปราสาท [" + .CastleName$ + "] ของท่านมีมูลค่า: ^ff0000" + .@Economy + "^000000 หน่วย";
+  mes "ท่านต้องการทำอะไรหละ ...";
+  next;
+
+  mes "[ ผู้จัดการ ]";
+  switch (select("แลกของรางวัล:ตรวจสอบของรางวัล")) {
+    case 1:
+
+      for(set .@i,0; .@i < getarraysize(.@prize); set .@i,.@i+1) {
+        setarray .@selectablePrize$[.@i], getitemname(.@prize[.@i]) + "^000000 จำนวน ^0066FF" + .@prizeAmt[.@i] + "^000000 ea";
+      }
+
+      set .@menu$, implode(.@selectablePrize$,":");
+      set .selectedIdx, select(.@menu$) - 1;
+
+      mes "คุณต้องการแลก " + .@prizeLvl[.selectedIdx] + " แต้ม";
+      mes "เพื่อ ^FF0000" + getitemname(.@prize[.selectedIdx]) + "^000000 จำนวน ^0066FF" + .@prizeAmt[.selectedIdx] + "^000000 ea";
+      mes "ใช่หรือไม่ ?";
+      next;
+
+      switch (select("ยืนยัน:ไม่หละ!")) {
+        case 1:
+          set .@Economy,GetCastleData(.castleMapName$,CD_CURRENT_ECONOMY);
+          if (.@Economy < .@prizeLvl[.selectedIdx]) {
+            mes "[ ผู้จัดการ ]";
+            mes "เจ้ามีแต้มไม่เพียงพอ! กลับมาใหม่ในภายหลัง";
+            close;
+          }
+
+          mes "[ ผู้จัดการ ]";
+          mes "เอาหละ รับไปเลย!";
+          getitem .@prize[.selectedIdx],.@prizeAmt[.selectedIdx];
+          set .@Economy, .@Economy - .@prizeLvl[.selectedIdx];
+          SetCastleData .castleMapName$, CD_CURRENT_ECONOMY, .@Economy;
+          announce "ผู้เล่น [" + strcharinfo(0) + "] แลกแต้มปราสาท [" + .@prizeLvl[.selectedIdx] + "] กับ [" + getitemname(.@prize[.selectedIdx]) + " " + .@prizeAmt[.selectedIdx] +"ea]",bc_all;
+          announce "[" + getcastlename(.castleMapName$) + "] มูลค่าลดลง ["+ .@prizeLvl[.selectedIdx] + "] หน่วย ผลรวม [" + GetCastleData(.castleMapName$,CD_CURRENT_ECONOMY) + "] หน่วย",bc_all;
+          close;
+        case 2:
+        default:
+          close;
+      }
+      close;
+    case 2:
+      for(set .@i,0; .@i < getarraysize(.@prize); set .@i,.@i+1) {
+        mes "ระดับความมั่งคั่ง: ^FF0000" + .@prizeLvl[.@i] + "^000000";
+        mes "ได้รับ ^0066FF" + getitemname(.@prize[.@i]) + "^000000 จำนวน ^0066FF" + .@prizeAmt[.@i] + "^000000 ea";
+        mes "==========================";
+      }
+      close;
+  }
+
+  OnInit:
+	waitingroom "แลกแต้มบ้าน",0;
+	end;
+}

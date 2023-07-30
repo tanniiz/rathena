@@ -65,16 +65,13 @@ OnAgitStart:
 	if (strnpcinfo(0) == "Gld_Agit_Manager") end;
 	MapRespawnGuildID strnpcinfo(2),GetCastleData(strnpcinfo(2),CD_GUILD_ID),6;
 	GvgOn strnpcinfo(2);
-	if (strnpcinfo(2) == "aldeg_cas03") {
-		initnpctimer;
-	}
 
 // Spawn (fall through), or respawn the Emperium once it has been broken.
 OnStartArena:
 	// OnAgitStart will fall through and spawn the Emperium.
 	if (strnpcinfo(2) == "aldeg_cas01") { setarray .@emproom[0],216,23; }
 	else if (strnpcinfo(2) == "aldeg_cas02") { setarray .@emproom[0],213,23; }
-	else if (strnpcinfo(2) == "aldeg_cas03" ) { setarray .@emproom[0],205,31; }
+	else if (strnpcinfo(2) == "aldeg_cas03" ) { setarray .@emproom[0],205,31; initnpctimer; }
 	else if (strnpcinfo(2) == "aldeg_cas04") { setarray .@emproom[0],36,217; }
 	else if (strnpcinfo(2) == "aldeg_cas05") { setarray .@emproom[0],27,101; }
 	else if (strnpcinfo(2) == "gefg_cas01") { setarray .@emproom[0],197,181; }
@@ -144,6 +141,7 @@ OnAgitBreak:
 	if( agitcheck() ) {
 		donpcevent "Agit#"+strnpcinfo(2)+"::OnStartArena";
 	} else {
+		stopnpctimer;
 		donpcevent "Agit#"+strnpcinfo(2)+"::OnSetup";
 		donpcevent "Agit#"+strnpcinfo(2)+"::OnCustomCastleBreak";
 	}
@@ -158,7 +156,7 @@ OnPointGet:
 	end;
 
 OnSetup:
-	set $countdown, 3;
+	set .countdown, 3;
 	set .customAgitEnabled, 0;
 	end;
 
@@ -168,11 +166,11 @@ OnCustomCastleBreak:
 	initnpctimer;
 	end;
 
-OnTimer180000:
-	set $countdown, $countdown - 1;
+OnTimer1800000:
+	set .countdown, .countdown - 1;
 	donpcevent "Agit#"+strnpcinfo(2)+"::OnPointGet";
 	stopnpctimer;
-	if ($countdown <= 0 && .customAgitEnabled == 0) {
+	if (.countdown <= 0 && .customAgitEnabled == 0) {
 		set .customAgitEnabled, 1;
 		donpcevent "Agit#"+strnpcinfo(2)+"::OnAgitStart";
 	}

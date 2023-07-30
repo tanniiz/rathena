@@ -4804,14 +4804,6 @@ Body:
     Type: Usable
     Buy: 2
     Weight: 10
-    Trade:
-      NoDrop: true
-      NoTrade: true
-      NoSell: true
-      NoCart: true
-      NoGuildStorage: true
-      NoMail: true
-      NoAuction: true
     Script: |
       callfunc "F_CashStore";
   - Id: 12212
@@ -22144,7 +22136,7 @@ Body:
       callfunc "F_UseCoins",30001,"#CASHPOINTS",1;
   - Id: 30002
     AegisName: REFINE_COIN
-    Name: Cash Coin
+    Name: Refine Coin
     Type: Usable
     Buy: 0
     Weight: 0

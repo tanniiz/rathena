@@ -17,7 +17,7 @@ function	script	Reset_Skill	{
 		sc_end SC_ALL;
 		if (countitem(12213)) delitem 12213,1;
 	} else {
-		getitem 7777,1;
+		getitem 12213,1;
 		mes "คุณต้องทำให้น้ำหนักเป็น 0 ก่อน.";
 		close;
 	}

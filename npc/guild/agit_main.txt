@@ -157,7 +157,7 @@ OnPointGet:
 
 OnSetup:
 	set .countdown, 3;
-	set .customAgitEnabled, 0;
+	set $customAgitEnabled, 0;
 	end;
 
 OnCustomCastleBreak:
@@ -170,8 +170,8 @@ OnTimer1800000:
 	set .countdown, .countdown - 1;
 	donpcevent "Agit#"+strnpcinfo(2)+"::OnPointGet";
 	stopnpctimer;
-	if (.countdown <= 0 && .customAgitEnabled == 0) {
-		set .customAgitEnabled, 1;
+	if (.countdown <= 0 && $customAgitEnabled == 0) {
+		set $customAgitEnabled, 1;
 		donpcevent "Agit#"+strnpcinfo(2)+"::OnAgitStart";
 	}
 
@@ -191,7 +191,7 @@ OnAgitEnd:
 // Occupying Guild has been disbanded.
 OnGuildBreak:
   stopnpctimer;
-	set .customAgitEnabled, 1;
+	set $customAgitEnabled, 1;
 	SetCastleData strnpcinfo(2), CD_CURRENT_ECONOMY, 0;
 	if (strnpcinfo(0) == "Gld_Agit_Manager") end;
 	// Kill guardians, disable the Kafra, and set owner to 0.

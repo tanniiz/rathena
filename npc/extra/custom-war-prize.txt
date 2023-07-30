@@ -5,7 +5,7 @@ morocc,169,85,4	script	GuildManager	55,{
   set .@Economy,GetCastleData(.castleMapName$,CD_CURRENT_ECONOMY);
 
   setarray .@prize,  7619, 7620, 6635,  60500,  30001, 30002, 12920,  12921,  6635, 60500,  30001, 30002;
-  setarray .@prizeAmt, 2,    2,    1,    7500,   7500,    10,     1,      1,    5, 30000,  30000,   100;
+  setarray .@prizeAmt, 1,    1,    1,    7500,   7500,    10,     1,      1,    5, 30000,  30000,   100;
   setarray .@prizeLvl, 5,    10,   15,     20,     25,    30,    50,     60,    70,    80,     90,   100;
 
   // if (.GID == 0) {

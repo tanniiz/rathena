@@ -22248,6 +22248,14 @@ Body:
     Weight: 0
     Script: |
       getgroupitem(IG_LUCKY_EGG_C7);
+  - Id: 30101
+    AegisName: Amulet_SCROLL
+    Name: Charm Random Scroll
+    Type: Usable
+    Buy: 20
+    Weight: 0
+    Script: |
+      getgroupitem(IG_LUCKY_EGG_C);
   - Id: 60100
     AegisName: STR_ARMOR_T1_OPTION
     Name: Str Armor Tier1 Option Box

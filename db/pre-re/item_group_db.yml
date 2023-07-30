@@ -7595,6 +7595,40 @@ Body:
           - Item: Sigrun's_Wing
             Rate: 1
             Announced: true
+  - Group: LUCKY_EGG_C
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Item: Drop_Amulet
+            Rate: 1
+            Announced: true
+          - Item: SP_REGEN_AMULET
+            Rate: 2
+            Announced: true
+          - Item: DELAY_REDUCTION_AMULET
+            Rate: 1
+            Announced: true
+          - Item: ASPD_AMULET
+            Rate: 1
+            Announced: true
+          - Item: Critical_Rate_Amulet
+            Rate: 2
+            Announced: true
+          - Item: Critical_Damage_Amulet
+            Rate: 1
+            Announced: true
+          - Item: Long_Range_Amulet
+            Rate: 1
+            Announced: true
+          - Item: Melee_Amulet
+            Rate: 1
+            Announced: true
+          - Item: Matk_Amulet
+            Rate: 2
+            Announced: true
+          - Item: Cast_Reduction_Amulet
+            Rate: 2
+            Announced: true
   - Group: LUCKY_EGG_C5
     SubGroups:
       - SubGroup: 1

@@ -1,0 +1,283 @@
+//===== rAthena Script ======================================= 
+//= Mushroom Slot
+//===== By: ==================================================
+//= Secret
+//===== Compatible With: ===================================== 
+//= rAthena Project
+//===== Description: ========================================= 
+//= Automatic lotto that uses mushrooms as random entries.
+//============================================================ 
+
+function	script	f_secret_mushroom	{
+	if($@Mushroom_Roll$[getarg(0)] != "") {
+		return $@Mushroom_Roll$[getarg(0)];
+	}
+	return "NULL";
+}
+
+-	script	scr_mushroom#template	-1,{
+	.@num = atoi(strnpcinfo(2));
+	.@n$ =  "[Mushroom No." + .@num + "]";
+	mes .@n$;
+	mes "จำนวนไอเทมที่เหลือ : " + $@Mushroom_WithReward_Count;
+	mes "คุณต้องการเปิดเห็ด no." + .@num + " ใช่หรือไม่?";
+	mes "ค่าใช้จ่าย ^FF0000" + .cost + "^000000 Zeny.";
+	next;
+	switch(select("- ยืนยัน","- ยกเลิก")){
+		case 1:
+			if(Zeny < .cost) {
+				mes .@n$;
+				mes "เจ้ามีเงินไม่เพียงพอ!";
+				close;
+			}
+			if(gettimetick(2) < mushroom_time) {
+				mes .@n$;
+				mes "เจ้าต้องรอ!.";
+				mes "[Delay " + .delay + " seconds]";
+				close;
+			}
+			if(!$@mushroom_active[.@num]) {
+				mes .@n$;
+				mes "ผู้เล่นท่านอื่นได้เปิดเลขนี้ไปแล้ว.";
+				close;
+			}
+			$@mushroom_active[.@num] = 0;
+			Zeny -= .cost;
+			mushroom_time = gettimetick(2) + (.delay);
+			.@result$ = callfunc("f_secret_mushroom", .@num);
+			if(.@result$ == "NULL") {
+				mes .@n$;
+				mes "เจ้าไม่ได้ไอเทมใดๆ...";
+				hideonnpc strnpcinfo(0);
+				close;
+			} else {
+				close2;
+				specialeffect2 EF_MVP;
+				explode(.@item$, .@result$, ":");
+				.@nameid = atoi(.@item$[0]);
+				.@amount = atoi(.@item$[1]);
+				getitem .@nameid,.@amount;
+				$@Mushroom_WithReward_Count--;
+				announce "[Mushroom Slot] " + strcharinfo(0) + " ได้รับ " + getitemname(.@nameid) + " " + .@amount + "ea. จากเห็ด no." + .@num + ".",bc_all;
+				hideonnpc strnpcinfo(0);
+				if(!$@Mushroom_WithReward_Count) {
+					for(.@i = 1; .@i <= 104; .@i++)
+						hideonnpc "Mushroom No." + .@i + "#" + .@i;
+					announce "[Mushroom Slot] เห็ดทั้งหมดได้ถูกเปิดไปแล้ว เจอกันใหม่รอบหน้า!", bc_all;
+				}
+			}
+			end;
+		case 2:
+			close;
+	}
+	
+OnInit:
+	.delay = 0; // Delay after opening a slot. Put 0 to disable
+	.cost = 300000; // Cost (Zeny)
+}
+
+morocc,206,55,4	duplicate(scr_mushroom#template)	Mushroom No.1#1	1085
+morocc,207,55,4	duplicate(scr_mushroom#template)	Mushroom No.2#2	1084
+morocc,208,55,4	duplicate(scr_mushroom#template)	Mushroom No.3#3	1085
+morocc,209,55,4	duplicate(scr_mushroom#template)	Mushroom No.4#4	1085
+morocc,210,55,4	duplicate(scr_mushroom#template)	Mushroom No.5#5	1084
+morocc,211,55,4	duplicate(scr_mushroom#template)	Mushroom No.6#6	1085
+morocc,212,55,4	duplicate(scr_mushroom#template)	Mushroom No.7#7	1084
+morocc,213,55,4	duplicate(scr_mushroom#template)	Mushroom No.8#8	1084
+morocc,214,55,4	duplicate(scr_mushroom#template)	Mushroom No.9#9	1085
+morocc,215,55,4	duplicate(scr_mushroom#template)	Mushroom No.10#10	1084
+morocc,216,55,4	duplicate(scr_mushroom#template)	Mushroom No.11#11	1084
+morocc,217,55,4	duplicate(scr_mushroom#template)	Mushroom No.12#12	1085
+morocc,218,55,4	duplicate(scr_mushroom#template)	Mushroom No.13#13	1084
+morocc,206,53,4	duplicate(scr_mushroom#template)	Mushroom No.14#14	1084
+morocc,207,53,4	duplicate(scr_mushroom#template)	Mushroom No.15#15	1084
+morocc,208,53,4	duplicate(scr_mushroom#template)	Mushroom No.16#16	1085
+morocc,209,53,4	duplicate(scr_mushroom#template)	Mushroom No.17#17	1084
+morocc,210,53,4	duplicate(scr_mushroom#template)	Mushroom No.18#18	1085
+morocc,211,53,4	duplicate(scr_mushroom#template)	Mushroom No.19#19	1085
+morocc,212,53,4	duplicate(scr_mushroom#template)	Mushroom No.20#20	1084
+morocc,213,53,4	duplicate(scr_mushroom#template)	Mushroom No.21#21	1085
+morocc,214,53,4	duplicate(scr_mushroom#template)	Mushroom No.22#22	1085
+morocc,215,53,4	duplicate(scr_mushroom#template)	Mushroom No.23#23	1085
+morocc,216,53,4	duplicate(scr_mushroom#template)	Mushroom No.24#24	1084
+morocc,217,53,4	duplicate(scr_mushroom#template)	Mushroom No.25#25	1084
+morocc,218,53,4	duplicate(scr_mushroom#template)	Mushroom No.26#26	1085
+morocc,206,51,4	duplicate(scr_mushroom#template)	Mushroom No.27#27	1085
+morocc,207,51,4	duplicate(scr_mushroom#template)	Mushroom No.28#28	1084
+morocc,208,51,4	duplicate(scr_mushroom#template)	Mushroom No.29#29	1085
+morocc,209,51,4	duplicate(scr_mushroom#template)	Mushroom No.30#30	1085
+morocc,210,51,4	duplicate(scr_mushroom#template)	Mushroom No.31#31	1084
+morocc,211,51,4	duplicate(scr_mushroom#template)	Mushroom No.32#32	1085
+morocc,212,51,4	duplicate(scr_mushroom#template)	Mushroom No.33#33	1084
+morocc,213,51,4	duplicate(scr_mushroom#template)	Mushroom No.34#34	1084
+morocc,214,51,4	duplicate(scr_mushroom#template)	Mushroom No.35#35	1085
+morocc,215,51,4	duplicate(scr_mushroom#template)	Mushroom No.36#36	1085
+morocc,216,51,4	duplicate(scr_mushroom#template)	Mushroom No.37#37	1084
+morocc,217,51,4	duplicate(scr_mushroom#template)	Mushroom No.38#38	1084
+morocc,218,51,4	duplicate(scr_mushroom#template)	Mushroom No.39#39	1084
+morocc,206,49,4	duplicate(scr_mushroom#template)	Mushroom No.40#40	1085
+morocc,207,49,4	duplicate(scr_mushroom#template)	Mushroom No.41#41	1084
+morocc,208,49,4	duplicate(scr_mushroom#template)	Mushroom No.42#42	1085
+morocc,209,49,4	duplicate(scr_mushroom#template)	Mushroom No.43#43	1085
+morocc,210,49,4	duplicate(scr_mushroom#template)	Mushroom No.44#44	1084
+morocc,211,49,4	duplicate(scr_mushroom#template)	Mushroom No.45#45	1085
+morocc,212,49,4	duplicate(scr_mushroom#template)	Mushroom No.46#46	1084
+morocc,213,49,4	duplicate(scr_mushroom#template)	Mushroom No.47#47	1084
+morocc,214,49,4	duplicate(scr_mushroom#template)	Mushroom No.48#48	1085
+morocc,215,49,4	duplicate(scr_mushroom#template)	Mushroom No.49#49	1085
+morocc,216,49,4	duplicate(scr_mushroom#template)	Mushroom No.50#50	1084
+morocc,217,49,4	duplicate(scr_mushroom#template)	Mushroom No.51#51	1084
+morocc,218,49,4	duplicate(scr_mushroom#template)	Mushroom No.52#52	1084
+morocc,206,47,4	duplicate(scr_mushroom#template)	Mushroom No.53#53	1085
+morocc,207,47,4	duplicate(scr_mushroom#template)	Mushroom No.54#54	1084
+morocc,208,47,4	duplicate(scr_mushroom#template)	Mushroom No.55#55	1085
+morocc,209,47,4	duplicate(scr_mushroom#template)	Mushroom No.56#56	1085
+morocc,210,47,4	duplicate(scr_mushroom#template)	Mushroom No.57#57	1084
+morocc,211,47,4	duplicate(scr_mushroom#template)	Mushroom No.58#58	1085
+morocc,212,47,4	duplicate(scr_mushroom#template)	Mushroom No.59#59	1084
+morocc,213,47,4	duplicate(scr_mushroom#template)	Mushroom No.60#60	1084
+morocc,214,47,4	duplicate(scr_mushroom#template)	Mushroom No.61#61	1085
+morocc,215,47,4	duplicate(scr_mushroom#template)	Mushroom No.62#62	1085
+morocc,216,47,4	duplicate(scr_mushroom#template)	Mushroom No.63#63	1084
+morocc,217,47,4	duplicate(scr_mushroom#template)	Mushroom No.64#64	1084
+morocc,218,47,4	duplicate(scr_mushroom#template)	Mushroom No.65#65	1084
+morocc,206,45,4	duplicate(scr_mushroom#template)	Mushroom No.66#66	1085
+morocc,207,45,4	duplicate(scr_mushroom#template)	Mushroom No.67#67	1084
+morocc,208,45,4	duplicate(scr_mushroom#template)	Mushroom No.68#68	1085
+morocc,209,45,4	duplicate(scr_mushroom#template)	Mushroom No.69#69	1085
+morocc,210,45,4	duplicate(scr_mushroom#template)	Mushroom No.70#70	1084
+morocc,211,45,4	duplicate(scr_mushroom#template)	Mushroom No.71#71	1085
+morocc,212,45,4	duplicate(scr_mushroom#template)	Mushroom No.72#72	1084
+morocc,213,45,4	duplicate(scr_mushroom#template)	Mushroom No.73#73	1084
+morocc,214,45,4	duplicate(scr_mushroom#template)	Mushroom No.74#74	1085
+morocc,215,45,4	duplicate(scr_mushroom#template)	Mushroom No.75#75	1085
+morocc,216,45,4	duplicate(scr_mushroom#template)	Mushroom No.76#76	1084
+morocc,217,45,4	duplicate(scr_mushroom#template)	Mushroom No.77#77	1084
+morocc,218,45,4	duplicate(scr_mushroom#template)	Mushroom No.78#78	1084
+morocc,206,43,4	duplicate(scr_mushroom#template)	Mushroom No.79#79	1085
+morocc,207,43,4	duplicate(scr_mushroom#template)	Mushroom No.80#80	1084
+morocc,208,43,4	duplicate(scr_mushroom#template)	Mushroom No.81#81	1085
+morocc,209,43,4	duplicate(scr_mushroom#template)	Mushroom No.82#82	1085
+morocc,210,43,4	duplicate(scr_mushroom#template)	Mushroom No.83#83	1084
+morocc,211,43,4	duplicate(scr_mushroom#template)	Mushroom No.84#84	1085
+morocc,212,43,4	duplicate(scr_mushroom#template)	Mushroom No.85#85	1084
+morocc,213,43,4	duplicate(scr_mushroom#template)	Mushroom No.86#86	1084
+morocc,214,43,4	duplicate(scr_mushroom#template)	Mushroom No.87#87	1085
+morocc,215,43,4	duplicate(scr_mushroom#template)	Mushroom No.88#88	1085
+morocc,216,43,4	duplicate(scr_mushroom#template)	Mushroom No.89#89	1084
+morocc,217,43,4	duplicate(scr_mushroom#template)	Mushroom No.90#90	1084
+morocc,218,43,4	duplicate(scr_mushroom#template)	Mushroom No.91#91	1084
+morocc,206,41,4	duplicate(scr_mushroom#template)	Mushroom No.92#92	1085
+morocc,207,41,4	duplicate(scr_mushroom#template)	Mushroom No.93#93	1084
+morocc,208,41,4	duplicate(scr_mushroom#template)	Mushroom No.94#94	1085
+morocc,209,41,4	duplicate(scr_mushroom#template)	Mushroom No.95#95	1085
+morocc,210,41,4	duplicate(scr_mushroom#template)	Mushroom No.96#96	1084
+morocc,211,41,4	duplicate(scr_mushroom#template)	Mushroom No.97#97	1085
+morocc,212,41,4	duplicate(scr_mushroom#template)	Mushroom No.98#98	1084
+morocc,213,41,4	duplicate(scr_mushroom#template)	Mushroom No.99#99	1084
+morocc,214,41,4	duplicate(scr_mushroom#template)	Mushroom No.100#100	1085
+morocc,215,41,4	duplicate(scr_mushroom#template)	Mushroom No.101#101	1085
+morocc,216,41,4	duplicate(scr_mushroom#template)	Mushroom No.102#102	1084
+morocc,217,41,4	duplicate(scr_mushroom#template)	Mushroom No.103#103	1084
+morocc,218,41,4	duplicate(scr_mushroom#template)	Mushroom No.104#104	1084
+
+
+morocc,219,58,4	script	Mushroom Slot	1_M_04,{
+	mes .n$;
+	mes "ยินดีต้อนรับ!";
+	mes "....";
+	next;
+	switch(select("รายการของรางวัล","ยกเลิก",(getgmlevel() >= .gmlevel ? "^FF0000GM Menu^000000" : ""))) {
+		case 1:
+			mes .n$;
+			mes "ของรางวัลที่ยังเหลือในเห็ด";
+			for(.@i = 0; .@i < 105; .@i++) {
+				if($@Mushroom_RewardIndices[.@i] && $@mushroom_active[$@Mushroom_RewardIndices[.@i]]) {
+					explode(.@item$, $@Mushroom_Roll$[$@Mushroom_RewardIndices[.@i]], ":");
+					.@nameid = atoi(.@item$[0]);
+					.@amount = atoi(.@item$[1]);
+					mes "- " + getitemname(.@nameid) + " " + .@amount + "ea.";
+				}
+			}
+			close;
+		case 2:
+			close;
+		case 3:
+			if(getgmlevel() < .gmlevel) {
+				mes .n$;
+				mes "...?";
+				close;
+			}
+			switch(select("Reset the event.","List rewards and their positions","Cancel")) {
+				case 1:
+					mes .n$;
+					mes "Done!";
+					callsub OnMushroomReset;
+					close;
+				case 2:
+					for(.@i = 0; .@i < 105; .@i++) {
+						if($@Mushroom_RewardIndices[.@i] && $@mushroom_active[$@Mushroom_RewardIndices[.@i]]) {
+							explode(.@item$, $@Mushroom_Roll$[$@Mushroom_RewardIndices[.@i]], ":");
+							.@nameid = atoi(.@item$[0]);
+							.@amount = atoi(.@item$[1]);
+							mes "- Mushroom No." + $@Mushroom_RewardIndices[.@i] + ". " + getitemname(.@nameid) + " " + .@amount + "ea.";
+						}
+					}
+					break;
+				case 3:
+					break;
+			}
+	}
+	close;
+
+OnTimer1800000: // Automatically end after 5 minutes
+	for(.@i = 1; .@i <= 104; .@i++)
+		hideonnpc "Mushroom No." + .@i + "#" + .@i;
+	announce "[Mushroom Slot] กิจกรรมเก็บเห็ดได้หมดเวลาลงแล้ว เจอกันใหม่รอบหน้าจ้าา ~", bc_all;
+	end;
+
+OnTimer3600000: // Automatically reset every 6 hours.
+	.@scheduled = true;
+OnMushroomReset:
+	$@Mushroom_WithReward_Count = 0;
+	for(.@i = 0; .@i < 105; .@i++) {
+		$@Mushroom_Roll$[.@i] = "";
+		$@Mushroom_RewardIndices[.@i] = 0;
+		$@Mushroom_WithReward_Count = 0;
+	}
+	.@i = 0;
+	while($Mushroom_Reward[.@i] != 0) {
+		.@nameid = $Mushroom_Reward[.@i];
+		.@amount = $Mushroom_Reward[.@i+1];
+		do {
+			.@rand = rand(1,104);
+		} while($@Mushroom_Roll$[.@rand] != "");
+		$@Mushroom_Roll$[.@rand] = .@nameid + ":" + .@amount;
+		.@i+=2;
+		$@Mushroom_RewardIndices[$@Mushroom_WithReward_Count] = .@rand;
+		$@Mushroom_WithReward_Count++;
+	}
+	for(.@i = 1; .@i < 105; .@i++) {
+		$@mushroom_active[.@i] = 1;
+		hideoffnpc "Mushroom No." + .@i + "#" + .@i;
+	}
+	initnpctimer;
+	announce "[Mushroom Slot] กิจกรรมเก็บเห็ดได้เริ่มต้นขึ้นแล้ว มาลุยกันเลย! Morocc หน้าโรงแรม", bc_all;
+	if(getattachedrid())
+		sleep2 3000;
+	else
+		sleep 3000;
+	announce "[Mushroom Slot] กิจกรรมมีเวลาเพียง 30นาที รีบมากันนะ",bc_all;
+	
+	if(.@scheduled)
+		end;
+	return;
+
+OnInit:
+	.n$ = "[Mushroom Slot]";
+	.gmlevel = 99;
+	deletearray $Mushroom_Reward[0],getarraysize($Mushroom_Reward);
+	setarray $Mushroom_Reward, 984, 5, 984, 5, 984, 5, 984, 5, 985, 5, 985, 5, 985, 5, 985, 5, 12997, 1, 12997, 1, 12997, 1, 12997, 1, 12997, 2, 12997, 2, 12997, 2, 12998, 1, 12998, 1, 12998, 1, 12998, 1, 12998, 2, 12998, 2, 12998, 2, 7619, 1, 7619, 1, 7619, 1, 7619, 1, 7619, 1, 7620, 1, 7620, 1, 7620, 1, 7620, 1, 7620, 1, 7621, 2, 7621, 2, 7621, 2, 7621, 2, 7621, 2, 6635, 1, 6635, 1, 6635, 1, 6635, 1, 6635, 1, 6635, 1, 6635, 2, 6635, 2, 12920, 1, 12921, 1, 30101, 1, 30101, 1, 30101, 1, 30101, 1, 30101, 1;
+  // 984,20, 985,20, 12997, 10, 12998, 10, 7619, 5, 7620, 5, 7621, 10, 6635, 5, 12920, 1, 12921, 1, 30101, 5;
+	callsub OnMushroomReset;
+}

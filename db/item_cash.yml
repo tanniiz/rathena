@@ -80,6 +80,8 @@ Body:
         Price: 14900
       - Item: Neuralizer
         Price: 14900
+      - Item: Megaphone_
+        price: 100
 Footer:
   Imports:
     - Path: db/import/item_cash.yml

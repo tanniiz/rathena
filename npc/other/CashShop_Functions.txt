@@ -48,6 +48,7 @@ function	script	F_CashStore	{
 // Weight UP Book
 //============================================================ 
 function	script	F_WeightUp	{
+	disable_items;
 	mes "^0066FF[ Weight UP Book ]^000000";
 	mes "ʡ�� Enlarge Weight Limit";
 	mes "ʡ�Ź�������ͧ͢��˹ѡ���";

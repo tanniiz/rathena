@@ -94,8 +94,8 @@ morocc,171,96,4	script	Lucky Wheel#Zeny	563,{
       if (.Sound_Effects)
         soundeffect "wheel_jackpot.wav", 0;
 
-      announce "[ กงล้อหรรษา ]: ว้าวว! ผู้เล่น [ " + strcharinfo(0) + " ] ได้รับ Free Spin",bc_all;
-      #freewheelfortunespin = #freewheelfortunespin == 0 ? .Prize_Qty[.@Sector] : #freewheelfortunespin + .Prize_Qty[.@Sector];
+      announce "[ กงล้อหรรษา ]: ว้าวว! ผู้เล่น [ " + strcharinfo(0) + " ] ไม่ได้รับของรางวัล โง่ๆๆๆ",bc_all;
+      // #freewheelfortunespin = #freewheelfortunespin == 0 ? .Prize_Qty[.@Sector] : #freewheelfortunespin + .Prize_Qty[.@Sector];
     } else if (.Prize_ID[.@Sector] == 0) {
       // Nothing
       if (.Sound_Effects)
@@ -131,16 +131,16 @@ morocc,171,96,4	script	Lucky Wheel#Zeny	563,{
     // bindatcmd("wheel_of_fortune", "Wheel_of_Fortune::OnCommand", 98, 98, false);
     .Spin_Speed = 10; // What is the base spin speed? (ms)
     .nbTurns = 2; // How many times the arrow makes a complete turn, before entering the stopping routine
-    .Zeny_Cost = 50000; // How much zeny does it cost for a spin?
+    .Zeny_Cost = 200000; // How much zeny does it cost for a spin?
     .Sound_Effects = true; // Enable sound effects? (true/false)
 
     // You must have a total of 10 prizes. DO NOT remove 0 or -1 from the array and do not
     // change their order.
-    setarray(.Prize_ID[1], -1, 14001, 14001, 30300,   30001,   60500, 617,   12269, 0,  12270);
-    setarray(.Prize_Qty[1], 2,     1,     2,     1,     50,     100,     1,     3, 0,     3);
+    setarray(.Prize_ID[1], -1, 1127, 6635, 1253,   30304,   1304, 60500,   1715, 14003,  1611);
+    setarray(.Prize_Qty[1], 2,     1,     1,     1,     1,     1,     100,     1, 1,     1);
 
     // Don't touch below
-    .Cutin$ = "WheelOfFortune_";
+    .Cutin$ = "V2ZenyWheelOfFortune_";
     setarray(.Sector_Range, 1, 10); // Sector range
     setarray(.Cutin_Range, 0, 19); // Cutin range
     end;

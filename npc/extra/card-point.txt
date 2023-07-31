@@ -103,10 +103,8 @@ OnBuyItem:
 OnInit:
 	waitingroom "[Card] แลกแต้ม", 0;
 	set .Points$,"#Card_Points";	// Variable to store points.
-	setarray .Shop[0],		// Card Shop items: <ID>,<point cost>
-	30100,1;
-	setarray .Shop[1],
-	616,20;
+	setarray .Shop,		// Card Shop items: <ID>,<point cost>
+	30100,1,616,20;
 //	616,7,41124,15,41125,15,41126,15,41127,15,41128,15,41129,15,41130,15;
 	setarray .Points[0],1,1;	// Points per <normal card>,<MVP card>
 	set .MVP$,			// List of MVP cards.

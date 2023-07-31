@@ -2407,6 +2407,8 @@ Body:
             Rate: 1
 #          - Item: Rafflesia_Card
 #            Rate: 1
+          - Item: Knight_Of_Abyss_Card
+            Rate: 1
           - Item: Marine_Sphere_Card
             Rate: 1
           - Item: Orc_Skeleton_Card

@@ -209,6 +209,16 @@ Body:
             Amount: 200
   - Name: RankD_Card
     Items:
+      - Index: 0
+        Zeny: 1000000
+        Item: D_Abysmal_Knight_Card
+        RequiredItems:
+          - Index: 0
+            Item: D_Abysmal_Knight_Card
+            Amount: 2
+          - Index: 1
+            Item: CARD_COIN
+            Amount: 10
       - Index: 1
         Zeny: 100000
         Item: D_Desert_Wolf_Card
@@ -393,7 +403,7 @@ Body:
             Amount: 1000
       - Index: 5
         Zeny: 1000000
-        Item: Critical_Rate_Amulet
+        Item: Critical_Damage_Amulet
         RequiredItems:
           - Index: 0
             Item: REFINE_COIN

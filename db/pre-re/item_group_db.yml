@@ -7809,6 +7809,9 @@ Body:
           - Item: Valentine_Hat
             Rate: 1
             Announced: true
+          - Item: Rideword_Hat
+            Rate: 1
+            Announced: true
   - Group: LIBRA_SCROLL
     SubGroups:
       - SubGroup: 1

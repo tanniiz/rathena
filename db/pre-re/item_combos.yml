@@ -1238,6 +1238,16 @@ Body:
       bonus bCritAtkRate,10;
       if (getequiprefinerycnt(EQI_HEAD_TOP) >= 7)
          bonus bCritical,5;
+  - Combos:
+      - Combo:
+          - UPG_Whike_Black_Tail   # 68503
+          - UPG_Whikebain_Ears   # 68502
+    Script: |
+      bonus bCritical,5;
+      if (getequiprefinerycnt(EQI_HEAD_TOP) >= 7) {
+        bonus bCritAtkRate,15;
+        bonus bAtkRate,3;
+      }
 
       
     

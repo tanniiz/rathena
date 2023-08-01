@@ -41677,3 +41677,163 @@ Body:
       Right_Hand: true
     WeaponLevel: 4
     Refineable: true
+
+
+### UPG ###
+  - Id: 68500
+    AegisName: UPG_Rideword_Hat
+    Name: UPG Rideword Hat
+    Type: Armor
+    Buy: 20
+    Weight: 300
+    Defense: 2
+    Slots: 1
+    Jobs:
+      All: true
+      Novice: false
+      SuperNovice: false
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 40
+    Refineable: true
+    View: 262
+    Script: |
+      bonus bAtk,20;
+      bonus2 bHPDrainRate,150,10;
+      bonus2 bSPDrainRate,50,4;
+      bonus2 bHPLossRate,10,5000;
+  - Id: 68501
+    AegisName: UPG_Ramen_Hat
+    Name: UPG Ramen Hat
+    Type: Armor
+    Buy: 20
+    Defense: 1
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
+    Slots: 1
+    View: 320
+    Trade:
+      NoDrop: true
+      NoSell: true
+      NoGuildStorage: true
+    Script: |
+      bonus bDex,5;
+      bonus bLongAtkRate,5;
+      bonus bMatkRate,5;
+      bonus4 bAutoSpellWhenHit,"AL_DECAGI",1,30,1;
+  - Id: 68502
+    AegisName: UPG_Whikebain_Ears
+    Name: UPG Hyuke's Black Cat Ears
+    Type: Armor
+    Buy: 20
+    Weight: 200
+    Defense: 2
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 45
+    Refineable: true
+    View: 368
+    Trade:
+      NoDrop: true
+      NoSell: true
+      NoGuildStorage: true
+    Script: |
+      bonus bAspd,1;
+      bonus bAtkRate,3;
+      bonus bFlee,10;
+      bonus bCritical,3;
+      bonus bCritAtkRate,10;
+  - Id: 68503
+    AegisName: UPG_Whike_Black_Tail
+    Name: UPG Whike Black Tail
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Both_Accessory: true
+    ArmorLevel: 1
+    Slots: 1
+    EquipLevelMin: 45
+    Script: |
+      bonus bCritical,7;
+      bonus bAspd,2;
+  - Id: 68505
+    AegisName: UPG_Zaha_Doll_Hat
+    Name: UPG Zaha Doll Hat
+    Type: Armor
+    Buy: 20
+    Defense: 1
+    Slots: 1
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
+    View: 461
+    Script: |
+      bonus bInt,2;
+      skill "PR_MAGNIFICAT", 5;
+  - Id: 68506
+    AegisName: UPG_Observer
+    Name: UPG Observer
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Defense: 1
+    Locations:
+      Head_Mid: true
+    ArmorLevel: 1
+    EquipLevelMin: 35
+    View: 337
+    Trade:
+      NoDrop: true
+      NoSell: true
+      NoGuildStorage: true
+    Script: |
+      skill "WZ_ESTIMATION",1;
+      bonus2 bAddClass,Class_Boss,5;
+  - Id: 68507
+    AegisName: UPG_Red_Glasses
+    Name: UPG Red Glasses
+    Type: Armor
+    Buy: 20
+    Defense: 1
+    Slots: 1
+    Locations:
+      Head_Mid: true
+    ArmorLevel: 1
+    View: 316
+    Trade:
+      NoDrop: true
+      NoSell: true
+      NoGuildStorage: true
+    Script: |
+      bonus bInt,1;
+      bonus bAtk,15;
+      bonus bMatk,15;
+  - Id: 68509
+    AegisName: UPG_Ribbon_Of_Bride
+    Name: UPG Red Tailed Ribbon
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Defense: 5
+    Slots: 1
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
+    Refineable: true
+    View: 167
+    Script: |
+      bonus bAllStats,3;
+      bonus2 bSubRace,RC_DemiHuman,10;
+      bonus2 bSubRace,RC_Player_Human,10;
+      bonus2 bAddRace,RC_DemiHuman,7;
+      bonus2 bAddRace,RC_Player_Human,7;
+      if (getskilllv("AL_HEAL") == 10) {
+         bonus3 bAutoSpellWhenHit,"AL_HEAL",10,20;
+      }
+      else {
+         bonus3 bAutoSpellWhenHit,"AL_HEAL",5,20;
+      }

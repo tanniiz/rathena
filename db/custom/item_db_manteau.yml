@@ -1,0 +1,94 @@
+Header:
+  Type: ITEM_DB
+  Version: 3
+
+Body:
+  - Id: 68300
+    AegisName: ATTACK_WINGS
+    Name: Attack Wings
+    Type: Armor
+    Locations:
+      Garment: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    Defense: 5
+    Refineable: true
+    Slots: 1
+    Script: |
+      .@r = getrefine();
+      bonus bAtk,3 * .@r;
+      bonus2 bIgnoreDefRaceRate,RC_ALL,1 * .@r;
+  - Id: 68301
+    AegisName: MATTACK_WINGS
+    Name: Magic Attack Wings
+    Type: Armor
+    Locations:
+      Garment: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    Defense: 5
+    Refineable: true
+    Slots: 1
+    Script: |
+      .@r = getrefine();
+      bonus bMatk,3 * .@r;
+      bonus2 bIgnoreMdefRaceRate,RC_ALL,1 * .@r;
+  - Id: 68302
+    AegisName: ASPD_WINGS
+    Name: Aspd Wings
+    Type: Armor
+    Locations:
+      Garment: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    Defense: 5
+    Refineable: true
+    Slots: 1
+    Script: |
+      .@r = getrefine();
+      bonus bAspd,1 * .@r;
+  - Id: 68303
+    AegisName: CRITICAL_WINGS
+    Name: Critical Wings
+    Type: Armor
+    Locations:
+      Garment: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    Defense: 5
+    Refineable: true
+    Slots: 1
+    Script: |
+      .@r = getrefine();
+      bonus bCritical,1 * .@r;
+      bonus bCritAtkRate,1 * .@r;
+  - Id: 68304
+    AegisName: MELEE_WINGS
+    Name: Melee Wings
+    Type: Armor
+    Locations:
+      Garment: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    Defense: 5
+    Refineable: true
+    Slots: 1
+    Script: |
+      .@r = getrefine();
+      bonus bAtk,3 * .@r;
+      bonus bShortAtkRate,1 * .@r;
+  - Id: 68305
+    AegisName: RANGE_WINGS
+    Name: Range Wings
+    Type: Armor
+    Locations:
+      Garment: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    Defense: 5
+    Refineable: true
+    Slots: 1
+    Script: |
+      .@r = getrefine();
+      bonus bAtk,3 * .@r;
+      bonus bLongAtkRate,1 * .@r;

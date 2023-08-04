@@ -33646,6 +33646,7 @@ Body:
     Locations:
       Head_Top: true
     ArmorLevel: 1
+    slots: 1
     Refineable: true
     View: 501
     Script: |
@@ -33660,6 +33661,7 @@ Body:
     Locations:
       Head_Top: true
     ArmorLevel: 1
+    slots: 1
     Refineable: true
     View: 502
     Script: |

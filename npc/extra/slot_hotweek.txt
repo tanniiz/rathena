@@ -88,7 +88,7 @@ morocc,159,131,4	script	น้องหนุ่ย Slot Cash	563,{
 			}
 			
 			// .@P ข้างล่างมีถึงเท่าไหร่ใส่ตรงนี้
-			set .@Total,13;
+			set .@Total,11;
 			// 10000 = 100%
 			// 1000 = 10%
 			// 100 = 1%
@@ -103,7 +103,7 @@ morocc,159,131,4	script	น้องหนุ่ย Slot Cash	563,{
 //			setarray .@P5[0],170,5389,1;		//Angel_Spirit
 //			setarray .@P6[0],170,5372,1;		//Drooping_White_Kitty
 //			setarray .@P7[0],170,5431,1;		//Chicken_Hat
-//			setarray .@P8[0],120,5464,1;		//Zaha
+//			setarray .@P8[0],120,5374,1;		//Majestic
 //			setarray .@P9[0],250,41084,1;		//Color_Name_Pass
 //			setarray .@P10[0],500,41085,1;		//Stylist_Pass
 //			setarray .@P11[0],100,41065,1;		//Re Status
@@ -180,20 +180,17 @@ morocc,159,131,4	script	น้องหนุ่ย Slot Cash	563,{
 //			setarray .@P11[0],300,41142,1;		//Tool_Research
 //			setarray .@P12[0],300,41197,1;		//RemoveCard_knife
 
-      setarray .@P1[0],200,5360,1;		// หูแมว
-			setarray .@P2[0],200,2855,1;		// หางแมว
-			setarray .@P3[0],200,5464,1;		// Zaha
-			setarray .@P4[0],200,5315,1;		// Observer
-			setarray .@P5[0],200,5288,1;		// Red_Glasses
-			setarray .@P6[0],200,5208,1;		// Rideword_Hat
-			setarray .@P7[0],200,5210,1;		// Flying_Angel
-			setarray .@P7[0],200,5293,1;		// Ramen Hat
-			setarray .@P7[0],200,5801,1;		// Red Tailed
+      setarray .@P1[0],150,5497,1;		// หมวกเสือ
+			setarray .@P2[0],200,5967,1;		// Galapagao
+			setarray .@P3[0],150,5374,1;		// Majestic
+			setarray .@P4[0],200,5288,1;		// Red_Glasses
+			setarray .@P5[0],200,5210,1;		// Flying_Angel
+			setarray .@P6[0],200,5293,1;		// Ramen Hat
+			setarray .@P7[0],200,18509,1;		// RWC
 			setarray .@P8[0],250,7619,1;		// EluHE
 			setarray .@P9[0],250,7620,1;		// OriHE
 			setarray .@P10[0],300,7777,1;		// Restat
 			setarray .@P11[0],300,12213,1;		// Neuralizer
-
 			
 			
 			// ตั้งค่ารหัสไอเทมขยะ
@@ -404,11 +401,11 @@ OnInit:
 	// ตั้งค่าชื่อ NPC
 	set .NPCName$, "[ น้องหนุ่ย Hotweek Cash ]";
 	// ตั้งค่าค่าบริการ
-	set .Fee, 200;
+	set .Fee, 500;
 	// ตั้งค่าจำนวนที่จะแบ่งเข้า Jackpot Pool
 	set .Share2Pool, 10;
 	// ตั้งค่าเล่นครบกี่รอบจะได้สุ่ม Jackpot
-	set .Round2Jackpot, 15;
+	set .Round2Jackpot, 20;
 	// ตั้งค่าโอกาสที่จะได้ Jackpot 1-100%
 	set .Jackpot_Rate, 5;
 	// ตั้งค่ารหัสไอเทมรางวัล ranking ที่ 1
@@ -444,15 +441,13 @@ OnInit:
 	freeloop(1);
 	setarray .Shops$[1],"~ ตัวอย่างของรางวัล";
 // =============================================================
-	PreviewAddItems(1,5360,1,0,0);			
-	PreviewAddItems(1,2855,1,0,0);			
-	PreviewAddItems(1,5464,1,0,0);			
-	PreviewAddItems(1,5315,1,0,0);			
-	PreviewAddItems(1,5288,1,0,0);			
-	PreviewAddItems(1,5208,1,0,0);			
-	PreviewAddItems(1,5210,1,0,0);			
-	PreviewAddItems(1,5293,1,0,0);			
-	PreviewAddItems(1,5801,1,0,0);			
+	PreviewAddItems(1,5497,1,0,0);	// หมวกเสือ
+	PreviewAddItems(1,5967,1,0,0);	// Galapagao
+	PreviewAddItems(1,5374,1,0,0);	// Majestic
+	PreviewAddItems(1,5288,1,0,0);	// Red Glasses	
+	PreviewAddItems(1,5210,1,0,0);	// Flying Angel
+	PreviewAddItems(1,5293,1,0,0);	// Ramen
+	PreviewAddItems(1,18509,1,0,0);	// RWC
 	PreviewAddItems(1,7619,1,0,0);			
 	PreviewAddItems(1,7620,1,0,0);			
 	PreviewAddItems(1,12213,1,0,0);			

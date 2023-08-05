@@ -1,0 +1,391 @@
+
+Header:
+  Type: ITEM_DB
+  Version: 3
+
+Body:
+  - Id: 47100
+    AegisName: COSTUME_RICHY_WING
+    Name: "[C] Richy Wing"
+    Type: Armor
+    Locations:
+      Costume_Garment: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 91
+    Script: |
+      bonus2 bDropAddRace,RC_ALL,5;
+      skill "BS_GREED",1;
+  - Id: 67000
+    AegisName: COSTUME_APPLE_OF_ARCHER
+    Name: Costume Apple of Archer
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 72
+    Script: |
+      bonus2 bDropAddRace,RC_ALL,3;
+      bonus2 bExpAddRace,RC_ALL,3;
+      bonus bLongAtkRate,1;
+  - Id: 67001
+    AegisName: COSTUME_WIZARD_HAT
+    Name: Costume Wizard Hat
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 36
+    Script: |
+      bonus2 bDropAddRace,RC_ALL,3;
+      bonus2 bExpAddRace,RC_ALL,3;
+      bonus bMatkRate,2;
+  - Id: 67002
+    AegisName: COSTUME_SAKKAT
+    Name: Costume Sakkat
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 67
+    Script: |
+      bonus2 bDropAddRace,RC_ALL,3;
+      bonus2 bExpAddRace,RC_ALL,3;
+      bonus bAspdRate,1;
+  - Id: 67003
+    AegisName: COSTUME_MARIONETTE_DOLL
+    Name: Costume Marionette Doll
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 212
+    Script: |
+      bonus2 bDropAddRace,RC_ALL,3;
+      bonus2 bExpAddRace,RC_ALL,3;
+      bonus bShortAtkRate,1;
+  - Id: 67004
+    AegisName: COSTUME_OPERA_MASK
+    Name: Costume Opera Mask
+    Type: Armor
+    Locations:
+      Costume_Head_Mid: true
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 68
+    Script: |
+      bonus2 bDropAddRace,RC_ALL,4;
+      bonus2 bExpAddRace,RC_ALL,4;
+  - Id: 67005
+    AegisName: COSTUME_ELVEN_EARS
+    Name: Costume Elven Ears
+    Type: Armor
+    Locations:
+      Costume_Head_Mid: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 73
+    Script: |
+      bonus2 bDropAddRace,RC_ALL,3;
+      bonus2 bExpAddRace,RC_ALL,3;
+  - Id: 67006
+    AegisName: COSTUME_EVIL_EARS
+    Name: Costume Evil Ears
+    Type: Armor
+    Locations:
+      Costume_Head_Mid: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 152
+    Script: |
+      bonus2 bDropAddRace,RC_ALL,4;
+      bonus2 bExpAddRace,RC_ALL,4;
+      bonus bAtkRate,1;
+      bonus bMatkRate,1;
+  - Id: 67007
+    AegisName: COSTUME_ROMANTIC_LEAF
+    Name: Costume Romantic Leaf
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 54
+    Script: |
+      bonus2 bDropAddRace,RC_ALL,2;
+      bonus2 bExpAddRace,RC_ALL,2;
+      bonus bAtk,3;
+      bonus bMatk,3;
+  - Id: 67008
+    AegisName: COSTUME_ROMANTIC_Flower
+    Name: Costume Romantic Flower
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 56
+    Script: |
+      bonus2 bDropAddRace,RC_ALL,3;
+      bonus2 bExpAddRace,RC_ALL,3;
+      bonus bAtk,3;
+      bonus bMatk,3;
+  - Id: 67009
+    AegisName: COSTUME_CIGARATTE
+    Name: Costume Cigarette
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 54
+    Script: |
+      bonus2 bDropAddRace,RC_ALL,1;
+      bonus2 bExpAddRace,RC_ALL,1;
+      bonus bAtk,1;
+      bonus bMatk,1;
+  - Id: 68000
+    AegisName: RAINBOW_WING
+    Name: Rainbow Angel Wing
+    Type: Armor
+    Locations:
+      Costume_Garment: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 9
+    Script: |
+      bonus bAtkRate,3;
+      bonus bMatkRate,3;
+      bonus bAspd,2;
+      bonus bCritical,2;
+      bonus bAllStats,1;
+  - Id: 68001
+    AegisName: COSTUME_CROWN
+    Name: Costume Crown
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 45
+    Script: |
+      bonus2 bDropAddRace,RC_ALL,10;
+      bonus bMatkRate,3;
+      bonus bDelayRate,-5;
+  - Id: 68002
+    AegisName: COSTUME_MAJESTIC_GOAT
+    Name: Costume Majestic Goat
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 41
+    Script: |
+      bonus2 bDropAddRace,RC_ALL,10;
+      bonus bAtkRate,3;
+      bonus bAspd,1;
+      bonus bCritAtkRate,7;
+  - Id: 68003
+    AegisName: COSTUME_CORSAIR
+    Name: Costume Corsair
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 105
+    Script: |
+      bonus2 bDropAddRace,RC_ALL,10;
+      bonus2 bSubSize,Size_Medium,5;
+  - Id: 68004
+    AegisName: COSTUME_TIARA
+    Name: Costume Tiara
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 19
+    Script: |
+      bonus2 bDropAddRace,RC_ALL,10;
+      bonus bMatkRate,3;
+      bonus bCastrate,-5;
+  - Id: 68005
+    AegisName: COSTUME_CORONET
+    Name: Costume Coronet
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 33
+    Script: |
+      bonus2 bDropAddRace,RC_ALL,10;
+      bonus bMatkRate,1;
+      bonus bDelayRate,-2;
+      bonus bCastrate,-2;
+  - Id: 68006
+    AegisName: COSTUME_SPIKY_BAND
+    Name: Costume Spiky Band
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 43
+    Script: |
+      bonus2 bDropAddRace,RC_ALL,10;
+      bonus bAspd,3;
+      bonus bCritAtkRate,10;
+  - Id: 68007
+    AegisName: COSTUME_PIPE
+    Name: Costume Pipe
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 55
+    Script: |
+      bonus2 bDropAddRace,RC_ALL,5;
+      bonus bAllStats,1;
+      bonus2 bSubSize,Size_Medium,1;
+  - Id: 68008
+    AegisName: COSTUME_ANGEL_WING_EARS
+    Name: Costume Angel Wing Ears
+    Type: Armor
+    Locations:
+      Costume_Head_Mid: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 158
+    Script: |
+      bonus2 bDropAddRace,RC_ALL,5;
+      bonus bAllStats,1;
+      bonus2 bSubSize,Size_Medium,2;
+  - Id: 68009
+    AegisName: COSTUME_GRAND_CIRCLET
+    Name: Costume Grand Circlet
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 93
+    Script: |
+      bonus2 bDropAddRace,RC_ALL,10;
+      bonus bAtkRate,1;
+      bonus bAspd,1;
+      bonus bLongAtkRate,2;
+      bonus bShortAtkRate,2;
+  - Id: 68010
+    AegisName: COSTUME_BOY_CAP
+    Name: Costume Boy Cap
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 102
+    Script: |
+      bonus2 bDropAddRace,RC_ALL,5;
+      bonus bAtk,15;
+      bonus bAspd,1;
+      bonus bLongAtkRate,1;
+      bonus bShortAtkRate,1;
+  - Id: 68011
+    AegisName: COSTUME_ICE_WING
+    Name: Costume Ice Wing
+    Type: Armor
+    Locations:
+      Costume_Garment: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 71
+    Script: |
+      bonus bAtkRate,7;
+      bonus bMatkRate,7;
+      bonus bAspd,3;
+      bonus bCritical,5;
+      bonus bAllStats,2;
+  - Id: 68012
+    AegisName: COSTUME_ACC_SAKURA
+    Name: Costume Accessory Sakura
+    Type: Shadowgear
+    Locations:
+      Shadow_Right_Accessory: true
+    EquipLevelMin: 1
+    Script: |
+      hateffect(HAT_EF_Full_BloomCherry_Tree,true);
+      bonus2 bDropAddRace,RC_ALL,5;
+      bonus bAtk,5;
+      bonus bMatk,5;
+      bonus bAllStats,1;
+    UnEquipScript: |
+      hateffect(HAT_EF_Full_BloomCherry_Tree,false);
+  - Id: 68013
+    AegisName: COSTUME_Glove
+    Name: Costume Glove
+    Type: Shadowgear
+    Locations:
+      Shadow_Right_Accessory: true
+      Shadow_Left_Accessory: true
+    EquipLevelMin: 1
+    Script: |
+      bonus bDex,1;
+  - Id: 68014
+    AegisName: COSTUME_Ring
+    Name: Costume Ring
+    Type: Shadowgear
+    Locations:
+      Shadow_Right_Accessory: true
+      Shadow_Left_Accessory: true
+    EquipLevelMin: 1
+    Script: |
+      bonus bStr,1;
+  - Id: 68015
+    AegisName: COSTUME_Earring
+    Name: Costume Earring
+    Type: Shadowgear
+    Locations:
+      Shadow_Right_Accessory: true
+      Shadow_Left_Accessory: true
+    EquipLevelMin: 1
+    Script: |
+      bonus bInt,1;
+  - Id: 68016
+    AegisName: COSTUME_Brooch
+    Name: Costume Brooch
+    Type: Shadowgear
+    Locations:
+      Shadow_Right_Accessory: true
+      Shadow_Left_Accessory: true
+    EquipLevelMin: 1
+    Script: |
+      bonus bAgi,1;
+  - Id: 68017
+    AegisName: COSTUME_Rosary
+    Name: Costume Rosary
+    Type: Shadowgear
+    Locations:
+      Shadow_Right_Accessory: true
+      Shadow_Left_Accessory: true
+    EquipLevelMin: 1
+    Script: |
+      bonus bLuk,5;
+  - Id: 68018
+    AegisName: COSTUME_Necklace
+    Name: Costume Necklace
+    Type: Shadowgear
+    Locations:
+      Shadow_Right_Accessory: true
+      Shadow_Left_Accessory: true
+    EquipLevelMin: 1
+    Script: |
+      bonus bVit,1;

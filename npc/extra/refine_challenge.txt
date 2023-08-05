@@ -15,7 +15,7 @@
 //  Rewards shop
 -	pointshop	REFINESHOP				-1,SECRET_REFINE,30002:1
 -	shop	REFINEDUMMYSHOP#1			-1,501:1000
--	cashshop	REFINE_MATERIAL_SHOP	-1,68200:500
+-	cashshop	REFINE_MATERIAL_SHOP	-1,68201:1000
 
 morocc,155,126,4	script	Refine Challenge	4_CAT_SAILOR1,{
 	disable_items;
@@ -113,7 +113,7 @@ morocc,155,126,4	script	Refine Challenge	4_CAT_SAILOR1,{
     OnInit:
 	//  				   0,1,2,3,....., 7, 8, 9, 10;
 	setarray .refine_worth,0,0,0,0,0,0,2,4,10,25,100;
-	.itemid = 68200;
+	.itemid = 68201;
 	.npc_name$ = "[ ^0000FFกิจกรรมตีบวก^000000 ]";
 	waitingroom "กิจกรรมตีบวก",0;
 }

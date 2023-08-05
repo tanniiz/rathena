@@ -5,7 +5,7 @@ end;
   disablenpc "น้องหนุ่ย Slot Cash";
   disablenpc "Hotweek#Craft";
    end;
-OnSat2304:
+OnSat2100:
 announce "น้องหนุ่ย Hotweek ได้เริ่มขึ้นแล้ว มีเวลาถึง 01:30 น. เท่านั้นหมดแล้วหมดเลย!!!!!", bc_all, "0xf1c232";
   enablenpc "Refine Challenge";
   enablenpc "น้องหนุ่ย Slot Cash";

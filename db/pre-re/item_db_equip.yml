@@ -33452,7 +33452,7 @@ Body:
     Type: Armor
     Buy: 20
     Weight: 400
-    Defense: 3
+    Defense: 6
     Slots: 1
     Jobs:
       All: true
@@ -33461,17 +33461,19 @@ Body:
     Locations:
       Head_Top: true
     ArmorLevel: 1
-    EquipLevelMin: 30
+    EquipLevelMin: 1
     Refineable: true
     View: 495
     Trade:
       NoDrop: true
-      NoSell: true
-      NoGuildStorage: true
-      NoMail: true
-      NoAuction: true
     Script: |
       bonus bStr,2;
+      bonus bDex,2;
+      bonus2 bAddRace,RC_Brute,10;
+      bonus2 bAddRace,RC_Player_Doram,10;
+      .@r = getrefine();
+      autobonus "{ bonus2 bSPLossRate,5,1000; bonus bBaseAtk,25*getrefine(); }",3*.@r,3000,BF_NORMAL,"{ active_transform 1115,3000; specialeffect2 EF_POTION_BERSERK; showscript \"Eddga Power !\"; }";
+      autobonus2 "{ bonus2 bSPLossRate,5,1000; bonus bBaseAtk,25*getrefine(); }",.@r,3000,BF_NORMAL,"{ active_transform 1115,3000; specialeffect2 EF_POTION_BERSERK; showscript \"Eddga Power !\"; }";
   - Id: 5498
     AegisName: Wondering_Wolf_Helm
     Name: Wandering Wolf Helm
@@ -41063,288 +41065,37 @@ Body:
         set .@bblvl,max(getskilllv("HT_BLITZBEAT"),1);
         set .@luk,min(readparam(bLuk),120);
         bonus3 bAutoSpell,"HT_BLITZBEAT",.@bblvl,50 + (.@luk / 3) + (.@bblvl * 2);
-        bonus2 bSkillAtk,"HT_BLITZBEAT",getskilllv("HT_STEELCROW") * 40;
+        bonus2 bSkillAtk,"HT_BLITZBEAT",getskilllv("HT_STEELCROW") * 20;
       }
-### Custom ###
-  - Id: 47100
-    AegisName: COSTUME_RICHY_WING
-    Name: "[C] Richy Wing"
+  - Id: 18509
+    AegisName: RWC2010_Indonesia
+    Name: RWC2010 Indonesia
     Type: Armor
+    Buy: 20
+    Weight: 100
+    Defense: 6
+    Slots: 1
+    Jobs:
+      All: true
+      Novice: false
+      SuperNovice: false
     Locations:
-      Costume_Garment: true
+      Head_Top: true
     ArmorLevel: 1
-    EquipLevelMin: 1
-    View: 91
+    EquipLevelMin: 15
+    Refineable: true
+    View: 678
     Script: |
-      bonus2 bDropAddRace,RC_ALL,5;
-      skill "BS_GREED",1;
-  - Id: 67000
-    AegisName: COSTUME_APPLE_OF_ARCHER
-    Name: Costume Apple of Archer
-    Type: Armor
-    Locations:
-      Costume_Head_Top: true
-    ArmorLevel: 1
-    EquipLevelMin: 1
-    View: 72
-    Script: |
-      bonus2 bDropAddRace,RC_ALL,3;
-      bonus2 bExpAddRace,RC_ALL,3;
-      bonus bLongAtkRate,1;
-  - Id: 67001
-    AegisName: COSTUME_WIZARD_HAT
-    Name: Costume Wizard Hat
-    Type: Armor
-    Locations:
-      Costume_Head_Top: true
-    ArmorLevel: 1
-    EquipLevelMin: 1
-    View: 36
-    Script: |
-      bonus2 bDropAddRace,RC_ALL,3;
-      bonus2 bExpAddRace,RC_ALL,3;
-      bonus bMatkRate,2;
-  - Id: 67002
-    AegisName: COSTUME_SAKKAT
-    Name: Costume Sakkat
-    Type: Armor
-    Locations:
-      Costume_Head_Top: true
-    ArmorLevel: 1
-    EquipLevelMin: 1
-    View: 67
-    Script: |
-      bonus2 bDropAddRace,RC_ALL,3;
-      bonus2 bExpAddRace,RC_ALL,3;
-      bonus bAspdRate,1;
-  - Id: 67003
-    AegisName: COSTUME_MARIONETTE_DOLL
-    Name: Costume Marionette Doll
-    Type: Armor
-    Locations:
-      Costume_Head_Top: true
-    ArmorLevel: 1
-    EquipLevelMin: 1
-    View: 212
-    Script: |
-      bonus2 bDropAddRace,RC_ALL,3;
-      bonus2 bExpAddRace,RC_ALL,3;
-      bonus bShortAtkRate,1;
-  - Id: 67004
-    AegisName: COSTUME_OPERA_MASK
-    Name: Costume Opera Mask
-    Type: Armor
-    Locations:
-      Costume_Head_Mid: true
-      Costume_Head_Low: true
-    ArmorLevel: 1
-    EquipLevelMin: 1
-    View: 68
-    Script: |
-      bonus2 bDropAddRace,RC_ALL,4;
-      bonus2 bExpAddRace,RC_ALL,4;
-  - Id: 67005
-    AegisName: COSTUME_ELVEN_EARS
-    Name: Costume Elven Ears
-    Type: Armor
-    Locations:
-      Costume_Head_Mid: true
-    ArmorLevel: 1
-    EquipLevelMin: 1
-    View: 73
-    Script: |
-      bonus2 bDropAddRace,RC_ALL,3;
-      bonus2 bExpAddRace,RC_ALL,3;
-  - Id: 67006
-    AegisName: COSTUME_EVIL_EARS
-    Name: Costume Evil Ears
-    Type: Armor
-    Locations:
-      Costume_Head_Mid: true
-    ArmorLevel: 1
-    EquipLevelMin: 1
-    View: 152
-    Script: |
-      bonus2 bDropAddRace,RC_ALL,4;
-      bonus2 bExpAddRace,RC_ALL,4;
-      bonus bAtkRate,1;
-      bonus bMatkRate,1;
-  - Id: 67007
-    AegisName: COSTUME_ROMANTIC_LEAF
-    Name: Costume Romantic Leaf
-    Type: Armor
-    Locations:
-      Costume_Head_Low: true
-    ArmorLevel: 1
-    EquipLevelMin: 1
-    View: 54
-    Script: |
-      bonus2 bDropAddRace,RC_ALL,2;
-      bonus2 bExpAddRace,RC_ALL,2;
-      bonus bAtk,3;
-      bonus bMatk,3;
-  - Id: 67008
-    AegisName: COSTUME_ROMANTIC_Flower
-    Name: Costume Romantic Flower
-    Type: Armor
-    Locations:
-      Costume_Head_Low: true
-    ArmorLevel: 1
-    EquipLevelMin: 1
-    View: 56
-    Script: |
-      bonus2 bDropAddRace,RC_ALL,3;
-      bonus2 bExpAddRace,RC_ALL,3;
-      bonus bAtk,3;
-      bonus bMatk,3;
-  - Id: 67009
-    AegisName: COSTUME_CIGARATTE
-    Name: Costume Cigarette
-    Type: Armor
-    Locations:
-      Costume_Head_Low: true
-    ArmorLevel: 1
-    EquipLevelMin: 1
-    View: 54
-    Script: |
-      bonus2 bDropAddRace,RC_ALL,1;
-      bonus2 bExpAddRace,RC_ALL,1;
-      bonus bAtk,1;
-      bonus bMatk,1;
-  - Id: 68000
-    AegisName: RAINBOW_WING
-    Name: Rainbow Angel Wing
-    Type: Armor
-    Locations:
-      Costume_Garment: true
-    ArmorLevel: 1
-    EquipLevelMin: 1
-    View: 9
-    Script: |
-      bonus bAtkRate,3;
-      bonus bMatkRate,3;
-      bonus bAspd,2;
-      bonus bCritical,2;
-  - Id: 68001
-    AegisName: COSTUME_CROWN
-    Name: Costume Crown
-    Type: Armor
-    Locations:
-      Costume_Head_Top: true
-    ArmorLevel: 1
-    EquipLevelMin: 1
-    View: 45
-    Script: |
-      bonus2 bDropAddRace,RC_ALL,10;
-      bonus bMatkRate,3;
-      bonus bDelayRate,-5;
-  - Id: 68002
-    AegisName: COSTUME_MAJESTIC_GOAT
-    Name: Costume Majestic Goat
-    Type: Armor
-    Locations:
-      Costume_Head_Top: true
-    ArmorLevel: 1
-    EquipLevelMin: 1
-    View: 41
-    Script: |
-      bonus2 bDropAddRace,RC_ALL,10;
-      bonus bAtkRate,3;
+      bonus bLuk,5;
+      bonus2 bSubRace,RC_Player_Human,10;
+      bonus2 bSubRace,RC_DemiHuman,10;
+      bonus2 bAddItemHealRate,501,100;
+      bonus2 bAddItemHealRate,504,100;
+      bonus bCritical,10;
       bonus bAspd,1;
-      bonus bCritAtkRate,7;
-  - Id: 68003
-    AegisName: COSTUME_CORSAIR
-    Name: Costume Corsair
-    Type: Armor
-    Locations:
-      Costume_Head_Top: true
-    ArmorLevel: 1
-    EquipLevelMin: 1
-    View: 105
-    Script: |
-      bonus2 bDropAddRace,RC_ALL,10;
-      bonus2 bSubSize,Size_Medium,5;
-  - Id: 68004
-    AegisName: COSTUME_TIARA
-    Name: Costume Tiara
-    Type: Armor
-    Locations:
-      Costume_Head_Top: true
-    ArmorLevel: 1
-    EquipLevelMin: 1
-    View: 19
-    Script: |
-      bonus2 bDropAddRace,RC_ALL,10;
+      bonus2 bAddClass,Class_All,3;
       bonus bMatkRate,3;
-      bonus bCastrate,-5;
-  - Id: 68005
-    AegisName: COSTUME_CORONET
-    Name: Costume Coronet
-    Type: Armor
-    Locations:
-      Costume_Head_Top: true
-    ArmorLevel: 1
-    EquipLevelMin: 1
-    View: 33
-    Script: |
-      bonus2 bDropAddRace,RC_ALL,10;
-      bonus bMatkRate,1;
-      bonus bDelayRate,-2;
-      bonus bCastrate,-2;
-  - Id: 68006
-    AegisName: COSTUME_SPIKY_BAND
-    Name: Costume Spiky Band
-    Type: Armor
-    Locations:
-      Costume_Head_Top: true
-    ArmorLevel: 1
-    EquipLevelMin: 1
-    View: 43
-    Script: |
-      bonus2 bDropAddRace,RC_ALL,10;
-      bonus bAspd,3;
-      bonus bCritAtkRate,10;
-  - Id: 68007
-    AegisName: COSTUME_PIPE
-    Name: Costume Pipe
-    Type: Armor
-    Locations:
-      Costume_Head_Low: true
-    ArmorLevel: 1
-    EquipLevelMin: 1
-    View: 55
-    Script: |
-      bonus2 bDropAddRace,RC_ALL,5;
-      bonus bAllStats,1;
-      bonus2 bSubSize,Size_Medium,1;
-  - Id: 68008
-    AegisName: COSTUME_ANGEL_WING_EARS
-    Name: Costume Angel Wing Ears
-    Type: Armor
-    Locations:
-      Costume_Head_Mid: true
-    ArmorLevel: 1
-    EquipLevelMin: 1
-    View: 158
-    Script: |
-      bonus2 bDropAddRace,RC_ALL,5;
-      bonus bAllStats,1;
-      bonus2 bSubSize,Size_Medium,2;
-  - Id: 68009
-    AegisName: COSTUME_GRAND_CIRCLET
-    Name: Costume Grand Circlet
-    Type: Armor
-    Locations:
-      Costume_Head_Top: true
-    ArmorLevel: 1
-    EquipLevelMin: 1
-    View: 93
-    Script: |
-      bonus2 bDropAddRace,RC_ALL,10;
-      bonus bAtkRate,1;
-      bonus bAspd,1;
-      bonus bLongAtkRate,2;
-      bonus bShortAtkRate,2;
+
 ### Ability Figures ###
   - Id: 69100
     AegisName: Swordman_Ability_Figure
@@ -41671,6 +41422,17 @@ Body:
   - Id: 68200
     AegisName: REFINE_CHALLENGE_DAGGER
     Name: Refine Challenge Dagger
+    Type: Weapon
+    SubType: Dagger
+    Buy: 0
+    Weight: 1
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 4
+    Refineable: true
+  - Id: 68201
+    AegisName: REFINE_CHALLENGE_DAGGER_W2
+    Name: Refine Challenge Dagger W2
     Type: Weapon
     SubType: Dagger
     Buy: 0

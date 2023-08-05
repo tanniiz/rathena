@@ -15,6 +15,7 @@ switch (
     "ยกเลิก"
   )) {
   case 1:
+	  announce "[WoE]: ผู้เล่น [" + strcharinfo(0) + "] กำลังเข้าสู่ปราสาทแล้ว"
     warp "aldeg_cas03",194,44;
     end;
   case 2:

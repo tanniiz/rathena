@@ -210,12 +210,12 @@ sL_Win:
 	mes "ยินดีด้วย! ผู้เล่นฟลุคชนะ";
 	next;
 	set Zeny, Zeny + (@bet * 2);
-	announce "[Blackjack]: ผู้เล่น [" + strcharinfo(0) + "] ชนะ เดิมพัน Blackjack จำนวน" + @bet + "zeny.";
+	announce "[Blackjack]: ผู้เล่น [" + strcharinfo(0) + "] ชนะ เดิมพัน Blackjack จำนวน " + @bet + "zeny.", bc_all;
 	goto L_Play;
 sL_Lose:
 	mes "[Dealer]";
 	mes "เสียใจด้วย วันนี้ไม่ใช่วันของเจ้า";
-	announce "[Blackjack]: ผู้เล่น [" + strcharinfo(0) + "] แพ้ เดิมพัน Blackjack จำนวน" + @bet + "zeny.";
+	announce "[Blackjack]: ผู้เล่น [" + strcharinfo(0) + "] แพ้ เดิมพัน Blackjack จำนวน " + @bet + "zeny.", bc_all;
 	next;
 	goto L_Play;
 sL_Push:

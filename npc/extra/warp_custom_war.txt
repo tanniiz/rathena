@@ -15,10 +15,11 @@ switch (
     "ยกเลิก"
   )) {
   case 1:
-	  announce "[WoE]: ผู้เล่น [" + strcharinfo(0) + "] กำลังเข้าสู่ปราสาทแล้ว";
+	  announce "[WoE]: ผู้เล่น [" + strcharinfo(0) + "] กำลังเข้าสู่ปราสาทแล้ว", bc_all;
     warp "aldeg_cas03",194,44;
     end;
   case 2:
+  announce "[WoE]: ผู้เล่น [" + strcharinfo(0) + "] กำลังกลับเข้าสู่ปราสาทแล้ว", bc_all;
     warp "aldeg_cas03",201,149;
     end;
   default:

@@ -553,21 +553,7 @@ L_close:
 	end;
 
 OnInit:
-	.delay = 100;
-	.title$ = " เปลี่ยนอาชีพ ที่นี้";
-	
-	.string_size = getstrlen( .title$ );
-	while( 1 ){
-		.@title$[ .@i ] = charat( .title$,.@i );
-		delwaitingroom;
-		waitingroom ""+implode( .@title$,"" ),0;
-		.@i++;
-		if( .@i > .string_size ){
-			.@i = 0;
-			deletearray .@title$;
-		}
-		sleep .delay;
-    }
+	waitingroom "Job Change",0;
     end;
 }
 //==============================================

@@ -18588,11 +18588,13 @@ Body:
     AegisName: N_Adventurer's_Suit
     Name: Novice Adventurer's Suit
     Type: Armor
-    Defense: 8
-    Slots: 1
+    Defense: 3
     Locations:
       Armor: true
     ArmorLevel: 1
+    Jobs:
+      Novice: true
+      SuperNovice: true
     Trade:
       NoDrop: true
       NoTrade: true
@@ -19932,8 +19934,6 @@ Body:
     Locations:
       Garment: true
     ArmorLevel: 1
-    Script: |
-      bonus2 bSubEle,Ele_Neutral,20;
   - Id: 2511
     AegisName: Skeleton's_Cape
     Name: Skeleton Manteau

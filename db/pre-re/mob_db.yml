@@ -9667,18 +9667,16 @@ Body:
     DamageMotion: 1000
     Ai: 21
     Drops:
-      - Item: Ogre_Tooth
-        Rate: 2500
       - Item: Orcish_Axe
         Rate: 10
       - Item: Steel
         Rate: 90
       - Item: Orcish_Voucher
-        Rate: 7500
+        Rate: 3000
       - Item: Zargon
         Rate: 1300
       - Item: Oridecon_Stone
-        Rate: 196
+        Rate: 100
       - Item: Yellow_Herb
         Rate: 900
       - Item: High_Orc_Card

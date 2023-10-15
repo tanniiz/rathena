@@ -149,6 +149,58 @@ Body:
       bonus2 bExpAddRace,RC_ALL,1;
       bonus bAtk,1;
       bonus bMatk,1;
+  - Id: 67010
+    AegisName: COSTUME_BONE_HELM
+    Name: Costume Bone Helm
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 103
+    Script: |
+      bonus2 bDropAddRace,RC_ALL,3;
+      bonus2 bExpAddRace,RC_ALL,3;
+      bonus bShortAtkRate,2;
+  - Id: 67011
+    AegisName: COSTUME_FIN_HELM
+    Name: Costume Fin Helm
+    Type: Armor
+    Locations:
+      Costume_Head_Mid: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 100
+    Script: |
+      bonus2 bDropAddRace,RC_ALL,2;
+      bonus2 bExpAddRace,RC_ALL,2;
+  - Id: 67012
+    AegisName: COSTUME_IRON_CANE
+    Name: Costume Iron Cane
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 53
+    Script: |
+      bonus2 bDropAddRace,RC_ALL,2;
+      bonus2 bExpAddRace,RC_ALL,2;
+      bonus bAtk,3;
+      bonus bMatk,3;
+  - Id: 67013
+    AegisName: COSTUME_GHOST_BANDANA
+    Name: Costume Ghost Bandana
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 61
+    Script: |
+      bonus2 bDropAddRace,RC_ALL,3;
+      bonus2 bExpAddRace,RC_ALL,3;
+      bonus bAspdRate,3;
   - Id: 68000
     AegisName: RAINBOW_WING
     Name: Rainbow Angel Wing

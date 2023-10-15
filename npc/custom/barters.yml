@@ -48,6 +48,38 @@ Body:
   - Name: General_Costume
     Items:
       - Index: 0
+        Zeny: 200000
+        Item: COSTUME_GHOST_BANDANA
+        RequiredItems:
+          - Index: 0
+            Item: Ghost_Bandana
+            Amount: 1
+          - Index: 1
+            Item: Elunium
+            Amount: 10
+          - Index: 2
+            Item: Oridecon
+            Amount: 10
+          - Index: 3
+            Item: MOB_COIN
+            Amount: 1000
+      - Index: 1
+        Zeny: 200000
+        Item: COSTUME_BONE_HELM
+        RequiredItems:
+          - Index: 0
+            Item: Bone_Helm
+            Amount: 1
+          - Index: 1
+            Item: Elunium
+            Amount: 10
+          - Index: 2
+            Item: Oridecon
+            Amount: 10
+          - Index: 3
+            Item: MOB_COIN
+            Amount: 1000
+      - Index: 2
         Zeny: 150000
         Item: COSTUME_APPLE_OF_ARCHER
         RequiredItems:
@@ -63,7 +95,7 @@ Body:
           - Index: 3
             Item: MOB_COIN
             Amount: 500
-      - Index: 1
+      - Index: 3
         Zeny: 150000
         Item: COSTUME_WIZARD_HAT
         RequiredItems:
@@ -79,7 +111,7 @@ Body:
           - Index: 3
             Item: MOB_COIN
             Amount: 500
-      - Index: 2
+      - Index: 4
         Zeny: 150000
         Item: COSTUME_SAKKAT
         RequiredItems:
@@ -95,7 +127,7 @@ Body:
           - Index: 3
             Item: MOB_COIN
             Amount: 500
-      - Index: 3
+      - Index: 5
         Zeny: 150000
         Item: COSTUME_MARIONETTE_DOLL
         RequiredItems:
@@ -111,7 +143,7 @@ Body:
           - Index: 3
             Item: MOB_COIN
             Amount: 500
-      - Index: 4
+      - Index: 6
         Zeny: 50000
         Item: COSTUME_OPERA_MASK
         RequiredItems:
@@ -127,7 +159,7 @@ Body:
           - Index: 3
             Item: MOB_COIN
             Amount: 300
-      - Index: 5
+      - Index: 7
         Zeny: 200000
         Item: COSTUME_ELVEN_EARS
         RequiredItems:
@@ -143,7 +175,7 @@ Body:
           - Index: 3
             Item: MOB_COIN
             Amount: 500
-      - Index: 6
+      - Index: 8
         Zeny: 200000
         Item: COSTUME_EVIL_EARS
         RequiredItems:
@@ -159,7 +191,23 @@ Body:
           - Index: 3
             Item: MOB_COIN
             Amount: 1000
-      - Index: 7
+      - Index: 9
+        Zeny: 150000
+        Item: COSTUME_FIN_HELM
+        RequiredItems:
+          - Index: 0
+            Item: Fin_Helm
+            Amount: 1
+          - Index: 1
+            Item: Elunium
+            Amount: 10
+          - Index: 2
+            Item: Oridecon
+            Amount: 10
+          - Index: 3
+            Item: MOB_COIN
+            Amount: 500
+      - Index: 10
         Zeny: 150000
         Item: COSTUME_ROMANTIC_LEAF
         RequiredItems:
@@ -175,7 +223,7 @@ Body:
           - Index: 3
             Item: MOB_COIN
             Amount: 300
-      - Index: 8
+      - Index: 11
         Zeny: 200000
         Item: COSTUME_ROMANTIC_Flower
         RequiredItems:
@@ -191,7 +239,7 @@ Body:
           - Index: 3
             Item: MOB_COIN
             Amount: 500
-      - Index: 9
+      - Index: 12
         Zeny: 50000
         Item: COSTUME_CIGARATTE
         RequiredItems:
@@ -207,6 +255,22 @@ Body:
           - Index: 3
             Item: MOB_COIN
             Amount: 200
+      - Index: 13
+        Zeny: 150000
+        Item: COSTUME_IRON_CANE
+        RequiredItems:
+          - Index: 0
+            Item: Iron_Cane
+            Amount: 1
+          - Index: 1
+            Item: Elunium
+            Amount: 10
+          - Index: 2
+            Item: Oridecon
+            Amount: 10
+          - Index: 3
+            Item: MOB_COIN
+            Amount: 500
   - Name: RankD_Card
     Items:
       - Index: 0

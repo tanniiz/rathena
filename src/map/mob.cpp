@@ -4205,8 +4205,13 @@ int mob_clone_spawn(map_session_data *sd, int16 m, int16 x, int16 y, const char 
 						continue;
 				}
 			}
-			if (battle_config.mob_skill_rate!= 100)
-				ms->permillage = ms->permillage*battle_config.mob_skill_rate/100;
+
+			int skill_rate = battle_config.mob_skill_rate;
+			if (db->mexp > 0) {
+				skill_rate = 100;
+			}
+			if (skill_rate != 100)
+				ms->permillage = ms->permillage* skill_rate/100;
 			if (battle_config.mob_skill_delay != 100)
 				ms->delay = ms->delay*battle_config.mob_skill_delay/100;
 
@@ -5976,11 +5981,16 @@ static bool mob_parse_row_mobskilldb(char** str, int columns, int current)
 
 	//Apply battle_config modifiers to rate (permillage) and delay [Skotlex]
 	tmp = atoi(str[5]);
-	if (battle_config.mob_skill_rate != 100)
-		tmp = tmp*battle_config.mob_skill_rate/100;
+
+	int skill_rate = battle_config.mob_skill_rate;
+	if (mob->mexp > 0) {
+		skill_rate = 100;
+	}
+	if (skill_rate != 100)
+		tmp = tmp* skill_rate /100;
 	if (tmp > 10000)
 		ms->permillage = 10000;
-	else if (!tmp && battle_config.mob_skill_rate)
+	else if (!tmp && skill_rate)
 		ms->permillage = 1;
 	else
 		ms->permillage = tmp;

@@ -4797,7 +4797,7 @@ Body:
       - Item: Oridecon_Stone
         Rate: 53
       - Item: Stiletto_
-        Rate: 140
+        Rate: 75
       - Item: Desert_Wolf_Card
         Rate: 1
         StealProtected: true

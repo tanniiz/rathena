@@ -93,7 +93,6 @@ new_1-2,100,29,4	script	Receptionist#nv1	86,{
 			mes "ขอให้ท่านเดินทางโดยสวัสดิภาพ";
 			close2;
 			
-			getitem 41014,1;
 			getitem 12263,2;
 			getitem 14592,2;
 			getitem 12324,20;

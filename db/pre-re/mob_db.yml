@@ -14639,11 +14639,11 @@ Body:
     Ai: 04
     Drops:
       - Item: Scarlet_Jewel
-        Rate: 150
+        Rate: 100
       - Item: Clam_Shell
         Rate: 5500
       - Item: Sea_Otter_Leather
-        Rate: 4365
+        Rate: 2000
       - Item: Red_Jewel
         Rate: 50
       - Item: Blue_Jewel

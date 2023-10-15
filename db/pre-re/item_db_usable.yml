@@ -20802,15 +20802,7 @@ Body:
     AegisName: Dun_Tele_Scroll1
     Name: Dungeon Teleport Scroll
     Type: Usable
-    Weight: 10
-    Trade:
-      NoDrop: true
-      NoTrade: true
-      NoSell: true
-      NoCart: true
-      NoGuildStorage: true
-      NoMail: true
-      NoAuction: true
+    Weight: 1
     Script: |
       callfunc "F_CashDungeon",1;
   - Id: 14528

@@ -127,6 +127,10 @@ function	script	F_CashReset	{
 // - Warp player to the selected dungeon.
 // - Arg(0) = type of scroll.
 function	script	F_CashDungeon	{
+	if(strcharinfo(3) == "new_1-3") {
+		return;
+	}
+
 	switch(getarg(0)) {
 	case 1:
 		switch(

@@ -7123,8 +7123,6 @@ Body:
         Rate: 61
       - Item: White_Herb
         Rate: 1000
-      - Item: Khukri
-        Rate: 5
       - Item: Zargon
         Rate: 1500
       - Item: Aloebera
@@ -14268,8 +14266,6 @@ Body:
         Rate: 1280
       - Item: Zargon
         Rate: 1240
-      - Item: Huuma_Bird_Wing
-        Rate: 5
       - Item: Old_Blue_Box
         Rate: 1
       - Item: Assulter_Card

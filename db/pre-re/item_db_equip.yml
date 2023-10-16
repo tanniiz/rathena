@@ -41601,3 +41601,54 @@ Body:
       else {
          bonus3 bAutoSpellWhenHit,"AL_HEAL",5,20;
       }
+  - Id: 13499
+    AegisName: Dark_Sword
+    Name: Dark Sword
+    Type: Shadowgear
+    Locations:
+      Shadow_Weapon: true
+    Range: 1
+    Slots: 2
+    Jobs:
+      Knight: true
+    Locations:
+      Right_Hand: true
+  - Id: 69999
+    AegisName: Knife_Dice
+    Name: Knife Dice
+    Type: Weapon
+    SubType: Dagger
+    Buy: 50
+    Weight: 400
+    Attack: 17
+    Range: 1
+    Slots: 3
+    Jobs:
+      Alchemist: true
+      Archer: true
+      Assassin: true
+      BardDancer: true
+      Blacksmith: true
+      Crusader: true
+      Hunter: true
+      Knight: true
+      Mage: true
+      Merchant: true
+      Ninja: true
+      Novice: true
+      Rogue: true
+      Sage: true
+      SoulLinker: true
+      SuperNovice: true
+      Swordman: true
+      Thief: true
+      Wizard: true
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 1
+    EquipLevelMin: 1
+    Refineable: true
+    EquipScript: |
+      PLAY_DICE = 1;
+    UnEquipScript: |
+      PLAY_DICE = 0;

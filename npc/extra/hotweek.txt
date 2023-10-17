@@ -1,15 +1,15 @@
-morocc,162,90,4	script  HotWeek1#1	4_CAT_SAILOR1,{
-    Oninit:
-        setarray $npc_name,"HotWeek1";
-        for(.@i = 0; .@i < getarraysize($npc_name); .@i++) {
-            announce $npc_name[.@i],bc_all;
-            disablenpc $npc_name[.@i];
-        }
-    waitingroom "Hot Week",0;
+morocc,162,90,4	script  HotWeek1#1 4_CAT_SAILOR1,{
+  Oninit:
+    setarray $npc_name,"HotWeek1";
+    for(.@i = 0; .@i < getarraysize($npc_name); .@i++) {
+      announce $npc_name[.@i],bc_all;
+      disablenpc $npc_name[.@i];
+    }
+    waiingroom "Hot Week",0;
 	end;
 }
 
 morocc,162,88,4	script	Hot Week2#2	4_CAT_SAILOR1,{
-    waitingroom "Hot Week",0;
-	end;
+  waitingroom "Hot Week",0;
+  end;
 }

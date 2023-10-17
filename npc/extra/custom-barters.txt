@@ -16,6 +16,15 @@ morocc,147,93,4	script	Card Trader#1	54,{
     end;
 }
 
+morocc,165,111,4	script	Daily Craft#1	54,{
+ 	callshop "Daily_Craft";
+ 	end;
+
+  OnInit:
+    waitingroom "[Daily] สร้างไอเทม",0;
+    end;
+}
+
 // morocc,159,117,4	script	Exchange#HW1	54,{
 //  	callshop "Refine_HW1";
 //  	end;

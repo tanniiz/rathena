@@ -577,3 +577,9 @@ Body:
           - Index: 1
             Item: CASH_COIN
             Amount: 5000
+  - Name: Daily_Craft
+    Items:
+      - Index: 1
+        Zeny: 10
+        Item: Battle_Manual
+        Stock: 10

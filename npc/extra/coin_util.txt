@@ -1,10 +1,13 @@
-
+/*
+* params: 0-coinId, 1-pointName, 2-value per coin
+*/
 function	script	F_UseCoins	{
   set totalCoin,countitem(getarg(0));
-  set pts, getd(getarg(1)) + totalCoin + 1;
+  set pts, totalCoin + 1;
   set multiplier, getarg(2);
   delitem getarg(0),totalCoin;
-  setd getarg(1), pts * multiplier;
+  set currentPts, getd(getarg(1));
+  setd getarg(1), (pts * multiplier) + currentPts;
   dispbottom "---------------------------------------------------";
 	dispbottom "คุณมียอดสะสม " + getarg(1) + " ทั้งหมด " + getd(getarg(1));
 	dispbottom "---------------------------------------------------";

@@ -22433,3 +22433,17 @@ Body:
     Weight: 1
     Script: |
       callfunc "F_DoOption",EQI_GARMENT,45,1,15,22,200,60309;
+  - Id: 70002
+    AegisName: Exp_Orb_Box
+    Name: Exp Orb Box
+    Type: Cash
+    Buy: 20
+    Script: |
+      rentitem 70000,604800;
+  - Id: 70003
+    AegisName: Drop_Orb_Box
+    Name: Drop Orb Box
+    Type: Cash
+    Buy: 20
+    Script: |
+      rentitem 70001,604800;

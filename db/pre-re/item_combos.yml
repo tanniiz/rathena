@@ -1248,6 +1248,13 @@ Body:
         bonus bCritAtkRate,15;
         bonus bAtkRate,3;
       }
+  - Combos:
+      - Combo:
+          - Exp_Orb   # 70000
+          - Drop_Orb   # 70001
+    Script: |
+      bonus2 bExpAddRace,RC_ALL,20;
+      bonus2 bDropAddRace,RC_ALL,10;
 
       
     

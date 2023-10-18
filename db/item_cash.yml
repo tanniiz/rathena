@@ -64,6 +64,10 @@ Body:
         Price: 4350
   - Tab: Rental
     Items:
+      - Item: Exp_Orb_Box
+        Price: 1890
+      - Item: Drop_Orb_Box
+        Price: 1890
       - Item: Chemical_Ring_Box
         Price: 1490
       - Item: Beholder_Ring_Box

@@ -34,54 +34,56 @@ Header:
 Body:
   - Tab: New
     Items:
-      - Item: CASH_COIN
-        Price: 1
-      - Item: Dun_Tele_Scroll_Box10
-        Price: 390
       - Item: Angel_Scroll
-        Price: 590
-      - Item: HEADGEAR_V1_SCROLL
-        Price: 590
-      - Item: Max_Weight_Up_Scroll
+        Price: 99999
+      - Item: CASH_COIN
+        Price: 10
+  - Tab: Hot
+    Items:
+      - Item: Battle_Manual
+        Price: 60
+      - Item: Job_Manual50
+        Price: 60
+      - Item: Bubble_Gum
+        Price: 60
+      - Item: Megaphone_
+        Price: 60
+      - Item: Battle_Manual_Box
+        Price: 60
+      - Item: Job_Manual50_Box
+        Price: 60
+      - Item: Bubble_Gum_Box
+        Price: 60
+      - Item: Megaphone_Box
         Price: 490
       - Item: VIP_CARD_1D
         Price: 290
       - Item: VIP_CARD_7D
-        Price: 990
-      - Item: Elite_Siege_Supply_Box
-        Price: 990
-      - Item: Basic_Siege_Supply_Box
-        Price: 490
-      - Item: Battle_Manual_Box
-        Price: 690
-      - Item: Job_Manual50_Box
-        Price: 690
-      - Item: Bubble_Gum_Box
         Price: 1490
-      - Item: Inc_Agi_10_Scroll_Box
-        Price: 490
-      - Item: Blessing_10_Scroll_Box
-        Price: 490
-      - Item: Convex_Mirror_Box
-        Price: 990
-      - Item: Swordman_Figure
-        Price: 4900
-      - Item: Acolyte_Figure
-        Price: 4900
-      - Item: Mage_Figure
-        Price: 4900
-      - Item: Archer_Figure
-        Price: 4900
-      - Item: Thief_Figure
-        Price: 4900
-      - Item: Merchant_Figure
-        Price: 4900
-      - Item: Reset_Stone
-        Price: 14900
-      - Item: Neuralizer
-        Price: 14900
-      - Item: Megaphone_
-        Price: 100
+      - Item: VIP_CARD_30D
+        Price: 4350
+  - Tab: Rental
+    Items:
+      - Item: Chemical_Ring_Box
+        Price: 1490
+      - Item: Beholder_Ring_Box
+        Price: 1490
+      - Item: Hallow_Ring_Box
+        Price: 1490
+      - Item: Clamorous_Ring_Box
+        Price: 1490
+      - Item: Insecticide_Ring_Box
+        Price: 1490
+      - Item: Fisher_Ring_Box
+        Price: 1490
+      - Item: Decussate_Ring_Box
+        Price: 1490
+      - Item: Bloody_Ring_Box
+        Price: 1490
+      - Item: Satanic_Ring_Box
+        Price: 1490
+      - Item: Dragoon_Ring_Box
+        Price: 1490
 Footer:
   Imports:
     - Path: db/import/item_cash.yml

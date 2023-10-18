@@ -4753,14 +4753,6 @@ Body:
     Delay:
       Duration: 60000
       Status: Reuse_Limit_C
-    Trade:
-      NoDrop: false
-      NoTrade: false
-      NoSell: false
-      NoCart: false
-      NoGuildStorage: false
-      NoMail: false
-      NoAuction: false
     Script: |
       sc_start SC_EXPBOOST,1800000,50;
   - Id: 12209
@@ -4789,7 +4781,7 @@ Body:
       Duration: 60000
       Status: Reuse_Limit_D
     Script: |
-      sc_start SC_ITEMBOOST,1800000,100;
+      sc_start SC_ITEMBOOST,1800000,50;
   - Id: 12211
     AegisName: Kafra_Card
     Name: Kafra Card
@@ -4961,15 +4953,7 @@ Body:
     Name: Megaphone
     Type: Usable
     Buy: 2
-    Weight: 10
-    Trade:
-      NoDrop: true
-      NoTrade: true
-      NoSell: true
-      NoCart: true
-      NoGuildStorage: true
-      NoMail: true
-      NoAuction: true
+    Weight: 1
     Script: |
       input @megaphone$;
       announce strcharinfo(0) + " is crying like: " + @megaphone$,bc_all,0x00FF00;
@@ -9457,12 +9441,6 @@ Body:
     Type: Cash
     Buy: 20
     Weight: 10
-    Trade:
-      NoDrop: true
-      NoSell: true
-      NoGuildStorage: true
-      NoMail: true
-      NoAuction: true
     Script: |
       getitem 12208,10;
   - Id: 12901
@@ -9485,12 +9463,6 @@ Body:
     Type: Cash
     Buy: 20
     Weight: 10
-    Trade:
-      NoDrop: true
-      NoSell: true
-      NoGuildStorage: true
-      NoMail: true
-      NoAuction: true
     Script: |
       getitem 12210,10;
   - Id: 12903
@@ -9722,13 +9694,7 @@ Body:
     Name: Megaphone Box
     Type: Cash
     Buy: 20
-    Weight: 10
-    Trade:
-      NoDrop: true
-      NoSell: true
-      NoGuildStorage: true
-      NoMail: true
-      NoAuction: true
+    Weight: 1
     Script: |
       getitem 12221,10;
   - Id: 12920
@@ -15815,13 +15781,6 @@ Body:
     Buy: 20
     Weight: 10
     Trade:
-      NoDrop: true
-      NoTrade: true
-      NoSell: true
-      NoCart: true
-      NoGuildStorage: true
-      NoMail: true
-      NoAuction: true
     Script: |
       getitem 14592,10;
   - Id: 13991
@@ -19733,7 +19692,7 @@ Body:
       NoSell: true
       NoGuildStorage: true
     Script: |
-      getitem 2753,1;
+      rentitem 2753,604800;
   - Id: 14243
     AegisName: Hallow_Ring_Box
     Name: Hallow Ring Box
@@ -19745,7 +19704,7 @@ Body:
       NoSell: true
       NoGuildStorage: true
     Script: |
-      getitem 2754,1;
+      rentitem 2754,604800;
   - Id: 14244
     AegisName: Clamorous_Ring_Box
     Name: Clamorous Ring Box
@@ -19757,7 +19716,7 @@ Body:
       NoSell: true
       NoGuildStorage: true
     Script: |
-      getitem 2755,1;
+      rentitem 2755,604800;
   - Id: 14245
     AegisName: Chemical_Ring_Box
     Name: Chemical Ring Box
@@ -19769,7 +19728,7 @@ Body:
       NoSell: true
       NoGuildStorage: true
     Script: |
-      getitem 2756,1;
+      rentitem 2756,604800;
   - Id: 14246
     AegisName: Insecticide_Ring_Box
     Name: Insecticide Ring Box
@@ -19781,7 +19740,7 @@ Body:
       NoSell: true
       NoGuildStorage: true
     Script: |
-      getitem 2757,1;
+      rentitem 2757,604800;
   - Id: 14247
     AegisName: Fisher_Ring_Box
     Name: Fisher Ring Box
@@ -19793,7 +19752,7 @@ Body:
       NoSell: true
       NoGuildStorage: true
     Script: |
-      getitem 2758,1;
+      rentitem 2758,604800;
   - Id: 14248
     AegisName: Decussate_Ring_Box
     Name: Decussate Ring Box
@@ -19805,7 +19764,7 @@ Body:
       NoSell: true
       NoGuildStorage: true
     Script: |
-      getitem 2759,1;
+      rentitem 2759,604800;
   - Id: 14249
     AegisName: Bloody_Ring_Box
     Name: Bloody Ring Box
@@ -19817,7 +19776,7 @@ Body:
       NoSell: true
       NoGuildStorage: true
     Script: |
-      getitem 2760,1;
+      rentitem 2760,604800;
   - Id: 14250
     AegisName: Satanic_Ring_Box
     Name: Satanic Ring Box
@@ -19829,7 +19788,7 @@ Body:
       NoSell: true
       NoGuildStorage: true
     Script: |
-      getitem 2761,1;
+      rentitem 2761,604800;
   - Id: 14251
     AegisName: Dragoon_Ring_Box
     Name: Dragon Ring Box
@@ -19841,7 +19800,7 @@ Body:
       NoSell: true
       NoGuildStorage: true
     Script: |
-      getitem 2762,1;
+      rentitem 2762,604800;
   - Id: 14252
     AegisName: Beholder_Ring_Box2
     Name: Beholder Ring Box II
@@ -22068,15 +22027,6 @@ Body:
     Type: Usable
     Buy: 20
     Weight: 1
-    Trade:
-      NoDrop: true
-      NoTrade: true
-      NoSell: true
-      NoCart: true
-      NoGuildStorage: true
-      NoMail: true
-      NoAuction: true
-      NoStorage: true
     Script: |
       vip_time(60*24);
   - Id: 41015
@@ -22085,17 +22035,24 @@ Body:
     Type: Usable
     Buy: 20
     Weight: 1
-    Trade:
-      NoDrop: true
-      NoTrade: true
-      NoSell: true
-      NoCart: true
-      NoGuildStorage: true
-      NoMail: true
-      NoAuction: true
-      NoStorage: true
     Script: |
       vip_time(60*24*7);
+  - Id: 41016
+    AegisName: VIP_CARD_15D
+    Name: VIP Card 15Days
+    Type: Usable
+    Buy: 20
+    Weight: 1
+    Script: |
+      vip_time(60*24*7);
+  - Id: 41017
+    AegisName: VIP_CARD_30D
+    Name: VIP Card 30Days
+    Type: Usable
+    Buy: 20
+    Weight: 1
+    Script: |
+      vip_time(60*24*30);
 
   ##### Coins #####
   - Id: 30001

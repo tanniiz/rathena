@@ -7636,38 +7636,38 @@ Body:
       - SubGroup: 1
         List:
           - Item: C_GiantCatBag_TW
-            Rate: 2
+            Rate: 1
             Amount: 1
             Announced: true
           - Item: Elite_Siege_Blue_Small_box
-            Rate: 5
+            Rate: 6
             Amount: 1
           - Item: Elite_Siege_White_Small_box
-            Rate: 7
+            Rate: 10
             Amount: 1
           - Item: Abrasive_Box10
-            Rate: 5
+            Rate: 10
             Amount: 1
           - Item: Inc_Agi_10_Scroll
-            Rate: 15
+            Rate: 30
             Amount: 3
           - Item: Blessing_10_Scroll
-            Rate: 15
+            Rate: 30
             Amount: 3
           - Item: Megaphone_
-            Rate: 10
+            Rate: 30
             Amount: 2
           - Item: Comp_Battle_Manual
-            Rate: 10
+            Rate: 20
             Amount: 2
           - Item: Job_Manual50
-            Rate: 10
+            Rate: 20
             Amount: 2
           - Item: Bubble_Gum
-            Rate: 8
+            Rate: 15
             Amount: 2
           - Item: Comp_Insurance
-            Rate: 10
+            Rate: 20
             Amount: 2
           - Item: Token_Of_Siegfried
             Rate: 8
@@ -7682,17 +7682,17 @@ Body:
           - Item: C_Eagle_Eyes
             Rate: 20
           - Item: C_Black_Cat_Ears_Beret
-            Rate: 5
+            Rate: 10
           - Item: C_Rabbit_Hopping_BL
-            Rate: 5
+            Rate: 10
           - Item: C_Rabbit_Ear_Hat
             Rate: 20
           - Item: C_Soulless_Wing
             Rate: 20
           - Item: C_Centimental_Flower
-            Rate: 5
+            Rate: 10
           - Item: C_Subject_Aura
-            Rate: 5
+            Rate: 10
           - Item: C_Cigar
             Rate: 20
           - Item: C_Choco_Donut_In_Mouth

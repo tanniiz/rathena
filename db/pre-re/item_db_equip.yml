@@ -41690,3 +41690,15 @@ Body:
       NoAuction: true
     Script: |
       bonus2 bDropAddRace,RC_ALL,5;
+  - Id: 75000
+    AegisName: C_GiantCatBag_TW
+    Name: Costume Giant Cat Bag
+    Type: Armor
+    Locations:
+      Costume_Garment: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 25
+    Script: |
+      bonus2 bDropAddRace,RC_ALL,5;
+      bonus2 bExpAddRace,RC_ALL,10;

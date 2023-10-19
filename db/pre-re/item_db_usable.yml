@@ -4776,7 +4776,7 @@ Body:
     Name: Bubble Gum
     Type: Usable
     Buy: 2
-    Weight: 10
+    Weight: 1
     Delay:
       Duration: 60000
       Status: Reuse_Limit_D
@@ -4842,17 +4842,9 @@ Body:
     Name: LV10 Blessing Scroll
     Type: Usable
     Buy: 2
-    Weight: 10
+    Weight: 1
     NoUse:
       Sitting: true
-    Trade:
-      NoDrop: true
-      NoTrade: true
-      NoSell: true
-      NoCart: true
-      NoGuildStorage: true
-      NoMail: true
-      NoAuction: true
     Script: |
       skilleffect "AL_BLESSING",0;
       sc_start SC_BLESSING,240000,10;
@@ -4861,17 +4853,9 @@ Body:
     Name: LV10 Agil Scroll
     Type: Usable
     Buy: 2
-    Weight: 10
+    Weight: 1
     NoUse:
       Sitting: true
-    Trade:
-      NoDrop: true
-      NoTrade: true
-      NoSell: true
-      NoCart: true
-      NoGuildStorage: true
-      NoMail: true
-      NoAuction: true
     Script: |
       if (Hp>15) {
          skilleffect "AL_INCAGI",0;
@@ -5358,16 +5342,7 @@ Body:
     Name: Field Manual
     Type: Usable
     Buy: 2
-    Weight: 10
-    Trade:
-      NoDrop: true
-      NoTrade: true
-      NoSell: true
-      NoCart: true
-      NoGuildStorage: true
-      NoMail: true
-      NoAuction: true
-      NoStorage: true
+    Weight: 1
     Script: |
       sc_start SC_EXPBOOST,1800000,50;
   - Id: 12264
@@ -5391,15 +5366,7 @@ Body:
     Name: Life Insurrance
     Type: Usable
     Buy: 2
-    Weight: 10
-    Trade:
-      NoDrop: true
-      NoTrade: true
-      NoSell: true
-      NoCart: true
-      NoGuildStorage: true
-      NoMail: true
-      NoAuction: true
+    Weight: 1
     Script: |
       sc_start SC_LIFEINSURANCE,1800000,0;
   - Id: 12266
@@ -12548,11 +12515,7 @@ Body:
     Name: Abrasive 10 Box
     Type: Cash
     Buy: 20
-    Weight: 10
-    Trade:
-      NoDrop: true
-      NoSell: true
-      NoGuildStorage: true
+    Weight: 1
     Script: |
       getitem 14536,10;
   - Id: 13719
@@ -20854,15 +20817,7 @@ Body:
     AegisName: Abrasive
     Name: Abrasive
     Type: Usable
-    Weight: 10
-    Trade:
-      NoDrop: true
-      NoTrade: true
-      NoSell: true
-      NoCart: true
-      NoGuildStorage: true
-      NoMail: true
-      NoAuction: true
+    Weight: 1
     Script: |
       specialeffect2 EF_MAGICALATTHIT;
       sc_start SC_INCCRI,300000,30;
@@ -21464,17 +21419,9 @@ Body:
     AegisName: Job_Manual50
     Name: JOB Battle Manual
     Type: Usable
-    Weight: 10
+    Weight: 1
     NoUse:
       Sitting: true
-    Trade:
-      NoDrop: true
-      NoTrade: true
-      NoSell: true
-      NoCart: true
-      NoGuildStorage: true
-      NoMail: true
-      NoAuction: true
     Script: |
       sc_start SC_JEXPBOOST,1800000,50;
   - Id: 14593
@@ -22447,3 +22394,27 @@ Body:
     Buy: 20
     Script: |
       rentitem 70001,604800;
+  - Id: 71000
+    AegisName: Elite_Siege_White_Small_box
+    Name: Elite Siege White Small Box
+    Type: Cash
+    Buy: 20
+    Weight: 1
+    Script: |
+      getitem 11503,50;
+  - Id: 71001
+    AegisName: Elite_Siege_Blue_Small_box
+    Name: Elite Siege Blue Small Box
+    Type: Cash
+    Buy: 20
+    Weight: 1
+    Script: |
+      getitem 11504,25;
+  - Id: 71002
+    AegisName: Welcome_Scroll
+    Name: Welcome Scroll
+    Type: Usable
+    Buy: 20
+    Weight: 1
+    Script: |
+      getgroupitem(IG_LUCKY_EGG_C2);

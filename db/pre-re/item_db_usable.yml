@@ -22418,3 +22418,11 @@ Body:
     Weight: 1
     Script: |
       getgroupitem(IG_LUCKY_EGG_C2);
+  - Id: 71003
+    AegisName: Costume_V1_Scroll
+    Name: Costume V1 Scroll
+    Type: Usable
+    Buy: 20
+    Weight: 1
+    Script: |
+      getgroupitem(IG_LUCKY_EGG_C3);

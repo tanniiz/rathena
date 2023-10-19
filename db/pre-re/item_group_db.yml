@@ -7672,6 +7672,31 @@ Body:
           - Item: Token_Of_Siegfried
             Rate: 8
             Amount: 2
+  - Group: LUCKY_EGG_C3
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Item: C_Love_Cheek
+            Rate: 1
+            Announced: true
+          - Item: C_Eagle_Eyes
+            Rate: 20
+          - Item: C_Black_Cat_Ears_Beret
+            Rate: 5
+          - Item: C_Rabbit_Hopping_BL
+            Rate: 5
+          - Item: C_Rabbit_Ear_Hat
+            Rate: 20
+          - Item: C_Soulless_Wing
+            Rate: 20
+          - Item: C_Centimental_Flower
+            Rate: 5
+          - Item: C_Subject_Aura
+            Rate: 5
+          - Item: C_Cigar
+            Rate: 20
+          - Item: C_Choco_Donut_In_Mouth
+            Rate: 20
   - Group: LUCKY_EGG_C5
     SubGroups:
       - SubGroup: 1

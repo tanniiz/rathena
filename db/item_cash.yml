@@ -34,8 +34,10 @@ Header:
 Body:
   - Tab: New
     Items:
-      - Item: Angel_Scroll
-        Price: 99999
+      - Item: Welcome_Scroll
+        Price: 290
+      - Item: Costume_V1_Scroll
+        Price: 1290
       - Item: CASH_COIN
         Price: 10
   - Tab: Hot

@@ -480,13 +480,13 @@ morocc,150,107,6	script	Juice Maker#Juice	612,{
 }
 
 // Mob Point
-morocc,171,102,4	script	Monster Point#1	998,{
-	callfunc "qshop", 1;
+// morocc,171,102,4	script	Monster Point#1	998,{
+// 	callfunc "qshop", 1;
 
-	OnInit:
-	waitingroom "Mob Points",0;
-	end;
-}
+// 	OnInit:
+// 	waitingroom "Mob Points",0;
+// 	end;
+// }
 
 // Figures
 morocc,168,108,4	script	Figures Crafter#1	56,{

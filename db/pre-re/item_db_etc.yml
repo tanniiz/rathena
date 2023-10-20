@@ -21334,7 +21334,12 @@ Body:
     Locations:
       Ammo: true
     EquipLevelMin: 99
-
+  - Id: 59999
+    AegisName: Protected_Research_Tool
+    Name: Protected Research Tool
+    Type: Etc
+    Buy: 0
+    Weight: 1
   - Id: 60000
     AegisName: Research_Tool
     Name: Research Tool

@@ -22026,6 +22026,14 @@ Body:
     Weight: 0
     Script: |
       callfunc "F_UseCoins",30100,"#Card_Points",1;
+  - Id: 59998
+    AegisName: Refine_Hammer
+    Name: Refine Hammer
+    Type: Usable
+    Buy: 0
+    Weight: 0
+    #Script: |
+    #  callfunc "F_UseCoins",60501,"#Garbage_Points",10000;
   - Id: 60500
     AegisName: MOB_COIN
     Name: Mob Coin
@@ -22034,6 +22042,14 @@ Body:
     Weight: 0
     Script: |
       callfunc "F_UseCoins",60500,"#MobPoint",1;
+  - Id: 60501
+    AegisName: GARBAGE_COIN
+    Name: Garbage Coin
+    Type: Usable
+    Buy: 0
+    Weight: 0
+    Script: |
+      callfunc "F_UseCoins",60501,"#Garbage_Points",10000;
 
   ##### Weapon Option Tier 1 #####
   - Id: 60001

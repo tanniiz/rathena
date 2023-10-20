@@ -41702,8 +41702,9 @@ Body:
     EquipLevelMin: 1
     View: 25
     Script: |
-      bonus2 bDropAddRace,RC_ALL,5;
+      bonus2 bDropAddRace,RC_ALL,7;
       bonus2 bExpAddRace,RC_ALL,10;
+      bonus bAddMaxWeight,100;
   - Id: 19500
     AegisName: T_Mr_Smile
     Name: T Mr Smile

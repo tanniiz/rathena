@@ -50450,6 +50450,12 @@ Body:
     ArmorLevel: 1
     EquipLevelMin: 1
     View: 1418
+    Script: |
+      bonus bAtkRate,2;
+      bonus bMatkRate,2;
+      bonus bAddMaxWeight,100;
+      bonus2 bDropAddRace,RC_ALL,7;
+      bonus2 bExpAddRace,RC_ALL,10;
   - Id: 20408
     AegisName: C_Bldy_Light_Dark_Crown
     Name: Costume Requiem Crown of Light and Dark
@@ -51978,6 +51984,12 @@ Body:
     Locations:
       Costume_Garment: true
     ArmorLevel: 1
+    Script: |
+      bonus bAtkRate,3;
+      bonus bMatkRate,3;
+      bonus bAddMaxWeight,100;
+      bonus2 bDropAddRace,RC_ALL,7;
+      bonus2 bExpAddRace,RC_ALL,10;
   - Id: 20598
     AegisName: C_GiantCatBag_JP_BL
     Name: Costume Giant Cat Bag
@@ -53351,10 +53363,16 @@ Body:
     Name: Costume Grim Reaper Protection
     Type: Armor
     Locations:
-      Costume_Head_Low: true
+      Costume_Head_Mid: true
     ArmorLevel: 1
     EquipLevelMin: 1
     View: 1450
+    Script: |
+      bonus bAtkRate,2;
+      bonus bMatkRate,2;
+      bonus bAddMaxWeight,100;
+      bonus2 bDropAddRace,RC_ALL,7;
+      bonus2 bExpAddRace,RC_ALL,10;
   - Id: 20799
     AegisName: Elemental_Towel
     Name: Elemental Towel

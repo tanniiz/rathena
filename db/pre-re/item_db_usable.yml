@@ -22018,6 +22018,14 @@ Body:
     Weight: 0
     Script: |
       callfunc "F_UseCoins",30002,"#REFINEPOINTS",1;
+  - Id: 30003
+    AegisName: MVP_COIN
+    Name: MVP Coin
+    Type: Usable
+    Buy: 0
+    Weight: 0
+    Script: |
+      callfunc "F_UseCoins",30003,"Mvp_Points",1;
   - Id: 30100
     AegisName: CARD_COIN
     Name: Card Coin

@@ -441,3 +441,17 @@ Body:
     EquipLevelMin: 1
     Script: |
       bonus bVit,1;
+  - Id: 68019
+    AegisName: COSTUME_MAJESTIC_GOAT_MVP
+    Name: Costume Majestic Goat MVP
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 380
+    Script: |
+      bonus bAllStats,1;
+      bonus2 bDropAddRace,RC_ALL,10;
+      bonus2 bExpAddRace,RC_ALL,10;
+      bonus2 bAddClass,Class_Boss,10;

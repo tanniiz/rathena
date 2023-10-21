@@ -6437,6 +6437,8 @@ static unsigned short status_calc_str(struct block_list* bl, status_change* sc, 
 		str -= sc->getSCE(SC_HARMONIZE)->val2;
 		return (unsigned short)cap_value(str, 0, USHRT_MAX);
 	}
+	if (sc->getSCE(SC_VIPSTATE_GW))
+		str += sc->getSCE(SC_VIPSTATE_GW)->val1;
 	if (sc->getSCE(SC_INCALLSTATUS))
 		str += sc->getSCE(SC_INCALLSTATUS)->val1;
 	if (sc->getSCE(SC_CHASEWALK2))
@@ -6528,6 +6530,8 @@ static unsigned short status_calc_agi(struct block_list* bl, status_change* sc, 
 	}
 	if (sc->getSCE(SC_CONCENTRATE) && !sc->getSCE(SC_QUAGMIRE))
 		agi += (agi - sc->getSCE(SC_CONCENTRATE)->val3) * sc->getSCE(SC_CONCENTRATE)->val2 / 100;
+	if (sc->getSCE(SC_VIPSTATE_GW))
+		agi += sc->getSCE(SC_VIPSTATE_GW)->val1;
 	if (sc->getSCE(SC_INCALLSTATUS))
 		agi += sc->getSCE(SC_INCALLSTATUS)->val1;
 	if (sc->getSCE(SC_INCAGI))
@@ -6613,6 +6617,8 @@ static unsigned short status_calc_vit(struct block_list* bl, status_change* sc, 
 		vit -= sc->getSCE(SC_HARMONIZE)->val2;
 		return (unsigned short)cap_value(vit, 0, USHRT_MAX);
 	}
+	if (sc->getSCE(SC_VIPSTATE_GW))
+		vit += sc->getSCE(SC_VIPSTATE_GW)->val1;
 	if (sc->getSCE(SC_INCALLSTATUS))
 		vit += sc->getSCE(SC_INCALLSTATUS)->val1;
 	if (sc->getSCE(SC_INCVIT))
@@ -6692,6 +6698,8 @@ static unsigned short status_calc_int(struct block_list* bl, status_change* sc, 
 		int_ -= sc->getSCE(SC_HARMONIZE)->val2;
 		return (unsigned short)cap_value(int_, 0, USHRT_MAX);
 	}
+	if (sc->getSCE(SC_VIPSTATE_GW))
+		int_ += sc->getSCE(SC_VIPSTATE_GW)->val1;
 	if (sc->getSCE(SC_INCALLSTATUS))
 		int_ += sc->getSCE(SC_INCALLSTATUS)->val1;
 	if (sc->getSCE(SC_INCINT))
@@ -6784,6 +6792,8 @@ static unsigned short status_calc_dex(struct block_list* bl, status_change* sc, 
 		dex -= sc->getSCE(SC_HARMONIZE)->val2;
 		return (unsigned short)cap_value(dex, 0, USHRT_MAX);
 	}
+	if (sc->getSCE(SC_VIPSTATE_GW))
+		dex += sc->getSCE(SC_VIPSTATE_GW)->val1;
 	if (sc->getSCE(SC_CONCENTRATE) && !sc->getSCE(SC_QUAGMIRE))
 		dex += (dex - sc->getSCE(SC_CONCENTRATE)->val4) * sc->getSCE(SC_CONCENTRATE)->val2 / 100;
 	if (sc->getSCE(SC_INCALLSTATUS))
@@ -6875,6 +6885,8 @@ static unsigned short status_calc_luk(struct block_list* bl, status_change* sc, 
 	}
 	if (sc->getSCE(SC_CURSE))
 		return 0;
+	if (sc->getSCE(SC_VIPSTATE_GW))
+		luk += sc->getSCE(SC_VIPSTATE_GW)->val1;
 	if (sc->getSCE(SC_INCALLSTATUS))
 		luk += sc->getSCE(SC_INCALLSTATUS)->val1;
 	if (sc->getSCE(SC_INCLUK))

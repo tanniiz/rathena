@@ -1,0 +1,245 @@
+morocc,134,104,4	script	Costume Point	573,{
+	mes "[ " + .npcName$ + " ]";
+	mes "สวัสดีคุณ, "+strcharinfo(0)+"";
+	mes "คุณมีทั้งหมด : "+getd(.Points$)+" แต้ม";
+	mes "ต้องการแลกของรางวัลหรือไม่?";
+	next;
+	switch(select("-->อ่านรายละเอียด:-->เริ่มสุ่ม Option Custome:-->ย่อย Costume:-->แลกของรางวัล:-->ยกเลิก")) {
+	case 1:
+		mes "ท่านสามารถนำ Costume ระดับ Common และ Rare ที่ไม่ได้ใช้";
+		mes "มาแลกแต้มกับข้าได้";
+        next;
+        mes "[ " + .npcName$ + " ]";
+		for(set .@i,0; .@i<getarraysize(.acceptedItemForPoint); set .@i,.@i+1) {
+            mes displayItemLink(.acceptedItemForPoint[.@i], 1) + "   " + .acceptedItemPointValue[.@i] + " แต้ม";
+        }
+		close;
+    case 2:
+        disable_items;
+        mes "[ " + .npcName$ + " ]";
+        mes "ท่านต้องการเพิ่ม Option ชิ้นไหนหละ ?";
+        setarray .@indices[1], EQI_COSTUME_HEAD_TOP, EQI_COSTUME_HEAD_MID, EQI_COSTUME_HEAD_LOW, EQI_SHADOW_WEAPON, EQI_COSTUME_GARMENT;
+        for(.@i = 1; .@i<getarraysize(.@indices); ++.@i) {
+            if(getequipisequiped(.@indices[.@i])) {
+                .@menu$ = .@menu$ + getequipname(.@indices[.@i]);
+                .@equipped = 1;
+            }
+            .@menu$ = .@menu$ + ":";
+        }
+        .@part = .@indices[select(.@menu$)];
+        next;
+
+        .@researchToolCount = countitem(60000);
+        if (.@researchToolCount > 0) {
+          mes "[ " + .npcName$ + " ]";
+          mes "Research Tool สามารถเพิ่มโอกาสสำเร็จได้ 15% ท่านต้องการใช้หรือไม่ ?";
+          next;
+          switch(select("แน่นอนสิ!:ไม่ละ ข้าห้าว")) {
+            case 1:
+              .@useResearchTool = true;
+              break;
+            case 2:
+              break;
+          }
+        } 
+
+        mes "[ " + .npcName$ + " ]";
+        mes getequipname(.@part);
+
+        .@chance = .@useResearchTool ? .optionRate + 15 : .optionRate;
+        mes "โอกาสสำเร็จ: " + .@chance + "%";
+        mes "วัตถุดิบที่ต้องการ:";
+        for(.@i = 0; .@i<getarraysize(.optionItemsRequirements); set .@i,.@i+2) {
+            mes "> " + getitemname(.optionItemsRequirements[.@i]) + " จำนวน " + .optionItemsRequirements[.@i+1] + "ea";
+        }
+        if (.@useResearchTool) {
+            mes "> " + getitemname(60000) + " จำนวน 1ea";
+        }
+        mes "> Zeny: " + .optionRequiredZeny;
+        mes "> แต้ม Costume: " + .optionRequiredPoint;
+        next;
+
+        switch(select("จัดการทันที!:ยกเลิก")) {
+            case 1:
+                .@isReady = true;
+                for(.@i = 0; .@i<getarraysize(.optionItemsRequirements); set .@i,.@i+2) {
+                    if (countitem(.optionItemsRequirements[.@i]) < .optionItemsRequirements[.@i + 1]) {
+                        .@isReady = false;
+                    }
+                }
+
+                if ((.@useResearchTool && countitem(60000) < 1)
+                    || Zeny < .optionRequiredZeny
+                    || !.@isReady
+                    || getd(.Points$) < .optionRequiredPoint) {
+                        mes "[ " + .npcName$ + " ]";
+                        mes "ไสหัวกลับไปเตรียมของมาให้ครบ !";
+                        mes "วัตถุดิบที่ต้องการ:";
+                        for(.@i = 0; .@i<getarraysize(.optionItemsRequirements); set .@i,.@i+2) {
+                            mes "> " + getitemname(.optionItemsRequirements[.@i]) + " จำนวน " + .optionItemsRequirements[.@i+1] + "ea";
+                        }
+                        if (.@useResearchTool) {
+                            mes "> " + getitemname(60000) + " จำนวน 1ea";
+                        }
+                        mes "> Zeny: " + .optionRequiredZeny;
+                        mes "> แต้ม Costume: " + .optionRequiredPoint;
+                        close;
+                } else {
+                    progressbar "#00FF00",2;
+                    for(.@i = 0; .@i<getarraysize(.optionItemsRequirements); set .@i,.@i+2) {
+                        delitem .optionItemsRequirements[.@i], .optionItemsRequirements[.@i+1];
+                    }
+                    setd .Points$, getd(.Points$) - .optionRequiredPoint;
+
+                    if (.@useResearchTool) {
+                        delitem 60000,1;
+                    }
+                    Zeny -= .optionRequiredZeny;
+                    if (rand(100) > .@chance) {
+                        specialeffect2 EF_REFINEFAIL;
+                    } else {
+                        specialeffect2 EF_REFINEOK;
+                        
+                        .@randOpt = rand( getarraysize(.optionIds) );
+                        .@randOptValue = rand(1, 7);
+                        mes "Option index: " + .@randOpt;
+                        mes "Option Value: " + .@randOptValue;
+
+                        setrandomoption(.@part,0,.optionIds[.@randOpt],.@randOptValue,0);
+                    }
+                }
+            case 2:
+                break;
+        }
+        close;
+        end;
+	case 3:
+		deletearray @sold_nameid[0],getarraysize(@sold_nameid);
+		close2;
+		callshop .shopName$,2;
+		npcshopattach .shopName$;
+		end;
+	case 4:
+		mes "[ " + .npcName$ + " ]";
+		mes "คุณมีแต้มทั้งหมด : "+getd(.Points$)+" Point"+((getd(.Points$) == 1)?".":"s.");
+		close2;
+		callshop .shopName$,1;
+		npcshopattach .shopName$;
+		end;
+	case 5:	
+		mes "[ " + .npcName$ + " ]";
+		mes "ฮืมๆ แย่จัง";
+		mes "ไว้เจอกันใหม่ ๆ นะ!";
+		emotion ET_SLEEPY;
+		close;
+	}
+
+OnSellItem:
+	mes "[ " + .npcName$ + " ]";
+
+	for(set .@i,0; .@i<getarraysize(@sold_nameid); set .@i,.@i+1) {
+        .@index = inarray(.acceptedItemForPoint[0],@sold_nameid[.@i]);
+        if (.@index != -1) {
+            .@itemId[getarraysize(.@itemId)] = @sold_nameid[.@i];
+            .@quantity[getarraysize(.@quantity)] = @sold_quantity[.@i];
+            .@sellPrice[getarraysize(.@sellPrice)] = .acceptedItemPointValue[.@index];
+            .@point = @sold_quantity[.@i] * .@sellPrice;
+            .@total += .@point;
+        }
+    }
+	deletearray @sold_nameid[0], getarraysize(@sold_nameid);
+	deletearray @sold_quantity[0], getarraysize(@sold_quantity);
+	if (!.@total) {
+		mes "ไม่พบไอเทมที่สามารถแลกแต้มได้";
+		emotion ET_SWEAT;
+		close;
+	}
+	mes "จำนวนแต้มที่ได้รับ :";
+	mes "^399e00"+.@total+" แต้ม^000000";
+    for(set .@i,0; .@i<getarraysize(.@itemId); set .@i,.@i+1) {
+        mes "> " + getitemname(.@itemId[.@i]) + " ได้รับ " + .@quantity[.@i] * .@sellPrice[.@i] + " แต้ม";
+    }
+	mes "คุณต้องการแลกแต้มหรือไม่ ?";
+	next;
+	if(select("-->แน่นอน ฉันต้องการแลก :-->ไม่ล่ะขอบคุณ") == 2) {
+		emotion ET_SCRATCH;
+		close;
+	}
+	for(set .@i,0; .@i<getarraysize(.@itemId); set .@i,.@i+1) {
+		delitem .@itemId[.@i],.@quantity[.@i];
+    }
+	setd .Points$, getd(.Points$) + .@total;
+	mes "ยินดีด้วยนะค่ะ ฉันส่งไอเท็มแล้ว !";
+	mes "คุณสามารถซื้อของในร้านค้าได้แล้ว";
+	emotion ET_DELIGHT;
+	close;
+
+OnBuyItem:
+	for(set .@i,0; .@i<getarraysize(@bought_nameid); set .@i,.@i+1)
+		for(set .@j,0; .@j<getarraysize(.Shop); set .@j,.@j+2)
+			if (@bought_nameid[.@i] == .Shop[.@j]) {
+				set .@cost, .@cost+(.Shop[.@j+1]*@bought_quantity[.@i]);
+				break;
+			}
+	if (.@cost > getd(.Points$)) {
+		mes "คุณมีแต้มไม่มากพอที่จะแลก";
+		mes "จึงไม่สามารถทำรายการได้ !";
+		emotion ET_HUK;
+	}
+	else {
+		mes "รายการแลกไอเท็ม :";
+		for(set .@i,0; .@i<getarraysize(@bought_nameid); set .@i,.@i+1) {
+			getitem @bought_nameid[.@i], @bought_quantity[.@i];
+			mes "  ^0000FF"+@bought_quantity[.@i]+"x "+getitemname(@bought_nameid[.@i])+"";
+		}
+		mes "จำนวนแต้ม : ";
+		mes "^3e9b00"+.@cost+" Points";
+		setd .Points$, getd(.Points$)-.@cost;
+		emotion ET_MONEY;
+	}
+	deletearray @bought_nameid[0], getarraysize(@bought_nameid);
+	deletearray @bought_quantity[0], getarraysize(@bought_quantity);
+	close;
+OnInit:
+	waitingroom "[Costume] ย่อย", 0;
+    set .npcName$,"Costume Point";
+	set .Points$,"#Costume_Points";	// Variable to store points.
+	setarray .Shop,		// Card Shop items: <ID>,<point cost>
+	    30004,1,71002,3,71003,15;
+
+    setarray .acceptedItemForPoint[0],
+        20123,20191,31513,19876,19677,19552,20132,19902,20030;
+    setarray .acceptedItemPointValue[0],
+        1,3,3,1,1,3,3,1,1;
+	set .priceRate, 124;
+    set .shopName$,"Costume_shop";
+
+    set .optionRate, 40;
+    setarray .optionItemsRequirements[0],
+        985,5,984,5;
+
+    setarray .optionIds[0],
+        13,14,16,17,19,242,300;
+    
+    set .optionRequiredPoint, 5;
+    set .optionRequiredZeny, 200000;
+    
+	npcshopdelitem .shopName$,909;
+
+	for(set .@i,0; .@i<getarraysize(.Shop); set .@i,.@i+2)
+		npcshopadditem .shopName$,.Shop[.@i],.Shop[.@i+1];
+}
+
+-	shop	Costume_shop	-1,909:-1
+
+
+
+
+
+
+
+
+
+
+
+

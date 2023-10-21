@@ -58,6 +58,12 @@ Body:
     Multiplier: 50
     Script: |
       bonus bAspd,getrandomoptinfo(ROA_VALUE);
+  - Id: 16
+    Option: VAR_PLUSASPDPERCENT
+    Type: 1
+    Multiplier: 50
+    Script: |
+      bonus bAspdRate,getrandomoptinfo(ROA_VALUE);
   - Id: 17
     Option: VAR_ATTPOWER
     Type: 1

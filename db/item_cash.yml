@@ -59,11 +59,13 @@ Body:
       - Item: Megaphone_Box
         Price: 490
       - Item: VIP_CARD_1D
-        Price: 290
+        Price: 490
       - Item: VIP_CARD_7D
-        Price: 1490
+        Price: 2990
       - Item: VIP_CARD_30D
-        Price: 4350
+        Price: 9990
+      - Item: VIP_CARD_GW_2HR
+        Price: 290
   - Tab: Rental
     Items:
       - Item: Exp_Orb_Box

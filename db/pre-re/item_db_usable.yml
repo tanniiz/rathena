@@ -22000,6 +22000,14 @@ Body:
     Weight: 1
     Script: |
       vip_time(60*24*30);
+  - Id: 41018
+    AegisName: VIP_CARD_GW_2HR
+    Name: VIP Card 30Days
+    Type: Usable
+    Buy: 20
+    Weight: 1
+    Script: |
+      sc_start SC_VIPSTATE_GW, 2 * 60 * 60 * 1000, 1;
 
   ##### Coins #####
   - Id: 30001

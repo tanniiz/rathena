@@ -65,12 +65,23 @@ izlu2dun,108,27,4	script	Sailor#02	100,{
 		Zeny -= .@Price;
 	}
 	specialeffect2 EF_HEAL2;
-	percentheal 100,0;
 	if (.@Buffs) {
-		specialeffect2 EF_INCAGILITY;
-		sc_start SC_INCREASEAGI,1800000,10;
-		specialeffect2 EF_BLESSING;
-		sc_start SC_BLESSING,1800000,10;
+		if(agitcheck() && getstatus(SC_VIPSTATE_GW)) {
+			percentheal 100,0;
+			sc_start SC_INCREASEAGI,900000,10;
+			sc_start SC_BLESSING,900000,10;
+		}
+		else if (vip_status(1)) {
+			percentheal 50,0;
+			sc_start SC_INCREASEAGI,900000,10;
+			sc_start SC_BLESSING,900000,10;
+			sc_start SC_MAGNIFICAT,300000,5;
+			specialeffect2 EF_BLESSING;
+		} else {
+			percentheal 50,0;
+			sc_start SC_INCREASEAGI,900000,5;
+			sc_start SC_BLESSING,900000,5;
+		}
 	}
 	if (.@Delay)
 		@HD = gettimetick(2) + .@Delay;

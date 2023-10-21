@@ -455,3 +455,19 @@ Body:
       bonus2 bDropAddRace,RC_ALL,10;
       bonus2 bExpAddRace,RC_ALL,10;
       bonus2 bAddClass,Class_Boss,10;
+  - Id: 19402
+    AegisName: COSTUME_Group of Stars
+    Name: Costume Group of Stars
+    Type: Shadowgear
+    Locations:
+      Shadow_Right_Accessory: true
+    EquipLevelMin: 1
+    Script: |
+      hateffect(HAT_EF_MANYSTARS,true);
+      bonus2 bDropAddRace,RC_ALL,5;
+      bonus bAtkRate,2;
+      bonus bMatkRate,2;
+    EquipScript: |
+      hateffect(HAT_EF_MANYSTARS,true);
+    UnEquipScript: |
+      hateffect(HAT_EF_MANYSTARS,false);

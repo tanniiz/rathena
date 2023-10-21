@@ -41601,18 +41601,6 @@ Body:
       else {
          bonus3 bAutoSpellWhenHit,"AL_HEAL",5,20;
       }
-  - Id: 13499
-    AegisName: Dark_Sword
-    Name: Dark Sword
-    Type: Shadowgear
-    Locations:
-      Shadow_Weapon: true
-    Range: 1
-    Slots: 2
-    Jobs:
-      Knight: true
-    Locations:
-      Right_Hand: true
   - Id: 69999
     AegisName: Knife_Dice
     Name: Knife Dice
@@ -56336,3 +56324,75 @@ Body:
       bonus bAddMaxWeight,50;
       bonus2 bDropAddRace,RC_ALL,5;
       bonus2 bExpAddRace,RC_ALL,3;
+  - Id: 79000
+    AegisName: Costume_Pheonix_Bow
+    Name: Costume Pheonix Bow
+    Type: Shadowgear
+    View: 103
+    Locations:
+      Shadow_Weapon: true
+    Range: 1
+    Jobs:
+      Hunter: true
+    Locations:
+      Right_Hand: true
+  - Id: 79001
+    AegisName: Costume_Pheonix_Sword
+    Name: Costume Pheonix Sword
+    Type: Shadowgear
+    View: 104
+    Locations:
+      Shadow_Weapon: true
+    Range: 1
+    Jobs:
+      Knight: true
+    Locations:
+      Right_Hand: true
+  - Id: 79002
+    AegisName: Costume_Pheonix_Staff
+    Name: Costume Pheonix Staff
+    Type: Shadowgear
+    View: 105
+    Locations:
+      Shadow_Weapon: true
+    Range: 1
+    Jobs:
+      Wizard: true
+    Locations:
+      Right_Hand: true
+  - Id: 79003
+    AegisName: Costume_Pheonix_Katar
+    Name: Costume Pheonix Katar
+    Type: Shadowgear
+    View: 106
+    Locations:
+      Shadow_Weapon: true
+    Range: 1
+    Jobs:
+      Assassin: true
+    Locations:
+      Right_Hand: true
+  - Id: 79004
+    AegisName: Costume_Pheonix_Mace
+    Name: Costume Pheonix Mace
+    Type: Shadowgear
+    View: 107
+    Locations:
+      Shadow_Weapon: true
+    Range: 1
+    Jobs:
+      Priest: true
+    Locations:
+      Right_Hand: true
+  - Id: 79005
+    AegisName: Costume_Pheonix_Axe
+    Name: Costume Pheonix Axe
+    Type: Shadowgear
+    View: 108
+    Locations:
+      Shadow_Weapon: true
+    Range: 1
+    Jobs:
+      Blacksmith: true
+    Locations:
+      Right_Hand: true

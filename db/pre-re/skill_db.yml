@@ -356,7 +356,6 @@ Body:
       - Level: 10
         Time: 37000
     Duration2: 10000
-    Cooldown: 10000
     Requires:
       SpCost: 10
     Status: Endure

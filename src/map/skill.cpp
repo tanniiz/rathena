@@ -5991,7 +5991,7 @@ int skill_castend_damage_id (struct block_list* src, struct block_list *bl, uint
 				}
 			}
 			// Original hit or chain hit depending on flag
-			skill_attack(BF_WEAPON,src,src,bl,skill_id,skill_lv,tick,(flag&0xFFF)>0?SD_ANIMATION:0);
+			//skill_attack(BF_WEAPON,src,src,bl,skill_id,skill_lv,tick,(flag&0xFFF)>0?SD_ANIMATION:0);
 		}
 		break;
 

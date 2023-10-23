@@ -7,14 +7,14 @@ morocc,146,140,4	script	General Costume#1	54,{
     end;
 }
 
-morocc,147,93,4	script	Card Trader#1	54,{
- 	callshop "RankD_Card";
- 	end;
-
-  OnInit:
-    waitingroom "[Card] �дѺ D",0;
-    end;
-}
+// morocc,147,93,4	script	Card Trader#1	54,{
+//  	callshop "RankD_Card";
+//  	end;
+// 
+//   OnInit:
+//     waitingroom "[Card] �дѺ D",0;
+//     end;
+// }
 
 // morocc,165,111,4	script	Daily Craft#1	54,{
 //  	callshop "Daily_Craft";

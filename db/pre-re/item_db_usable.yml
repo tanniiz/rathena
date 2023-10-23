@@ -22467,3 +22467,22 @@ Body:
     Weight: 1
     Script: |
       rentitem 12887,86400;
+  - Id: 17230
+    AegisName: Donation_box
+    Name: Donation Box
+    Type: Cash
+    Buy: 10
+    Weight: 1
+    Script: |
+      getrandgroupitem(IG_LUCKY_EGG_C4);
+  - Id: 75001
+    AegisName: Promotion_Box
+    Name: Promotion Box
+    Type: Cash
+    Buy: 10
+    Weight: 1
+    Script: |
+      getitem 5286,1;
+      getitem 19402,1;
+      getitem 17230,20;
+      getitem 30001,4200;

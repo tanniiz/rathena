@@ -7697,6 +7697,55 @@ Body:
             Rate: 20
           - Item: C_Choco_Donut_In_Mouth
             Rate: 20
+  - Group: LUCKY_EGG_C4
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Item: Blessing_10_Scroll
+            Amount: 3
+            Rate: 10
+          - Item: Inc_Agi_10_Scroll
+            Amount: 3
+            Rate: 10
+          - Item: Kafra_Card
+            Amount: 2
+            Rate: 10
+          - Item: Dun_Tele_Scroll1
+            Amount: 2
+            Rate: 10
+          - Item: Elite_Siege_White_Small_box
+            Amount: 1
+            Rate: 6
+          - Item: Elite_Siege_Blue_Small_box
+            Amount: 1
+            Rate: 4
+          - Item: CASH_COIN
+            Amount: 100
+            Rate: 10
+          - Item: CASH_COIN
+            Amount: 200
+            Rate: 5
+          - Item: CASH_COIN
+            Amount: 300
+            Rate: 3
+          - Item: Costume_COIN
+            Amount: 1
+            Rate: 10
+          - Item: Costume_COIN
+            Amount: 3
+            Rate: 8
+          - Item: Costume_COIN
+            Amount: 5
+            Rate: 5
+          - Item: Costume_COIN
+            Amount: 10
+            Rate: 3
+          - Item: C_Wing_Of_Fly_Box
+            Amount: 1
+            Rate: 2
+          - Item: Recovery_Bubble_Gum_Box_1D
+            Amount: 1
+            Rate: 2
   - Group: LUCKY_EGG_C5
     SubGroups:
       - SubGroup: 1

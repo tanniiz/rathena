@@ -29830,8 +29830,8 @@ Body:
       NoGuildStorage: true
     Script: |
       bonus bSpeedRate,25;
-      bonus bAspdRate,-10;
-      bonus bCastrate,25;
+      bonus bAspdRate,5;
+      bonus bCastrate,-5;
   - Id: 5287
     AegisName: Vacation_Hat
     Name: Vacation Hat

@@ -1,0 +1,33 @@
+morocc,159,104,4	script	Level Challenge#1	4_M_JPNOJI,{
+  if($first99PlayerName$ != ""){
+    mes .npcName$;
+    mes "น่าเสียดาย... ผู้เล่น " + $first99PlayerName$ + " ได้ลงทะเบียนรับรางวัลไปแล้ว";
+    close;
+    end;
+  }
+
+	.@playerName$ = strcharinfo(0);
+
+	mes .npcName$;
+	mes "ข้ามีของรางวัลสำหรับผู้ที่มีเลเวล 99 คนแรก";
+	next;
+
+	mes .npcName$;
+	mes "เจ้ามีเลเวล " + BaseLevel;
+
+	if(BaseLevel == 99){
+		mes "ต้องการลงทะเบียนเลยไหม";
+		if(select("ใช่:ไม่ใช่") == 1) {
+			$first99PlayerName$ = .@playerName$;
+			mes "ลงทะเบียนเรียบร้อยแล้ว";
+		}
+	} else {
+		mes "กลับไปเก็บเลเวลมาก่อนนะ";
+	}
+	close;
+	end;
+
+OnInit:
+	.npcName$ = "[Level Challenge]";
+	waitingroom "แข่งขันเก็บเลเวล", 0;
+}

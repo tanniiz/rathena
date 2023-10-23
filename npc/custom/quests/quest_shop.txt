@@ -489,13 +489,13 @@ morocc,150,107,6	script	Juice Maker#Juice	612,{
 // }
 
 // Figures
-morocc,168,108,4	script	Figures Crafter#1	56,{
-	callfunc "qshop", 4;
+// morocc,168,108,4	script	Figures Crafter#1	56,{
+// 	callfunc "qshop", 4;
 
-	OnInit:
-	waitingroom "Figures Craft",0;
-	end;
-}
+// 	OnInit:
+// 	waitingroom "Figures Craft",0;
+// 	end;
+// }
 
 // Figures
 morocc,177,140,6	script	Headgear Crafter#1	673,{
@@ -507,46 +507,46 @@ morocc,177,140,6	script	Headgear Crafter#1	673,{
 }
 
 // Costume Mvp
-morocc,142,140,6	script	MVP Crafter#1	673,{
-	callfunc "qshop", 6;
+// morocc,142,140,6	script	MVP Crafter#1	673,{
+// 	callfunc "qshop", 6;
 
-	OnInit:
-	waitingroom "MVP Costume Quests",0;
-	end;
-}
-
-// Weapon
-morocc,165,112,6	script	Weapon Crafter#1	84,{
-	callfunc "qshop", 7;
-
-	OnInit:
-	waitingroom "Weapon Quests",0;
-	end;
-}
+// 	OnInit:
+// 	waitingroom "MVP Costume Quests",0;
+// 	end;
+// }
 
 // Weapon
- morocc,163,126,6	script	Hotweek#Craft	84,{
- 	callfunc "qshop", 8;
+// morocc,165,112,6	script	Weapon Crafter#1	84,{
+// 	callfunc "qshop", 7;
+
+// 	OnInit:
+// 	waitingroom "Weapon Quests",0;
+// 	end;
+// }
+
+// Weapon
+//  morocc,163,126,6	script	Hotweek#Craft	84,{
+//  	callfunc "qshop", 8;
  
- 	OnInit:
- 	waitingroom "[HW] สร้างไอเทม",0;
- 	end;
- }
+//  	OnInit:
+//  	waitingroom "[HW] สร้างไอเทม",0;
+//  	end;
+//  }
 
 // UPG Headwear
-morocc,159,109,6	script	UPG#Craft	84,{
-	callfunc "qshop", 9;
+// morocc,159,109,6	script	UPG#Craft	84,{
+// 	callfunc "qshop", 9;
 
-	OnInit:
-	waitingroom "[UPG] สร้างไอเทม",0;
-	end;
-}
+// 	OnInit:
+// 	waitingroom "[UPG] สร้างไอเทม",0;
+// 	end;
+// }
 
-// Manteau
-morocc,159,113,6	script	Manteau#Craft	84,{
-	callfunc "qshop", 10;
+// // Manteau
+// morocc,159,113,6	script	Manteau#Craft	84,{
+// 	callfunc "qshop", 10;
 
-	OnInit:
-	waitingroom "[Manteau] สร้างไอเทม",0;
-	end;
-}
+// 	OnInit:
+// 	waitingroom "[Manteau] สร้างไอเทม",0;
+// 	end;
+// }

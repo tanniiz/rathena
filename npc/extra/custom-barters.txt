@@ -25,19 +25,19 @@ morocc,147,93,4	script	Card Trader#1	54,{
 //     end;
 // }
 
-morocc,159,117,4	script	Exchange#HW1	54,{
- 	callshop "Refine_HW1";
- 	end;
-
-  OnInit:
-    waitingroom "[HW1] áÅ¡¢Í§",0;
-    end;
-}
-morocc,159,115,4	script	Exchange2#HW1	54,{
- 	callshop "Craft_HW1";
- 	end;
-
-  OnInit:
-    waitingroom "[HW2] áÅ¡¢Í§",0;
-    end;
-}
+// morocc,159,117,4	script	Exchange#HW1	54,{
+//  	callshop "Refine_HW1";
+//  	end;
+// 
+//   OnInit:
+//     waitingroom "[HW1] áÅ¡¢Í§",0;
+//     end;
+// }
+// morocc,159,115,4	script	Exchange2#HW1	54,{
+//  	callshop "Craft_HW1";
+//  	end;
+// 
+//   OnInit:
+//     waitingroom "[HW2] áÅ¡¢Í§",0;
+//     end;
+// }

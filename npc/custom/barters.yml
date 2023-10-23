@@ -60,9 +60,6 @@ Body:
           - Index: 2
             Item: Oridecon
             Amount: 10
-          - Index: 3
-            Item: MOB_COIN
-            Amount: 1000
       - Index: 1
         Zeny: 200000
         Item: COSTUME_BONE_HELM
@@ -76,9 +73,6 @@ Body:
           - Index: 2
             Item: Oridecon
             Amount: 10
-          - Index: 3
-            Item: MOB_COIN
-            Amount: 1000
       - Index: 2
         Zeny: 150000
         Item: COSTUME_APPLE_OF_ARCHER
@@ -92,9 +86,6 @@ Body:
           - Index: 2
             Item: Oridecon
             Amount: 10
-          - Index: 3
-            Item: MOB_COIN
-            Amount: 500
       - Index: 3
         Zeny: 150000
         Item: COSTUME_WIZARD_HAT
@@ -108,9 +99,6 @@ Body:
           - Index: 2
             Item: Oridecon
             Amount: 10
-          - Index: 3
-            Item: MOB_COIN
-            Amount: 500
       - Index: 4
         Zeny: 150000
         Item: COSTUME_SAKKAT
@@ -124,9 +112,6 @@ Body:
           - Index: 2
             Item: Oridecon
             Amount: 10
-          - Index: 3
-            Item: MOB_COIN
-            Amount: 500
       - Index: 5
         Zeny: 150000
         Item: COSTUME_MARIONETTE_DOLL
@@ -140,9 +125,6 @@ Body:
           - Index: 2
             Item: Oridecon
             Amount: 10
-          - Index: 3
-            Item: MOB_COIN
-            Amount: 500
       - Index: 6
         Zeny: 50000
         Item: COSTUME_OPERA_MASK
@@ -156,9 +138,6 @@ Body:
           - Index: 2
             Item: Oridecon
             Amount: 10
-          - Index: 3
-            Item: MOB_COIN
-            Amount: 300
       - Index: 7
         Zeny: 200000
         Item: COSTUME_ELVEN_EARS
@@ -172,9 +151,6 @@ Body:
           - Index: 2
             Item: Oridecon
             Amount: 10
-          - Index: 3
-            Item: MOB_COIN
-            Amount: 500
       - Index: 8
         Zeny: 200000
         Item: COSTUME_EVIL_EARS
@@ -188,9 +164,6 @@ Body:
           - Index: 2
             Item: Oridecon
             Amount: 10
-          - Index: 3
-            Item: MOB_COIN
-            Amount: 1000
       - Index: 9
         Zeny: 150000
         Item: COSTUME_FIN_HELM
@@ -204,9 +177,6 @@ Body:
           - Index: 2
             Item: Oridecon
             Amount: 10
-          - Index: 3
-            Item: MOB_COIN
-            Amount: 500
       - Index: 10
         Zeny: 150000
         Item: COSTUME_ROMANTIC_LEAF
@@ -220,9 +190,6 @@ Body:
           - Index: 2
             Item: Oridecon
             Amount: 10
-          - Index: 3
-            Item: MOB_COIN
-            Amount: 300
       - Index: 11
         Zeny: 200000
         Item: COSTUME_ROMANTIC_Flower
@@ -236,9 +203,6 @@ Body:
           - Index: 2
             Item: Oridecon
             Amount: 10
-          - Index: 3
-            Item: MOB_COIN
-            Amount: 500
       - Index: 12
         Zeny: 50000
         Item: COSTUME_CIGARATTE
@@ -252,9 +216,6 @@ Body:
           - Index: 2
             Item: Oridecon
             Amount: 10
-          - Index: 3
-            Item: MOB_COIN
-            Amount: 200
       - Index: 13
         Zeny: 150000
         Item: COSTUME_IRON_CANE
@@ -268,9 +229,6 @@ Body:
           - Index: 2
             Item: Oridecon
             Amount: 10
-          - Index: 3
-            Item: MOB_COIN
-            Amount: 500
   - Name: RankD_Card
     Items:
       - Index: 0

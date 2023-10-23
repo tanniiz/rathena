@@ -56396,3 +56396,22 @@ Body:
       Blacksmith: true
     Locations:
       Right_Hand: true
+  - Id: 12228
+    AegisName: Recovery_Bubble_Gum_In_Mouth
+    Name: Recovery Bubble Gum in Mouth
+    Type: Armor
+    EquipLevelMin: 1
+    View: 572
+    Jobs:
+      All: true
+    Locations:
+      Head_Low: true
+    ArmorLevel: 1
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoSell: true
+      NoMail: true
+      NoAuction: true
+    Script: |
+      bonus bSPrecovRate,100;

@@ -4952,56 +4952,32 @@ Body:
     Script: |
       pet 1245;
   - Id: 12226
-    AegisName: Examination1
-    Name: Examination 1
-    Type: Healing
-    Buy: 20
-    Weight: 50
+    AegisName: Bubble_Gum_100
+    Name: Bubble Gum 100
+    Type: Usable
+    Buy: 2
+    Weight: 1
+    Delay:
+      Duration: 60000
+      Status: Reuse_Limit_D
     Script: |
-      sc_start SC_SPEEDUP0,5400000,25;
-      percentheal 100,100;
-      sc_start SC_STRFOOD,5400000,10;
-      sc_start SC_DEXFOOD,5400000,5;
-      sc_start SC_ATKPOTION,5400000,22;
-      sc_start SC_MATKFOOD,5400000,15;
+      sc_start SC_ITEMBOOST,1800000,100;
   - Id: 12227
-    AegisName: Examination2
-    Name: Examination 2
-    Type: Healing
-    Buy: 20
-    Weight: 50
+    AegisName: Comp_Battle_Manual_100
+    Name: Field Manual 100
+    Type: Usable
+    Buy: 2
+    Weight: 1
     Script: |
-      sc_start SC_SPEEDUP0,5400000,25;
-      percentheal 100,100;
-      sc_start SC_INTFOOD,5400000,8;
-      sc_start SC_VITFOOD,5400000,7;
-      sc_start SC_LUKFOOD,5400000,7;
-      sc_start SC_ATKPOTION,5400000,10;
-  - Id: 12228
-    AegisName: Examination3
-    Name: Examination 3
-    Type: Healing
-    Buy: 20
-    Weight: 50
-    Script: |
-      sc_start SC_SPEEDUP0,5400000,25;
-      percentheal 100,100;
-      sc_start SC_AGIFOOD,5400000,15;
-      sc_start SC_ATKPOTION,5400000,52;
-      sc_start SC_MATKFOOD,5400000,10;
+      sc_start SC_EXPBOOST,1800000,100;
   - Id: 12229
-    AegisName: Examination4
-    Name: Examination 4
-    Type: Healing
+    AegisName: Recovery_Bubble_Gum_Box_1D
+    Name: Recovery Bubble Gum Box 1D
+    Type: Cash
     Buy: 20
-    Weight: 50
+    Weight: 1
     Script: |
-      sc_start SC_SPEEDUP0,5400000,25;
-      percentheal 100,100;
-      sc_start SC_STRFOOD,5400000,3;
-      sc_start SC_AGIFOOD,5400000,5;
-      sc_start SC_VITFOOD,5400000,10;
-      sc_start SC_MATKFOOD,5400000,52;
+      rentitem 12228,86400;
   - Id: 12230
     AegisName: Examination5
     Name: Examination 5
@@ -12547,7 +12523,7 @@ Body:
     Name: Dungeon Teleport Scroll 10 Box
     Type: Cash
     Buy: 20
-    Weight: 10
+    Weight: 1
     Trade:
       NoDrop: true
       NoSell: true
@@ -22466,3 +22442,28 @@ Body:
     Weight: 1
     Script: |
       getgroupitem(IG_LUCKY_EGG_C3,1);
+  - Id: 12887
+    AegisName: C_Wing_Of_Fly
+    Name: Infinite Flywing
+    Type: Usable
+    Flags:
+      NoConsume: true
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoSell: true
+      NoCart: true
+      NoStorage: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+    Script: |
+      itemskill "AL_TELEPORT",1;
+  - Id: 17229
+    AegisName: C_Wing_Of_Fly_Box
+    Name: Infinite Flywing Box
+    Type: Cash
+    Buy: 10
+    Weight: 1
+    Script: |
+      rentitem 12887,86400;

@@ -1,0 +1,259 @@
+-	script	stock_quest_shop	-1,{
+    OnInit:
+        query_sql (
+            "CREATE TABLE IF NOT EXISTS `stock_shop` ("+
+            "`id` int(7) NOT NULL AUTO_INCREMENT,"+
+            "`shop_id` int(11) NOT NULL,"+
+            "`item_id` int(11) NOT NULL,"+
+            "`amount` int(11) NOT NULL,"+
+            "PRIMARY KEY (`id`)"+
+            ") ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;"
+        );
+        freeloop(1);
+        callfunc "addItemStock", 1, 12227, 20, 10000, 1, 100;
+        callfunc "addItemStock", 1, 12226, 20, 10000, 1, 100;
+        callfunc "addItemStock", 1, 13721, 5, 20000, 1, 100, 30001, 5;
+        callfunc "addItemStock", 1, 12229, 2, 200000, 1, 100;
+        callfunc "addItemStock", 1, 17229, 2, 200000, 1, 100;
+
+        // Shop Name List
+        setarray .Shops$[1],
+            "ร้านค้าลึกลับ",	// Shop Named
+
+        freeloop(0);
+        set .menu$,"";
+        for(set .@i,1; .@i<=getarraysize(.Shops$); set .@i,.@i+1) {
+            set .menu$, .menu$+.Shops$[.@i]+":";
+            npcshopdelitem "qsshop"+.@i,909;
+        }
+        end;
+
+    OnBuyItem:
+        disable_items;
+        // selectedItems, quantity
+        setarray .@buyMetadata[0], @bought_nameid[0], ((@bought_quantity[0] > 1)? 1 : @bought_quantity[0]);
+
+        // Get requirement list from addItem func
+        // copyarray .@requirementsMetadata[0], getd("$qs_"+@shop_index+"_"+.@requirements[0]+"[0]"), getarraysize(getd("$qs_"+@shop_index+"_"+.@requirements[0]));
+
+        // [ {<shopName>, <itemId>, .@stock, .@price, .@maxBy, .@craftChance}, ...[{<requiredItemId>, <amount>}] ]
+        copyarray .@metadataArr[0], getd("$qs_"+@shop_index+"_"+.@buyMetadata[0]+"[0]"), getarraysize(getd("$qs_"+@shop_index+"_"+.@buyMetadata[0]+"[0]"));
+        .@selectedItemId = .@metadataArr[1];
+        .@stock = .@metadataArr[2];
+        .@price = .@metadataArr[3];
+        .@maxBuy = .@metadataArr[4];
+        .@craftChance = .@metadataArr[5];
+
+        query_sql("SELECT `amount` FROM `stock_shop` WHERE shop_id = " + .@metadataArr[0] + " AND item_id = " + .@selectedItemId,.@amt);
+
+        mes "[" + .Shops$[@shop_index] + "]";
+        debugmes "query: " + "SELECT `amount` FROM `stock_shop` WHERE shop_id = " + .@metadataArr[0] + " AND item_id = " + .@selectedItemId;
+        debugmes "ramains " + .@amt;
+        debugmes "selectedItemId " + .@selectedItemId;
+        if (.@amt < 1) {
+            mes "เสียใจด้วย! สินค้าข้าหมดเสียแล้ว :')";
+            close;
+        }   
+        mes "จำนวนคงเหลือในร้านค้า: " + .@amt;
+        mes "จำนวนสูงสุดในการซื้อต่อครั้ง: " + .@maxBuy;
+        
+        if (.@craftChance < 100) {
+            mes "> โอกาสสำเร็จ: " + .@craftChance;
+        }
+        mes "วัตถุดิบ:";
+
+        for (set .@i,6; .@i < getarraysize(.@metadataArr); set .@i, .@i + 2) {
+            mes "> " + getitemname(.@metadataArr[.@i]) + " จำนวน " + .@metadataArr[.@i+1] + "ea";
+        }
+
+        mes "> จำนวนเงิน: " + .@price;
+        next;
+
+        mes "[" + .Shops$[@shop_index] + "]";
+        mes "เจ้ายืนยันการซื้อหรือไม่ ?";
+        next;
+
+        switch(select("แน่นอนสิ!:ไม่ละ")) {
+            case 1:
+                .@isValid = true;
+                for (set .@i,6; .@i < getarraysize(.@metadataArr); set .@i, .@i + 2) {
+                    .@isValid = .@isValid && countitem(.@metadataArr[.@i]) >= .@metadataArr[.@i+1];
+                }
+                .@isValid = .@isValid && (Zeny > .@price);
+
+                mes "[" + .Shops$[@shop_index] + "]";
+                if (!.@isValid) {
+                    mes "ไสหัวไป! หาของที่ข้าต้องการให้ครบก่อนค่อยกลับมาหาข้า!";
+                    close;
+                }
+
+                
+                query_sql("SELECT `amount` FROM `stock_shop` WHERE shop_id = " + .@metadataArr[0] + " AND item_id = " + .@selectedItemId,.@latestAmt);
+                if (.@latestAmt < 1) {
+                    mes "เสียใจด้วย! สินค้าข้าหมดเสียแล้ว :')";
+                    close;
+                }
+
+                for (set .@i,6; .@i < getarraysize(.@metadataArr); set .@i, .@i + 2) {
+                    delitem .@metadataArr[.@i], (.@metadataArr[.@i+1] * .@buyMetadata[1]);
+                }
+                Zeny -= .@price;
+                if (rand(0, 100) < .@craftChance) {
+                    query_sql("UPDATE `stock_shop` SET `amount` = `amount` - 1 WHERE shop_id = " + .@metadataArr[0] + " AND item_id = " + .@selectedItemId);
+                    announce "[" + .Shops$[@shop_index] + "] ยินดีด้วย! [" + strcharinfo(0) + "] ได้รับ [" + getitemname(.@buyMetadata[0]) + "]" + " จำนวน " + .@buyMetadata[1] + "ea", 0;
+                    getitem .@selectedItemId, .@buyMetadata[1];
+
+                    query_sql("SELECT `amount` FROM `stock_shop` WHERE shop_id = " + .@metadataArr[0] + " AND item_id = " + .@selectedItemId,.@afterBoughtAmt);
+                    if (.@afterBoughtAmt <= 0) {
+                        npcshopdelitem "qsshop" + .@metadataArr[0], .@selectedItemId;
+                    }
+                    mes "ยินดีด้วย!";
+                } else {
+                    announce "[" + .Shops$[@shop_index] + "] เสียใจด้วย! [" + strcharinfo(0) + "] สร้าง [" + getitemname(.@buyMetadata[0]) + "]" + " ไม่สำเร็จ", 0;
+                }
+              break;
+            case 2:
+              break;
+        }
+        close;
+
+
+        end;
+
+    OnMenu:
+        set .@size, getarraysize(@i);
+        if (!.@size) set @shop_index, select(.menu$);
+        else if (.@size == 1) set @shop_index, @i[0];
+        else {
+            for(set .@j,0; .@j<.@size; set .@j,.@j+1)
+                set .@menu$, .@menu$+.Shops$[@i[.@j]]+":";
+            set @shop_index, @i[select(.@menu$)-1];
+        }
+        deletearray @i[0],getarraysize(@i);
+        if (.Shops$[@shop_index] == "") {
+            message strcharinfo(0),"An error has occurred.";
+            end;
+        }
+        dispbottom "กรุณาเลือกซื้อสินค้า 1 ชนิดต่อครั้ง";
+
+        callshop "qsshop"+@shop_index,1;
+        npcshopattach "qsshop"+@shop_index;
+        end;
+}
+
+function	script	createShopId	{
+	deletearray @i[0],getarraysize(@i);
+	for(set .@i,0; .@i<getargcount(); set .@i,.@i+1)
+		set @i[.@i],getarg(.@i);
+	doevent "stock_quest_shop::OnMenu";
+	end;
+}
+
+/*
+ * args[0] - shop id
+ * args[1] - item id
+ * args[2] - item stock (0 = unlimited)
+ * args[3] - price (Zeny)
+ * args[4] - max buy
+ * args[5] - craft chance (Default = 100)
+ * args[6 -i] - item requirements with format { <itemId>, <amount> }
+ */
+function	script	addItemStock	{
+    .@shopId = getarg(0);
+    .@itemId = getarg(1);
+    .@stock = getarg(2);
+    .@price = getarg(3);
+    .@maxBuy = getarg(4);
+    .@craftChance = getarg(5);
+    if (getitemname(getarg(1)) == "null") {
+        debugmes "Quest reward #"+getarg(1)+" invalid (skipped).";
+        return;
+    }
+    setarray .@requirements[0], .@shopid, .@itemId, .@stock, .@price, .@maxBuy, .@craftChance;
+    for(set .@i,6; .@i<getargcount(); set .@i,.@i+2) {
+        if (getitemname(getarg(.@i)) == "null") {
+            debugmes "Quest requirement #"+getarg(.@i)+" invalid (skipped).";
+            return;
+        } else
+            /*
+            * requirements = [ {<shopName>, <itemId>, .@stock, .@price, .@maxBy, .@craftChance}, ...[{<requiredItemId>, <amount>}] ]
+            */
+            setarray .@requirements[.@i],getarg(.@i),getarg(.@i+1);
+    }
+    copyarray getd("$qs_"+getarg(0)+"_"+getarg(1)+"[0]"), .@requirements[0], getarraysize(.@requirements);
+    
+    query_sql("SELECT `shop_id`, `amount` FROM `stock_shop` WHERE shop_id = " + .@shopid + " AND item_id = " + .@itemId, .@existShopId, .@remainAmount);
+    if (!.@existShopId) {
+        query_sql("INSERT INTO `stock_shop` (shop_id, item_id, amount) VALUES (" + .@shopId + ", " + .@itemId + ", " + .@stock + ")");
+    }
+
+    callfunc "addShopItem", .@shopId, .@itemId , .@price, .@existShopId ? .@remainAmount : .@stock;
+    return;
+}
+
+/*
+* args[0] - shop id
+* args[1] - item id
+* args[2] - price
+* args[3] - amount
+*/
+function	script	addShopItem	{
+    .@shopId = getarg(0);
+    .@itemId = getarg(1);
+    .@price = getarg(2);
+    .@stock = getarg(3);
+
+    npcshopdelitem "qsshop" + .@shopId, .@itemId;
+    if (.@stock > 0) {
+        npcshopadditem "qsshop" + .@shopId, .@itemId , .@price, .@stock;
+    } else if (.@stock <= -1) {
+        npcshopadditem "qsshop" + .@shopId, .@itemId , .@price;
+    }
+    return;
+}
+
+/*
+* args[0] - shop id
+* args[1] - item id
+* args[2] - price
+* args[3] - amount
+*/
+function	script	restockItem	{
+    .@shopId = getarg(0);
+    .@itemId = getarg(1);
+    .@price = getarg(2);
+    .@amount = getarg(3);
+    debugmes "UPDATE `stock_shop` SET `amount` = "+ .@amount + " WHERE shop_id = " + .@shopId + " AND item_id = " + .@itemId;
+	query_sql("UPDATE `stock_shop` SET `amount` = "+ .@amount + " WHERE shop_id = " + .@shopId + " AND item_id = " + .@itemId);
+
+    addShopItem(.@shopId, .@itemId, .@price, .@amount);
+	return;
+}
+
+// Dummy shop data -- copy as needed.
+//============================================================
+-	shop	qsshop1	-1,909:-1
+
+// Daily Craft
+morocc,165,125,6	script	ร้านค้าลึกลับ#1	726,{
+	callfunc "createShopId", 1;
+
+	OnInit:
+        waitingroom "[รายวัน] ร้านค้าลึกลับ",0;
+        end;
+
+    OnClock2100:
+        disablenpc "ร้านค้าลึกลับ#1";
+        announce "[ร้านค้าลึกลับ] กำลังเติมของลงในร้านค้า และจะพร้อมจำหน่ายภายใน 60 วินาที!", 0;
+        callfunc "restockItem", 1, 12227, 10000, 20;
+        callfunc "restockItem", 1, 12226, 10000, 20;
+        callfunc "restockItem", 1, 13721, 20000, 5;
+        callfunc "restockItem", 1, 12229, 200000, 2;
+        callfunc "restockItem", 1, 17229, 200000, 2;
+        end;
+
+    OnClock2101:
+        enablenpc "ร้านค้าลึกลับ#1";
+        announce "[ร้านค้าลึกลับ] สินค้าพร้อมจำหน่ายแล้ว!!", 0;
+        end;
+}

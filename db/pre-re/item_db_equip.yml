@@ -42363,11 +42363,9 @@ Body:
     Name: Costume Centimental Flower
     Type: Armor
     Buy: 20
-    Weight: 100
     Locations:
       Costume_Head_Low: true
     ArmorLevel: 1
-    EquipLevelMin: 100
     View: 56
     Script: |
       bonus bAddMaxWeight,50;

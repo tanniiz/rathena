@@ -10,8 +10,8 @@
             ") ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;"
         );
         freeloop(1);
-        callfunc "addItemStock", 1, 12227, 20, 10000, 1, 100;
-        callfunc "addItemStock", 1, 12226, 20, 10000, 1, 100;
+        callfunc "addItemStock", 1, 12227, 20, 10000, 1, 100, 30001, 5, 12208, 1;
+        callfunc "addItemStock", 1, 12226, 20, 10000, 1, 100, 30001, 5, 12210, 1;
         callfunc "addItemStock", 1, 13721, 5, 20000, 1, 100, 30001, 5;
         callfunc "addItemStock", 1, 12229, 2, 200000, 1, 100;
         callfunc "addItemStock", 1, 17229, 2, 200000, 1, 100;
@@ -98,7 +98,7 @@
                     delitem .@metadataArr[.@i], (.@metadataArr[.@i+1] * .@buyMetadata[1]);
                 }
                 Zeny -= .@price;
-                if (rand(0, 100) < .@craftChance) {
+                if (rand(0, 99) < .@craftChance) {
                     query_sql("UPDATE `stock_shop` SET `amount` = `amount` - 1 WHERE shop_id = " + .@metadataArr[0] + " AND item_id = " + .@selectedItemId);
                     announce "[" + .Shops$[@shop_index] + "] ยินดีด้วย! [" + strcharinfo(0) + "] ได้รับ [" + getitemname(.@buyMetadata[0]) + "]" + " จำนวน " + .@buyMetadata[1] + "ea", 0;
                     getitem .@selectedItemId, .@buyMetadata[1];

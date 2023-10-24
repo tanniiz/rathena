@@ -1219,6 +1219,9 @@
 	export_constant(SC_SUMMER);
 	export_constant(SC_EXPBOOST);
 	export_constant(SC_ITEMBOOST);
+	export_constant(SC_ITEMBOOST_EQP);
+	export_constant(SC_ITEMBOOST_CARD);
+	export_constant(SC_ITEMBOOST_MVP);
 	export_constant(SC_BOSSMAPINFO);
 	export_constant(SC_LIFEINSURANCE);
 	export_constant(SC_INCCRI);
@@ -4154,6 +4157,9 @@
 	export_constant(EFST_C_RATE_PLUS);
 	export_constant(EFST_RESIST_PLUS);
 	export_constant(EFST_PVP_DUN_BUFF);
+	export_constant(EFST_ITEMBOOST_EQP);
+	export_constant(EFST_ITEMBOOST_CARD);
+	export_constant(EFST_ITEMBOOST_MVP);
 	export_constant(EFST_VIPSTATE_GW);
 	export_constant(EFST_VIPSTATE);
 /// @APIHOOK_END

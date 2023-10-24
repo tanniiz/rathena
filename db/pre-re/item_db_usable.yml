@@ -4777,9 +4777,6 @@ Body:
     Type: Usable
     Buy: 2
     Weight: 1
-    Delay:
-      Duration: 60000
-      Status: Reuse_Limit_D
     Script: |
       sc_start SC_ITEMBOOST,1800000,50;
   - Id: 12211
@@ -22486,3 +22483,27 @@ Body:
       getitem 19402,1;
       getitem 17230,20;
       getitem 30001,4200;
+  - Id: 75100
+    AegisName: Bubble_Gum_Equipment
+    Name: Bubble Gum Equipment
+    Type: Usable
+    Buy: 2
+    Weight: 1
+    Script: |
+      sc_start SC_ITEMBOOST_EQP,1800000,50;
+  - Id: 75101
+    AegisName: Bubble_Gum_Card
+    Name: Bubble Gum Card
+    Type: Usable
+    Buy: 2
+    Weight: 1
+    Script: |
+      sc_start SC_ITEMBOOST_CARD,1800000,50;
+  - Id: 75102
+    AegisName: Bubble_Gum_Mvp
+    Name: Bubble Gum Mvp
+    Type: Usable
+    Buy: 2
+    Weight: 1
+    Script: |
+      sc_start SC_ITEMBOOST_MVP,1800000,50;

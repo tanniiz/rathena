@@ -7759,14 +7759,18 @@ ACMD_FUNC(mobinfo)
 			if (id == nullptr)
 				continue;
 
-			int droprate = mob_getdroprate( &sd->bl, mob, mob->dropitem[i].rate, drop_modifier );
+			int dropratebonus = calc_dropratebonus(&sd->bl, mob, mob->dropitem[i].rate, nullptr, id);
+			int droprate = mob_getdroprate( &sd->bl, mob, mob->dropitem[i].rate, drop_modifier, nullptr, dropratebonus);
+			// int calc_dropratebonus(struct block_list* src, std::shared_ptr<s_mob_db> mob, int base_rate, int drop_modifier, mob_data * md, std::shared_ptr<item_data> it);
 
-			sprintf(atcmd_output2, " - %s  %02.02f%%", item_db.create_item_link( id ).c_str(), (float)droprate / 100);
-			strcat(atcmd_output, atcmd_output2);
-			if (++j % 3 == 0) {
-				clif_displaymessage(fd, atcmd_output);
-				strcpy(atcmd_output, " ");
-			}
+			float baserate = (float)mob->dropitem[i].rate / 100;
+			float totalrate = (float)droprate / 100;
+			float bonusrate = totalrate - baserate;
+			
+
+			sprintf(atcmd_output2, " - %s  %02.02f%% (+ %02.02f%%)", item_db.create_item_link( id ).c_str(), totalrate < baserate ? totalrate : baserate, bonusrate <= 0 ? 0 : bonusrate);
+			// strcat(atcmd_output, atcmd_output2);
+			clif_displaymessage(fd, atcmd_output2);
 		}
 		if (j == 0)
 			clif_displaymessage(fd, msg_txt(sd,1246)); // This monster has no drops.

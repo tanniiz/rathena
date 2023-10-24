@@ -2460,6 +2460,55 @@ void mob_damage(struct mob_data *md, struct block_list *src, int damage)
 #endif
 }
 
+int calc_dropratebonus(struct block_list* src, std::shared_ptr<s_mob_db> mob, int base_rate, mob_data* md, std::shared_ptr<item_data> it) {
+	int drop_rate = base_rate;
+	int drop_rate_bonus = 0;
+	if (src) {
+		if (battle_config.drops_by_luk) // Drops affected by luk as a fixed increase [Valaris]
+			drop_rate += status_get_luk(src) * battle_config.drops_by_luk / 100;
+		if (battle_config.drops_by_luk2) // Drops affected by luk as a % increase [Skotlex]
+			drop_rate += (int)(0.5 + drop_rate * status_get_luk(src) * battle_config.drops_by_luk2 / 10000.);
+
+		if (src->type == BL_PC) { // Player specific drop rate adjustments
+			map_session_data* sd = (map_session_data*)src;
+			drop_rate_bonus = 100;
+
+			// In PK mode players get an additional drop chance bonus of 25% if there is a 20 level difference
+			if (battle_config.pk_mode && (int)(mob->lv - sd->status.base_level) >= 20) {
+				drop_rate_bonus += 25;
+			}
+
+			// Add class and race specific bonuses
+			drop_rate_bonus += sd->indexed_bonus.dropaddclass[mob->status.class_] + sd->indexed_bonus.dropaddclass[CLASS_ALL];
+			drop_rate_bonus += sd->indexed_bonus.dropaddrace[mob->status.race] + sd->indexed_bonus.dropaddrace[RC_ALL];
+
+			if (mob->status.class_ != CLASS_BOSS) {
+				if (sd->sc.getSCE(SC_ITEMBOOST))
+					drop_rate_bonus += sd->sc.getSCE(SC_ITEMBOOST)->val1;
+
+				if (sd->sc.getSCE(SC_ITEMBOOST_EQP) && (it->type == IT_ARMOR || it->type == IT_WEAPON)) {
+					drop_rate_bonus += sd->sc.getSCE(SC_ITEMBOOST_EQP)->val1;
+				}
+
+				if (sd->sc.getSCE(SC_ITEMBOOST_CARD) && (it->type == IT_CARD)) {
+					drop_rate_bonus += sd->sc.getSCE(SC_ITEMBOOST_CARD)->val1;
+				}
+			}
+			else {
+				if (sd->sc.getSCE(SC_ITEMBOOST_MVP))
+					drop_rate_bonus += sd->sc.getSCE(SC_ITEMBOOST_MVP)->val1;
+			}
+
+			if (pc_isvip(sd)) { // Increase item drop rate for VIP.
+				// Unsure how the VIP and other bonuses should stack, this is additive.
+				drop_rate_bonus += battle_config.vip_drop_increase;
+			}
+		}
+	}
+
+	return drop_rate_bonus;
+}
+
 /**
  * Get modified drop rate
  * @param src: Source object
@@ -2468,7 +2517,7 @@ void mob_damage(struct mob_data *md, struct block_list *src, int damage)
  * @param drop_modifier: RENEWAL_DROP level modifier
  * @return Modified drop rate
  */
-int mob_getdroprate(struct block_list *src, std::shared_ptr<s_mob_db> mob, int base_rate, int drop_modifier, mob_data* md)
+int mob_getdroprate(struct block_list *src, std::shared_ptr<s_mob_db> mob, int base_rate, int drop_modifier, mob_data* md, int drop_rate_bonus)
 {
 	int drop_rate = base_rate;
 
@@ -2487,26 +2536,10 @@ int mob_getdroprate(struct block_list *src, std::shared_ptr<s_mob_db> mob, int b
 			drop_rate += (int)(0.5 + drop_rate * status_get_luk(src) * battle_config.drops_by_luk2 / 10000.);
 
 		if (src->type == BL_PC) { // Player specific drop rate adjustments
-			map_session_data *sd = (map_session_data*)src;
-			int drop_rate_bonus = 100;
-
-			// In PK mode players get an additional drop chance bonus of 25% if there is a 20 level difference
-			if( battle_config.pk_mode && (int)(mob->lv - sd->status.base_level) >= 20 ){
-				drop_rate_bonus += 25;
-			}
-
-			// Add class and race specific bonuses
-			drop_rate_bonus += sd->indexed_bonus.dropaddclass[mob->status.class_] + sd->indexed_bonus.dropaddclass[CLASS_ALL];
-			drop_rate_bonus += sd->indexed_bonus.dropaddrace[mob->status.race] + sd->indexed_bonus.dropaddrace[RC_ALL];
-
-			if (sd->sc.getSCE(SC_ITEMBOOST))
-				drop_rate_bonus += sd->sc.getSCE(SC_ITEMBOOST)->val1;
 
 			int cap;
-
+			map_session_data* sd = (map_session_data*)src;
 			if (pc_isvip(sd)) { // Increase item drop rate for VIP.
-				// Unsure how the VIP and other bonuses should stack, this is additive.
-				drop_rate_bonus += battle_config.vip_drop_increase;
 				cap = battle_config.drop_rate_cap_vip;
 			} else
 				cap = battle_config.drop_rate_cap;
@@ -2514,7 +2547,7 @@ int mob_getdroprate(struct block_list *src, std::shared_ptr<s_mob_db> mob, int b
 			drop_rate = (int)( 0.5 + drop_rate * drop_rate_bonus / 100. );
 
 			// Now limit the drop rate to never be exceed the cap (default: 90%), unless it is originally above it already.
-			if( drop_rate > cap && base_rate < cap ){
+			if( drop_rate > cap){
 				drop_rate = cap;
 			}
 		}
@@ -2821,8 +2854,9 @@ int mob_dead(struct mob_data *md, struct block_list *src, int type)
 
 			if ( it == nullptr )
 				continue;
-			
-			drop_rate = mob_getdroprate(src, md->db, md->db->dropitem[i].rate, drop_modifier, md);
+
+			int dropratebonus = calc_dropratebonus(src, md->db, md->db->dropitem[i].rate, nullptr, it);
+			drop_rate = mob_getdroprate(src, md->db, md->db->dropitem[i].rate, drop_modifier, md, dropratebonus);
 
 			// attempt to drop the item
 			if (rnd() % 10000 >= drop_rate)
